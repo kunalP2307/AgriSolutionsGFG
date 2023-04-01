@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.solutiontofarming">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.SolutionToFarming">
+        <activity android:name=".RideRequestSentActivity"></activity>
+        <activity android:name=".ShowSearchedEquipmentActivity" />
+        <activity android:name=".AgriLandAddedActivity" />
+        <activity android:name=".ShowNewsActivity" />
+        <activity android:name=".WeatherForecastActivity" />
+        <activity android:name=".NoMyRidesActivity" />
+        <activity android:name=".ShowMyRidesActivity" />
+        <activity android:name=".GetRideActivity" />
+        <activity android:name=".WeatherDetailsActivity" />
+        <activity android:name=".AgriEquipmentServiceActivity" />
+        <activity android:name=".ShowAvailableAgriEquipmentsActivity" />
+        <activity android:name=".EquipmentAddedActivity" />
+        <activity android:name=".ShowAgriEquipmentActivity" />
+        <activity android:name=".AddAgriEquipment" />
+        <activity android:name=".temp" />
+        <activity android:name=".HelpActivity" />
+        <activity android:name=".MyAddressActivity" />
+        <activity android:name=".SearchTransportActivity" />
+        <activity android:name=".VerifyMobileNoActivity" />
+        <activity android:name=".AboutUsActivity" />
+        <activity android:name=".ContactUsActivity" />
+        <activity android:name=".LandRentServiceActivity" />
+        <activity android:name=".TransportServiceActivity" />
+        <activity android:name=".AddAgriLandActivity" />
+        <activity android:name=".ShowAvailableAgriLandsActivity" />
+        <activity android:name=".VerifyProfileActivity" />
+        <activity android:name=".ShowRideDetailsActivity" />
+        <activity android:name=".ShowAvailableRidesActivity" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyAXsfDGmffRx9ShDwA_C2MqPHzIjOOXEpo" />
+
+        <activity android:name=".AddDriverDetailsActivity" />
+        <activity android:name=".AddVehicleDetailsActivity" />
+        <activity android:name=".AddRideDetailsActivity" />
+        <activity android:name=".ResetPasswordActivity" />
+        <activity android:name=".NoRidesActivity" />
+        <activity android:name=".RideAddedActivity" />
+        <activity android:name=".ScheduleTransportActivity" />
+        <activity android:name=".ShowTransportActivity" />
+        <activity android:name=".HomeNewsActivity" />
+        <activity android:name=".ServicesActivity" />
+        <activity android:name=".ExploreActivity" />
+        <activity android:name=".ProfileActivity" />
+        <activity android:name=".RegistrationActivity" />
+        <activity android:name=".HomeActivity" />
+        <activity android:name=".RegistrationPage" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

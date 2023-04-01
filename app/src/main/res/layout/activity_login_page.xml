@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical"
+    android:padding="30dp"
+    tools:context=".LoginActivity">
+
+
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="50dp"
+        android:text="Agri Solutions"
+        android:textColor="@color/colorAccent"
+        android:textSize="40dp"
+        android:textStyle="bold"
+
+        />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_marginTop="60dp"
+        android:textColorHint="@color/colorAccent"
+        >
+
+        <EditText
+            android:id="@+id/text_log_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Username"
+            android:inputType="text"
+            android:textSize="20dp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_marginTop="10dp"
+        android:textColorHint="@color/colorAccent"
+        >
+
+        <EditText
+            android:id="@+id/text_log_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:ems="10"
+            android:textSize="20dp"
+            android:inputType="textPassword" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/button_rounded"
+        android:backgroundTint="@color/colorAccent"
+        android:text="Login"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp"
+        app:backgroundTint="@color/colorAccent" />
+    <TextView
+        android:id="@+id/label_forgot_pass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Forgot Password "
+        android:textColor="#03A9F4"
+        android:textSize="20dp"
+        android:textStyle="italic"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="90dp"
+
+        />
+    <TextView
+        android:id="@+id/label_no_acc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Don't have an account? "
+        android:textColor="#808080"
+        android:textSize="20dp"
+        android:textStyle="italic"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="70dp"
+
+        />
+
+    <Button
+        android:id="@+id/btn_sign_up"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginLeft="90dp"
+        android:layout_marginTop="25dp"
+        android:background="@drawable/button2_round"
+        android:backgroundTint="#808080"
+        android:text="SignUp"
+        android:textColor="#FFFFFF"
+        android:textSize="22sp"
+        app:backgroundTint="#808080" />
+
+        />
+
+
+
+</LinearLayout>

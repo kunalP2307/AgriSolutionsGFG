@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    style="@style/CardView.Light"
+    android:layout_marginTop="8dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingBottom="12dp">
+
+        <TextView
+            android:id="@+id/titleTextView"
+            android:layout_width="365dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text=" Question"
+            android:textColor="@color/teal_200"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.142" />
+
+        <ru.embersoft.expandabletextview.ExpandableTextView
+            android:id="@+id/descTextView"
+            style="@style/TextAppearance.AppCompat.Body1"
+            android:layout_width="364dp"
+            android:layout_height="140dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:paddingBottom="30dp"
+            app:etv_animationTime="20"
+            app:etv_expandLines="0"
+            app:etv_showLine="false"
+            app:etv_textContentColor="#8A000000"
+            app:etv_textContentSize="14sp"
+            app:etv_textExpand="Show more"
+            app:etv_textShrink="Show less"
+            app:etv_textStateColor="#8A000000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/titleTextView" />
+
+
+        />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

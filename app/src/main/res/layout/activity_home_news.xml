@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeNewsActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="270dp"
+                android:src="@drawable/news_1"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:textSize="22dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:padding="10dp"
+                android:text="Odisha Farmer earns Rs 18 Lakh/Year in Horiculture using Organic Practices"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1300dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:textColor="@color/black"
+                android:textSize="22dp"
+                android:padding="10dp"
+                android:text="Krushna Nag from Odisha is earning fabulous profits by growing vegetables and fruits - mango, pomegranate, and banana using the best organic practices.\n\nBefore coming into farming, Krushna was a truck driver in 1996. After ten years, he decided to do agriculture in his ancestral field of 0.25 acre. First, he planted 50 mango plants. He inclined to organic farming due to low cultivation costs and health reasons.                       that mango trees take time to bear fruits, Krushna utilized those four years to cultivate tomato and green chillies in the space between mango trees (Intercropping). He also planted coconut trees on the boundaries of his orchard to fully utilize the space and protect mango fruit fall from heavy winds.\n\nWhen Krushna ventured into farming, he aimed to meet his family's basic needs and get a steady income. He took training from State Horticulture Mission, learned effective organic farming practices, and space utility in growing horticulture crops.
+                        Krushna got Rs. 2.6 lakh from his first green chillies harvest. From then on, he gradually increased his cultivable land to 11 acres. Now he is growing a wide range of fruits and vegetables, has a poultry farm, and practicing pisciculture (fish farming - The breeding, rearing, and transplantation of fish by artificial means). Krushna is getting Rs. 18 lakh a year through all these collectively."
+                />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

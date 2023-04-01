@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/teal_200"
+    tools:context=".ContactUsActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/rounded_box2"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="30dp"
+
+        >
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="210dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="65dp"
+            android:layout_marginEnd="60dp"
+            android:layout_marginTop="80dp"
+            android:background="@drawable/rounded_box"
+            android:paddingLeft="14dp"
+            android:text="AgriSolution"
+            android:textColor="@color/white"
+            android:textSize="32sp"
+            android:textStyle="bold" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="340dp"
+            android:layout_marginTop="200dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/rounded_box"
+            >
+
+            <TextView
+                android:id="@+id/tcontact11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="30dp"
+                android:textColor="@color/white"
+                android:text="Email "
+                android:textSize="26dp"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tcontact12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="125dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="30dp"
+                android:text="agri.solution@gmail.com "
+                android:textColor="@color/black"
+                android:paddingTop="8dp"
+                android:textSize="18sp"
+                />
+            <TextView
+                android:id="@+id/tcontact21"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="110dp"
+                android:text="Phone "
+                android:textSize="26dp"
+                android:textColor="@color/white"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tcontact22"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="125dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="110dp"
+                android:text="(+91) 9890502934 "
+                android:textSize="20sp"
+                android:padding="8dp"
+                android:textColor="@color/black"
+                />
+
+            <TextView
+                android:id="@+id/tcontact31"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="190dp"
+                android:text="Address"
+                android:textSize="26dp"
+                android:textColor="@color/white"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/tcontact32"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="125dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginTop="190dp"
+                android:text="@string/OfficeAddress"
+                android:textSize="20dp"
+                android:padding="8dp"
+                android:textColor="@color/black"
+                />
+        </FrameLayout>
+
+    </FrameLayout>
+
+</RelativeLayout>

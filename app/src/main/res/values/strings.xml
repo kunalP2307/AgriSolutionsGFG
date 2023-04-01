@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">AgriSolutions</string>
+    <string name="todo3">TODO</string>
+    <string name="viewroute"><u>View Route ></u>></string>
+    <string name="OfficeAddress">AgriSolution, 125,Main Street, Shivaji Nagar, Pune-411006</string>
+    <string name="about1">Since 2021, our mission has been to provide different servies in Agriculture Industry at one platform.</string>
+    <string name="about2">We believe in helping people by reducing the cost of expenses, and give our  little  contribution to help  the  environment by conserving resources</string>
+
+
+</resources>

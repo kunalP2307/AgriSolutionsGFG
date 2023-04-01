@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "374318936946",
+    "project_id": "agrisolutions-20061",
+    "storage_bucket": "agrisolutions-20061.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:374318936946:android:45711b094ec51f2aa4a3eb",
+        "android_client_info": {
+          "package_name": "com.example.solutiontofarming"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "374318936946-8bfc7il8kgqloen3q78bj3q8hgef74a5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxwZOVgYZ6gIHc6TtHOmSPYvUJIE6iKKY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "374318936946-8bfc7il8kgqloen3q78bj3q8hgef74a5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
