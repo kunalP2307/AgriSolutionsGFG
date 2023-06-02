@@ -83,7 +83,10 @@ public class WeatherDetailsActivity extends AppCompatActivity {
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),WeatherForecastActivity.class));
+                Intent intent = new Intent(getApplicationContext(), WeatherForecastActivity.class);
+                intent.putExtra("EXTRA_LAT", lat);
+                intent.putExtra("EXTRA_LON", lon);
+                startActivity(intent);
             }
         });
     }
@@ -136,8 +139,6 @@ public class WeatherDetailsActivity extends AppCompatActivity {
                 // latitude.setText(lat);
                 //     longitude.setText(lon);
                 add.setText(address);
-
-
 
 
             }

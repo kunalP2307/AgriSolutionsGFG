@@ -146,7 +146,10 @@ public class HomeActivity extends AppCompatActivity {
        btnShowWeatherDetails.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
-               startActivity(new Intent(getApplicationContext(),WeatherDetailsActivity.class));
+               Intent intent = new Intent(getApplicationContext(), WeatherDetailsActivity.class);
+               intent.putExtra("EXTRA_LAT", lat);
+               intent.putExtra("EXTRA_LON", lon);
+               startActivity(intent);
            }
        });
     }
@@ -172,18 +175,12 @@ public class HomeActivity extends AppCompatActivity {
 
     class MyLocationListener implements LocationListener {
 
-
         @Override
         public void onLocationChanged(@NonNull Location location) {
             if (location != null) {
                 locationManager.removeUpdates(locationListener);
                 lat = "" + location.getLatitude();
                 lon = "" + location.getLongitude();
-
-                // Log.d("My Activity", "Lat1 "+lat);
-                // Log.d("Lat", "getMyLocation: "+lat);
-
-
 
                 geocoder = new Geocoder(HomeActivity.this, Locale.getDefault());
 
@@ -262,7 +259,6 @@ public class HomeActivity extends AppCompatActivity {
         if(network_enable){
 
             locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locationListener);
-
 
         }
 

@@ -5,10 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.solutiontofarming.data.News;
 import com.example.solutiontofarming.data.Transport;
@@ -54,18 +56,21 @@ public class ExploreActivity extends AppCompatActivity implements AdapterView.On
             }
         });
 
+        startActivity(new Intent(getApplicationContext(), APINewsActivity.class));
+
         getSupportActionBar().setTitle("Bulletins");
         initNews();
         listViewNews = findViewById(R.id.list_news);
         newsAdapter = new NewsAdapter(this,newsList);
         listViewNews.setAdapter(newsAdapter);
         listViewNews.setOnItemClickListener(this);
+
     }
 
     public void initNews(){
 
         newsList = new ArrayList<News>();
-        String[] newsHeader = {"PM Kisan 2021 New List: Know about your Payment Status, Rejected Applications & Other Details",
+        String[] newsHeader = {"PM Kisan 2023 New List: Know about your Payment Status, Rejected Applications & Other Details",
                                 "Supreme Court Committee of Experts calls in for Public Comments on three Farm Laws",
                                 "Krishi Jagran is now an Official Media Partner at BioAg, World Congress 2021",
                                 "Kisan Credit Card Latest Update: Only 50% Beneficiaries Received KCC So Far; Center Begins Drive to Cover All",
@@ -167,4 +172,6 @@ public class ExploreActivity extends AppCompatActivity implements AdapterView.On
         showNewsIntent.putExtra("selectedNews",selectedNews);
         startActivity(showNewsIntent);
     }
+
+
 }

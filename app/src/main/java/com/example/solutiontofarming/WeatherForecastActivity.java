@@ -1,7 +1,13 @@
 package com.example.solutiontofarming;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.location.Address;
+import android.location.Geocoder;
+import android.location.Location;
+import android.location.LocationListener;
 import android.os.Bundle;
 
 
@@ -13,6 +19,7 @@ import android.app.AlertDialog;
 import android.content.pm.PackageManager;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -29,13 +36,23 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
+import java.util.List;
+import java.util.Locale;
+
 public class WeatherForecastActivity extends AppCompatActivity {
 
     Button btn;
     private boolean gps_enable = false;
     private boolean network_enable = false;
     public LocationManager locationManager;
+    String lat, lon;
     TextView day1,day2,day3,day4,day5,day6,day7;
+    public LocationListener locationListener = new WeatherForecastActivity.MyLocationListener();
+    Geocoder geocoder;
+    List<Address> myaddress;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,8 +68,11 @@ public class WeatherForecastActivity extends AppCompatActivity {
         day5=findViewById(R.id.day5);
         day6=findViewById(R.id.day6);
         day7=findViewById(R.id.day7);
-        getMylocation();
 
+        locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
+
+        getMylocation();
+        getMylocation();
 
 
 
@@ -72,7 +92,6 @@ public class WeatherForecastActivity extends AppCompatActivity {
             ex.printStackTrace();
         }
 
-
         if (!gps_enable && !network_enable) {
             AlertDialog.Builder builder = new AlertDialog.Builder(WeatherForecastActivity.this);
             builder.setTitle("Attenstion");
@@ -85,19 +104,23 @@ public class WeatherForecastActivity extends AppCompatActivity {
 
                 return;
             }
-            //    locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
+            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
 
         }
         if(network_enable){
 
-            //  locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locationListener);
+            locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locationListener);
 
 
         }
-        String la="18.520430";
-        String lo="73.856743";
+//        String la="18.520430";
+//        String lo="73.856743";
+
+        String lat = getIntent().getStringExtra("EXTRA_LAT");
+        String lon = getIntent().getStringExtra("EXTRA_LON");
+        Log.d("TAG", "getMylocation: using lat"+lat+ "  lon"+lon );
         String id="0852853b3628f9f0ef79308eacb461b4";
-        String Url="https://api.openweathermap.org/data/2.5/onecall?lat="+la+"&lon="+lo+"&exclude{part}&appid=0852853b3628f9f0ef79308eacb461b4";
+        String Url="https://api.openweathermap.org/data/2.5/onecall?lat="+lat+"&lon="+lon+"&exclude{part}&appid=0852853b3628f9f0ef79308eacb461b4";
 
         RequestQueue que1 = Volley.newRequestQueue(getApplicationContext());
         JsonObjectRequest req = new JsonObjectRequest(Request.Method.GET, Url, null, new Response.Listener<JSONObject>() {
@@ -155,7 +178,7 @@ public class WeatherForecastActivity extends AppCompatActivity {
                     what = obj2.getString("main");
                     des=obj2.getString("description");
 
-                    out1="Day Temp :"+cov1.toString().substring(0,5)+"  Night Temp : "+cov2.toString().substring(0,5);
+                    out1="Day Temp :"+cov1.toString().substring(0,4)+"  Night Temp : "+cov2.toString().substring(0,4);
                     out2="Description :   "+what+"    "+des+"  ";
                     out3="Pressure : "+pre+"    "+"Humidity  :"+hum+" ";
 
@@ -189,7 +212,7 @@ public class WeatherForecastActivity extends AppCompatActivity {
                     what = obj2.getString("main");
                     des=obj2.getString("description");
 
-                    out1="Day Temp :"+cov1.toString().substring(0,5)+"  Night Temp : "+cov2.toString().substring(0,5);
+                    out1="Day Temp :"+cov1.toString().substring(0,4)+"  Night Temp : "+cov2.toString().substring(0,4);
                     out2="Description :   "+what+"    "+des+"  ";
                     out3="Pressure : "+pre+"    "+"Humidity  :"+hum+" ";
 
@@ -215,7 +238,7 @@ public class WeatherForecastActivity extends AppCompatActivity {
                     what = obj2.getString("main");
                     des=obj2.getString("description");
 
-                    out1="Day Temp :"+cov1.toString().substring(0,5)+"  Night Temp : "+cov2.toString().substring(0,5);
+                    out1="Day Temp :"+cov1.toString().substring(0,4)+"  Night Temp : "+cov2.toString().substring(0,4);
                     out2="Description :   "+what+"    "+des+"  ";
                     out3="Pressure : "+pre+"    "+"Humidity  :"+hum+" ";
 
@@ -241,7 +264,7 @@ public class WeatherForecastActivity extends AppCompatActivity {
                     what = obj2.getString("main");
                     des=obj2.getString("description");
 
-                    out1="Day Temp :"+cov1.toString().substring(0,5)+"  Night Temp : "+cov2.toString().substring(0,5);
+                    out1="Day Temp :"+cov1.toString().substring(0,4)+"  Night Temp : "+cov2.toString().substring(0,4);
                     out2="Description :   "+what+"    "+des+"  ";
                     out3="Pressure : "+pre+"    "+"Humidity  :"+hum+" ";
 
@@ -266,7 +289,7 @@ public class WeatherForecastActivity extends AppCompatActivity {
                     what = obj2.getString("main");
                     des=obj2.getString("description");
 
-                    out1="Day Temp :"+cov1.toString().substring(0,5)+"  Night Temp : "+cov2.toString().substring(0,5);
+                    out1="Day Temp :"+cov1.toString().substring(0,4)+"  Night Temp : "+cov2.toString().substring(0,4);
                     out2="Description :   "+what+"    "+des+"  ";
                     out3="Pressure : "+pre+"    "+"Humidity  :"+hum+" ";
 
@@ -316,23 +339,13 @@ public class WeatherForecastActivity extends AppCompatActivity {
                     what = obj2.getString("main");
                     des=obj2.getString("description");
 
-                    out1="Day Temp :"+cov1.toString().substring(0,5)+"  Night Temp : "+cov2.toString().substring(0,5);
+                    out1="Day Temp :"+cov1.toString().substring(0,4)+"  Night Temp : "+cov2.toString().substring(0,4);
                     out2="Description :   "+what+"    "+des+"  ";
                     out3="Pressure : "+pre+"    "+"Humidity  :"+hum+" ";
 
                     day7.setText("  \tDay7 \n  "+out1+" \n  "+out2+"  \n  "+out3);
 
                     //day8--------------------
-
-
-
-
-
-
-
-
-
-
 
 
                 } catch (JSONException e) {
@@ -350,6 +363,43 @@ public class WeatherForecastActivity extends AppCompatActivity {
             }
         });
         que1.add(req);
+    }
+
+    class MyLocationListener implements LocationListener {
+
+        @Override
+        public void onLocationChanged(@NonNull Location location) {
+            if (location != null) {
+                locationManager.removeUpdates(locationListener);
+                lat = "" + location.getLatitude();
+                lon = "" + location.getLongitude();
+
+                geocoder = new Geocoder(WeatherForecastActivity.this, Locale.getDefault());
+
+                try {
+                    myaddress=geocoder.getFromLocation(location.getLatitude(),location.getLongitude(),1);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+
+            }
+        }
+
+        @Override
+        public void onStatusChanged(String provider, int status, Bundle extras) {
+
+        }
+
+        @Override
+        public void onProviderEnabled(@NonNull String provider) {
+
+        }
+
+        @Override
+        public void onProviderDisabled(@NonNull String provider) {
+
+        }
     }
 
 }

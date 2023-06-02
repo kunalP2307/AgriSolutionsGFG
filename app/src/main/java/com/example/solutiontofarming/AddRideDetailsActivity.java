@@ -133,13 +133,15 @@ public class AddRideDetailsActivity extends AppCompatActivity implements DatePic
     @Override
     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
         myYear = year;
-        myday = day;
-        myMonth = month;
+        myday = dayOfMonth;
+        myMonth = month + 1;
         Calendar c = Calendar.getInstance();
         hour = c.get(Calendar.HOUR);
         minute = c.get(Calendar.MINUTE);
         TimePickerDialog timePickerDialog = new TimePickerDialog(AddRideDetailsActivity.this, AddRideDetailsActivity.this, hour, minute, DateFormat.is24HourFormat(this));
         timePickerDialog.show();
+        textViewRideDate.setText(""+myday+"-"+myMonth+"-"+myYear);
+
     }
 
     @Override
@@ -147,7 +149,6 @@ public class AddRideDetailsActivity extends AppCompatActivity implements DatePic
         myHour = hourOfDay;
         myMinute = minute;
 
-        textViewRideDate.setText(""+myday+"-"+myMonth+"-"+myYear);
         textViewRideTime.setText(""+myHour+":"+myMonth);
 
         System.out.println("Year: " + myYear + "\n" +
