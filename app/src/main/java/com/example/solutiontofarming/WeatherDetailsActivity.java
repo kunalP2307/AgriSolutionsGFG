@@ -61,13 +61,13 @@ public class WeatherDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather_details);
         btn=findViewById(R.id.btn1);
-        tv1=findViewById(R.id.tv1);
-        tv2=findViewById(R.id.tv2);
-        tv3=findViewById(R.id.tv3);
-        tv4=findViewById(R.id.tv4);
-        tv5=findViewById(R.id.tv5);
-        tv6=findViewById(R.id.tv6);
-        add=findViewById(R.id.address);
+        tv1=findViewById(R.id.text_view_tempreture);
+        tv2=findViewById(R.id.text_view_humidity);
+        tv3=findViewById(R.id.text_view_pressure);
+        tv4=findViewById(R.id.text_view_sunrise);
+        tv5=findViewById(R.id.text_view_sunset);
+        tv6=findViewById(R.id.text_view_wind_speed);
+        add=findViewById(R.id.text_view_address);
         next=findViewById(R.id.next);
         locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
 
@@ -109,10 +109,7 @@ public class WeatherDetailsActivity extends AppCompatActivity {
         return  true;
     }
 
-
-
     class MyLocationListener implements LocationListener {
-
 
         @Override
         public void onLocationChanged(@NonNull Location location) {
@@ -120,11 +117,6 @@ public class WeatherDetailsActivity extends AppCompatActivity {
                 locationManager.removeUpdates(locationListener);
                 lat = "" + location.getLatitude();
                 lon = "" + location.getLongitude();
-
-                // Log.d("My Activity", "Lat1 "+lat);
-                // Log.d("Lat", "getMyLocation: "+lat);
-
-
 
                 geocoder = new Geocoder(WeatherDetailsActivity.this, Locale.getDefault());
 
@@ -135,12 +127,8 @@ public class WeatherDetailsActivity extends AppCompatActivity {
                 }
 
                 String address= myaddress.get(0).getAddressLine(0);
-                // tv1.setText("Your Location :: "+address);
-                // latitude.setText(lat);
-                //     longitude.setText(lon);
                 add.setText(address);
-
-
+                getWeatherDetails();
             }
         }
 
@@ -165,10 +153,9 @@ public class WeatherDetailsActivity extends AppCompatActivity {
     public void getMyLocation() {
 
 
-        Log.d("My activity","Inside get my location: ");
-        Log.d("Lat", "getMyLocation: "+lat);
-        Log.d("Lon", "getMyLocation: "+lon);
-
+        Log.d("My activity", "Inside get my location: ");
+        Log.d("Lat", "getMyLocation: " + lat);
+        Log.d("Lon", "getMyLocation: " + lon);
 
 
         try {
@@ -209,13 +196,11 @@ public class WeatherDetailsActivity extends AppCompatActivity {
         }
 
 
-        if(network_enable){
-
+        if (network_enable) {
             locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locationListener);
-
-
         }
-
+    }
+    public void getWeatherDetails(){
 
         String id="0852853b3628f9f0ef79308eacb461b4";
         String Url="https://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lon+"&appid=0852853b3628f9f0ef79308eacb461b4";
@@ -229,6 +214,7 @@ public class WeatherDetailsActivity extends AppCompatActivity {
                 try {
                     //Json Object
                     JSONObject object1 = response.getJSONObject("main");
+                    Log.d("", "onResponse: "+response.toString());
                     String temp = object1.getString("temp");
                     //Temperature
                     Double temp1 = Double.parseDouble(temp)-273.15;
@@ -267,7 +253,6 @@ public class WeatherDetailsActivity extends AppCompatActivity {
                 }
             }
 
-
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
@@ -277,11 +262,7 @@ public class WeatherDetailsActivity extends AppCompatActivity {
             }
         });
 
-
-
         que1.add(req);
-
-
     }
     //-------------------------------------------------------------------
 

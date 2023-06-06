@@ -3,11 +3,11 @@ package com.example.solutiontofarming;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 
 import android.Manifest;
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
@@ -42,6 +42,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
+
 public class HomeActivity extends AppCompatActivity {
     ImageSlider imageSlider;
     private TextView textViewMoreNews;
@@ -59,6 +60,9 @@ public class HomeActivity extends AppCompatActivity {
     private boolean network_enable = false;
     Geocoder geocoder;
     List<Address> myaddress;
+
+    //Location Permission
+    private final int REQUEST_LOCATION_PERMISSION = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -96,8 +100,6 @@ public class HomeActivity extends AppCompatActivity {
         addListeners();
 
         locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
-        getMyLocation();
-        getMyLocation();
 
         imageSlider=findViewById(R.id.image_slider);
 
@@ -140,37 +142,24 @@ public class HomeActivity extends AppCompatActivity {
        btnGetTemperature.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
-               getMyLocation();
+                checkGpsPermissions();
+//                getLocation();
            }
        });
        btnShowWeatherDetails.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
-               Intent intent = new Intent(getApplicationContext(), WeatherDetailsActivity.class);
-               intent.putExtra("EXTRA_LAT", lat);
-               intent.putExtra("EXTRA_LON", lon);
-               startActivity(intent);
+               if(lat != null && lon != null) {
+                   Intent intent = new Intent(getApplicationContext(), WeatherDetailsActivity.class);
+                   intent.putExtra("EXTRA_LAT", lat);
+                   intent.putExtra("EXTRA_LON", lon);
+                   startActivity(intent);
+               }
+               else{
+                   checkGpsPermissions();
+               }
            }
        });
-    }
-
-
-    private boolean checkLocation() {
-
-        int location= ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION);
-        int location2= ContextCompat.checkSelfPermission(this,Manifest.permission.ACCESS_COARSE_LOCATION);
-
-        List<String> listPermission = new ArrayList<>();
-
-        if(location!= PackageManager.PERMISSION_GRANTED) {
-            listPermission.add(Manifest.permission.ACCESS_FINE_LOCATION);
-            listPermission.add(Manifest.permission.ACCESS_COARSE_LOCATION);
-
-        }if(!listPermission.isEmpty())
-        {
-            ActivityCompat.requestPermissions(this,listPermission.toArray(new String[listPermission.size()]),1);
-        }
-        return  true;
     }
 
     class MyLocationListener implements LocationListener {
@@ -191,10 +180,8 @@ public class HomeActivity extends AppCompatActivity {
                 }
 
                 String address= myaddress.get(0).getAddressLine(0);
-                // tv1.setText("Your Location :: "+address);
-                // latitude.setText(lat);
-                //     longitude.setText(lon);
                 textViewAddress.setText(address);
+                getTemperature();
             }
         }
 
@@ -215,9 +202,10 @@ public class HomeActivity extends AppCompatActivity {
     }
     //--------------------------------------------------------------------
 
-    public void getMyLocation() {
+    public void checkGpsPermissions() {
 
-        Log.d("hii", "Hiii ");
+        textViewAddress.setText("Loading...");
+        textViewTemperature.setText("Loading....");
 
         try {
             gps_enable = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
@@ -233,13 +221,11 @@ public class HomeActivity extends AppCompatActivity {
 
 
         if (!gps_enable && !network_enable) {
-            AlertDialog.Builder builder = new AlertDialog.Builder(HomeActivity.this);
-            builder.setTitle("Attenstion");
-            builder.setMessage("Turn On GPS");
-            builder.create().show();
-
+            statusCheck();
         }
-
+        getLocation();
+    }
+    public void getLocation(){
         if (gps_enable) {
             if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
                 // TODO: Consider calling
@@ -255,19 +241,18 @@ public class HomeActivity extends AppCompatActivity {
 
         }
 
-
         if(network_enable){
-
-            locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locationListener);
-
+           locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locationListener);
         }
+    }
 
+    public void getTemperature() {
 
+        Log.d("", "getMyLocation: lat"+lat +"lon"+lon );
         String id="0852853b3628f9f0ef79308eacb461b4";
-        String Url="https://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lon+"&appid=0852853b3628f9f0ef79308eacb461b4";
+        String Url="https://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lon+"&appid="+id;
 
         RequestQueue que1 = Volley.newRequestQueue(getApplicationContext());
-
 
         JsonObjectRequest req = new JsonObjectRequest(Request.Method.GET, Url, null, new Response.Listener<JSONObject>() {
             @Override
@@ -287,15 +272,40 @@ public class HomeActivity extends AppCompatActivity {
                 }
             }
 
-
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-
                 Toast.makeText(HomeActivity.this,error.toString(),Toast.LENGTH_SHORT).show();
-
             }
         });
         que1.add(req);
+    }
+
+
+    public void statusCheck() {
+        final LocationManager manager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+
+        if (!manager.isProviderEnabled(LocationManager.GPS_PROVIDER)) {
+            buildAlertMessageNoGps();
+        }
+    }
+
+    private void buildAlertMessageNoGps() {
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Your GPS seems to be disabled, do you want to enable it?")
+                .setCancelable(false)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    public void onClick(final DialogInterface dialog, final int id) {
+                        startActivity(new Intent(android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS));
+                        checkGpsPermissions();
+                    }
+                })
+                .setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    public void onClick(final DialogInterface dialog, final int id) {
+                        dialog.cancel();
+                    }
+                });
+        final AlertDialog alert = builder.create();
+        alert.show();
     }
 }
