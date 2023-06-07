@@ -337,49 +337,49 @@ public class WeatherDetailsActivity extends AppCompatActivity {
      private void setWeatherIcon(String icon){
         Toast.makeText(this, ""+icon, Toast.LENGTH_SHORT).show();
         switch (icon){
-            case "01d":
-                imageViewIcWeather.setBackgroundResource(R.drawable._01d);
-                break;
-            case "01n":
-                imageViewIcWeather.setBackgroundResource(R.drawable._01n);
-                break;
-            case "02d":
-                imageViewIcWeather.setBackgroundResource(R.drawable._02d);
-                break;
-            case "02n":
-                imageViewIcWeather.setBackgroundResource(R.drawable._02n);
-                break;
-
-            case "03d":
-            case "03n":
-                imageViewIcWeather.setBackgroundResource(R.drawable._03d);
-                break;
-
-            case "04n":
-            case "04d":
-                imageViewIcWeather.setBackgroundResource(R.drawable._04d);
-                break;
-
-            case "09n":
-            case "09d":
-                imageViewIcWeather.setBackgroundResource(R.drawable._09d);
-                break;
-
-            case "10n":
-                imageViewIcWeather.setBackgroundResource(R.drawable._10n);
-                break;
-            case "10d":
-                imageViewIcWeather.setBackgroundResource(R.drawable._10d);
-                break;
-
-            case "11n":
-            case "11d":
-                imageViewIcWeather.setBackgroundResource(R.drawable._11n);
-                break;
+//            case "01d":
+//                imageViewIcWeather.setBackgroundResource(R.drawable._01d);
+//                break;
+//            case "01n":
+//                imageViewIcWeather.setBackgroundResource(R.drawable._01n);
+//                break;
+//            case "02d":
+//                imageViewIcWeather.setBackgroundResource(R.drawable._02d);
+//                break;
+//            case "02n":
+//                imageViewIcWeather.setBackgroundResource(R.drawable._02n);
+//                break;
+//
+//            case "03d":
+//            case "03n":
+//                imageViewIcWeather.setBackgroundResource(R.drawable._03d);
+//                break;
+//
+//            case "04n":
+//            case "04d":
+//                imageViewIcWeather.setBackgroundResource(R.drawable._04d);
+//                break;
+//
+//            case "09n":
+//            case "09d":
+//                imageViewIcWeather.setBackgroundResource(R.drawable._09d);
+//                break;
+//
+//            case "10n":
+//                imageViewIcWeather.setBackgroundResource(R.drawable._10n);
+//                break;
+//            case "10d":
+//                imageViewIcWeather.setBackgroundResource(R.drawable._10d);
+//                break;
+//
+//            case "11n":
+//            case "11d":
+//                imageViewIcWeather.setBackgroundResource(R.drawable._11n);
+//                break;
 
         }
-
-    }
+//
+  }
 
 
     // --------------- Ignoew --------------------------------------
@@ -474,7 +474,7 @@ public class WeatherDetailsActivity extends AppCompatActivity {
 //
 //        if (gps_enable) {
 //            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-//                // TODO: Consider calling
+//                TODO: Consider calling
 //                //    ActivityCompat#requestPermissions
 //                // here to request the missing permissions, and then overriding
 //                //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
