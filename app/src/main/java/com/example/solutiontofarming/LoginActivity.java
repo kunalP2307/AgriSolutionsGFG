@@ -5,9 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.renderscript.ScriptGroup;
+import android.text.InputType;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -25,7 +29,7 @@ public class LoginActivity extends AppCompatActivity {
     EditText editTextPassword;
     TextView textViewForgotPass;
     FirebaseAuth firebaseAuth;
-
+   CheckBox chk;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +46,7 @@ public class LoginActivity extends AppCompatActivity {
         btnSignUp = findViewById(R.id.btn_sign_up);
         btnLogin = findViewById(R.id.btn_login);
         textViewForgotPass = findViewById(R.id.label_forgot_pass);
+       chk= findViewById(R.id.show_password);
     }
 
     private void addListeners(){
@@ -66,7 +71,17 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), ResetPasswordActivity.class));
             }
         });
-
+       chk.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+           @Override
+           public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+               if(b ){
+                   editTextPassword.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
+               }
+               else{
+                   editTextPassword.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+               }
+           }
+       });
     }
 
     private void logIn(){
