@@ -96,11 +96,12 @@
             android:layout_height="130dp"
             android:orientation="horizontal">
 
-            <ImageView
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:src="@drawable/ic_weather"
-                android:layout_marginLeft="20dp"/>
+                <ImageView
+                    android:id="@+id/image_view_weather_icon"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_marginLeft="20dp"
+                    android:src="@drawable/ic_weather" />
 
                 <TextView
                     android:id="@+id/text_tempreture"

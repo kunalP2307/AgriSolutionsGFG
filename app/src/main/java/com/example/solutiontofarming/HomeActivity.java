@@ -54,7 +54,7 @@ public class HomeActivity extends AppCompatActivity {
 
     public LocationManager locationManager;
     public LocationListener locationListener = new HomeActivity.MyLocationListener();
-    String lat, lon;
+    String lat, lon, address;
 
     private boolean gps_enable = false;
     private boolean network_enable = false;
@@ -153,6 +153,7 @@ public class HomeActivity extends AppCompatActivity {
                    Intent intent = new Intent(getApplicationContext(), WeatherDetailsActivity.class);
                    intent.putExtra("EXTRA_LAT", lat);
                    intent.putExtra("EXTRA_LON", lon);
+                   intent.putExtra("EXTRA_ADDRESS", myaddress.get(0).getThoroughfare()+","+myaddress.get(0).getLocality());
                    startActivity(intent);
                }
                else{
@@ -179,8 +180,9 @@ public class HomeActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
 
-                String address= myaddress.get(0).getAddressLine(0);
-                textViewAddress.setText(address);
+                address = myaddress.get(0).getAddressLine(0);
+                Log.d("", "onLocationChanged: "+myaddress.toString());
+                textViewAddress.setText(myaddress.get(0).getThoroughfare()+" "+myaddress.get(0).getLocality());
                 getTemperature();
             }
         }
@@ -259,7 +261,7 @@ public class HomeActivity extends AppCompatActivity {
             public void onResponse(JSONObject response) {
                 try {
                     //Json Object
-                    Log.d("In getLocation", "onResponces: ");
+                    Log.d("In getLocation", "onResponces: "+response.toString());
                     JSONObject object1 = response.getJSONObject("main");
                     String temp = object1.getString("temp");
                     //Temperature
