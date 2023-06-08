@@ -37,16 +37,33 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         getSupportActionBar().setTitle("Welcome!");
         bnext=(Button) findViewById(R.id.next);
-        this.addListener();
+     //   this.addListener();
+        Thread thread =new Thread(){
+            @Override
+            public void run() {
+                try{
+                    sleep(100);
+                }
+                catch(Exception e)
+                {
+                    e.printStackTrace();
+                }
+                finally {
+                    Intent i=new Intent(MainActivity.this, LoginActivity.class);
+                    startActivity(i);
 
+                    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                    if (user != null) {
+                        startActivity(new Intent(getApplicationContext(),HomeActivity.class));
+                    } else {
+                        // User is signed out
+                        Log.d("MainActivity", "onAuthStateChanged:signed_out");
+                    }
 
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        if (user != null) {
-            startActivity(new Intent(getApplicationContext(),HomeActivity.class));
-        } else {
-            // User is signed out
-            Log.d("MainActivity", "onAuthStateChanged:signed_out");
-        }
+                }
+            }
+        };thread.start();
+
 
        /* FirebaseDatabase.getInstance().getReference("(Q2-2021)Users").addValueEventListener(new ValueEventListener() {
             @Override
@@ -65,8 +82,9 @@ public class MainActivity extends AppCompatActivity {
             }
         }); */
 
+
     }
-  private void addListener(){
+ /* private void addListener(){
 
         bnext.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -75,6 +93,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
-    }
+    }*/
 
 }
