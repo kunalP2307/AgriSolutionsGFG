@@ -138,6 +138,7 @@ android:background="@color/greenGrey"
             android:text="Sign Up"
             android:textColor="@color/black"
             android:background="@drawable/custom_button"
+            android:fontFamily="@font/nbold"
             android:textSize="15dp"  />
         <TextView
             android:id="@+id/textUid"
