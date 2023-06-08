@@ -6,7 +6,7 @@
         android:id="@+id/notification"
         android:icon="@drawable/ic_notification"
         android:title=""
-        android:iconTint="#96FF1D"
+        android:iconTint="@color/darkYellow"
         app:showAsAction="always"
         />
 

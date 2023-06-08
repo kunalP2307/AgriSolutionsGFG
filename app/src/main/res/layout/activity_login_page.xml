@@ -36,7 +36,7 @@ android:orientation="vertical">
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:layout_gravity="center_vertical|right"
-                android:src="@drawable/ic_add_warehouse"
+                android:src="@drawable/farmer"
 
                 android:layout_marginRight="10dp"
                 android:layout_marginTop="20dp"/>
@@ -93,6 +93,7 @@ android:orientation="vertical">
             android:layout_height="wrap_content"
             android:text="Show Password"
             android:layout_marginLeft="20dp"
+            android:textSize="14dp"
             />
         <ProgressBar
             android:layout_width="wrap_content"
@@ -114,7 +115,8 @@ android:orientation="vertical">
             android:textStyle="bold"
             android:textColor="@color/black"
             android:background="@drawable/custom_button"
-            android:textSize="15dp" />
+            android:fontFamily="@font/nbold"
+            android:textSize="16dp" />
 
         <Button
             android:id="@+id/label_forgot_pass"
@@ -127,7 +129,7 @@ android:orientation="vertical">
             android:text="Forgot Password"
             android:textAllCaps="false"
             android:textColor="@color/black"
-            android:textSize="13dp" />
+            android:textSize="14dp" />
 
         <Button
             android:id="@+id/btn_sign_up"
@@ -140,7 +142,7 @@ android:orientation="vertical">
             android:text="Not a user? Sign Up"
             android:textAllCaps="false"
             android:textColor="@color/black"
-            android:textSize="13dp" />
+            android:textSize="14dp" />
     </LinearLayout>
 
 </FrameLayout>
