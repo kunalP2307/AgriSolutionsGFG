@@ -4,12 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".MainActivity">
 
     <ImageView
         android:layout_width="301dp"
         android:layout_height="163dp"
-        android:src="@drawable/agri_solution_logo"
+        android:src="@drawable/agrotech"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,7 +27,7 @@
         android:text="Get Started"
         android:textColor="#FFFFFF"
         android:textSize="22sp"
-        app:backgroundTint="@color/teal_200"
+        app:backgroundTint="@color/darkYellow"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -40,7 +41,7 @@
         android:layout_height="88dp"
         android:gravity="center_horizontal"
         android:text="One Stop Solution to Farming Needs"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/darkGreen"
         android:textSize="30dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
