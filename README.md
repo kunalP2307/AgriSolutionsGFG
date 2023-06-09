@@ -1,13 +1,13 @@
 ﻿# SIH-Project
  # How to start on local server
  
- 1. Install all dependencies using following commands
+**1. Install all dependencies using following commands**
  
  ```
  npm i
  ```
  
- 2. To start API use following commands 
+**2. To start API use following commands**
 
 ```
 node index.js
@@ -25,31 +25,31 @@ nodemon index.js
 
 ### * GET Requests
 
-1. To Find All Collections available in database
+**1. To Find All Collections available in database**
 
 ```
 http://IP:7000/get-collections 
 ```
 
-2. To Create New Collection
+**2. To Create New Collection**
 
 ```
 http://IP:7000/create-collection/COLLECTION_NAME
 ```
 
-3.  Drop Collection
-
+**3.  Drop Collection
+**
 ```
 http://IP:7000/drop-collection/COLLECTION_NAME
 ```
 
-4. To find all data available in collection 
+**4. To find all data available in collection **
 
 ```
 http://IP:7000/find/COLLECTION_NAME
 ```
 
-5. To Check Connectivity
+**5. To Check Connectivity**
 
 ```
 http://IP:7000
@@ -57,7 +57,7 @@ http://IP:7000
 
 ### * POST Requests
 
-1. To Insert one document in collection
+**1. To Insert one document in collection**
 
 
 ```
@@ -74,7 +74,7 @@ http://IP:7000/insert-one/COLLECTION_NAME
 }
 ```
 
-2. To Insert Multiple Documents in collection 
+**2. To Insert Multiple Documents in collection **
 
 ```
 http://IP:7000/insert-many/COLLECTION_NAME
@@ -102,7 +102,7 @@ http://IP:7000/insert-many/COLLECTION_NAME
 ]
 ```
 
-3. To Find any data with and condition
+**3. To Find any data with and condition**
 
 ```
 http://IP:7000/find-with-and/COLLECTION_NAME
@@ -119,7 +119,7 @@ http://IP:7000/find-with-and/COLLECTION_NAME
 
 in above name is first condition and weight is second condition
 
-4. To Find any data with or condition
+**4. To Find any data with or condition**
 
 ```
 http://IP:7000/find-with-or/COLLECTION_NAME
@@ -136,7 +136,7 @@ http://IP:7000/find-with-or/COLLECTION_NAME
 
 Where name json is first condition and weight json is second condition
 
-5. Update only one doc
+**5. Update only one doc**
 
 ```
 http://IP:7000/update/COLLECTION_NAME
@@ -153,7 +153,7 @@ http://IP:7000/update/COLLECTION_NAME
 
 where filter is any condition you want to apply and update is what you want to update in doc
 
-6. Update multiple docs
+**6. Update multiple docs**
  
  ```
 http://IP:7000/update-many/COLLECTION_NAME
@@ -170,7 +170,7 @@ http://IP:7000/update-many/COLLECTION_NAME
 
 where filter is any condition you want to apply and update is what you want to update in doc
 
-7. Delete one doc
+**7. Delete one doc**
 
  ```
 http://IP:7000/delete/COLLECTION_NAME
@@ -186,7 +186,7 @@ http://IP:7000/delete/COLLECTION_NAME
 
 where filter is condition by which you want to delete perticular doc
 
-8. Delete multiple doc
+**8. Delete multiple doc**
 
  ```
 http://IP:7000/delete-many/COLLECTION_NAME
