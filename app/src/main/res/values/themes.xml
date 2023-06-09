@@ -15,9 +15,9 @@
 
         <!-- Font styles -->
         <item name="android:fontFamily">@font/nunito</item>
-<!--        <item name="android:fontFamilyItalic">@font/Nunito-Italic</item>-->
-<!--        <item name="android:fontFamilyBold">@font/Nunito-Bold</item>-->
-<!--        <item name="android:fontFamilyBoldItalic">@font/Nunito-BoldItalic</item>-->
+        <!--        <item name="android:fontFamilyItalic">@font/Nunito-Italic</item>-->
+        <!--        <item name="android:fontFamilyBold">@font/Nunito-Bold</item>-->
+        <!--        <item name="android:fontFamilyBoldItalic">@font/Nunito-BoldItalic</item>-->
         <!-- Add more font styles if required -->
 
 

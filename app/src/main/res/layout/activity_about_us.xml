@@ -4,86 +4,83 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#EEEDEF"
+    android:background="@color/greenGrey"
+
     tools:context=".AboutUsActivity">
+
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/rounded_box"
-        android:layout_marginLeft="12dp"
-        android:layout_marginRight="12dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="30dp"
-
-        >
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="210dp"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="85dp"
-            android:layout_marginEnd="60dp"
-            android:layout_marginTop="80dp"
-            android:background="@drawable/rounded_box2"
-            android:paddingLeft="14dp"
-            android:text="AgriSolution"
-            android:textColor="@color/white"
-            android:textSize="32sp"
-            android:textStyle="bold" />
+            android:orientation="vertical">
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:background="@color/darkGreen" />
+
+                <TextView
+                    android:id="@+id/tabout1"
+                    android:layout_width="220dp"
+                    android:layout_height="63dp"
+                    android:layout_marginStart="100dp"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginEnd="0dp"
+                    android:fontFamily="@font/nbold"
+                    android:text="Our Mission "
+                    android:textColor="@color/white"
+                    android:textSize="35dp"
+
+                    />
+
+
+            </FrameLayout>
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_gravity="end"
+                    android:background="@drawable/ic_wave" />
+            </FrameLayout>
+        </LinearLayout>
+
+
+
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="400dp"
+            android:layout_height="450dp"
             android:layout_marginTop="160dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:background="@drawable/rounded_box2"
+
             >
+
+
             <TextView
-                android:id="@+id/tabout1"
+                android:id="@+id/tcontact22"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="90dp"
-                android:layout_marginEnd="90dp"
-                android:layout_marginTop="30dp"
-                android:textColor="@color/black"
-                android:text="Our Mission "
-                android:textSize="26dp"
-                android:textStyle="bold"/>
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="70dp"
+                android:layout_marginEnd="2dp"
+                android:fontFamily="@font/nmedium"
+                android:padding="8dp"
+                android:paddingEnd="8dp"
+                android:text="@string/about1"
+                android:textColor="@color/Brown"
+                android:textSize="20sp"
+                android:textStyle="italic" />
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="75dp"
-                android:orientation="vertical">
-                <TextView
-                    android:id="@+id/tcontact22"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginEnd="20dp"
-                    android:text="@string/about1"
-                    android:textSize="20sp"
-                    android:padding="8dp"
-                    android:textStyle="italic"
-                    android:textColor="@color/black"
-                    />
-                <TextView
-                    android:id="@+id/tcontact23"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="30dp"
-                    android:layout_marginEnd="20dp"
-
-                    android:text="@string/about2"
-                    android:textSize="20sp"
-                    android:padding="8dp"
-                    android:textStyle="italic"
-                    android:textColor="@color/black"
-                    />
-
-            </LinearLayout>
 
         </FrameLayout>
 

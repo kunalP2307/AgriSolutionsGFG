@@ -1,139 +1,199 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:layout_margin="10dp"
+    android:background="@color/greenGrey"
     tools:context=".MyAddressActivity">
 
-    <TextView
-        android:id="@+id/label1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="65dp"
-        android:layout_marginTop="40dp"
-        android:text="MY ADDRESS"
-        android:textColor="@color/colorAccent"
-        android:textSize="40dp"
-        android:textStyle="bold"
 
-        />
-    <com.google.android.material.textfield.TextInputLayout
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:focusable="true"
-        android:focusableInTouchMode="true"
-        android:layout_marginTop="30dp"
-        android:textColorHint="@color/colorAccent">
-
-        <EditText
-            android:id="@+id/state"
+        android:layout_height="match_parent">
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="State"
-            android:textColorHint="@color/colorAccent"
-            android:ems="10"
-            android:inputType="text"
-            android:textSize="20dp"
+            android:orientation="vertical">
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-            />
-    </com.google.android.material.textfield.TextInputLayout>
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:background="@color/darkGreen" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:focusable="true"
-        android:focusableInTouchMode="true"
-        android:layout_marginTop="5dp"
-        android:textColorHint="@color/colorAccent">
+                <TextView
+                    android:id="@+id/label1"
+                    android:layout_width="220dp"
+                    android:layout_height="63dp"
+                    android:layout_marginStart="100dp"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginEnd="0dp"
+                    android:fontFamily="@font/nbold"
+                    android:text="My Address "
+                    android:textColor="@color/white"
+                    android:textSize="35dp"
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/city"
-            android:hint="City"
-            android:textColorHint="@color/colorAccent"
-            android:ems="10"
-
-            android:inputType="text"
-            android:textSize="20dp"
-
-            />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:focusable="true"
-        android:focusableInTouchMode="true"
-        android:layout_marginTop="5dp"
-        android:textColorHint="@color/colorAccent">
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/area"
-            android:hint="Area"
-            android:textColorHint="@color/colorAccent"
-            android:ems="10"
-            android:inputType="text"
-            android:textSize="20dp"
-
-            />
-    </com.google.android.material.textfield.TextInputLayout>
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:focusable="true"
-        android:focusableInTouchMode="true"
-        android:layout_marginTop="5dp"
-        android:textColorHint="@color/colorAccent">
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/houseNo"
-            android:hint="House No, Building Name"
-            android:textColorHint="@color/colorAccent"
-            android:ems="10"
-            android:inputType="text"
-            android:textSize="20dp"
-
-            />
-    </com.google.android.material.textfield.TextInputLayout>
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:focusable="true"
-        android:focusableInTouchMode="true"
-        android:layout_marginTop="5dp"
-        android:textColorHint="@color/colorAccent">
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/lmark"
-            android:hint="Landmark"
-            android:textColorHint="@color/colorAccent"
-            android:ems="10"
-            android:inputType="text"
-            android:textSize="20dp"
-
-            />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <Button
-        android:id="@+id/bsave"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginTop="40dp"
-        android:backgroundTint="@color/colorAccent"
-        android:text="Save Address"
-        android:textColor="#FFFFFF"
-        android:textSize="20dp"
-        />
+                    />
 
 
-</LinearLayout>
+            </FrameLayout>
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_gravity="end"
+                    android:background="@drawable/ic_wave" />
+
+
+            </FrameLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_marginTop="0dp"
+                app:boxBackgroundMode="none"
+                android:layout_marginBottom="5dp"
+                >
+                <EditText
+                    android:id="@+id/state"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/custome_input"
+                    android:drawablePadding="12dp"
+                    android:ems="10"
+                    android:hint="State"
+                    android:inputType="text"
+                    android:padding="15dp"
+                    android:textSize="20dp" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_marginTop="5dp"
+                app:boxBackgroundMode="none"
+                >
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/city"
+                    android:hint="City"
+                    android:background="@drawable/custome_input"
+                    android:drawablePadding="12dp"
+                    android:padding="15dp"
+                    android:layout_margin="8dp"
+                    android:ems="10"
+
+                    android:inputType="text"
+                    android:textSize="20dp"
+
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_marginTop="5dp"
+                app:boxBackgroundMode="none"
+                >
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/area"
+                    android:hint="Area"
+                    android:background="@drawable/custome_input"
+                    android:drawablePadding="12dp"
+                    android:padding="15dp"
+                    android:layout_margin="8dp"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:textSize="20dp"
+
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_marginTop="5dp"
+                app:boxBackgroundMode="none"
+                >
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/houseNo"
+                    android:hint="House No, Building Name"
+                    android:background="@drawable/custome_input"
+                    android:drawablePadding="12dp"
+                    android:padding="15dp"
+                    android:layout_margin="8dp"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:textSize="20dp"
+
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:layout_marginTop="5dp"
+                app:boxBackgroundMode="none"
+                >
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/lmark"
+                    android:hint="Landmark"
+                    android:background="@drawable/custome_input"
+                    android:drawablePadding="12dp"
+                    android:padding="15dp"
+                    android:layout_margin="8dp"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:textSize="20dp"
+
+                    />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/bsave"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20sp"
+                android:textStyle="bold"
+                android:text="Save Address"
+                android:textColor="@color/black"
+                android:background="@drawable/custom_button"
+                android:fontFamily="@font/nbold"
+                android:textSize="15dp"  />
+
+
+
+        </LinearLayout>
+
+
+
+    </FrameLayout>
+</RelativeLayout>
