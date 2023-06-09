@@ -73,7 +73,7 @@ http://IP:7000/insert-one/COLLECTION_NAME
 }
 ```
 
-**2. To Insert Multiple Documents in collection **
+**2. To Insert Multiple Documents in collection**
 
 ```
 http://IP:7000/insert-many/COLLECTION_NAME
