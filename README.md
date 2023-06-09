@@ -1,5 +1,5 @@
 ﻿# SIH-Project
- ![(https://myoctocat.com/assets/images/base-octocat.svg)](https://webimages.mongodb.com/_com_assets/cms/kuzt9r42or1fxvlq2-Meta_Generic.png)
+ ![MongoDB API(https://myoctocat.com/assets/images/base-octocat.svg)](https://webimages.mongodb.com/_com_assets/cms/kuzt9r42or1fxvlq2-Meta_Generic.png)
  
  # How to start on local server
  
