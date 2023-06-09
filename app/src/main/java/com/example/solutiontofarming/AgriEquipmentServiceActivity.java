@@ -27,7 +27,7 @@ import java.util.List;
 
 public class AgriEquipmentServiceActivity extends AppCompatActivity {
 
-    final String TAG = "AgriEquipmentServiceActivity";
+    final String TAG = "AgriEquipmentSeomrviceActivity";
     List<AgriculturalEquipment> agriculturalEquipmentsList = new ArrayList<>();
     ImageView imageViewFindEquip,imageViewAddEquip,imageViewMyEquipments;
     String userId;

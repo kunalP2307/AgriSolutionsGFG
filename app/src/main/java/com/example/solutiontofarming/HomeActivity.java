@@ -99,6 +99,7 @@ public class HomeActivity extends AppCompatActivity {
         bindComponents();
         addListeners();
 
+
         locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
 
         imageSlider=findViewById(R.id.image_slider);
@@ -267,7 +268,7 @@ public class HomeActivity extends AppCompatActivity {
                     //Temperature
                     Double temp1 = Double.parseDouble(temp)-273.15;
                     textViewTemperature.setTextSize(70);
-                    textViewTemperature.setText(temp1.toString().substring(0,5)+"\u2103");
+                    textViewTemperature.setText(temp1.toString().substring(0,4)+"\u2103");
 
                 } catch (JSONException e) {
                     Toast.makeText(getApplicationContext(), e.toString(), Toast.LENGTH_SHORT).show();
