@@ -42,11 +42,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
                 try{
-<<<<<<< Updated upstream
-                    sleep(100);
-=======
                     sleep(2000);
->>>>>>> Stashed changes
                 }
                 catch(Exception e)
                 {
