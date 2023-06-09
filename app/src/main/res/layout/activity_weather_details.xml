@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/greenGrey"
+    android:background="@color/white"
     tools:context=".WeatherDetailsActivity">
 
     <ScrollView
@@ -52,7 +52,7 @@
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp"
                         android:text="Today"
-                        android:textColor="@color/Brown"
+                        android:textColor="@color/black"
                         android:textSize="21dp" />
 
                     <TextView
@@ -63,7 +63,7 @@
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp"
                         android:text="8 June"
-                        android:textColor="@color/Brown"
+                        android:textColor="@color/black"
                         android:textSize="21dp" />
 
                     <TextView
@@ -74,7 +74,7 @@
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp"
                         android:text="9 June"
-                        android:textColor="@color/Brown"
+                        android:textColor="@color/black"
                         android:textSize="21dp" />
 
                     <TextView
@@ -85,7 +85,7 @@
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp"
                         android:text="Today"
-                        android:textColor="@color/Brown"
+                        android:textColor="@color/black"
                         android:textSize="21dp" />
 
                 </TableRow>
@@ -106,7 +106,7 @@
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp"
                         android:text="Today"
-                        android:textColor="@color/Brown"
+                        android:textColor="@color/black"
                         android:textSize="21dp" />
 
                     <TextView
@@ -117,7 +117,7 @@
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp"
                         android:text="Today"
-                        android:textColor="@color/Brown"
+                        android:textColor="@color/black"
                         android:textSize="21dp" />
 
                     <TextView
@@ -128,7 +128,7 @@
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp"
                         android:text="Today"
-                        android:textColor="@color/Brown"
+                        android:textColor="@color/black"
                         android:textSize="21dp" />
 
                     <TextView
@@ -139,7 +139,7 @@
                         android:paddingLeft="8dp"
                         android:paddingRight="8dp"
                         android:text="Today"
-                        android:textColor="@color/Brown"
+                        android:textColor="@color/black"
                         android:textSize="21dp" />
 
                 </TableRow>
