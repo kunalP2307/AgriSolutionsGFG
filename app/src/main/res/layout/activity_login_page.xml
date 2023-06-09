@@ -44,13 +44,12 @@ android:orientation="vertical">
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-<<<<<<< Updated upstream
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:background="@drawable/ic_wave"
                 android:layout_gravity="end"/>
-=======
 
             <View
                 android:id="@+id/abc"
@@ -58,7 +57,6 @@ android:orientation="vertical">
                 android:layout_height="100dp"
                 android:layout_gravity="end"
                 android:background="@drawable/ic_wave" />
->>>>>>> Stashed changes
         </FrameLayout>
     </LinearLayout>
 
