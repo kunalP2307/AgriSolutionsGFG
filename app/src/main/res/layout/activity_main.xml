@@ -7,33 +7,41 @@
     android:background="@color/white"
     tools:context=".MainActivity">
 
+
     <ImageView
-        android:layout_width="301dp"
-        android:layout_height="163dp"
-        android:src="@drawable/agrotech"
+        android:id="@+id/imageView10"
+        android:layout_width="276dp"
+        android:layout_height="192dp"
+        android:src="@drawable/agrotech_logo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.271"
+
+        app:layout_constraintVertical_bias="0.252"
         tools:ignore="MissingConstraints" />
 
-    <Button
-        android:id="@+id/next"
-        android:layout_width="200dp"
-        android:layout_height="60dp"
-        android:background="@drawable/button_rounded"
-        android:backgroundTint="@color/teal_200"
-        android:text="Get Started"
-        android:textColor="#FFFFFF"
-        android:textSize="22sp"
-        app:backgroundTint="@color/darkYellow"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <TextView
+        android:layout_width="276dp"
+        android:layout_height="70dp"
+        android:fontFamily="@font/nbold"
+        android:shadowColor="@color/black"
+        android:shadowDx="0"
+        android:shadowDy="2"
+        android:shadowRadius="2"
+        android:text="AGRISOLUTIONS"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/darkGreen"
+        android:textSize="33sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.525"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.843" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView10"
+        app:layout_constraintVertical_bias="0.125" />
 
     <TextView
         android:id="@+id/textView"
@@ -41,7 +49,7 @@
         android:layout_height="88dp"
         android:gravity="center_horizontal"
         android:text="One Stop Solution to Farming Needs"
-        android:textColor="@color/darkGreen"
+        android:textColor="#671507"
         android:textSize="30dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -49,7 +57,7 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.541" />
+        app:layout_constraintVertical_bias="0.643" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

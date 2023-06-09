@@ -72,7 +72,7 @@ android:orientation="vertical">
         <EditText
             android:drawableStart="@drawable/ic_email"
             android:id="@+id/text_log_email"
-            android:padding="10dp"
+            android:padding="15dp"
             android:background="@drawable/custome_input"
             android:drawablePadding="12dp"
             android:layout_width="match_parent"
@@ -85,7 +85,7 @@ android:orientation="vertical">
 
             android:drawableStart="@drawable/ic_password"
             android:id="@+id/text_log_password"
-            android:padding="10dp"
+            android:padding="15dp"
             android:inputType="textPassword"
             android:background="@drawable/custome_input"
             android:layout_width="match_parent"
