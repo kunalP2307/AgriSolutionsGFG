@@ -37,13 +37,12 @@ http://IP:7000/get-collections
 http://IP:7000/create-collection/COLLECTION_NAME
 ```
 
-**3.  Drop Collection
-**
+**3.  Drop Collection**
 ```
 http://IP:7000/drop-collection/COLLECTION_NAME
 ```
 
-**4. To find all data available in collection **
+**4. To find all data available in collection**
 
 ```
 http://IP:7000/find/COLLECTION_NAME
