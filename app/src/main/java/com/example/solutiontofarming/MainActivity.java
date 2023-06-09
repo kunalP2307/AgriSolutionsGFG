@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -30,39 +31,30 @@ public class MainActivity extends AppCompatActivity {
     Button bnext;
     //List<User> userList = new ArrayList<>();
 
-
+    private static final int SPLASH_DELAY_MS = 2500;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        getSupportActionBar().setTitle("Welcome!");
-        bnext=(Button) findViewById(R.id.next);
-     //   this.addListener();
-        Thread thread =new Thread(){
+
+        getSupportActionBar().hide();
+
+        new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                try{
-                    sleep(2000);
-                }
-                catch(Exception e)
-                {
-                    e.printStackTrace();
-                }
-                finally {
-                    Intent i=new Intent(MainActivity.this, LoginActivity.class);
-                    startActivity(i);
-
-                    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                    if (user != null) {
-                        startActivity(new Intent(getApplicationContext(),HomeActivity.class));
-                    } else {
-                        // User is signed out
-                        Log.d("MainActivity", "onAuthStateChanged:signed_out");
-                    }
+                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                if (user != null) {
+                    startActivity(new Intent(MainActivity.this, HomeActivity.class));
+                } else {
+                    Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                    startActivity(intent);
 
                 }
+                finish();
             }
-        };thread.start();
+        }, SPLASH_DELAY_MS);
+
+        };
 
 
        /* FirebaseDatabase.getInstance().getReference("(Q2-2021)Users").addValueEventListener(new ValueEventListener() {
@@ -95,4 +87,3 @@ public class MainActivity extends AppCompatActivity {
         });
     }*/
 
-}

@@ -11,11 +11,15 @@
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <item name="android:navigationBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+
         <!-- Font styles -->
         <item name="android:fontFamily">@font/nunito</item>
 <!--        <item name="android:fontFamilyItalic">@font/Nunito-Italic</item>-->
 <!--        <item name="android:fontFamilyBold">@font/Nunito-Bold</item>-->
 <!--        <item name="android:fontFamilyBoldItalic">@font/Nunito-BoldItalic</item>-->
         <!-- Add more font styles if required -->
+
+
     </style>
 </resources>
