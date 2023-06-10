@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/greenGrey"
     tools:context=".AddAgriLandActivity">
 
     <TextView
@@ -13,8 +14,9 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="40dp"
         android:text="Owner Name"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/Brown"
         android:textSize="20dp"
+        android:fontFamily="@font/nbold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -25,8 +27,9 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="13dp"
         android:text="Owner Contact No"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/Brown"
         android:textSize="20dp"
+        android:fontFamily="@font/nbold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_add_land_owner_name" />
 
@@ -37,8 +40,9 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="13dp"
         android:text="Field Location"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/Brown"
         android:textSize="20dp"
+        android:fontFamily="@font/nbold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_land_owner_mobile" />
 
@@ -49,8 +53,9 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="13dp"
         android:text="Field Type"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/Brown"
         android:textSize="20dp"
+        android:fontFamily="@font/nbold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_add_land_field_address" />
 
@@ -61,8 +66,9 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="13dp"
         android:text="Field Area"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/Brown"
         android:textSize="20dp"
+        android:fontFamily="@font/nbold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_add_land_field_type" />
 
@@ -73,8 +79,9 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="13dp"
         android:text="Land Rent / YEAR"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/Brown"
         android:textSize="20dp"
+        android:fontFamily="@font/nbold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_add_land_area" />
 
@@ -85,9 +92,9 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
-        android:background="@drawable/border"
+        android:background="@drawable/custome_input"
         android:ems="10"
-        android:gravity="center_vertical"
+        android:gravity="center"
         android:inputType="textPersonName"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -101,9 +108,9 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
-        android:background="@drawable/border"
+        android:background="@drawable/custome_input"
         android:ems="10"
-        android:gravity="center_vertical"
+        android:gravity="center"
         android:inputType="textPersonName"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -118,9 +125,9 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
-        android:background="@drawable/border"
+        android:background="@drawable/custome_input"
         android:ems="10"
-        android:gravity="center_vertical"
+        android:gravity="center"
         android:inputType="textPersonName"
         android:textSize="23dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -135,9 +142,9 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
-        android:background="@drawable/border"
+        android:background="@drawable/custome_input"
         android:ems="10"
-        android:gravity="center_vertical"
+        android:gravity="center"
         android:inputType="textPersonName"
         android:textSize="23dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -152,7 +159,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
-        android:background="@drawable/border"
+        android:background="@drawable/custome_input"
         android:ems="10"
         android:gravity="center_vertical"
         android:inputType="textPersonName"
@@ -169,9 +176,9 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
-        android:background="@drawable/border"
+        android:background="@drawable/custome_input"
         android:ems="10"
-        android:gravity="center_vertical"
+        android:gravity="center"
         android:inputType="textPersonName"
         android:textSize="23dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -179,34 +186,37 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView40" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_add_land"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="334dp"
+        android:layout_height="44dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="64dp"
         android:layout_marginEnd="20dp"
+        android:background="@drawable/custom_button"
         android:text="Add This Land"
+        android:fontFamily="@font/nbold"
         android:textSize="24dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_add_land_rent_year" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_contact_land_owner"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="25dp"
         android:layout_marginEnd="10dp"
+        android:background="@drawable/custom_button"
         android:text="Contact Owner"
         android:visibility="gone"
         app:layout_constraintEnd_toStartOf="@+id/btn_view_location_on_map"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_add_land_rent_year" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_view_location_on_map"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -215,6 +225,7 @@
         android:layout_marginEnd="20dp"
         android:text="View Location "
         android:visibility="gone"
+        android:background="@drawable/custom_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btn_contact_land_owner"
         app:layout_constraintTop_toBottomOf="@+id/text_add_land_rent_year" />

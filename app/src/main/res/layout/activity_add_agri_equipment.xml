@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/greenGrey"
     tools:context=".AddAgriEquipment">
 
     <TextView
@@ -13,8 +14,9 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="40dp"
         android:text="Owner Name"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/Brown"
         android:textSize="20dp"
+        android:fontFamily="@font/nbold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -25,8 +27,9 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="13dp"
         android:text="Owner Mobile"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/Brown"
         android:textSize="20dp"
+        android:fontFamily="@font/nbold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_equip_owner_name" />
 
@@ -37,8 +40,9 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="13dp"
         android:text="Location"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/Brown"
         android:textSize="20dp"
+        android:fontFamily="@font/nbold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_equip_owner_mobile_no" />
 
@@ -49,8 +53,9 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="13dp"
         android:text="Equipment Category"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/Brown"
         android:textSize="20dp"
+        android:fontFamily="@font/nbold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_agri_equip_location" />
 
@@ -61,8 +66,9 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="13dp"
         android:text="Equipment Name"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/Brown"
         android:textSize="20dp"
+        android:fontFamily="@font/nbold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spin_agri_equip_cat" />
 
@@ -73,8 +79,9 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="13dp"
         android:text="Rent Per Hour"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/Brown"
         android:textSize="20dp"
+        android:fontFamily="@font/nbold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_agri_equip_name" />
 
@@ -85,8 +92,9 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="13dp"
         android:text="Additional Details"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/Brown"
         android:textSize="20dp"
+        android:fontFamily="@font/nbold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_agri_equip_rent" />
 
@@ -97,9 +105,9 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
-        android:background="@drawable/border"
+        android:background="@drawable/custome_input"
         android:ems="10"
-        android:gravity="center_vertical"
+        android:textAlignment="center"
         android:inputType="textPersonName"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -114,9 +122,9 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
-        android:background="@drawable/border"
+        android:background="@drawable/custome_input"
         android:ems="10"
-        android:gravity="center_vertical"
+        android:textAlignment="center"
         android:inputType="textPersonName"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -131,9 +139,9 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="13dp"
         android:layout_marginEnd="20dp"
-        android:background="@drawable/border"
+        android:background="@drawable/custome_input"
         android:ems="10"
-        android:gravity="center_vertical"
+        android:textAlignment="center"
         android:inputType="textPersonName"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -148,9 +156,9 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
-        android:background="@drawable/border"
+        android:background="@drawable/custome_input"
         android:ems="10"
-        android:gravity="center_vertical"
+        android:textAlignment="center"
         android:inputType="textPersonName"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -165,9 +173,10 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
-        android:background="@drawable/border"
+        android:background="@drawable/custome_input"
         android:ems="10"
-        android:gravity="center_vertical"
+
+        android:textAlignment="center"
         android:inputType="textPersonName"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -182,9 +191,9 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
-        android:background="@drawable/border"
+        android:background="@drawable/custome_input"
         android:ems="10"
-        android:gravity="center_vertical"
+        android:gravity="center"
         android:inputType="textPersonName"
         android:textSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -197,20 +206,24 @@
         android:layout_width="0dp"
         android:layout_height="33dp"
         android:layout_marginStart="20dp"
-        android:background="@drawable/border"
+        android:background="@drawable/custome_input"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView52" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_add_agri_equip"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="334dp"
+        android:layout_height="44dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="30dp"
         android:layout_marginEnd="20dp"
+        android:background="@drawable/custom_button"
+        android:backgroundTint="@color/darkYellow"
+        android:fontFamily="@font/nbold"
         android:text="Add This Equipment"
         android:textSize="26dp"
         app:layout_constraintEnd_toEndOf="parent"

@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/greenGrey"
     android:layout_height="match_parent"
     tools:context=".EquipmentAddedActivity">
 
@@ -17,7 +18,8 @@
         android:gravity="center_horizontal|center"
         android:text="Your Agricultural Equipment For Rent has been added to our portal, Now it will be visible to all users!"
 
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/Brown"
+        android:fontFamily="@font/nbold"
         android:textSize="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.3"
@@ -30,20 +32,21 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
         android:text="Know More!"
-        android:textColor="@color/teal_200"
+        android:textColor="@color/Brown"
         android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_show_agri_land_added"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="124dp"
-        android:text="Show Now!"
+        android:text=" Show Now "
         android:textSize="25dp"
-        app:backgroundTint="#4CAF50"
+        android:fontFamily="@font/nbold"
+       android:background="@drawable/custom_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -59,6 +62,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/check" />
+        app:srcCompat="@drawable/baseline_check_circle_24" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
