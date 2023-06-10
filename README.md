@@ -203,3 +203,19 @@ http://IP:7000/delete-many/COLLECTION_NAME
 
 where filter is condition by which you want to delete perticular doc value
 
+**9. Insert Single image with data**
+
+ ```
+http://IP:7000/insert-image/COLLECTION_NAME
+```
+
+* Data Format
+
+```
+{
+"name":"ram",
+"weights":[1,2,3,4,5]
+}
+```
+
+and upload image with above data format
