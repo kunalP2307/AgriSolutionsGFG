@@ -2,10 +2,30 @@ const express = require('express')
 const dotenv = require('dotenv');
 const cors = require("cors");
 const db = require("./utils/db");
-const app = express()
+const multer = require('multer');
+const path = require('path');
+const fs = require('fs');
+const uniqid = require('uniqid');
+const cloudinary = require('cloudinary').v2;
+const app = express();
 app.use(express.json());
+
+// /--------------------------------------------------------------------------------------------\
+//                                     Env Configuration
+// \--------------------------------------------------------------------------------------------/
+
 dotenv.config({ path: './.env' });
+
+// /--------------------------------------------------------------------------------------------\
+//                                     Port Configuration
+// \--------------------------------------------------------------------------------------------/
+
 const port = process.env.PORT || 7000;
+
+// /--------------------------------------------------------------------------------------------\
+//                                     Cors Configuration
+// \--------------------------------------------------------------------------------------------/
+
 const corsOptions = {
     origin: '*',
     credentials: true,            //access-control-allow-credentials:true
@@ -13,6 +33,23 @@ const corsOptions = {
 }
 
 app.use(cors(corsOptions)) // Use this after the variable declarationd
+
+// /--------------------------------------------------------------------------------------------\
+//                          Multer Configuration middleware to handle upload
+// \--------------------------------------------------------------------------------------------/
+
+const upload = multer();
+
+// /--------------------------------------------------------------------------------------------\
+//                                     Cloudinary Configuration
+// \--------------------------------------------------------------------------------------------/
+
+cloudinary.config({
+    cloud_name: process.env.CLOUD_NAME,
+    api_key: process.env.API_KEY,
+    api_secret: process.env.API_SECRET,
+    secure: true
+});
 
 // /--------------------------------------------------------------------------------------------\
 //                                     MongoDB Collections Operations
@@ -43,7 +80,7 @@ app.get('/create-collection/:collection_name', async (req, res) => {
         console.log(collection);
         if (collection) {
             await db.db.disconnect();
-            res.status(200).json({stat: 0, msg:"Collection already exists"});
+            res.status(200).json({ stat: 0, msg: "Collection already exists" });
         } else {
             const collection = await db.db.Connection.createCollection(collection_name);
             if (collection) {
@@ -76,9 +113,9 @@ app.get('/drop-collection/:collection_name', async (req, res) => {
             })
             await db.db.disconnect();
             res.status(200).json(collection_list);
-        }else{
+        } else {
             await db.db.disconnect();
-            res.status(200).json({stat:0, msg:"Collection not exists"});
+            res.status(200).json({ stat: 0, msg: "Collection not exists" });
         }
 
     } catch (error) {
@@ -98,14 +135,14 @@ app.post('/insert-one/:collection_name', async (req, res) => {
         console.log(doc);
         await db.db.connect();
         let collection = await db.db.Connection.db.listCollections({ name: collection_name }).next();
-        if (collection){
+        if (collection) {
             const collection = db.db.Connection.collection(collection_name);
             await collection.insertOne(doc);
             await db.db.disconnect();
-            res.status(200).json({stat:1, msg:"Done"});
-        }else{
+            res.status(200).json({ stat: 1, msg: "Done" });
+        } else {
             await db.db.disconnect();
-            res.json({stat:0, msg:"Collection not exists."});
+            res.json({ stat: 0, msg: "Collection not exists." });
         }
     } catch (error) {
         await db.db.disconnect();
@@ -120,16 +157,16 @@ app.post('/insert-many/:collection_name', async (req, res) => {
         console.log(doc);
         await db.db.connect();
         let collection = await db.db.Connection.db.listCollections({ name: collection_name }).next();
-        if (collection){
+        if (collection) {
             const collection = db.db.Connection.collection(collection_name);
             await collection.insertMany(doc);
             await db.db.disconnect();
-            res.status(200).json({stat:1, msg:"Done"});
-        }else{
+            res.status(200).json({ stat: 1, msg: "Done" });
+        } else {
             await db.db.disconnect();
-            res.json({stat:0, msg:"Collection not exists."});
+            res.json({ stat: 0, msg: "Collection not exists." });
         }
-        
+
     } catch (error) {
         await db.db.disconnect();
         res.status(500).send("Internal Server Error");
@@ -146,14 +183,14 @@ app.get('/find/:collection_name', async (req, res) => {
         const collection_name = req.params.collection_name;
         await db.db.connect();
         let collection = await db.db.Connection.db.listCollections({ name: collection_name }).next();
-        if (collection){
+        if (collection) {
             const collection = db.db.Connection.collection(collection_name);
             const collection_data = await collection.find().toArray();
             await db.db.disconnect();
             res.status(200).json(collection_data);
-        }else{
+        } else {
             await db.db.disconnect();
-            res.json({stat:0, msg:"Collection not exists."});
+            res.json({ stat: 0, msg: "Collection not exists." });
         }
     } catch (error) {
         await db.db.disconnect();
@@ -167,14 +204,14 @@ app.post('/find-with-and/:collection_name', async (req, res) => {
     try {
         await db.db.connect();
         let collection = await db.db.Connection.db.listCollections({ name: collection_name }).next();
-        if (collection){
+        if (collection) {
             const collection = db.db.Connection.collection(collection_name);
             const collection_data = await collection.find(doc).toArray();
             await db.db.disconnect();
             res.status(200).json(collection_data);
-        }else{
+        } else {
             await db.db.disconnect();
-            res.json({stat:0, msg:"Collection not exists."});
+            res.json({ stat: 0, msg: "Collection not exists." });
         }
     } catch (error) {
         await db.db.disconnect();
@@ -188,14 +225,14 @@ app.post('/find-with-or/:collection_name', async (req, res) => {
     try {
         await db.db.connect();
         let collection = await db.db.Connection.db.listCollections({ name: collection_name }).next();
-        if (collection){
+        if (collection) {
             const collection = db.db.Connection.collection(collection_name);
-            const collection_data = await collection.find({$or: array_doc}).toArray();
+            const collection_data = await collection.find({ $or: array_doc }).toArray();
             await db.db.disconnect();
             res.status(200).json(collection_data);
-        }else{
+        } else {
             await db.db.disconnect();
-            res.json({stat:0, msg:"Collection not exists."});
+            res.json({ stat: 0, msg: "Collection not exists." });
         }
     } catch (error) {
         await db.db.disconnect();
@@ -214,20 +251,20 @@ app.post('/update/:collection_name', async (req, res) => {
     try {
         await db.db.connect();
         let collection = await db.db.Connection.db.listCollections({ name: collection_name }).next();
-        if (collection){
+        if (collection) {
             const collection = db.db.Connection.collection(collection_name);
-            const collection_data = await collection.updateOne(array_doc['filter'], {$set:array_doc['update']});
+            const collection_data = await collection.updateOne(array_doc['filter'], { $set: array_doc['update'] });
             console.log(collection_data)
             await db.db.disconnect();
-            if(collection_data){
-                res.status(200).json({stat:1, msg:"Done"});
-            }else{
-                res.status(200).json({stat:0, msg:"Failed"});
+            if (collection_data) {
+                res.status(200).json({ stat: 1, msg: "Done" });
+            } else {
+                res.status(200).json({ stat: 0, msg: "Failed" });
             }
-            
-        }else{
+
+        } else {
             await db.db.disconnect();
-            res.json({stat:0, msg:"Collection not exists."});
+            res.json({ stat: 0, msg: "Collection not exists." });
         }
     } catch (error) {
         await db.db.disconnect();
@@ -241,20 +278,20 @@ app.post('/update-many/:collection_name', async (req, res) => {
     try {
         await db.db.connect();
         let collection = await db.db.Connection.db.listCollections({ name: collection_name }).next();
-        if (collection){
+        if (collection) {
             const collection = db.db.Connection.collection(collection_name);
-            const collection_data = await collection.updateMany(array_doc['filter'], {$set:array_doc['update']});
+            const collection_data = await collection.updateMany(array_doc['filter'], { $set: array_doc['update'] });
             console.log(collection_data)
             await db.db.disconnect();
-            if(collection_data){
-                res.status(200).json({stat:1, msg:"Done"});
-            }else{
-                res.status(200).json({stat:0, msg:"Failed"});
+            if (collection_data) {
+                res.status(200).json({ stat: 1, msg: "Done" });
+            } else {
+                res.status(200).json({ stat: 0, msg: "Failed" });
             }
-            
-        }else{
+
+        } else {
             await db.db.disconnect();
-            res.json({stat:0, msg:"Collection not exists."});
+            res.json({ stat: 0, msg: "Collection not exists." });
         }
     } catch (error) {
         await db.db.disconnect();
@@ -273,20 +310,20 @@ app.post('/delete/:collection_name', async (req, res) => {
     try {
         await db.db.connect();
         let collection = await db.db.Connection.db.listCollections({ name: collection_name }).next();
-        if (collection){
+        if (collection) {
             const collection = db.db.Connection.collection(collection_name);
             const collection_data = await collection.deleteOne(doc['filter']);
             console.log(collection_data)
             await db.db.disconnect();
-            if(collection_data){
-                res.status(200).json({stat:1, msg:"Done"});
-            }else{
-                res.status(200).json({stat:0, msg:"Failed"});
+            if (collection_data) {
+                res.status(200).json({ stat: 1, msg: "Done" });
+            } else {
+                res.status(200).json({ stat: 0, msg: "Failed" });
             }
-            
-        }else{
+
+        } else {
             await db.db.disconnect();
-            res.json({stat:0, msg:"Collection not exists."});
+            res.json({ stat: 0, msg: "Collection not exists." });
         }
     } catch (error) {
         await db.db.disconnect();
@@ -300,20 +337,20 @@ app.post('/delete-many/:collection_name', async (req, res) => {
     try {
         await db.db.connect();
         let collection = await db.db.Connection.db.listCollections({ name: collection_name }).next();
-        if (collection){
+        if (collection) {
             const collection = db.db.Connection.collection(collection_name);
             const collection_data = await collection.deleteMany(doc['filter']);
             console.log(collection_data)
             await db.db.disconnect();
-            if(collection_data){
-                res.status(200).json({stat:1, msg:"Done"});
-            }else{
-                res.status(200).json({stat:0, msg:"Failed"});
+            if (collection_data) {
+                res.status(200).json({ stat: 1, msg: "Done" });
+            } else {
+                res.status(200).json({ stat: 0, msg: "Failed" });
             }
-            
-        }else{
+
+        } else {
             await db.db.disconnect();
-            res.json({stat:0, msg:"Collection not exists."});
+            res.json({ stat: 0, msg: "Collection not exists." });
         }
     } catch (error) {
         await db.db.disconnect();
@@ -322,6 +359,60 @@ app.post('/delete-many/:collection_name', async (req, res) => {
 })
 
 
+// /--------------------------------------------------------------------------------------------\
+//                                     MongoDB Insertion with single image
+// \--------------------------------------------------------------------------------------------/
+
+async function buffer_to_image(buffer, outputPath, req, res) {
+    const collection_name = req.params.collection_name;
+    const doc = req.body;
+    fs.writeFile(outputPath, buffer, (err) => {
+      if (err) {
+        console.error('Error writing image:', err);
+      } else {
+        cloudinary.uploader.upload(outputPath).then(async (result) => {
+            // console.log(result);
+            try {
+                doc['img_url'] = result.secure_url;
+                fs.unlinkSync(outputPath);
+                // console.log(doc)
+                await db.db.connect();
+                let collection = await db.db.Connection.db.listCollections({ name: collection_name }).next();
+                if (collection) {
+                    const collection = db.db.Connection.collection(collection_name);
+                    await collection.insertOne(doc);
+                    await db.db.disconnect();
+                    // res.status(200).json({ stat: 1, msg: "Done" });
+                    res.status(200).json({msg: "Data inserted with image", stat: 1, secure_url: result.secure_url, url: result.url, original_filename: result.original_filename, width:result.width, height: result.height, format: result.format, resourse_type: result.resource_type, bytes: result.bytes});
+                } else {
+                    await db.db.disconnect();
+                    res.json({ stat: 0, msg: "Collection not exists." });
+                }
+                
+            } catch (error) {
+                res.json({stat:0, msg:error});
+            }
+            
+        }, (err)=>{
+            res.json({stat:0, msg:"Failed to upload"});
+        })
+        // console.log('Image successfully written to', outputPath);  
+      }
+    });
+
+  }
+
+
+
+app.post('/insert-image/:collection_name', upload.single('file'), async (req, res) => {
+    try {
+        // console.log(req.file);
+        await buffer_to_image(req.file.buffer, path.join(__dirname, `./assets/${uniqid()}.${req.file.mimetype.split('/')[1]}`), req, res);
+    } catch (error) {
+        await db.db.disconnect();
+        res.status(500).send("Internal Server Error");
+    }
+})
 
 app.get('/', async (req, res) => {
     res.status(200).send({ msg: "Connected to SIH Project!!" });
