@@ -203,7 +203,11 @@ http://IP:7000/delete-many/COLLECTION_NAME
 
 where filter is condition by which you want to delete perticular doc value
 
-**9. Insert Single image with data**
+# Image Handling with data Endpoints
+
+## POST Requests
+
+**1. Insert Single image with data**
 
  ```
 http://IP:7000/insert-image/COLLECTION_NAME
@@ -219,3 +223,46 @@ http://IP:7000/insert-image/COLLECTION_NAME
 ```
 
 and upload image with above data format
+
+# How to use News API - API Endpoints
+### GET Requests
+
+**1. How to Scrap Data which automatically get stored in mongodb**
+
+```
+http://IP:7000/scrap-news/COLLECTION_NAME
+```
+
+Where **COLLECTION_NAME** in which collection you want to save data in our project case **COLLECTION_Name is always like agri_news**
+
+**End point for project** 
+
+```
+http://IP:7000/scrap-news/agri_news
+```
+
+**Collection name should be already created using /creat-collection/COLLECTION_NAME endpoint**
+
+**2. How to retreive Latest news (Find latest Data)**
+
+```
+http://IP:7000/find-latest/COLLECTION_NAME
+```
+
+**e.g.**
+
+```
+http://IP:7000/find-latest/agri_news
+```
+
+**3. How to find Latest news with limit**
+
+```
+http://IP:7000/find-latest/COLLECTION_NAME/LIMIT
+```
+
+where in place of **LIMIT** you can specify values e.g.
+
+```
+http://IP:7000/find-latest/agri_news/5
+```
