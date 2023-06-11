@@ -5,7 +5,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/greenGrey"
+
     tools:context=".AddRideDetailsActivity">
+
+    <CheckBox
+        android:id="@+id/check_box_on_demand_price_aval"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="16dp"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:scaleX="0.80"
+        android:scaleY="0.80"
+        android:text="On Demand Available"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_ride_price_km" />
 
     <TextView
         android:id="@+id/textView8"
@@ -14,9 +29,8 @@
         android:layout_marginStart="4dp"
         android:layout_marginTop="40dp"
         android:fontFamily="@font/nbold"
-        android:text="FROM"
+        android:text="From"
         android:textColor="@color/Brown"
-        android:textSize="22dp"
         app:layout_constraintStart_toEndOf="@+id/textView14"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -25,12 +39,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
         android:layout_marginTop="13dp"
-        android:text="DATE"
-        android:textColor="@color/Brown"
         android:fontFamily="@font/nbold"
-        android:textSize="22dp"
+        android:text="Date"
+        android:textColor="@color/Brown"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_destination_address" />
 
@@ -39,27 +51,23 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="13dp"
-        android:textColor="@color/Brown"
         android:fontFamily="@font/nbold"
-        android:text="TIME"
-        android:textSize="22dp"
+        android:text="Time"
+        android:textColor="@color/Brown"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_ride_date" />
+        app:layout_constraintTop_toBottomOf="@+id/check_box_flex_with_date" />
 
     <TextView
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="13dp"
-        android:text="PRICE/KM"
-        android:textColor="@color/Brown"
+        android:layout_marginTop="2dp"
         android:fontFamily="@font/nbold"
-        android:textSize="22dp"
+        android:text="Price/KM"
+        android:textColor="@color/Brown"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_ride_time" />
+        app:layout_constraintTop_toBottomOf="@+id/check_box_flex_with_time" />
 
     <TextView
         android:id="@+id/textView23"
@@ -67,10 +75,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="13dp"
+        android:fontFamily="@font/nbold"
         android:text="Add Route (Optional)"
         android:textColor="@color/Brown"
-        android:fontFamily="@font/nbold"
-        android:textSize="22dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_ride_price_km" />
 
@@ -81,16 +88,15 @@
         android:layout_marginStart="4dp"
         android:layout_marginTop="12dp"
         android:fontFamily="@font/nbold"
-        android:text="TO"
+        android:text="To"
         android:textColor="@color/Brown"
-        android:textSize="22dp"
         app:layout_constraintStart_toEndOf="@+id/textView18"
         app:layout_constraintTop_toBottomOf="@+id/edit_source_address" />
 
     <ImageView
         android:id="@+id/textView14"
-        android:layout_width="27dp"
-        android:layout_height="29dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="40dp"
         android:background="@drawable/ic_location"
@@ -101,41 +107,40 @@
         android:id="@+id/textView16"
         android:layout_width="15dp"
         android:layout_height="15dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginStart="20dp"
 
+        app:layout_constraintBottom_toBottomOf="@+id/textView8"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/textView8" />
 
     <ImageView
         android:id="@+id/textView18"
-        android:layout_width="wrap_content"
-        android:layout_height="29dp"
+        android:layout_width="18dp"
+        android:layout_height="18dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="12dp"
         android:background="@drawable/ic_addlocation_red"
 
+        app:layout_constraintBottom_toBottomOf="@+id/textView19"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_source_address" />
+        app:layout_constraintTop_toTopOf="@+id/textView19" />
 
     <EditText
         android:id="@+id/edit_source_address"
         android:layout_width="0dp"
-        android:layout_height="38dp"
-        android:layout_marginStart="20dp"
+        android:layout_height="wrap_content"
 
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginRight="20dp"
-        android:gravity="center"
+
+
         android:background="@drawable/custome_input"
 
 
+        android:gravity="center"
         android:hint="Select Source Address"
-
-
-        android:textSize="25dp"
+        android:padding="6dp"
+        android:textSize="18dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -144,18 +149,17 @@
     <EditText
         android:id="@+id/edit_destination_address"
         android:layout_width="0dp"
-        android:layout_height="38dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
 
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginRight="20dp"
 
-        android:hint="Select Destination Address"
-        android:gravity="center"
         android:background="@drawable/custome_input"
-        android:textSize="25dp"
+        android:gravity="center"
+        android:hint="Select Destination Address"
+        android:padding="6dp"
+        android:textSize="18dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -165,15 +169,17 @@
     <EditText
         android:id="@+id/edit_ride_price_km"
         android:layout_width="0dp"
-        android:layout_height="38dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="20dp"
-        android:gravity="center"
         android:background="@drawable/custome_input"
-        android:hint="Enter Price Per KM"
+        android:gravity="center"
+        android:hint="Fare Per KM"
+        android:padding="6dp"
         android:textColor="@color/black"
-        android:textSize="25dp"
+        android:textSize="18dp"
+        android:inputType="numberDecimal"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -183,16 +189,16 @@
     <TextView
         android:id="@+id/text_ride_date"
         android:layout_width="0dp"
-        android:layout_height="38dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:gravity="center"
-        android:background="@drawable/custome_input"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginRight="20dp"
+        android:background="@drawable/custome_input"
+        android:gravity="center"
         android:hint="Select Date"
-        android:textSize="25dp"
+        android:padding="6dp"
+        android:textColor="@color/black"
+        android:textSize="18dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -202,16 +208,16 @@
     <TextView
         android:id="@+id/text_ride_time"
         android:layout_width="0dp"
-        android:layout_height="38dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:gravity="center"
-        android:background="@drawable/custome_input"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginRight="20dp"
+        android:background="@drawable/custome_input"
+        android:gravity="center"
         android:hint="Select Time"
-        android:textSize="25dp"
+        android:padding="6dp"
+        android:textColor="@color/black"
+        android:textSize="18dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -221,17 +227,19 @@
     <EditText
         android:id="@+id/edit_ride_description"
         android:layout_width="0dp"
-        android:layout_height="45dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="13dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="20dp"
+        android:background="@drawable/custome_input"
         android:ems="10"
         android:gravity="center"
-        android:background="@drawable/custome_input"
-        android:hint="Enter Additional Description"
+        android:hint="Specify Ride Route"
         android:inputType="textMultiLine"
+        android:padding="6dp"
         android:text=""
-        android:textSize="25dp"
+        android:textColor="@color/black"
+        android:textSize="18dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -242,17 +250,45 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:layout_marginTop="30dp"
         android:layout_marginEnd="30dp"
+        android:layout_marginBottom="20dp"
         android:background="@drawable/custom_button"
         android:fontFamily="@font/nbold"
+        android:textAllCaps="false"
         android:text="Continue"
-        android:textSize="26dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+       app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_ride_description"
-        app:layout_constraintVertical_bias="0.25" />
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <CheckBox
+        android:id="@+id/check_box_flex_with_date"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="16dp"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:scaleX="0.80"
+        android:scaleY="0.80"
+        android:text="Flexible With Date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_ride_date" />
+
+    <CheckBox
+        android:id="@+id/check_box_flex_with_time"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="16dp"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:scaleX="0.80"
+        android:scaleY="0.80"
+        android:text="Flexible With Time"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_ride_time" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

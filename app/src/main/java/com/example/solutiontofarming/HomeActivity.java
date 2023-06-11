@@ -9,6 +9,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
@@ -32,12 +33,14 @@ import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.models.SlideModel;
+import com.example.solutiontofarming.data.Fare;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-
+import com.google.gson.Gson;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
@@ -100,6 +103,11 @@ public class HomeActivity extends AppCompatActivity {
         addListeners();
 
 
+        SharedPreferences preferences =getSharedPreferences("DATA",Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.clear();
+        editor.apply();
+
         locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
 
         imageSlider=findViewById(R.id.image_slider);
@@ -111,7 +119,25 @@ public class HomeActivity extends AppCompatActivity {
         images.add(new SlideModel(R.drawable.p4,null));
         images.add(new SlideModel(R.drawable.p5,null));
         imageSlider.setImageList(images);
-        
+
+        Fare fare = new Fare("ABC", "NA");
+
+        Gson gson = new Gson();
+        String json = gson.toJson(fare);
+
+        Fare newFare = gson.fromJson(json, Fare.class);
+        Log.d("TAG", "onCreate: "+newFare.toString());
+        Log.d("TAG", "json: "+json);
+
+        JSONObject object = null;
+        try {
+            object = new JSONObject(json);
+        } catch (Throwable t) {
+            Log.e("My App", "Could not parse malformed JSON: \"" + json + "\"");
+        }
+
+//        JsonObject jsonObject = gson.fromJson(json, (Type) Fare.class);
+        Log.d("TAG", "onCreate: JsonObject"+object);
     }
     private void bindComponents(){
         textViewMoreNews = findViewById(R.id.textv_more);

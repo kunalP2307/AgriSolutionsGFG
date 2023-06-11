@@ -5,13 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.example.solutiontofarming.data.ID;
 import com.example.solutiontofarming.data.Transport;
 import com.example.solutiontofarming.data.User;
 import com.google.firebase.auth.FirebaseAuth;
@@ -27,11 +27,11 @@ import java.util.List;
 public class TransportServiceActivity extends AppCompatActivity {
     final String TAG = "TransportServiceActivity";
 
-    List<Transport> transportList = new ArrayList<>();
-
-    ImageView imageViewFind, imageViewGive,imageViewShowAll,imageViewMyRides;
     String loggedInUserId;
+    View viewFindRide, viewScheduleRie, viewShowAllRides, viewManageRides;
 
+    List<Transport> transportList = new ArrayList<>();
+    //ImageView imageViewFind, imageViewGive,imageViewShowAll,imageViewMyRides;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,28 +39,31 @@ public class TransportServiceActivity extends AppCompatActivity {
         setContentView(R.layout.activity_transport_service);
         getSupportActionBar().setTitle("Transport Pool");
 
+
         bindComponents();
         addListeners();
-        initRides();
-        getLoggedInUserId();
+
 
     }
-
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(getApplicationContext(), ServicesActivity.class));
+    }
     public void bindComponents(){
-        imageViewFind = findViewById(R.id.img_find_ride);
-        imageViewGive = findViewById(R.id.img_give_ride);
-        imageViewShowAll = findViewById(R.id.img_show_all_rides);
-        imageViewMyRides = findViewById(R.id.img_my_rides);
+        viewFindRide = findViewById(R.id.card_find_ride);
+        viewScheduleRie = findViewById(R.id.card_schedule_ride);
+        viewShowAllRides = findViewById(R.id.card_show_all_rides);
+        viewManageRides = findViewById(R.id.card_manage_my_rides);
     }
 
     public void addListeners(){
-        this.imageViewGive.setOnClickListener(new View.OnClickListener() {
+        this.viewScheduleRie.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(getApplicationContext(),ScheduleTransportActivity.class));
             }
         });
-        this.imageViewFind.setOnClickListener(new View.OnClickListener() {
+        this.viewFindRide.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),SearchTransportActivity.class);
@@ -68,7 +71,7 @@ public class TransportServiceActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        this.imageViewShowAll.setOnClickListener(new View.OnClickListener() {
+        this.viewShowAllRides.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),ShowAvailableRidesActivity.class);
@@ -77,7 +80,7 @@ public class TransportServiceActivity extends AppCompatActivity {
 
             }
         });
-        this.imageViewMyRides.setOnClickListener(new View.OnClickListener() {
+        this.viewManageRides.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),ShowMyRidesActivity.class);
@@ -89,6 +92,19 @@ public class TransportServiceActivity extends AppCompatActivity {
         });
 
     }
+
+
+
+
+
+
+
+
+
+
+
+
+    // Firebase
     public void initRides(){
         FirebaseDatabase.getInstance().getReference("Transport-Rides").addValueEventListener(new ValueEventListener() {
             @Override

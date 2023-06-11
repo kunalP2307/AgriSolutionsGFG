@@ -41,7 +41,6 @@ public class ScheduleTransportActivity extends AppCompatActivity {
         bindComponents();
         addListeners();
         getSupportActionBar().setTitle("Add Ride");
-
     }
 
     @Override
@@ -78,6 +77,10 @@ public class ScheduleTransportActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(getApplicationContext(), TransportServiceActivity.class));
+    }
     public void bindComponents(){
         this.currentTransport = (Transport) getIntent().getSerializableExtra("currentTransport");
         this.btnAddRide = findViewById(R.id.btn_add_ride);
@@ -93,36 +96,37 @@ public class ScheduleTransportActivity extends AppCompatActivity {
         this.btnAddRide.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                addRide(currentTransport);
+//                addRide(currentTransport);
+                startActivity(new Intent(getApplicationContext(), AddRideDetailsActivity.class));
             }
         });
-        this.textViewAddRide.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(currentTransport == null)
-                    currentTransport = new Transport();
-
-                Intent intent = new Intent(getApplicationContext(),AddRideDetailsActivity.class);
-                intent.putExtra("currentTransport",currentTransport);
-                startActivity(intent);
-            }
-        });
-        this.textViewAddVehicle.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),AddVehicleDetailsActivity.class);
-                intent.putExtra("currentTransport",currentTransport);
-                startActivity(intent);
-            }
-        });
-        this.textViewAddDriver.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),AddDriverDetailsActivity.class);
-                intent.putExtra("currentTransport",currentTransport);
-                startActivity(intent);
-            }
-        });
+//        this.textViewAddRide.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                if(currentTransport == null)
+//                    currentTransport = new Transport();
+//
+//                Intent intent = new Intent(getApplicationContext(),AddRideDetailsActivity.class);
+//                intent.putExtra("currentTransport",currentTransport);
+//                startActivity(intent);
+//            }
+//        });
+//        this.textViewAddVehicle.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(getApplicationContext(),AddVehicleDetailsActivity.class);
+//                intent.putExtra("currentTransport",currentTransport);
+//                startActivity(intent);
+//            }
+//        });
+//        this.textViewAddDriver.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(getApplicationContext(),AddDriverDetailsActivity.class);
+//                intent.putExtra("currentTransport",currentTransport);
+//                startActivity(intent);
+//            }
+//        });
     }
 
     public void addRide(Transport transport){
