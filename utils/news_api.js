@@ -20,41 +20,69 @@ async function scrap_data(req, res) {
                 let collection = await db.db.Connection.db.listCollections({ name: collection_name }).next();
                 if (collection) {
                     let reverse_agri_news = parse_data['agri_news'].reverse();
-                    const collection = db.db.Connection.collection(collection_name); 
+                    // let reverse_agri_news = [{"a":"sonu"},{"heading": "India's tea industry getting drowsy, needs some 'kadak' measures"}].reverse();
+                    let agri_news = parse_data['agri_news'];
+                    // let agri_news = [{'heading':'ram'},{"heading": "India's tea industry getting drowsy, needs some 'kadak' measures"},{'heading':"b"}, {'heading':'c'}];
+                    const collection = db.db.Connection.collection(collection_name);
                     const collection_data = await collection.find().toArray();
-                    // const reverse_collection_data = collection_data.reverse();
-                    if (collection_data.length == 0){
+                    const reverse_collection_data = collection_data.reverse();
+                    if (reverse_collection_data.length == 0) {
                         await collection.insertMany(reverse_agri_news);
                         await db.db.disconnect();
                         res.status(200).json({ stat: 1, msg: "Done" });
-                    }else if(collection_data.length > reverse_agri_news.length){
-                        for(let i = 0; i<reverse_agri_news.length;i++){
-                            if (reverse_agri_news[i].heading !== collection_data[i].heading){
-                                await collection.insertOne(reverse_agri_news[i]);
+                    }else if(agri_news.length < reverse_collection_data.length){
+                        // console.log('k')
+                        let final_news = [];
+                        for(let i = 0; i<agri_news.length;i++){
+                            let found = false;
+                            for(let j=0; j<agri_news.length;j++){
+                                if(agri_news[i].heading == reverse_collection_data[j].heading){
+                                    found = true;   
+                                }
+                            }
+
+                            if (!found) {
+                                final_news.push(agri_news[i]);
                             }
                         }
-                        await db.db.disconnect();
-                        res.status(200).json({ stat: 1, msg: "Done" });
+                        // console.log(final_news);
+                        if (final_news.length != 0){
+                            await collection.insertMany(final_news.reverse());
+                            await db.db.disconnect();
+                            res.status(200).json({ stat: 1, msg: "Done" });
+                        }else{
+                            res.status(200).json({ stat: 1, msg: "Done" });
+                        }
+                        
                     }else{
-                        for(let i = 0; i<collection_data.length;i++){
-                            if (reverse_agri_news[i].heading !== collection_data[i].heading){
-                                await collection.insertOne(reverse_agri_news[i]);
+                        // console.log('m')
+                        let final_news = [];
+                        for(let i = 0; i<agri_news.length;i++){
+                            let found = false;
+                            for(let j=0; j<reverse_collection_data.length;j++){
+                                if(agri_news[i].heading == reverse_collection_data[j].heading){
+                                    found = true; 
+                                }
+                            }
+                            if (!found) {
+                                final_news.push(agri_news[i]);
                             }
                         }
-                        for(let i = collection_data.length; i<reverse_agri_news.length;i++){
-                            if (reverse_agri_news[i].heading !== collection_data[i].heading){
-                                await collection.insertOne(reverse_agri_news[i]);
-                            }
+                        // console.log(final_news);
+                        if (final_news.length != 0){
+                            await collection.insertMany(final_news.reverse());
+                            await db.db.disconnect();
+                            res.status(200).json({ stat: 1, msg: "Done" });
+                        }else{
+                            res.status(200).json({ stat: 1, msg: "Done" });
                         }
-                        await db.db.disconnect();
-                        res.status(200).json({ stat: 1, msg: "Done" });
-                    }  
-                    
+                    }
+
                 } else {
                     await db.db.disconnect();
                     res.json({ stat: 0, msg: "Collection not exists." });
                 }
-        
+
             } catch (error) {
                 await db.db.disconnect();
                 res.status(500).send("Internal Server Error");
