@@ -38,7 +38,7 @@ def scrap_news():
                 i+=1
         json_data = json.dumps(final_news)
         
-        with open(os.getcwd()+"\\assets\\scrap_data.json", "w") as file:
+        with open(os.path.join('assets','scrap_data.json'), "w") as file:
             file.write(json_data)
         return 1
     except:
