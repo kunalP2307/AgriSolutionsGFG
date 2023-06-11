@@ -7,6 +7,7 @@ const path = require('path');
 const fs = require('fs');
 const uniqid = require('uniqid');
 const cloudinary = require('cloudinary').v2;
+const news_api = require('./utils/news_api');
 const app = express();
 app.use(express.json());
 
@@ -77,7 +78,7 @@ app.get('/create-collection/:collection_name', async (req, res) => {
         const collection_name = req.params.collection_name;
         await db.db.connect();
         let collection = await db.db.Connection.db.listCollections({ name: collection_name }).next();
-        console.log(collection);
+        // console.log(collection);
         if (collection) {
             await db.db.disconnect();
             res.status(200).json({ stat: 0, msg: "Collection already exists" });
@@ -132,7 +133,7 @@ app.post('/insert-one/:collection_name', async (req, res) => {
     try {
         const collection_name = req.params.collection_name;
         const doc = req.body;
-        console.log(doc);
+        // console.log(doc);
         await db.db.connect();
         let collection = await db.db.Connection.db.listCollections({ name: collection_name }).next();
         if (collection) {
@@ -154,7 +155,7 @@ app.post('/insert-many/:collection_name', async (req, res) => {
     try {
         const collection_name = req.params.collection_name;
         const doc = req.body;
-        console.log(doc);
+        // console.log(doc);
         await db.db.connect();
         let collection = await db.db.Connection.db.listCollections({ name: collection_name }).next();
         if (collection) {
@@ -188,6 +189,58 @@ app.get('/find/:collection_name', async (req, res) => {
             const collection_data = await collection.find().toArray();
             await db.db.disconnect();
             res.status(200).json(collection_data);
+        } else {
+            await db.db.disconnect();
+            res.json({ stat: 0, msg: "Collection not exists." });
+        }
+    } catch (error) {
+        await db.db.disconnect();
+        res.status(500).send("Internal Server Error");
+    }
+})
+
+app.get('/find-latest/:collection_name', async (req, res) => {
+    try {
+        const collection_name = req.params.collection_name;
+        await db.db.connect();
+        let collection = await db.db.Connection.db.listCollections({ name: collection_name }).next();
+        if (collection) {
+            const collection = db.db.Connection.collection(collection_name);
+            const collection_data = await collection.find().toArray();
+            await db.db.disconnect();
+            res.status(200).json(collection_data.reverse());
+        } else {
+            await db.db.disconnect();
+            res.json({ stat: 0, msg: "Collection not exists." });
+        }
+    } catch (error) {
+        await db.db.disconnect();
+        res.status(500).send("Internal Server Error");
+    }
+})
+
+app.get('/find-latest/:collection_name/:limit', async (req, res) => {
+    try {
+        const collection_name = req.params.collection_name;
+        const limit = req.params.limit;
+        let final_data = [];
+        await db.db.connect();
+        let collection = await db.db.Connection.db.listCollections({ name: collection_name }).next();
+        if (collection) {
+            const collection = db.db.Connection.collection(collection_name);
+            const collection_data = await collection.find().toArray();
+            const reverse_collection = collection_data.reverse();
+            if(limit < reverse_collection.length){
+                for(let i=0; i<limit;i++){
+                    final_data.push(reverse_collection[i]);
+                }
+                await db.db.disconnect();
+                res.status(200).json(final_data);
+            }else{
+                await db.db.disconnect();
+                res.status(200).json(reverse_collection);
+            }
+            
         } else {
             await db.db.disconnect();
             res.json({ stat: 0, msg: "Collection not exists." });
@@ -239,6 +292,7 @@ app.post('/find-with-or/:collection_name', async (req, res) => {
         res.status(500).send("Internal Server Error");
     }
 })
+
 
 
 // /--------------------------------------------------------------------------------------------\
@@ -413,6 +467,15 @@ app.post('/insert-image/:collection_name', upload.single('file'), async (req, re
         res.status(500).send("Internal Server Error");
     }
 })
+
+
+// /--------------------------------------------------------------------------------------------\
+//                                 News_API
+// \--------------------------------------------------------------------------------------------/
+app.get('/scrap-news/:collection_name', (req, res) => {
+    news_api(req, res);
+})
+
 
 app.get('/', async (req, res) => {
     res.status(200).send({ msg: "Connected to SIH Project!!" });
