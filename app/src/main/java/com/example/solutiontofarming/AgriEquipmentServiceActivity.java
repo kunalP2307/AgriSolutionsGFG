@@ -2,6 +2,7 @@ package com.example.solutiontofarming;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -29,8 +30,10 @@ public class AgriEquipmentServiceActivity extends AppCompatActivity {
 
     final String TAG = "AgriEquipmentSeomrviceActivity";
     List<AgriculturalEquipment> agriculturalEquipmentsList = new ArrayList<>();
-    ImageView imageViewFindEquip,imageViewAddEquip,imageViewMyEquipments;
     String userId;
+    CardView imageViewFindEquip,imageViewAddEquip,imageViewMyEquipments;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,9 +46,9 @@ public class AgriEquipmentServiceActivity extends AppCompatActivity {
 
     }
     public void bindComponents(){
-        this.imageViewAddEquip = findViewById(R.id.img_add_agri_equip);
-        this.imageViewFindEquip = findViewById(R.id.img_find_agri_equip);
-        this.imageViewMyEquipments = findViewById(R.id.img_my_agri_equip);
+        this.imageViewAddEquip = findViewById(R.id.card_add_agri_equip);
+        this.imageViewFindEquip = findViewById(R.id.card_find_agri_equip);
+        this.imageViewMyEquipments = findViewById(R.id.card_my_agri_equip);
     }
 
     public void addLisnteners(){

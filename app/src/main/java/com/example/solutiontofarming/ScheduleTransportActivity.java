@@ -28,7 +28,7 @@ import java.io.File;
 public class ScheduleTransportActivity extends AppCompatActivity {
     private Button btnAddRide;
     private TextView textViewAddRide , textViewAddVehicle, textViewAddDriver;
-    private ImageView imageButtonAlertRide, imageButtonAlertVehicle, imageButtonAlertDriver;
+  //  private ImageView imageButtonAlertRide, imageButtonAlertVehicle, imageButtonAlertDriver;
     private Transport currentTransport;
     String rideId,userId;
     private boolean rideDetailsStatus[] = {false,false,false};
@@ -48,34 +48,34 @@ public class ScheduleTransportActivity extends AppCompatActivity {
         super.onResume();
         Intent intent = getIntent();
         currentTransport = (Transport) intent.getSerializableExtra("currentTransport");
-        if(currentTransport != null) {
-
-
-            if(currentTransport.getSourceAddress() !=""){
-                imageButtonAlertRide = findViewById(R.id.img_status_ride);
-                imageButtonAlertRide.setBackgroundColor(Color.GREEN);
-                imageButtonAlertRide.setImageResource(R.drawable.check);
-                textViewAddRide.setTextColor(Color.GREEN);
-                rideDetailsStatus[0] = true;
-            }
-            if(currentTransport.getDriverName()!=null){
-                imageButtonAlertDriver = findViewById(R.id.img_status_driver);
-                imageButtonAlertDriver.setBackgroundColor(Color.GREEN);
-                imageButtonAlertDriver.setImageResource(R.drawable.check);
-                textViewAddDriver.setTextColor(Color.GREEN);
-                rideDetailsStatus[1] = true;
-            }
-            if(currentTransport.getVehicleNo()!=null){
-                imageButtonAlertVehicle = findViewById(R.id.img_status_vehicle);
-                imageButtonAlertVehicle.setBackgroundColor(Color.GREEN);
-                imageButtonAlertVehicle.setImageResource(R.drawable.check);
-                textViewAddVehicle.setTextColor(Color.GREEN);
-                rideDetailsStatus[2] = true;
-            }
-
-        }
+//        if(currentTransport != null) {
+//
+//
+//            if(currentTransport.getSourceAddress() !=""){
+//                imageButtonAlertRide = findViewById(R.id.img_status_ride);
+//                imageButtonAlertRide.setBackgroundColor(Color.GREEN);
+//                imageButtonAlertRide.setImageResource(R.drawable.check);
+//                textViewAddRide.setTextColor(Color.GREEN);
+//                rideDetailsStatus[0] = true;
+//            }
+//            if(currentTransport.getDriverName()!=null){
+//                imageButtonAlertDriver = findViewById(R.id.img_status_driver);
+//                imageButtonAlertDriver.setBackgroundColor(Color.GREEN);
+//                imageButtonAlertDriver.setImageResource(R.drawable.check);
+//                textViewAddDriver.setTextColor(Color.GREEN);
+//                rideDetailsStatus[1] = true;
+//            }
+//            if(currentTransport.getVehicleNo()!=null){
+//                imageButtonAlertVehicle = findViewById(R.id.img_status_vehicle);
+//                imageButtonAlertVehicle.setBackgroundColor(Color.GREEN);
+//                imageButtonAlertVehicle.setImageResource(R.drawable.check);
+//                textViewAddVehicle.setTextColor(Color.GREEN);
+//                rideDetailsStatus[2] = true;
+//            }
 
     }
+
+
 
     @Override
     public void onBackPressed() {
@@ -84,9 +84,9 @@ public class ScheduleTransportActivity extends AppCompatActivity {
     public void bindComponents(){
         this.currentTransport = (Transport) getIntent().getSerializableExtra("currentTransport");
         this.btnAddRide = findViewById(R.id.btn_add_ride);
-        this.imageButtonAlertRide = findViewById(R.id.img_status_ride);
-        this.imageButtonAlertVehicle = findViewById(R.id.img_status_ride);
-        this.imageButtonAlertDriver = findViewById(R.id.img_status_driver);
+//        this.imageButtonAlertRide = findViewById(R.id.img_status_ride);
+//        this.imageButtonAlertVehicle = findViewById(R.id.img_status_ride);
+//        this.imageButtonAlertDriver = findViewById(R.id.img_status_driver);
         this.textViewAddRide = findViewById(R.id.text_ride_details);
         this.textViewAddDriver = findViewById(R.id.text_driver_details);
         this.textViewAddVehicle = findViewById(R.id.text_vehicle_details);

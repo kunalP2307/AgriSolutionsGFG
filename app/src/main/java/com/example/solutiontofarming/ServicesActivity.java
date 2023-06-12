@@ -84,6 +84,11 @@ public class ServicesActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("Service");
     }
 
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(getApplicationContext(), HomeActivity.class));
+    }
+
     public void showProfileStatus(){
 
         FirebaseDatabase.getInstance().getReference("(Q2-2021)Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
@@ -126,7 +131,7 @@ public class ServicesActivity extends AppCompatActivity {
         imageViewLandService = findViewById(R.id.img_land_service);
         imageViewTransportService = findViewById(R.id.img_transport_service);
         textViewProfileDetails =findViewById(R.id.text_profile_detail);
-       // imageViewWarehouseService = findViewById(R.id.img_warehouse_service);
+        imageViewWarehouseService = findViewById(R.id.img_warehouse_service);
         imageViewAgriEquipmentService = findViewById(R.id.img_agri_equip_service);
     }
     public void addListeners(){
@@ -154,7 +159,12 @@ public class ServicesActivity extends AppCompatActivity {
             }
         });
 
-
+        imageViewWarehouseService.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), WareHouseServiceActivity.class));
+            }
+        });
 
         imageViewProfileStatus.setOnClickListener(new View.OnClickListener() {
             @Override

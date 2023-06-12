@@ -58,7 +58,7 @@ public class HomeActivity extends AppCompatActivity {
     public LocationManager locationManager;
     public LocationListener locationListener = new HomeActivity.MyLocationListener();
     String lat, lon, address;
-
+    Button buttonReadMooreNews;
     private boolean gps_enable = false;
     private boolean network_enable = false;
     Geocoder geocoder;
@@ -140,8 +140,9 @@ public class HomeActivity extends AppCompatActivity {
         Log.d("TAG", "onCreate: JsonObject"+object);
     }
     private void bindComponents(){
-        textViewMoreNews = findViewById(R.id.textv_more);
-        imageViewHomeNews = findViewById(R.id.img_home_news);
+//        textViewMoreNews = findViewById(R.id.textv_more);
+//        imageViewHomeNews = findViewById(R.id.img_home_news);
+        buttonReadMooreNews = findViewById(R.id.btn_home_news_read_more);
         textViewAddress = findViewById(R.id.text_address_for_temp);
         textViewTemperature = findViewById(R.id.text_tempreture);
         //textViewTemperature.setTextSize(70);
@@ -151,14 +152,14 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void addListeners(){
-        textViewMoreNews.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(HomeActivity.this, ExploreActivity.class);
-                startActivity(intent);
-            }
-        });
-        imageViewHomeNews.setOnClickListener(new View.OnClickListener() {
+//        textViewMoreNews.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(HomeActivity.this, ExploreActivity.class);
+//                startActivity(intent);
+//            }
+//        });
+        buttonReadMooreNews.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(HomeActivity.this, HomeNewsActivity.class);

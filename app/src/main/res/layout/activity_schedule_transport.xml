@@ -10,7 +10,6 @@
     tools:context=".ScheduleTransportActivity">
 
     <ScrollView
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -19,6 +18,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:padding="@dimen/_16sdp">
+
 
             <TextView
                 android:id="@+id/textViewTitle"
@@ -116,6 +116,17 @@
                     android:layout_marginTop="@dimen/_8sdp" />
 
             </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_add_ride"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:backgroundTint="@color/darkYellow"
+                android:text="Continue" />
 
         </LinearLayout>
     </ScrollView>
