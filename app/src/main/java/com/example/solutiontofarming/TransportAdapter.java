@@ -9,15 +9,15 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.solutiontofarming.data.Transport;
+import com.example.solutiontofarming.data.TransportRide;
+import com.example.solutiontofarming.data.TransportRide;
 
 import java.util.ArrayList;
 
 public class TransportAdapter extends BaseAdapter {
     Context context;
-    ArrayList<Transport> transportList;
-
-    public TransportAdapter(Context context,ArrayList<Transport> transportList){
+    ArrayList<TransportRide> transportList;
+    public TransportAdapter(Context context,ArrayList<TransportRide> transportList){
         this.context = context;
         this.transportList = transportList;
     }
@@ -44,7 +44,7 @@ public class TransportAdapter extends BaseAdapter {
             convertView = LayoutInflater.from(context).inflate(R.layout.ride_row,parent,false);
         }
 
-        Transport currTransport = (Transport)getItem(position);
+        TransportRide currTransport = (TransportRide)getItem(position);
         TextView textViewSource = (TextView) convertView.findViewById(R.id.text_field_area);
         TextView textViewDestination = (TextView) convertView.findViewById(R.id.scheduled_ride_destination);
         TextView textViewLoad = (TextView) convertView.findViewById(R.id.text_field_type);
@@ -59,23 +59,23 @@ public class TransportAdapter extends BaseAdapter {
             textView.setVisibility(View.VISIBLE);
         }*/
 
-        textViewDateTime.setText(currTransport.getRideDate());
-        textViewSource.setText(currTransport.getSourceAddress());
-        textViewDestination.setText(currTransport.getDestinationAddress());
-        textViewLoad.setText(currTransport.getAvailableLoad());
-        textViewPrice.setText(currTransport.getPricePerKm());
+        textViewDateTime.setText(currTransport.getWhen().getDate());
+        textViewSource.setText(currTransport.getSource().getAddress());
+        textViewDestination.setText(currTransport.getDestination().getAddress());
+        textViewLoad.setText(currTransport.getVehicle().getAvailableLimit() + " "+currTransport.getVehicle().getWeightUnit());
+//        textViewPrice.setText(currTransport.getFare().getPricePerKm());
 
-        String rideProviderId = currTransport.getRideProviderId();
-        int length = rideProviderId.length();
-
-        char ch = rideProviderId.charAt(length-1);
-
-        if(ch == 'F'){
-            ImageView imageView = convertView.findViewById(R.id.img_profile_status_in_transport);
-            TextView textView = convertView.findViewById(R.id.text_profile_status_in_transport);
-            imageView.setVisibility(View.VISIBLE);
-            textView.setVisibility(View.VISIBLE);
-        }
+//        String rideProviderId = currTransport.getRideProviderId();
+//        int length = rideProviderId.length();
+//
+//        char ch = rideProviderId.charAt(length-1);
+//
+//        if(ch == 'F'){
+//            ImageView imageView = convertView.findViewById(R.id.img_profile_status_in_transport);
+//            TextView textView = convertView.findViewById(R.id.text_profile_status_in_transport);
+//            imageView.setVisibility(View.VISIBLE);
+//            textView.setVisibility(View.VISIBLE);
+//        }
 
         return convertView;
     }

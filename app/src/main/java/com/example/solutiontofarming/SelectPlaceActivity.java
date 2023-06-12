@@ -50,7 +50,7 @@ public class SelectPlaceActivity extends AppCompatActivity {
         editTextAddress.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Places.initialize(getApplicationContext(),"API_KEY");
+                Places.initialize(getApplicationContext(),"AIzaSyBgXbVJEa9ev4akoZhezFVYeGfneYbHlRQ");
                 List<Place.Field> fieldList = Arrays.asList(Place.Field.ADDRESS
                         ,Place.Field.LAT_LNG, Place.Field.NAME);
 

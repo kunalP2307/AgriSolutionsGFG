@@ -10,6 +10,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.solutiontofarming.data.Transport;
+import com.example.solutiontofarming.data.TransportRide;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +18,7 @@ import java.util.List;
 public class ShowMyRidesActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
     final String TAG = "ShowMyRidesActivity";
-    List<Transport> allRides,myRides;
+    List<TransportRide> allRides,myRides;
     String userId;
     TransportAdapter transportAdapter;
     ListView listViewMyRides;
@@ -28,13 +29,13 @@ public class ShowMyRidesActivity extends AppCompatActivity implements AdapterVie
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_my_rides);
 
-        allRides = (List<Transport>) getIntent().getSerializableExtra("availableRides");
+        allRides = (List<TransportRide>) getIntent().getSerializableExtra("availableRides");
         userId = getIntent().getStringExtra("userId");
         initMyRides();
 
         if(!(myRides.size()==0)) {
             listViewMyRides = findViewById(R.id.list_my_rides);
-            transportAdapter = new TransportAdapter(this, (ArrayList<Transport>) myRides);
+            transportAdapter = new TransportAdapter(this, (ArrayList<TransportRide>) myRides);
             listViewMyRides.setAdapter(transportAdapter);
             listViewMyRides.setOnItemClickListener(this);
         }else{
@@ -48,13 +49,13 @@ public class ShowMyRidesActivity extends AppCompatActivity implements AdapterVie
 
     public void initMyRides(){
 
-        myRides = new ArrayList<Transport>();
-
-        for(int i=0; i<allRides.size(); i++){
-            if(allRides.get(i).getRideProviderId().contains(userId)){
-                myRides.add(allRides.get(i));
-            }
-        }
+        myRides = new ArrayList<TransportRide>();
+//
+//        for(int i=0; i<allRides.size(); i++){
+//            if(allRides.get(i).getRideProviderId().contains(userId)){
+//                myRides.add(allRides.get(i));
+//            }
+//        }
 
         Log.d(TAG, "initMyRides: myRIdes Count "+myRides.size());
 

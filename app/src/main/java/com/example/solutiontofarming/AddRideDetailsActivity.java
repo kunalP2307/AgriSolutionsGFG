@@ -27,6 +27,7 @@ import android.widget.Toast;
 
 import com.example.solutiontofarming.data.Address;
 import com.example.solutiontofarming.data.Extras;
+import com.example.solutiontofarming.data.Fare;
 import com.example.solutiontofarming.data.ID;
 import com.example.solutiontofarming.data.RideTime;
 import com.example.solutiontofarming.data.Transport;
@@ -63,8 +64,7 @@ public class AddRideDetailsActivity extends AppCompatActivity implements DatePic
     int myday, myMonth, myYear, myHour, myMinute;
 
     CheckBox checkBoxFlexWithDate, checkBoxFlexWithTime,checkBoxOnDemandFareAva;
-
-    String flexWithDays = "NA";
+    String flexWithDays = "NA", onDemandFare = "NA";
 
     Address source, destination;
     int PLACE_PICKER_REQUEST = 1;
@@ -75,7 +75,7 @@ public class AddRideDetailsActivity extends AppCompatActivity implements DatePic
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_ride_details);
-        Places.initialize(getApplicationContext(),"API_KEY");
+        Places.initialize(getApplicationContext(),"AIzaSyBgXbVJEa9ev4akoZhezFVYeGfneYbHlRQ");
 
         getUserId();
         bindComponents();
@@ -171,7 +171,6 @@ public class AddRideDetailsActivity extends AppCompatActivity implements DatePic
             }
         });
     }
-
 
     private void showDialogForFlexWithDate(){
         if(checkBoxFlexWithDate.isChecked()) {
@@ -302,6 +301,17 @@ public class AddRideDetailsActivity extends AppCompatActivity implements DatePic
                 flexWithTime
         );
         transportRide.setWhen(rideTime);
+
+        if(checkBoxOnDemandFareAva.isChecked())
+            onDemandFare = "Yes";
+
+        Fare fare = new Fare(
+                editTextPricePerKM.getText().toString(),
+                onDemandFare
+        );
+
+        transportRide.setFare(fare);
+
     }
 
     //-------- FIREBASE-------------
