@@ -85,11 +85,13 @@ public class SendVerifyOtpActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(verifyOtp(editTextOtp.getText().toString())){
-                    Intent intent = new Intent(getApplicationContext(), RideAddedActivity.class);
+                    Intent intent = new Intent(getApplicationContext(), AddTransportRideActivity.class);
+                    intent.putExtra("EXTRA_RIDE_OBJ", transportRide);
                     startActivity(intent);
                 }
                 else{
-                    editTextOtp.setError("E");
+                    editTextOtp.setError("Invalid Otp");
+                    editTextOtp.requestFocus();
                 }
             }
         });

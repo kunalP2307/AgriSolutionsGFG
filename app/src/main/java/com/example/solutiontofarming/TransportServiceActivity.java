@@ -94,16 +94,6 @@ public class TransportServiceActivity extends AppCompatActivity {
     }
 
 
-
-
-
-
-
-
-
-
-
-
     // Firebase
     public void initRides(){
         FirebaseDatabase.getInstance().getReference("Transport-Rides").addValueEventListener(new ValueEventListener() {
