@@ -1,224 +1,380 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".ShowRideDetailsActivity">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="@dimen/_16sdp"
+        android:paddingBottom="@dimen/_16sdp">
 
-    <TextView
-        android:id="@+id/textView11"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="30dp"
-        android:textSize="19dp"
-        android:text="DATE TIME"
-        android:textColor="@color/colorAccent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <LinearLayout
 
-    <TextView
-        android:id="@+id/textView28"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="13dp"
-        android:text="Source Address"
-        android:textColor="@color/colorAccent"
-        android:textSize="19dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_ride_details_time" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/_7sdp">
 
-    <TextView
-        android:id="@+id/textView31"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="13dp"
-        android:text="Destination Address"
-        android:textColor="@color/colorAccent"
-        android:textSize="19dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_ride_details_source" />
 
-    <TextView
-        android:id="@+id/textView35"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="13dp"
-        android:text="Vehicle Type"
-        android:textColor="@color/colorAccent"
-        android:textSize="19dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_ride_details_view_route" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@drawable/section_background"
+                android:elevation="@dimen/_5sdp"
+                android:padding="16dp"
+                android:layout_marginBottom="@dimen/_10sdp">
+                <TextView
+                    android:id="@+id/title_ride"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Ride Details"
+                    android:textSize="@dimen/_18sdp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:shadowColor="@color/white"
+                    android:shadowDx="1"
+                    android:shadowDy="2"
+                    android:shadowRadius="1"/>
+                <TextView
+                    android:id="@+id/textSource"
+                    android:textSize="@dimen/_16sdp"
+                    android:textColor="@color/Brown"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Source" />
 
-    <TextView
-        android:id="@+id/textView36"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:text="Available Load"
-        android:textColor="@color/colorAccent"
-        android:textSize="19dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_view_ride_details_vehicle_type" />
+                <TextView
+                    android:id="@+id/text_ride_details_source"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nbold" android:textSize="@dimen/_16sdp"  android:layout_marginVertical="@dimen/_5sdp"
+                    android:background="@drawable/textview_border"
+                    android:text="" />
 
-    <TextView
-        android:id="@+id/textView38"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="13dp"
-        android:text="PRICE/KM"
-        android:textColor="@color/colorAccent"
-        android:textSize="19dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_view_ride_details_available_load" />
+                <TextView
+                    android:id="@+id/textDest"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Destination"
+                    android:textSize="@dimen/_16sdp"
+                    android:textColor="@color/Brown"
+                    />
 
-    <TextView
-        android:id="@+id/textView37"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="13dp"
-        android:text="Driver Name"
-        android:textColor="@color/colorAccent"
-        android:textSize="19dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_ride_details_price_per_km" />
+                <TextView
+                    android:id="@+id/text_ride_details_destination"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black" android:textSize="@dimen/_16sdp"  android:layout_marginVertical="@dimen/_5sdp"
+                    android:fontFamily="@font/nbold"
+                    android:background="@drawable/textview_border"
+                    android:text="" />
 
-    <TextView
-        android:id="@+id/text_ride_details_view_route"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
-        android:layout_marginEnd="40dp"
-        android:text="@string/viewroute"
-        android:textColor="#2196F3"
-        android:textSize="19dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_ride_details_destination" />
+                <TextView
+                    android:id="@+id/text_ride_details_view_route"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="View Route On Map >>"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/_15sdp"
+                    android:textColor="@color/darkGreen"
+                    />
 
-    <TextView
-        android:id="@+id/text_ride_details_date"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-     
-        android:layout_marginTop="10dp"
-        android:text=""
-        android:textSize="23dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
-    <TextView
-        android:id="@+id/text_ride_details_time"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+            </LinearLayout>
 
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:text=""
-        android:textSize="23dp"
-        app:layout_constraintStart_toEndOf="@+id/text_ride_details_date"
-        app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
-    <TextView
-        android:id="@+id/text_ride_details_source"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:text=""
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"  android:background="@drawable/section_background"
+                android:elevation="@dimen/_5sdp"
+                android:padding="16dp"
+                android:layout_marginBottom="@dimen/_10sdp">
+                <TextView
+                    android:id="@+id/title_schedule"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Scheduled On"
+                    android:textSize="@dimen/_18sdp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:shadowColor="@color/white"
+                    android:shadowDx="0"
+                    android:shadowDy="2"
+                    android:shadowRadius="1"/>
 
-        android:textSize="24dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView28" />
+                <TextView
+                    android:id="@+id/text_ride_details_driver_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Date"
+                    android:textSize="@dimen/_16sdp"
+                    android:textColor="@color/Brown"
+                    />
 
-    <TextView
-        android:id="@+id/text_ride_details_destination"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:text=""
-        android:textSize="24dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView31" />
+                <TextView
+                    android:id="@+id/text_ride_details_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nbold"
+                    android:layout_marginVertical="@dimen/_5sdp"
+                    android:background="@drawable/textview_border" android:textSize="@dimen/_16sdp"
 
-    <TextView
-        android:id="@+id/text_view_ride_details_vehicle_type"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:text=""
+                    android:text="" />
+                <TextView
+                    android:id="@+id/textTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Time"
+                    android:hint="Enter time"
+                    android:textSize="@dimen/_16sdp"
+                    android:textColor="@color/Brown"/>
 
-        android:textSize="24dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView35" />
+                <TextView
+                    android:id="@+id/text_ride_details_time"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nbold"
+                    android:background="@drawable/textview_border"  android:textSize="@dimen/_16sdp"
+                    android:layout_marginVertical="@dimen/_5sdp"  android:text="testing" />
 
-    <TextView
-        android:id="@+id/text_view_ride_details_available_load"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="13dp"
-        android:text=""
+                <CheckBox
+                    android:id="@+id/chk_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Flexible with Date" />
 
-        android:textSize="24dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView36" />
+                <CheckBox
+                    android:id="@+id/chk_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Flexible with Time" />
 
-    <TextView
-        android:id="@+id/text_ride_details_price_per_km"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:text=""
+            </LinearLayout>
 
-        android:textSize="24dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView38" />
 
-    <TextView
-        android:id="@+id/text_ride_details_driver_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:textSize="24dp"
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"  android:background="@drawable/section_background"
+                android:elevation="@dimen/_15sdp"
+                android:padding="16dp"
+                android:layout_marginBottom="@dimen/_10sdp">
+                <TextView
+                    android:id="@+id/title_vehicle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Vehicle Details"
+                    android:textSize="@dimen/_18sdp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:shadowColor="@color/white"
+                    android:shadowDx="0"
+                    android:shadowDy="2"
+                    android:shadowRadius="1"/>
 
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView37" />
+                <TextView
+                    android:id="@+id/textVehicleType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Vehicle Type"
+                    android:textSize="@dimen/_16sdp"
+                    android:textColor="@color/Brown"
+                    />
 
-    <Button
-        android:id="@+id/btn_view_ride_details_call"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="10dp"
-        android:backgroundTint="#2196F3"
-        android:text="Contact Driver"
-        app:layout_constraintEnd_toStartOf="@+id/btn_view_ride_details_get_this_ride"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_ride_details_driver_name" />
+                <TextView
+                    android:id="@+id/text_view_ride_details_vehicle_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nbold" android:textSize="@dimen/_16sdp"  android:layout_marginVertical="@dimen/_5sdp"
+                    android:background="@drawable/textview_border"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/textContainerType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Container Type"
+                    android:textSize="@dimen/_16sdp"
+                    android:textColor="@color/Brown"
+                    />
 
-    <Button
-        android:id="@+id/btn_view_ride_details_get_this_ride"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginEnd="20dp"
-        android:backgroundTint="#60E766"
-        android:text="Get This Ride"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btn_view_ride_details_call"
-        app:layout_constraintTop_toTopOf="@+id/btn_view_ride_details_call" />
+                <TextView
+                    android:id="@+id/text_view_ride_details_container_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nbold" android:textSize="@dimen/_16sdp"  android:layout_marginVertical="@dimen/_5sdp"
+                    android:background="@drawable/textview_border"
+                    android:text="" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"  android:background="@drawable/section_background"
+                android:elevation="@dimen/_15sdp"
+                android:padding="16dp"
+                android:layout_marginBottom="@dimen/_10sdp">
+                <TextView
+                    android:id="@+id/title_goods"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Goods Details"
+                    android:textSize="@dimen/_18sdp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:shadowColor="@color/white"
+                    android:shadowDx="0"
+                    android:shadowDy="2"
+                    android:shadowRadius="1"/>
+
+                <TextView
+                    android:id="@+id/textGoods"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/_16sdp"
+                    android:textColor="@color/Brown"
+
+                    android:text="Goods Being Transported" />
+
+                <TextView
+                    android:id="@+id/text_view_ride_details_goods_to_transport"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nbold" android:textSize="@dimen/_16sdp"
+                    android:background="@drawable/textview_border"
+                    android:layout_marginVertical="@dimen/_5sdp"
+                    android:text="" />
+                <TextView
+                    android:id="@+id/textSpaceAvailability"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/_16sdp"
+                    android:textColor="@color/Brown"
+
+                    android:text="Availability of Space" />
+
+                <TextView
+                    android:id="@+id/text_view_ride_details_available_load"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nbold"
+                    android:textSize="@dimen/_16sdp"
+                    android:layout_marginVertical="@dimen/_5sdp"
+                    android:background="@drawable/textview_border"
+                    android:text="" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/button_Check_Compatibility"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginHorizontal="@dimen/_60sdp"
+                    android:layout_marginTop="@dimen/_7sdp"
+                    android:background="@drawable/custom_button"
+                    android:fontFamily="@font/nbold"
+                    android:gravity="center"
+                    android:text="  Check Compatibility  " />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"  android:background="@drawable/section_background"
+                android:elevation="@dimen/_15sdp"
+                android:padding="16dp"
+                android:layout_marginBottom="@dimen/_10sdp">
+                <TextView
+                    android:id="@+id/title_fare"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Fare Details"
+                    android:textSize="@dimen/_18sdp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:shadowColor="@color/white"
+                    android:shadowDx="0"
+                    android:shadowDy="2"
+                    android:shadowRadius="1"/>
+
+                <TextView
+                    android:id="@+id/textPricePerKm"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/_16sdp"
+                    android:textColor="@color/Brown"
+
+                    android:text="Price per Km" />
+
+                <TextView
+                    android:id="@+id/text_ride_details_price_per_km"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/nbold"
+                    android:layout_marginVertical="@dimen/_5sdp"
+                    android:textSize="@dimen/_16sdp"
+                    android:background="@drawable/textview_border"
+                    android:text=""
+                    android:hint="perKm"/>
+
+                <CheckBox
+                    android:id="@+id/checkboxOnDemand"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="On-Demand Fare" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/_16sdp"  >
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_view_ride_details_get_this_ride"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+
+                    android:layout_weight="1"
+                    android:text=" Get Ride "
+                    android:background="@drawable/custom_button"
+                    android:fontFamily="@font/nbold"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_view_ride_details_call"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text=" Call Driver "    android:layout_marginLeft="@dimen/_4sdp"
+                    android:background="@drawable/custom_button"
+                    android:fontFamily="@font/nbold"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

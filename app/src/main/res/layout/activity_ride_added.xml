@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/greenGrey"
     tools:context=".RideAddedActivity">
 
     <TextView
@@ -15,7 +16,8 @@
         android:layout_marginLeft="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
-        android:textColor="@color/colorAccent"
+        android:textColor="@color/Brown"
+        android:fontFamily="@font/nbold"
         android:gravity="center_horizontal|center"
         android:text="Your Ride has been added to our portal, Now it will be visible to all users nearby you."
         android:textSize="25dp"
@@ -33,20 +35,21 @@
         android:layout_height="wrap_content"
         android:text="Know More!"
         android:textSize="18dp"
-        android:textColor="@color/teal_200"
+        android:textColor="@color/Brown"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
         app:layout_constraintVertical_bias="0.05" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_show_ride"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Show Now!"
-        app:backgroundTint="#4CAF50"
+        android:text=" Show Now "
+      android:background="@drawable/custom_button"
         android:textSize="25dp"
+        android:fontFamily="@font/nbold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
