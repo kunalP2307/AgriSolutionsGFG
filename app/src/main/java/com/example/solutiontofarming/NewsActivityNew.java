@@ -1,19 +1,24 @@
 package com.example.solutiontofarming;
 
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.widget.Toast;
 
 import com.android.volley.VolleyError;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 
@@ -40,13 +45,13 @@ public class NewsActivityNew extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news_new);
 
+
+
         verticalViewPager = (VerticalViewPager) findViewById(R.id.verticalViewPager);
 
 //        addDummyData();
 
         fetchOriginalData();
-
-
 
         //verticalViewPager.setAdapter((new ViewPagerAdapter(NewsActivityNew.this, sliderItems, titles, desc, newslinks, heads, verticalViewPager)));
 
@@ -67,14 +72,15 @@ public class NewsActivityNew extends AppCompatActivity {
                         JSONObject obj = (JSONObject) response.get(i);
 
                         String full_desc = obj.getString("news_description");
-                        String sub_desc = full_desc.substring(0, 300);
+                        String half_desc = cutDesc(full_desc);
+
 
                         String imageUrl = obj.getString("story_img_url");
-                        String updatedImageUrl = imageUrl.replace("width-160", "width-500")
-                                .replace("height-120", "height-360");
+                        String updatedImageUrl = imageUrl.replace("width-160", "width-490")
+                                .replace("height-120", "height-310");
 
                         titles.add(obj.getString("heading"));
-                        desc.add(sub_desc);
+                        desc.add(half_desc);
                         images.add(updatedImageUrl);
                         newslinks.add(obj.getString("story_link"));
 //                        heads.add(obj.getString("heading"));
@@ -101,6 +107,27 @@ public class NewsActivityNew extends AppCompatActivity {
             }
         });
 
+    }
+
+    private String cutDesc(String full_desc){
+
+        StringBuilder half_desc = new StringBuilder();
+
+        int numberOfWords = 90;
+
+        String[] desc_split = full_desc.split("\\s+");
+
+        int words_to_take = Math.min(numberOfWords, desc_split.length);
+
+        for(int i = 0; i < words_to_take; i++)
+        {
+            half_desc.append(desc_split[i]).append(" ");
+        }
+
+        String res_half_desc = half_desc.toString().trim();
+        res_half_desc += "...";
+
+        return res_half_desc;
     }
 
     private void addDummyData(){

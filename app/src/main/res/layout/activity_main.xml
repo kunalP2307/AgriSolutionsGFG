@@ -23,7 +23,7 @@
         tools:ignore="MissingConstraints" />
 
     <TextView
-        android:layout_width="276dp"
+        android:layout_width="wrap_content"
         android:layout_height="70dp"
         android:fontFamily="@font/nbold"
         android:shadowColor="@color/black"
@@ -45,13 +45,14 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="284dp"
-        android:layout_height="88dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:text="One Stop Solution to Farming Needs"
         android:textColor="#671507"
         android:textSize="30dp"
         android:textStyle="bold"
+        android:padding="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"

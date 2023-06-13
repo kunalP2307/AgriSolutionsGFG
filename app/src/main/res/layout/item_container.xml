@@ -23,7 +23,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
                 android:src="@drawable/ic_launcher_background"
-                android:scaleType="centerCrop"/>
+                android:scaleType="fitXY" />
 
             <TextView
                 android:id="@+id/tv_news_headline_item_container"
@@ -32,7 +32,7 @@
                 android:padding="2dp"
                 android:text="Headline"
                 android:textColor="@color/black"
-                android:textSize="20dp"
+                android:textSize="20sp"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginLeft="20dp"/>
@@ -44,7 +44,7 @@
                 android:padding="2dp"
                 android:textColor="@android:color/darker_gray"
                 android:text="Date"
-                android:textSize="10dp"
+                android:textSize="11sp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginBottom="20dp"
@@ -55,7 +55,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="2dp"
-                android:textSize="15dp"
+                android:textSize="15sp"
                 android:text="Description"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"/>
@@ -67,7 +67,7 @@
                 android:padding="2dp"
                 android:textColor="@android:color/darker_gray"
                 android:text="Swipe left to Read More..."
-                android:textSize="10dp"
+                android:textSize="11sp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="2dp"/>
@@ -83,7 +83,7 @@
             android:scaleType="centerCrop"/>
 
 
-        
+
         <TextView
             android:id="@+id/tv_tap_here_item_container"
             android:layout_width="match_parent"
@@ -93,12 +93,10 @@
             android:padding="2dp"
             android:textColor="@color/white"
             android:text="Tap Here to Read More >>>"
-            android:textSize="13dp"
+            android:textSize="13sp"
             android:layout_marginBottom="10dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"/>
-
-
 
     </androidx.cardview.widget.CardView>
 

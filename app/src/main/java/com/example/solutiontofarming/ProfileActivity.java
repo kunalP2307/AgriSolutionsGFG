@@ -69,7 +69,7 @@ public class ProfileActivity extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.navigation_explore:
-                        startActivity(new Intent(getApplicationContext(), ExploreActivity.class));
+                        startActivity(new Intent(getApplicationContext(), NewsActivityNew.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.navigation_more:

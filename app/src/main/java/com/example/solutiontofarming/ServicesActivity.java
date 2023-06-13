@@ -55,7 +55,7 @@ public class ServicesActivity extends AppCompatActivity {
                     case R.id.navigation_services:
                         return true;
                     case R.id.navigation_explore:
-                        startActivity(new Intent(getApplicationContext(), ExploreActivity.class));
+                        startActivity(new Intent(getApplicationContext(), NewsActivityNew.class));
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.navigation_more:
