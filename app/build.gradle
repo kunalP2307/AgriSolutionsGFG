@@ -69,4 +69,10 @@ dependencies {
     //for responsive designs dimention
     implementation 'com.intuit.sdp:sdp-android:1.1.0'
 
+    //for new News Activity
+    implementation 'androidx.cardview:cardview:1.0.0'
+
+    //For new News Image Loading
+    implementation 'com.github.bumptech.glide:glide:4.15.1'
+
 }
