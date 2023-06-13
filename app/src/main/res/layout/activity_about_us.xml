@@ -30,17 +30,14 @@
 
                 <TextView
                     android:id="@+id/tabout1"
-                    android:layout_width="220dp"
-                    android:layout_height="63dp"
-                    android:layout_marginStart="100dp"
-                    android:layout_marginTop="50dp"
-                    android:layout_marginEnd="0dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
                     android:fontFamily="@font/nbold"
-                    android:text="Our Mission "
+                    android:text="Our Mission"
                     android:textColor="@color/white"
-                    android:textSize="35dp"
-
-                    />
+                    android:gravity="center"
+                    android:textSize="@dimen/_30sdp" />
 
 
             </FrameLayout>
@@ -60,24 +57,23 @@
         <FrameLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:paddingBottom="20dp"
-            android:layout_marginTop="160dp"
-            android:layout_marginRight="20dp">
+            android:layout_marginHorizontal="@dimen/_20sdp"
+            android:layout_marginTop="@dimen/_170sdp"
+            android:layout_marginBottom="@dimen/_6sdp"
+            >
 
             <TextView
                 android:id="@+id/tcontact22"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="70dp"
-                android:layout_marginEnd="2dp"
-                android:fontFamily="@font/nmedium"
-                android:padding="8dp"
-                android:paddingEnd="8dp"
+                android:textAlignment="viewStart"
+                android:justificationMode="inter_word"
+                android:fontFamily="@font/nunito"
+                android:padding="@dimen/_6sdp"
+
                 android:text="@string/about1"
                 android:textColor="@color/Brown"
-                android:textSize="20sp"
+                android:textSize="@dimen/_16sdp"
                 android:textStyle="italic" />
 
 

@@ -1,11 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/greenGrey"
     tools:context=".AddAgriEquipment">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="10dp">
+
+
+
+
 
     <TextView
         android:id="@+id/textView3"
@@ -15,7 +26,6 @@
         android:layout_marginTop="40dp"
         android:text="Owner Name"
         android:textColor="@color/Brown"
-        android:textSize="20dp"
         android:fontFamily="@font/nbold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -28,7 +38,7 @@
         android:layout_marginTop="13dp"
         android:text="Owner Mobile"
         android:textColor="@color/Brown"
-        android:textSize="20dp"
+
         android:fontFamily="@font/nbold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_equip_owner_name" />
@@ -41,7 +51,6 @@
         android:layout_marginTop="13dp"
         android:text="Location"
         android:textColor="@color/Brown"
-        android:textSize="20dp"
         android:fontFamily="@font/nbold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_equip_owner_mobile_no" />
@@ -54,7 +63,6 @@
         android:layout_marginTop="13dp"
         android:text="Equipment Category"
         android:textColor="@color/Brown"
-        android:textSize="20dp"
         android:fontFamily="@font/nbold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_agri_equip_location" />
@@ -67,10 +75,21 @@
         android:layout_marginTop="13dp"
         android:text="Equipment Name"
         android:textColor="@color/Brown"
-        android:textSize="20dp"
         android:fontFamily="@font/nbold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/spin_agri_equip_cat" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="13dp"
+        android:text="Equipment Year Used"
+        android:textColor="@color/Brown"
+        android:fontFamily="@font/nbold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_agri_equip_name" />
 
     <TextView
         android:id="@+id/textView54"
@@ -80,10 +99,9 @@
         android:layout_marginTop="13dp"
         android:text="Rent Per Hour"
         android:textColor="@color/Brown"
-        android:textSize="20dp"
         android:fontFamily="@font/nbold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_agri_equip_name" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_agri_equip_year_used" />
 
     <TextView
         android:id="@+id/textView56"
@@ -91,17 +109,52 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="13dp"
-        android:text="Additional Details"
+        android:text="Available for rent "
         android:textColor="@color/Brown"
-        android:textSize="20dp"
         android:fontFamily="@font/nbold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_agri_equip_rent" />
 
-    <EditText
+        <TextView
+            android:id="@+id/textView57"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="13dp"
+            android:text="  From"
+            android:textColor="@color/Brown"
+            android:fontFamily="@font/nbold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView56" />
+
+        <TextView
+            android:id="@+id/textView58"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="13dp"
+            android:text="  To"
+            android:textColor="@color/Brown"
+            android:fontFamily="@font/nbold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_agri_euip_avialable_from" />
+        <TextView
+            android:id="@+id/textView59"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="13dp"
+            android:text="Additional Details"
+            android:textColor="@color/Brown"
+            android:fontFamily="@font/nbold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edit_agri_euip_avialable_to" />
+
+
+        <EditText
         android:id="@+id/edit_equip_owner_name"
         android:layout_width="0dp"
-        android:layout_height="33dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
@@ -109,7 +162,8 @@
         android:ems="10"
         android:textAlignment="center"
         android:inputType="textPersonName"
-        android:textSize="20dp"
+        android:textSize="18dp"
+        android:padding="6dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -118,7 +172,7 @@
     <EditText
         android:id="@+id/edit_equip_owner_mobile_no"
         android:layout_width="0dp"
-        android:layout_height="33dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
@@ -126,7 +180,8 @@
         android:ems="10"
         android:textAlignment="center"
         android:inputType="textPersonName"
-        android:textSize="20dp"
+        android:textSize="18dp"
+        android:padding="6dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -135,15 +190,16 @@
     <EditText
         android:id="@+id/edit_agri_equip_location"
         android:layout_width="0dp"
-        android:layout_height="33dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="13dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
         android:background="@drawable/custome_input"
         android:ems="10"
         android:textAlignment="center"
         android:inputType="textPersonName"
-        android:textSize="20dp"
+        android:textSize="18dp"
+        android:padding="6dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -152,7 +208,7 @@
     <EditText
         android:id="@+id/edit_agri_equip_name"
         android:layout_width="0dp"
-        android:layout_height="33dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
@@ -167,66 +223,139 @@
         app:layout_constraintTop_toBottomOf="@+id/textView53" />
 
     <EditText
-        android:id="@+id/edit_agri_equip_rent"
+        android:id="@+id/edit_agri_equip_year_used"
         android:layout_width="0dp"
-        android:layout_height="33dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
         android:background="@drawable/custome_input"
         android:ems="10"
-
         android:textAlignment="center"
-        android:inputType="textPersonName"
+        android:inputType="number"
         android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <EditText
+        android:id="@+id/edit_agri_equip_rent"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/custome_input"
+        android:ems="10"
+        android:textAlignment="center"
+        android:inputType="numberDecimal"
+        android:textSize="18dp"
+        android:padding="6dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView54" />
 
     <EditText
-        android:id="@+id/edit_agri_euip_details"
+        android:id="@+id/edit_agri_euip_avialable_from"
         android:layout_width="0dp"
-        android:layout_height="33dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
         android:background="@drawable/custome_input"
         android:ems="10"
         android:gravity="center"
-        android:inputType="textPersonName"
-        android:textSize="20dp"
+        android:inputType="date"
+        android:textSize="18dp"
+        android:padding="6dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView56" />
+        app:layout_constraintTop_toBottomOf="@+id/textView57" />
 
-    <Spinner
+        <EditText
+            android:id="@+id/edit_agri_euip_avialable_to"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/custome_input"
+            android:ems="10"
+            android:gravity="center"
+            android:inputType="date"
+            android:textSize="18dp"
+            android:padding="6dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView58" />
+        <EditText
+            android:id="@+id/edit_agri_euip_details"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/custome_input"
+            android:ems="10"
+            android:textAlignment="center"
+            android:inputType="textPersonName"
+            android:textSize="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView59" />
+
+        <CheckBox
+            android:id="@+id/check_flexible_renatl_term"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:checked="false"
+            android:layout_marginEnd="20dp"
+            android:text="Flexible with rental terms"
+            app:layout_constraintTop_toBottomOf="@id/edit_agri_euip_details"/>
+
+
+
+        <Spinner
         android:id="@+id/spin_agri_equip_cat"
         android:layout_width="0dp"
-        android:layout_height="33dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:background="@drawable/custome_input"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
         android:textAlignment="center"
+        android:textSize="18dp"
+        android:padding="6dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView52" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_add_agri_equip"
-        android:layout_width="334dp"
-        android:layout_height="44dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="20dp"
-        android:background="@drawable/custom_button"
-        android:backgroundTint="@color/darkYellow"
-        android:fontFamily="@font/nbold"
-        android:text="Add This Equipment"
-        android:textSize="26dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_agri_euip_details" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_add_agri_equip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:background="@drawable/custom_button"
+            android:fontFamily="@font/nbold"
+            android:text=" Add This Equipment "
+            android:textAllCaps="false"
+            android:textSize="18dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/check_flexible_renatl_term" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

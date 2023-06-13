@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -24,7 +25,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:background="@drawable/section_background"
-                android:elevation="@dimen/_5sdp"
+
                 android:padding="16dp"
                 android:layout_marginBottom="@dimen/_10sdp">
                 <TextView
@@ -42,38 +43,83 @@
                     android:shadowRadius="1"/>
                 <TextView
                     android:id="@+id/textSource"
-                    android:textSize="@dimen/_16sdp"
+
                     android:textColor="@color/Brown"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+
                     android:text="Source" />
 
-                <TextView
-                    android:id="@+id/text_ride_details_source"
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/black"
-                    android:fontFamily="@font/nbold" android:textSize="@dimen/_16sdp"  android:layout_marginVertical="@dimen/_5sdp"
-                    android:background="@drawable/textview_border"
-                    android:text="" />
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/text_ride_details_source"
+                        android:layout_width="@dimen/_240sdp"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_16sdp"
+                        android:layout_marginVertical="@dimen/_5sdp"
+                        android:background="@drawable/textview_border"
+                        android:paddingLeft="@dimen/_8sdp"
+                        android:paddingTop="@dimen/_2sdp"
+                        android:paddingBottom="@dimen/_2sdp"
+                        android:text="" />
+
+                    <ImageView
+                        android:id="@+id/img_view_loc_on_map_source"
+                        android:layout_width="47dp"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@id/text_ride_details_source"
+                        android:clickable="true"
+                        android:foreground="?attr/selectableItemBackgroundBorderless"
+                        android:padding="@dimen/_4sdp"
+                        android:src="@drawable/ic_location" />
+
+                </RelativeLayout>
 
                 <TextView
                     android:id="@+id/textDest"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Destination"
-                    android:textSize="@dimen/_16sdp"
+
                     android:textColor="@color/Brown"
                     />
 
-                <TextView
-                    android:id="@+id/text_ride_details_destination"
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/black" android:textSize="@dimen/_16sdp"  android:layout_marginVertical="@dimen/_5sdp"
-                    android:fontFamily="@font/nbold"
-                    android:background="@drawable/textview_border"
-                    android:text="" />
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/text_ride_details_destination"
+                        android:layout_width="@dimen/_240sdp"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_16sdp"
+                        android:layout_marginVertical="@dimen/_5sdp"
+                        android:background="@drawable/textview_border"
+                        android:paddingLeft="@dimen/_8sdp"
+                        android:paddingTop="@dimen/_2sdp"
+                        android:paddingBottom="@dimen/_2sdp"
+                        android:text="" />
+
+                    <ImageView
+                        android:id="@+id/img_view_loc_on_map_destn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="@dimen/_40sdp"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@id/text_ride_details_destination"
+                        android:clickable="true"
+                        android:foreground="?attr/selectableItemBackgroundBorderless"
+                        android:padding="@dimen/_4sdp"
+                        android:src="@drawable/ic_pin_location"
+                        android:contentDescription="Icon" />
+
+                </RelativeLayout>
+
 
                 <TextView
                     android:id="@+id/text_ride_details_view_route"
@@ -82,6 +128,7 @@
                     android:text="View Route On Map >>"
                     android:textAlignment="center"
                     android:textSize="@dimen/_15sdp"
+                    android:clickable="true"
                     android:textColor="@color/darkGreen"
                     />
 
@@ -93,7 +140,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"  android:background="@drawable/section_background"
-                android:elevation="@dimen/_5sdp"
+
                 android:padding="16dp"
                 android:layout_marginBottom="@dimen/_10sdp">
                 <TextView
@@ -111,23 +158,22 @@
                     android:shadowRadius="1"/>
 
                 <TextView
-                    android:id="@+id/text_ride_details_driver_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Date"
-                    android:textSize="@dimen/_16sdp"
                     android:textColor="@color/Brown"
-                    />
+                  />
 
                 <TextView
                     android:id="@+id/text_ride_details_date"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
-                    android:fontFamily="@font/nbold"
                     android:layout_marginVertical="@dimen/_5sdp"
                     android:background="@drawable/textview_border" android:textSize="@dimen/_16sdp"
-
+                    android:paddingLeft="@dimen/_8sdp"
+                    android:paddingTop="@dimen/_2sdp"
+                    android:paddingBottom="@dimen/_2sdp"
                     android:text="" />
                 <TextView
                     android:id="@+id/textTime"
@@ -135,17 +181,20 @@
                     android:layout_height="wrap_content"
                     android:text="Time"
                     android:hint="Enter time"
-                    android:textSize="@dimen/_16sdp"
+
                     android:textColor="@color/Brown"/>
 
                 <TextView
                     android:id="@+id/text_ride_details_time"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/_5sdp"
+                    android:background="@drawable/textview_border"
+                    android:text=""
                     android:textColor="@color/black"
-                    android:fontFamily="@font/nbold"
-                    android:background="@drawable/textview_border"  android:textSize="@dimen/_16sdp"
-                    android:layout_marginVertical="@dimen/_5sdp"  android:text="testing" />
+                    android:textSize="@dimen/_18sdp" android:paddingLeft="@dimen/_8sdp"
+                    android:paddingTop="@dimen/_2sdp"
+                    android:paddingBottom="@dimen/_2sdp"/>
 
                 <CheckBox
                     android:id="@+id/chk_date"
@@ -166,7 +215,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"  android:background="@drawable/section_background"
-                android:elevation="@dimen/_15sdp"
                 android:padding="16dp"
                 android:layout_marginBottom="@dimen/_10sdp">
                 <TextView
@@ -182,13 +230,12 @@
                     android:shadowDx="0"
                     android:shadowDy="2"
                     android:shadowRadius="1"/>
-
                 <TextView
                     android:id="@+id/textVehicleType"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Vehicle Type"
-                    android:textSize="@dimen/_16sdp"
+
                     android:textColor="@color/Brown"
                     />
 
@@ -197,15 +244,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
-                    android:fontFamily="@font/nbold" android:textSize="@dimen/_16sdp"  android:layout_marginVertical="@dimen/_5sdp"
+                android:textSize="@dimen/_18sdp"  android:layout_marginVertical="@dimen/_5sdp"
                     android:background="@drawable/textview_border"
-                    android:text="" />
+                    android:text=""
+                    android:paddingLeft="@dimen/_8sdp"
+                    android:paddingTop="@dimen/_2sdp"
+                    android:paddingBottom="@dimen/_2sdp" />
                 <TextView
                     android:id="@+id/textContainerType"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Container Type"
-                    android:textSize="@dimen/_16sdp"
                     android:textColor="@color/Brown"
                     />
 
@@ -214,9 +263,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
-                    android:fontFamily="@font/nbold" android:textSize="@dimen/_16sdp"  android:layout_marginVertical="@dimen/_5sdp"
+                   android:textSize="@dimen/_18sdp"  android:layout_marginVertical="@dimen/_5sdp"
                     android:background="@drawable/textview_border"
-                    android:text="" />
+                    android:text=""
+                    android:paddingLeft="@dimen/_8sdp"
+                    android:paddingTop="@dimen/_2sdp"
+                    android:paddingBottom="@dimen/_2sdp"/>
 
             </LinearLayout>
 
@@ -225,7 +277,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"  android:background="@drawable/section_background"
-                android:elevation="@dimen/_15sdp"
                 android:padding="16dp"
                 android:layout_marginBottom="@dimen/_10sdp">
                 <TextView
@@ -246,7 +297,6 @@
                     android:id="@+id/textGoods"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="@dimen/_16sdp"
                     android:textColor="@color/Brown"
 
                     android:text="Goods Being Transported" />
@@ -256,15 +306,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
-                    android:fontFamily="@font/nbold" android:textSize="@dimen/_16sdp"
+             android:textSize="@dimen/_18sdp"
                     android:background="@drawable/textview_border"
                     android:layout_marginVertical="@dimen/_5sdp"
-                    android:text="" />
+                    android:text=""
+                    android:paddingLeft="@dimen/_8sdp"
+                    android:paddingTop="@dimen/_2sdp"
+                    android:paddingBottom="@dimen/_2sdp"/>
                 <TextView
                     android:id="@+id/textSpaceAvailability"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="@dimen/_16sdp"
                     android:textColor="@color/Brown"
 
                     android:text="Availability of Space" />
@@ -275,10 +327,13 @@
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
                     android:fontFamily="@font/nbold"
-                    android:textSize="@dimen/_16sdp"
+                    android:textSize="@dimen/_18sdp"
                     android:layout_marginVertical="@dimen/_5sdp"
                     android:background="@drawable/textview_border"
-                    android:text="" />
+                    android:text=""
+                    android:paddingLeft="@dimen/_8sdp"
+                    android:paddingTop="@dimen/_2sdp"
+                    android:paddingBottom="@dimen/_2sdp"/>
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/button_Check_Compatibility"
@@ -289,6 +344,7 @@
                     android:layout_marginTop="@dimen/_7sdp"
                     android:background="@drawable/custom_button"
                     android:fontFamily="@font/nbold"
+                    android:textAllCaps="false"
                     android:gravity="center"
                     android:text="  Check Compatibility  " />
 
@@ -299,7 +355,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"  android:background="@drawable/section_background"
-                android:elevation="@dimen/_15sdp"
+
                 android:padding="16dp"
                 android:layout_marginBottom="@dimen/_10sdp">
                 <TextView
@@ -320,7 +376,7 @@
                     android:id="@+id/textPricePerKm"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="@dimen/_16sdp"
+
                     android:textColor="@color/Brown"
 
                     android:text="Price per Km" />
@@ -330,12 +386,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
-                    android:fontFamily="@font/nbold"
                     android:layout_marginVertical="@dimen/_5sdp"
-                    android:textSize="@dimen/_16sdp"
+                    android:textSize="@dimen/_18sdp"
                     android:background="@drawable/textview_border"
                     android:text=""
-                    android:hint="perKm"/>
+                    android:paddingLeft="@dimen/_8sdp"
+                    android:paddingTop="@dimen/_2sdp"
+                    android:paddingBottom="@dimen/_2sdp"/>
 
                 <CheckBox
                     android:id="@+id/checkboxOnDemand"
@@ -344,7 +401,50 @@
                     android:text="On-Demand Fare" />
 
             </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"  android:background="@drawable/section_background"
 
+                android:padding="16dp"
+                android:layout_marginBottom="@dimen/_10sdp">
+                <TextView
+                    android:id="@+id/title_driver"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Driver Details"
+                    android:textSize="@dimen/_18sdp"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:textAlignment="center"
+                    android:shadowColor="@color/white"
+                    android:shadowDx="0"
+                    android:shadowDy="2"
+                    android:shadowRadius="1"/>
+
+                <TextView
+                    android:id="@+id/textdriver"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/Brown"
+                    android:text="Driver Name" />
+
+                <TextView
+                    android:id="@+id/text_ride_details_driver_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:layout_marginVertical="@dimen/_5sdp"
+                    android:textSize="@dimen/_18sdp"
+                    android:background="@drawable/textview_border"
+                    android:text=""
+                    android:paddingLeft="@dimen/_8sdp"
+                    android:paddingTop="@dimen/_2sdp"
+                    android:paddingBottom="@dimen/_2sdp"/>
+
+
+
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -357,7 +457,7 @@
                     android:id="@+id/btn_view_ride_details_get_this_ride"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-
+android:textAllCaps="false"
                     android:layout_weight="1"
                     android:text=" Get Ride "
                     android:background="@drawable/custom_button"
@@ -370,6 +470,7 @@
                     android:layout_weight="1"
                     android:text=" Call Driver "    android:layout_marginLeft="@dimen/_4sdp"
                     android:background="@drawable/custom_button"
+                    android:textAllCaps="false"
                     android:fontFamily="@font/nbold"/>
 
             </LinearLayout>

@@ -20,7 +20,7 @@
 
         android:textColor="@color/Brown"
         android:fontFamily="@font/nbold"
-        android:textSize="25dp"
+        android:textSize="@dimen/_18sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.3"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,7 +33,7 @@
         android:layout_marginTop="30dp"
         android:text="Know More!"
         android:textColor="@color/Brown"
-        android:textSize="18dp"
+        android:textSize="@dimen/_16sdp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
@@ -44,7 +44,8 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="124dp"
         android:text=" Show Now "
-        android:textSize="25dp"
+        android:textAllCaps="false"
+        android:textSize="@dimen/_18sdp"
         android:fontFamily="@font/nbold"
        android:background="@drawable/custom_button"
         app:layout_constraintBottom_toBottomOf="parent"

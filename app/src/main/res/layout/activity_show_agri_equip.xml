@@ -1,159 +1,387 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:background="@color/white"
+    tools:context=".ShowAgriEquipmentActivity">
+<ScrollView
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ShowAgriEquipmentActivity">
+    android:paddingTop="@dimen/_16sdp"
+    android:paddingBottom="@dimen/_16sdp">
 
-    <TextView
-        android:id="@+id/text_equip_category"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:text=""
-        android:textSize="24dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView57" />
+    <LinearLayout
 
-    <TextView
-        android:id="@+id/text_equip_name"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="13dp"
-        android:text=""
-        android:textSize="24dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView58" />
+        android:orientation="vertical"
+        android:padding="@dimen/_7sdp">
 
-    <TextView
-        android:id="@+id/text_equip_rent_hour"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="13dp"
-        android:text=""
-        android:textSize="24dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_equip_rent" />
 
-    <TextView
-        android:id="@+id/text_equip_details"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:text=""
-        android:textSize="24dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_equip_rent2" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/section_background"
 
-    <TextView
-        android:id="@+id/text_equip_location"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:text=""
-        android:textSize="24dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView60" />
+            android:padding="16dp"
+            android:layout_marginBottom="@dimen/_10sdp">
+            <TextView
+                android:id="@+id/title_owner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Owner Details"
+                android:textSize="@dimen/_18sdp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:shadowColor="@color/white"
+                android:shadowDx="1"
+                android:shadowDy="2"
+                android:shadowRadius="1"/>
+            <TextView
+                android:id="@+id/textSource"
 
-    <TextView
-        android:id="@+id/text_equip_owner_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:text=""
-        android:textSize="24dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView61" />
+                android:textColor="@color/Brown"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
 
-    <TextView
-        android:id="@+id/textView57"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="30dp"
-        android:text="Equipment Category"
-        android:textColor="@color/colorAccent"
-        android:textSize="19dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+                android:text="Name" />
 
-    <TextView
-        android:id="@+id/textView58"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="13dp"
-        android:text="Equipment Name"
-        android:textColor="@color/colorAccent"
-        android:textSize="19dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_equip_category" />
 
-    <TextView
-        android:id="@+id/text_equip_rent"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="13dp"
-        android:text="Rent Per Hour"
-        android:textColor="@color/colorAccent"
-        android:textSize="19dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_equip_name" />
 
-    <TextView
-        android:id="@+id/text_equip_rent2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="13dp"
-        android:text="Addition Details"
-        android:textColor="@color/colorAccent"
-        android:textSize="19dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_equip_rent_hour" />
+                <TextView
+                    android:id="@+id/text_equip_owner_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_16sdp"
+                    android:layout_marginVertical="@dimen/_5sdp"
+                    android:background="@drawable/textview_border"
+                    android:paddingLeft="@dimen/_8sdp"
+                    android:paddingTop="@dimen/_2sdp"
+                    android:paddingBottom="@dimen/_2sdp"
+                    android:text="" />
 
-    <TextView
-        android:id="@+id/textView60"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="13dp"
-        android:text="Location"
-        android:textColor="@color/colorAccent"
-        android:textSize="19dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_equip_details" />
 
-    <TextView
-        android:id="@+id/textView61"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="13dp"
-        android:text="Owner"
-        android:textColor="@color/colorAccent"
-        android:textSize="19dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_equip_location" />
 
-    <Button
-        android:id="@+id/btn_call_equi_owner"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="80dp"
-        android:layout_marginEnd="20dp"
-        android:text="Call Owner"
-        android:textSize="26dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_equip_owner_name" />
+
+            <TextView
+                android:id="@+id/textDest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Contact No."
+
+                android:textColor="@color/Brown"
+                />
+            <TextView
+                android:id="@+id/text_equip_contact"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:background="@drawable/textview_border" android:textSize="@dimen/_16sdp"
+                android:paddingLeft="@dimen/_8sdp"
+                android:paddingTop="@dimen/_2sdp"
+                android:paddingBottom="@dimen/_2sdp"
+                android:text="" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Location "
+                android:textColor="@color/Brown"
+                />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/text_equip_location"
+                    android:layout_width="@dimen/_240sdp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_16sdp"
+                    android:layout_marginVertical="@dimen/_5sdp"
+                    android:background="@drawable/textview_border"
+                    android:paddingLeft="@dimen/_8sdp"
+                    android:paddingTop="@dimen/_2sdp"
+                    android:paddingBottom="@dimen/_2sdp"
+                    android:text="" />
+
+                <ImageView
+                    android:id="@+id/img_view_loc_on_map_destn"
+                    android:layout_width="@dimen/_38sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_centerVertical="true"
+                    android:layout_toEndOf="@id/text_equip_location"
+                    android:clickable="true"
+
+                    android:padding="@dimen/_4sdp"
+                    android:src="@drawable/ic_pin_location"
+                    android:contentDescription="Icon" />
+
+            </RelativeLayout>
+
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"  android:background="@drawable/section_background"
+
+            android:padding="16dp"
+            android:layout_marginBottom="@dimen/_10sdp">
+            <TextView
+                android:id="@+id/title_quipment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Equipment Details"
+                android:textSize="@dimen/_18sdp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:shadowColor="@color/white"
+                android:shadowDx="0"
+                android:shadowDy="2"
+                android:shadowRadius="1"/>
+
+            <TextView
+                android:id="@+id/textCategory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Category"
+                android:textColor="@color/Brown"
+                />
+
+            <TextView
+                android:id="@+id/text_equip_category"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:background="@drawable/textview_border" android:textSize="@dimen/_16sdp"
+                android:paddingLeft="@dimen/_8sdp"
+                android:paddingTop="@dimen/_2sdp"
+                android:paddingBottom="@dimen/_2sdp"
+                android:text="" />
+            <TextView
+                android:id="@+id/textEquipName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Name"
+
+                android:textColor="@color/Brown"/>
+
+            <TextView
+                android:id="@+id/text_equip_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:background="@drawable/textview_border"
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="@dimen/_18sdp" android:paddingLeft="@dimen/_8sdp"
+                android:paddingTop="@dimen/_2sdp"
+                android:paddingBottom="@dimen/_2sdp"/>
+            <TextView
+                android:id="@+id/textYrUsed"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Years Used"
+                android:hint="Enter time"
+
+                android:textColor="@color/Brown"/>
+
+            <TextView
+                android:id="@+id/text_equip_year_used"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:background="@drawable/textview_border"
+
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="@dimen/_18sdp" android:paddingLeft="@dimen/_8sdp"
+                android:paddingTop="@dimen/_2sdp"
+                android:paddingBottom="@dimen/_2sdp"/>
+            <TextView
+                android:id="@+id/textAddintional"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Additional details"
+
+                android:textColor="@color/Brown"/>
+
+            <TextView
+                android:id="@+id/text_equip_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:background="@drawable/textview_border"
+
+                android:text=""
+                android:textColor="@color/black"
+                android:textSize="@dimen/_18sdp" android:paddingLeft="@dimen/_8sdp"
+                android:paddingTop="@dimen/_2sdp"
+                android:paddingBottom="@dimen/_2sdp"/>
+
+
+        </LinearLayout>
+
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"  android:background="@drawable/section_background"
+            android:padding="16dp"
+            android:layout_marginBottom="@dimen/_10sdp">
+            <TextView
+                android:id="@+id/title_avail_rent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Available For Rent"
+                android:textSize="@dimen/_18sdp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:shadowColor="@color/white"
+                android:shadowDx="0"
+                android:shadowDy="2"
+                android:shadowRadius="1"/>
+
+            <TextView
+                android:id="@+id/textFrom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/Brown"
+
+                android:text="From" />
+
+            <TextView
+                android:id="@+id/text_equip_avail_from"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+             android:textSize="@dimen/_18sdp"
+                android:background="@drawable/textview_border"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:text=""
+                android:paddingLeft="@dimen/_8sdp"
+                android:paddingTop="@dimen/_2sdp"
+                android:paddingBottom="@dimen/_2sdp"/>
+            <TextView
+                android:id="@+id/textTo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/Brown"
+
+                android:text="To" />
+
+            <TextView
+                android:id="@+id/text_equip_avail_to"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+
+                android:textSize="@dimen/_18sdp"
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:background="@drawable/textview_border"
+                android:text=""
+                android:paddingLeft="@dimen/_8sdp"
+                android:paddingTop="@dimen/_2sdp"
+                android:paddingBottom="@dimen/_2sdp"/>
+
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"  android:background="@drawable/section_background"
+
+            android:padding="16dp"
+            android:layout_marginBottom="@dimen/_10sdp">
+            <TextView
+                android:id="@+id/title_rent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Rent Details"
+                android:textSize="@dimen/_18sdp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:shadowColor="@color/white"
+                android:shadowDx="0"
+                android:shadowDy="2"
+                android:shadowRadius="1"/>
+
+            <TextView
+                android:id="@+id/textRent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:textColor="@color/Brown"
+
+                android:text="Rent per hour" />
+
+            <TextView
+                android:id="@+id/text_equip_rent_hour"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+
+                android:layout_marginVertical="@dimen/_5sdp"
+                android:textSize="@dimen/_18sdp"
+                android:background="@drawable/textview_border"
+                android:text=""
+                android:paddingLeft="@dimen/_8sdp"
+                android:paddingTop="@dimen/_2sdp"
+                android:paddingBottom="@dimen/_2sdp"/>
+
+            <CheckBox
+                android:id="@+id/checkboxOnDemand"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+            android:checked="false"
+                android:text="On-Demand Fare" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/_16sdp"  >
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_call_equi_owner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text=" Call Driver "
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:layout_marginLeft="@dimen/_4sdp"
+                android:layout_marginHorizontal="@dimen/_20sdp"
+                android:background="@drawable/custom_button"
+                android:textAllCaps="false"
+                android:fontFamily="@font/nbold"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

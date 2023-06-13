@@ -11,6 +11,9 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+        <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -26,15 +29,14 @@
 
                 <TextView
                     android:id="@+id/label1"
-                    android:layout_width="220dp"
-                    android:layout_height="63dp"
-                    android:layout_marginStart="100dp"
-                    android:layout_marginTop="50dp"
-                    android:layout_marginEnd="0dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
                     android:fontFamily="@font/nbold"
-                    android:text="My Address "
+                    android:text="My Address"
                     android:textColor="@color/white"
-                    android:textSize="35dp"
+                    android:gravity="center"
+                    android:textSize="@dimen/_30sdp"
 
                     />
 
@@ -52,28 +54,26 @@
 
 
             </FrameLayout>
+
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:focusable="true"
                 android:focusableInTouchMode="true"
-                android:layout_marginTop="0dp"
-                app:boxBackgroundMode="none"
-                android:layout_marginBottom="5dp"
-                >
+                android:layout_marginTop="@dimen/_10sdp"
+                android:padding="@dimen/_6sdp">
+
                 <EditText
                     android:id="@+id/state"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="8dp"
                     android:background="@drawable/custome_input"
-                    android:drawablePadding="12dp"
-                    android:ems="10"
                     android:hint="State"
                     android:inputType="text"
-                    android:padding="15dp"
-                    android:textSize="20dp" />
+
+                    android:textSize="@dimen/_18sdp" />
             </com.google.android.material.textfield.TextInputLayout>
+
 
 
 
@@ -82,8 +82,8 @@
                 android:layout_height="wrap_content"
                 android:focusable="true"
                 android:focusableInTouchMode="true"
-                android:layout_marginTop="5dp"
-                app:boxBackgroundMode="none"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:padding="@dimen/_6sdp"
                 >
 
                 <EditText
@@ -92,13 +92,10 @@
                     android:id="@+id/city"
                     android:hint="City"
                     android:background="@drawable/custome_input"
-                    android:drawablePadding="12dp"
-                    android:padding="15dp"
-                    android:layout_margin="8dp"
-                    android:ems="10"
+
 
                     android:inputType="text"
-                    android:textSize="20dp"
+                    android:textSize="@dimen/_18sdp"
 
                     />
             </com.google.android.material.textfield.TextInputLayout>
@@ -108,8 +105,8 @@
                 android:layout_height="wrap_content"
                 android:focusable="true"
                 android:focusableInTouchMode="true"
-                android:layout_marginTop="5dp"
-                app:boxBackgroundMode="none"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:padding="@dimen/_6sdp"
                 >
 
                 <EditText
@@ -118,12 +115,10 @@
                     android:id="@+id/area"
                     android:hint="Area"
                     android:background="@drawable/custome_input"
-                    android:drawablePadding="12dp"
-                    android:padding="15dp"
-                    android:layout_margin="8dp"
-                    android:ems="10"
+                    android:ems="1"
                     android:inputType="text"
-                    android:textSize="20dp"
+                    android:textSize="@dimen/_18sdp"
+
 
                     />
             </com.google.android.material.textfield.TextInputLayout>
@@ -132,8 +127,8 @@
                 android:layout_height="wrap_content"
                 android:focusable="true"
                 android:focusableInTouchMode="true"
-                android:layout_marginTop="5dp"
-                app:boxBackgroundMode="none"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:padding="@dimen/_6sdp"
                 >
 
                 <EditText
@@ -142,12 +137,9 @@
                     android:id="@+id/houseNo"
                     android:hint="House No, Building Name"
                     android:background="@drawable/custome_input"
-                    android:drawablePadding="12dp"
-                    android:padding="15dp"
-                    android:layout_margin="8dp"
                     android:ems="10"
                     android:inputType="text"
-                    android:textSize="20dp"
+                    android:textSize="@dimen/_18sdp"
 
                     />
             </com.google.android.material.textfield.TextInputLayout>
@@ -156,8 +148,8 @@
                 android:layout_height="wrap_content"
                 android:focusable="true"
                 android:focusableInTouchMode="true"
-                android:layout_marginTop="5dp"
-                app:boxBackgroundMode="none"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:padding="@dimen/_6sdp"
                 >
 
                 <EditText
@@ -166,34 +158,33 @@
                     android:id="@+id/lmark"
                     android:hint="Landmark"
                     android:background="@drawable/custome_input"
-                    android:drawablePadding="12dp"
-                    android:padding="15dp"
-                    android:layout_margin="8dp"
                     android:ems="10"
                     android:inputType="text"
-                    android:textSize="20dp"
+                    android:textSize="@dimen/_18sdp"
 
                     />
             </com.google.android.material.textfield.TextInputLayout>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/bsave"
-                android:layout_width="200dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="20sp"
-                android:textStyle="bold"
-                android:text="Save Address"
-                android:textColor="@color/black"
+
+                android:text=" Save Address "
+                android:textAllCaps="false"
+
                 android:background="@drawable/custom_button"
                 android:fontFamily="@font/nbold"
-                android:textSize="15dp"  />
-
+                android:textSize="@dimen/_18sdp"
+                android:layout_marginBottom="@dimen/_10sdp"/>
 
 
         </LinearLayout>
 
 
+    </ScrollView>
 
     </FrameLayout>
 </RelativeLayout>

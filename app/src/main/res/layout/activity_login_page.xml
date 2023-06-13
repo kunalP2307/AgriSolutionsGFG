@@ -72,12 +72,14 @@ android:orientation="vertical">
         <EditText
             android:drawableStart="@drawable/ic_email"
             android:id="@+id/text_log_email"
-            android:padding="10dp"
+            android:padding="@dimen/_10sdp"
             android:background="@drawable/custome_input"
             android:drawablePadding="12dp"
+            android:fontFamily="@font/nunito"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
+            android:textSize="@dimen/_18sdp"
             android:hint="Email" />
 
         <EditText
@@ -85,12 +87,14 @@ android:orientation="vertical">
 
             android:drawableStart="@drawable/ic_password"
             android:id="@+id/text_log_password"
-            android:padding="10dp"
+            android:padding="@dimen/_10sdp"
             android:inputType="textPassword"
             android:background="@drawable/custome_input"
             android:layout_width="match_parent"
+            android:fontFamily="@font/nunito"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
+            android:textSize="@dimen/_18sdp"
             android:hint="Password"
             />
 
@@ -124,7 +128,7 @@ android:orientation="vertical">
             android:textColor="@color/black"
             android:background="@drawable/custom_button"
             android:fontFamily="@font/nbold"
-            android:textSize="16dp" />
+            android:textSize="@dimen/_18sdp" />
 
         <Button
             android:id="@+id/label_forgot_pass"

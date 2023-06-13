@@ -55,13 +55,13 @@
         </LinearLayout>
 
         <LinearLayout
+            android:orientation="vertical"
+            android:layout_gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:orientation="vertical"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginTop="55dp">
+            android:layout_marginRight="25dp"
+            android:layout_marginTop="@dimen/_55sdp"
+            android:layout_marginLeft="25dp">>
 
             <EditText
                 android:id="@+id/text_doc_no"
@@ -70,10 +70,10 @@
                 android:layout_margin="8dp"
                 android:background="@drawable/custome_input"
                 android:drawableStart="@drawable/ic_name"
-
                 android:drawablePadding="12dp"
                 android:hint="Name"
-                android:padding="15dp" />
+                android:textSize="@dimen/_18sdp"
+                android:padding="@dimen/_10sdp" />
 
             <EditText
                 android:id="@+id/text_phone"
@@ -83,8 +83,8 @@
                 android:background="@drawable/custome_input"
                 android:drawableStart="@drawable/ic_call"
                 android:drawablePadding="12dp"
-                android:hint="Phone Number"
-                android:padding="15dp" />
+                android:hint="Phone Number"  android:textSize="@dimen/_18sdp"
+                android:padding="@dimen/_10sdp" />
 
             <EditText
                 android:id="@+id/text_email"
@@ -95,7 +95,8 @@
                 android:drawableStart="@drawable/ic_email"
                 android:drawablePadding="12dp"
                 android:hint="Email"
-                android:padding="15dp" />
+                android:textSize="@dimen/_18sdp"
+                android:padding="@dimen/_10sdp" />
 
             <EditText
                 android:id="@+id/text_password"
@@ -106,8 +107,8 @@
                 android:drawableStart="@drawable/ic_password"
                 android:drawablePadding="12dp"
                 android:inputType="textPassword"
-                android:hint="Password"
-                android:padding="15dp" />
+                android:hint="Password"  android:textSize="@dimen/_18sdp"
+                android:padding="@dimen/_10sdp"/>
 
             <EditText
                 android:id="@+id/text_cnf_password"
@@ -118,14 +119,14 @@
                 android:drawableStart="@drawable/ic_password"
                 android:drawablePadding="12dp"
                 android:inputType="textPassword"
-                android:hint="Confirm Password"
-                android:padding="15dp" />
+                android:hint="Confirm Password"  android:textSize="@dimen/_18sdp"
+                android:padding="@dimen/_10sdp"/>
 
             <ProgressBar
                 android:id="@+id/spin_weight_unit"
                 style="?android:attr/progressBarStyle"
                 android:layout_width="match_parent"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="@dimen/_10sdp"
                 android:layout_height="wrap_content" />
 
             <androidx.appcompat.widget.AppCompatButton
@@ -134,12 +135,10 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="20sp"
-                android:textStyle="bold"
                 android:text="Sign Up"
-                android:textColor="@color/black"
                 android:background="@drawable/custom_button"
                 android:fontFamily="@font/nbold"
-                android:textSize="15dp"  />
+                android:textSize="@dimen/_18sdp"  />
             <TextView
                 android:id="@+id/textUid"
                 android:layout_width="match_parent"
