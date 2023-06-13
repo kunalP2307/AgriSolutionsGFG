@@ -22,6 +22,9 @@
         android:theme="@style/Theme.SolutionToFarming"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".AddWareHouseActivity"
+            android:exported="false" />
+        <activity
             android:name=".WareHouseServiceActivity"
             android:exported="false" />
         <activity
