@@ -16,7 +16,7 @@ import org.json.JSONObject;
 public class DemoFetchNews {
     private static final String TAG = DemoFetchNews.class.getSimpleName();
     private RequestQueue requestQueue;
-    private static final String API_URL = "http://34.135.102.197:7000/find-latest/agri_news/10";
+    private static final String API_URL = "http://34.171.110.234:7000/find-latest/agri_news/10";
 
     public DemoFetchNews(Context context) {
         requestQueue = Volley.newRequestQueue(context.getApplicationContext());

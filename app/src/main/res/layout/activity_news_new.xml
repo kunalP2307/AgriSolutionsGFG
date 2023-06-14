@@ -8,6 +8,16 @@
     android:orientation="vertical"
     tools:context=".NewsActivityNew">
 
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer_activity_news_new"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include layout="@layout/layout_news_shimmer_effect"/>
+
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
     <com.example.solutiontofarming.VerticalViewPager
         android:id="@+id/verticalViewPager"
         android:layout_width="match_parent"

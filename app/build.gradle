@@ -75,4 +75,7 @@ dependencies {
     //For new News Image Loading
     implementation 'com.github.bumptech.glide:glide:4.15.1'
 
+    //For Shimmer Loading Effect
+    implementation 'com.facebook.shimmer:shimmer:0.1.0@aar'
+
 }

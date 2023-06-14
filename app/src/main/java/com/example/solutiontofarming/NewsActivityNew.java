@@ -8,9 +8,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Toast;
 
 import com.android.volley.VolleyError;
+import com.facebook.shimmer.ShimmerFrameLayout;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import org.json.JSONArray;
@@ -36,8 +38,7 @@ public class NewsActivityNew extends AppCompatActivity {
 
     VerticalViewPager verticalViewPager;
 
-
-
+    ShimmerFrameLayout shimmer_layout;
 
 
     @Override
@@ -46,10 +47,11 @@ public class NewsActivityNew extends AppCompatActivity {
         setContentView(R.layout.activity_news_new);
 
 
-
         verticalViewPager = (VerticalViewPager) findViewById(R.id.verticalViewPager);
+        shimmer_layout = findViewById(R.id.shimmer_activity_news_new);
 
-//        addDummyData();
+        verticalViewPager.setVisibility(View.INVISIBLE);
+        shimmer_layout.startShimmerAnimation();
 
         fetchOriginalData();
 
@@ -92,6 +94,9 @@ public class NewsActivityNew extends AppCompatActivity {
                     {
                         sliderItems.add(new SliderItems(images.get(j)));
                     }
+
+                    shimmer_layout.stopShimmerAnimation();
+                    verticalViewPager.setVisibility(View.VISIBLE);
 
                     verticalViewPager.setAdapter((new ViewPagerAdapter(NewsActivityNew.this, sliderItems, titles, desc, newslinks, news_date, verticalViewPager)));
 
