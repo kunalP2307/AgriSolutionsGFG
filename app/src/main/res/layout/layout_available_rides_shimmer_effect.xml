@@ -24,7 +24,6 @@
         android:textSize="20dp"
         android:textStyle="bold"
         android:textColor="@color/colorAccent"
-        app:layout_constraintBottom_toTopOf="tp1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
