@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:visibility="gone"
     android:id="@+id/show_rides"
+    android:background="@color/greenGrey"
     tools:context=".ShowTransportActivity">
 
     <TextView

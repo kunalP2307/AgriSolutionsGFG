@@ -2,6 +2,7 @@ package com.example.solutiontofarming;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
 import android.media.Image;
@@ -25,7 +26,7 @@ import java.util.List;
 
 public class LandRentServiceActivity extends AppCompatActivity {
 
-    ImageView imageViewFindLand,imageViewAddLand,imageViewShowAllLand;
+    CardView cardFindLand,cardAddLand,cardShowAllLand;
     List<AgriculturalLand> landRendList = new ArrayList<>();
 
     @Override
@@ -38,11 +39,11 @@ public class LandRentServiceActivity extends AppCompatActivity {
 
     }
     public void addListeners(){
-        imageViewAddLand = findViewById(R.id.img_add_land_for_rent);
-        imageViewFindLand = findViewById(R.id.img_find_land_for_rent);
-        //imageViewShowAllLand = findViewById(R.id.img_show_all_lands);
+        cardAddLand = findViewById(R.id.card_rent_land);
+        cardFindLand = findViewById(R.id.card_borrow_land);
+        cardShowAllLand = findViewById(R.id.card_my_land);
 
-        imageViewAddLand.setOnClickListener(new View.OnClickListener() {
+        cardAddLand.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),AddAgriLandActivity.class);
@@ -50,7 +51,7 @@ public class LandRentServiceActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        imageViewFindLand.setOnClickListener(new View.OnClickListener() {
+        cardFindLand.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),ShowAvailableAgriLandsActivity.class);

@@ -42,7 +42,7 @@ public class ShowRideDetailsActivity extends AppCompatActivity {
         this.textViewTime = findViewById(R.id.text_ride_details_time);
         this.textViewPricePerKm = findViewById(R.id.text_ride_details_price_per_km);
         this.textViewAvailableLoad = findViewById(R.id.text_view_ride_details_available_load);
-        this.textViewDriverName = findViewById(R.id.text_ride_details_driver_name);
+//        this.textViewDriverName = findViewById(R.id.text_ride_details_driver_name);
         this.textViewVehicleType = findViewById(R.id.text_view_ride_details_vehicle_type);
         this.btnCall = findViewById(R.id.btn_view_ride_details_call);
         this.textViewRoute = findViewById(R.id.text_ride_details_view_route);
@@ -56,7 +56,7 @@ public class ShowRideDetailsActivity extends AppCompatActivity {
         //textViewPricePerKm.setText(transport.getFare().getPricePerKm());
         textViewVehicleType.setText(transport.getVehicle().getType());
         textViewAvailableLoad.setText(transport.getVehicle().getAvailableLimit());
-        textViewDriverName.setText(transport.getDriver().getName());
+//        textViewDriverName.setText(transport.getDriver().getName());
     }
 
     public void addListeners(){

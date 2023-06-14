@@ -111,7 +111,6 @@
                             android:layout_height="186dp"
                             android:layout_marginLeft="15dp"
                             android:layout_marginRight="15dp"
-
                             android:layout_marginTop="10dp"
                             app:srcCompat="@drawable/transportation" />
 
@@ -133,6 +132,14 @@
                             android:layout_marginRight="15dp"
                             android:layout_marginBottom="30dp"
                             app:srcCompat="@drawable/land" />
+                        <ImageView
+                            android:id="@+id/img_warehouse_service"
+                            android:layout_width="wrap_content"
+                            android:layout_height="186dp"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginRight="15dp"
+                            android:layout_marginBottom="30dp"
+                            app:srcCompat="@drawable/img_ware_house" />
 
                 </LinearLayout>
         </ScrollView>

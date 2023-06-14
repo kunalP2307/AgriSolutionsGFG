@@ -50,6 +50,7 @@ public class TransportAdapter extends BaseAdapter {
         TextView textViewLoad = (TextView) convertView.findViewById(R.id.text_field_type);
         TextView textViewPrice = (TextView) convertView.findViewById(R.id.text_field_rent);
         TextView textViewDateTime = (TextView) convertView.findViewById(R.id.text_field_location);
+        ImageView imageView = convertView.findViewById(R.id.imageView);
 
 
         /*if(position == 0 || position > 2)  {
@@ -60,8 +61,8 @@ public class TransportAdapter extends BaseAdapter {
         }*/
 
         textViewDateTime.setText(currTransport.getWhen().getDate());
-        textViewSource.setText(currTransport.getSource().getAddress());
-        textViewDestination.setText(currTransport.getDestination().getAddress());
+        textViewSource.setText(currTransport.getSource().getName());
+        textViewDestination.setText(currTransport.getDestination().getName());
         textViewLoad.setText(currTransport.getVehicle().getAvailableLimit() + " "+currTransport.getVehicle().getWeightUnit());
 //        textViewPrice.setText(currTransport.getFare().getPricePerKm());
 

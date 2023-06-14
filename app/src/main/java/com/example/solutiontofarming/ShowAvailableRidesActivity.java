@@ -2,6 +2,7 @@ package com.example.solutiontofarming;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,24 +11,36 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.Volley;
 import com.example.solutiontofarming.data.Address;
 import com.example.solutiontofarming.data.Transport;
 import com.example.solutiontofarming.data.TransportRide;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ShowAvailableRidesActivity extends AppCompatActivity implements AdapterView.OnItemClickListener{
+public class ShowAvailableRidesActivity extends AppCompatActivity {
 
     TransportAdapter transportAdapter;
     TextView textViewHeader;
     ListView listViewAvailableRides;
+    String GET_ALL_URL = "http://34.133.71.237:7000/find/user";
+    ProgressDialog dialog;
+    List<TransportRide> availableRides;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,7 +49,7 @@ public class ShowAvailableRidesActivity extends AppCompatActivity implements Ada
 
         //List<TransportRide> availableRides = (List<TransportRide>) getIntent().getSerializableExtra("availableRides");
 
-        List<TransportRide> availableRides = new ArrayList<>();
+        availableRides = new ArrayList<>();
         TransportRide transportRide;
 
         String jsonString = "{\n" +
@@ -80,9 +93,9 @@ public class ShowAvailableRidesActivity extends AppCompatActivity implements Ada
         JsonObject jsonObject = new Gson().fromJson(jsonString, JsonObject.class);
         transportRide = new Gson().fromJson(jsonObject, TransportRide.class);
 
-        availableRides.add(transportRide);
-        availableRides.add(transportRide);
-        availableRides.add(transportRide);
+//        availableRides.add(transportRide);
+//        availableRides.add(transportRide);
+//        availableRides.add(transportRide);
 
 
 //        String source = getIntent().getExtras().getString("source");
@@ -93,11 +106,26 @@ public class ShowAvailableRidesActivity extends AppCompatActivity implements Ada
 //            textViewHeader.setText(source+"  <->  "+destination+"   Date : "+date);
 //        }
 
-        listViewAvailableRides = findViewById(R.id.list_available_rides);
-        transportAdapter = new TransportAdapter(this, (ArrayList<TransportRide>) availableRides);
-        listViewAvailableRides.setAdapter(transportAdapter);
-        listViewAvailableRides.setOnItemClickListener(this);
+        Log.d("TAG", "onCreate: Before ");
         getSupportActionBar().setTitle("Available Rides");
+        setProgressDialog();
+        initJsonArray();
+
+         Log.d("TAG", "onCreate: size of List "+availableRides.size());
+        Log.d("TAG", "onCreate: After ");
+
+        listViewAvailableRides = findViewById(R.id.list_available_rides);
+        transportAdapter = new TransportAdapter(getApplicationContext(), (ArrayList<TransportRide>) availableRides);
+        listViewAvailableRides.setAdapter(transportAdapter);
+        listViewAvailableRides.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                TransportRide selectedRide = (TransportRide) transportAdapter.getItem(position);
+                Intent showRideDetailsIntent = new Intent(getApplicationContext(),ShowRideDetailsActivity.class);
+                showRideDetailsIntent.putExtra("EXTRA_SELECTED_RIDE",selectedRide);
+                startActivity(showRideDetailsIntent);
+            }
+        });
 
     }
 
@@ -108,14 +136,50 @@ public class ShowAvailableRidesActivity extends AppCompatActivity implements Ada
     }
 
 
+    private void setProgressDialog(){
+        dialog = new ProgressDialog(this);
+        dialog.setMessage("Loading..");
+        dialog.setCancelable(false);
+        dialog.setInverseBackgroundForced(false);
+        dialog.show();
+    }
+
+    private void initJsonArray(){
+        RequestQueue queue = Volley.newRequestQueue(ShowAvailableRidesActivity.this);
+
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, GET_ALL_URL, null, new Response.Listener<JSONArray>() {
+            @Override
+            public void onResponse(JSONArray response) {
+                dialog.hide();
+                for (int i = 0; i < response.length(); i++) {
+                    // creating a new json object and
+                    // getting each object from our json array.
+                    try {
+                        JSONObject responseObj = response.getJSONObject(i);
+
+                        JsonObject jsonObject = new Gson().fromJson(responseObj.toString(), JsonObject.class);
+                        TransportRide transportRide = new Gson().fromJson(jsonObject, TransportRide.class);
+                        availableRides.add(transportRide);
+                        transportAdapter.notifyDataSetChanged();
+                        Log.d("TAG", "onResponse:jsonObject "+responseObj.toString());
+                        Log.d("TAG", "onResponse:mapped Java "+transportRide.toString());
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+                Log.d("TAG", "onCreate: size of List in Request"+availableRides.size());
+
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(ShowAvailableRidesActivity.this, "Fail to get the data..", Toast.LENGTH_SHORT).show();
+            }
+        });
+        queue.add(jsonArrayRequest);
+    }
+
     private void getAllRides(){
 
-    }
-    @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        TransportRide selectedRide = (TransportRide) transportAdapter.getItem(position);
-        Intent showRideDetailsIntent = new Intent(getApplicationContext(),ShowRideDetailsActivity.class);
-        showRideDetailsIntent.putExtra("EXTRA_SELECTED_RIDE",selectedRide);
-        startActivity(showRideDetailsIntent);
     }
 }
