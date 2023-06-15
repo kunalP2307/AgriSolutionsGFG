@@ -24,7 +24,6 @@
             android:fontFamily="@font/nbold"
             android:text="Owner Name"
             android:textColor="@color/Brown"
-            android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -37,7 +36,6 @@
             android:fontFamily="@font/nbold"
             android:text="Owner Contact"
             android:textColor="@color/Brown"
-            android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edit_text_select_name_warehouse" />
 
@@ -50,7 +48,6 @@
             android:fontFamily="@font/nbold"
             android:text="Select Location"
             android:textColor="@color/Brown"
-            android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edit_text_select_contact_warehouse" />
 
@@ -63,7 +60,6 @@
             android:fontFamily="@font/nbold"
             android:text="Floor Space"
             android:textColor="@color/Brown"
-            android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edit_text_select_address_warehouse" />
 
@@ -76,7 +72,6 @@
             android:fontFamily="@font/nbold"
             android:text="Ceiling Height"
             android:textColor="@color/Brown"
-            android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edit_text_select_floor_space_warehouse" />
 
@@ -89,7 +84,6 @@
             android:fontFamily="@font/nbold"
             android:text="Fire Prevention System"
             android:textColor="@color/Brown"
-            android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edit_text_select_ceiling_height_warehouse" />
 
@@ -102,7 +96,6 @@
             android:fontFamily="@font/nbold"
             android:text="Transportation Access"
             android:textColor="@color/Brown"
-            android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edit_text_select_fire_prevention_system_warehouse" />
 
@@ -115,7 +108,6 @@
             android:fontFamily="@font/nbold"
             android:text="Transportation Access"
             android:textColor="@color/Brown"
-            android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edit_text_select_transportation_access_warehouse" />
 
@@ -128,7 +120,6 @@
             android:fontFamily="@font/nbold"
             android:text="Lease Term Duration"
             android:textColor="@color/Brown"
-            android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edit_text_select_road_conditions_warehouse" />
 
@@ -141,7 +132,6 @@
             android:fontFamily="@font/nbold"
             android:text="Lease Term Start Date"
             android:textColor="@color/Brown"
-            android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edit_text_select_lease_term_duration_warehouse" />
 
@@ -154,7 +144,6 @@
             android:fontFamily="@font/nbold"
             android:text="Lease Term End Date"
             android:textColor="@color/Brown"
-            android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edit_text_select_lease_term_start_date_warehouse" />
 
@@ -166,25 +155,23 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="12dp"
             android:fontFamily="@font/nbold"
-            android:text="Desciption(Optional)"
+            android:text="Rent"
             android:textColor="@color/Brown"
-            android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edit_text_select_lease_term_rent_amount_warehouse" />
+            app:layout_constraintTop_toBottomOf="@+id/edit_text_select_lease_term_end_date_warehouse" />
 
         <EditText
             android:id="@+id/edit_text_select_name_warehouse"
             android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="20dp"
+            android:layout_height="wrap_content"            android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="20dp"
             android:background="@drawable/custome_input"
             android:ems="10"
             android:inputType="textPersonName"
-            android:padding="10dp"
+            android:padding="6dp"
             android:textAlignment="viewStart"
-            android:textSize="20sp"
+            android:textSize="18dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -193,16 +180,16 @@
         <EditText
             android:id="@+id/edit_text_select_contact_warehouse"
             android:layout_width="0dp"
-            android:layout_height="48dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="20dp"
             android:background="@drawable/custome_input"
             android:ems="10"
             android:inputType="number"
-            android:padding="10dp"
+            android:padding="6dp"
             android:textAlignment="viewStart"
-            android:textSize="20sp"
+            android:textSize="18dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -211,16 +198,16 @@
         <EditText
             android:id="@+id/edit_text_select_address_warehouse"
             android:layout_width="0dp"
-            android:layout_height="48dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="20dp"
             android:background="@drawable/custome_input"
             android:ems="10"
             android:inputType="text"
-            android:padding="10dp"
+            android:padding="6dp"
             android:textAlignment="viewStart"
-            android:textSize="20sp"
+            android:textSize="18dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -229,15 +216,16 @@
         <EditText
             android:id="@+id/edit_text_select_floor_space_warehouse"
             android:layout_width="0dp"
-            android:layout_height="48dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="20dp"
             android:background="@drawable/custome_input"
             android:ems="10"
+            android:padding="6dp"
             android:inputType="numberDecimal"
             android:textAlignment="viewStart"
-            android:textSize="20sp"
+            android:textSize="18dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView50" />
@@ -245,15 +233,16 @@
         <EditText
             android:id="@+id/edit_text_select_ceiling_height_warehouse"
             android:layout_width="0dp"
-            android:layout_height="48dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="20dp"
             android:background="@drawable/custome_input"
             android:ems="10"
+            android:padding="6dp"
             android:inputType="numberDecimal"
             android:textAlignment="viewStart"
-            android:textSize="20sp"
+            android:textSize="18dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView87" />
@@ -276,9 +265,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:padding="10dp"
+                    android:padding="6dp"
                     android:text="Yes"
-                    android:textSize="20sp"
                     app:layout_constraintTop_toTopOf="@+id/textView31"
                     tools:layout_editor_absoluteX="180dp" />
 
@@ -288,9 +276,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
-                    android:padding="10dp"
+                    android:padding="6dp"
                     android:text="No"
-                    android:textSize="20sp"
                     app:layout_constraintTop_toBottomOf="@+id/textView31"
                     tools:layout_editor_absoluteX="58dp" />
 
@@ -316,9 +303,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:padding="10dp"
+                    android:padding="6dp"
                     android:text="Yes"
-                    android:textSize="20sp"
                     app:layout_constraintTop_toTopOf="@+id/textView13"
                     tools:layout_editor_absoluteX="180dp" />
 
@@ -328,9 +314,8 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
                     android:layout_marginEnd="20dp"
-                    android:padding="10dp"
+                    android:padding="6dp"
                     android:text="No"
-                    android:textSize="20sp"
                     app:layout_constraintTop_toBottomOf="@+id/textView13"
                     tools:layout_editor_absoluteX="58dp" />
 
@@ -341,16 +326,16 @@
         <EditText
             android:id="@+id/edit_text_select_road_conditions_warehouse"
             android:layout_width="0dp"
-            android:layout_height="48dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="20dp"
             android:background="@drawable/custome_input"
             android:ems="10"
             android:inputType="text"
-            android:padding="10dp"
+            android:textSize="18dp"
+            android:padding="6dp"
             android:textAlignment="viewStart"
-            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -359,16 +344,16 @@
         <EditText
             android:id="@+id/edit_text_select_lease_term_duration_warehouse"
             android:layout_width="0dp"
-            android:layout_height="48dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="20dp"
             android:background="@drawable/custome_input"
             android:ems="10"
             android:inputType="number"
-            android:padding="10dp"
+            android:padding="6dp"            android:textSize="18dp"
+
             android:textAlignment="viewStart"
-            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView15" />
@@ -376,47 +361,50 @@
         <EditText
             android:id="@+id/edit_text_select_lease_term_start_date_warehouse"
             android:layout_width="0dp"
-            android:layout_height="48dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="20dp"
             android:background="@drawable/custome_input"
             android:ems="10"
+            android:textSize="18dp"
+            android:padding="6dp"
+            android:inputType="date"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView17" />
 
         <EditText
-            android:id="@+id/edit_text_select_lease_term_rent_amount_warehouse"
+            android:id="@+id/edit_text_select_lease_term_end_date_warehouse"
             android:layout_width="0dp"
-            android:layout_height="48dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="20dp"
             android:background="@drawable/custome_input"
             android:ems="10"
             android:inputType="number"
-            android:padding="10dp"
+            android:padding="6dp"             android:textSize="18dp"
+
             android:textAlignment="viewStart"
-            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView22" />
 
         <EditText
-            android:id="@+id/edit_text_desciption_warehouse"
+            android:id="@+id/edit_text_rent"
             android:layout_width="0dp"
-            android:layout_height="48dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="20dp"
             android:background="@drawable/custome_input"
             android:ems="10"
             android:inputType="number"
-            android:padding="10dp"
+            android:padding="6dp"
+            android:textSize="18dp"
             android:textAlignment="viewStart"
-            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView11" />
@@ -430,14 +418,15 @@
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="60dp"
             android:text="Continue"
-            android:textColor="@color/white"
-            android:textAllCaps="false"
+            android:textColor="@color/black"
             android:textSize="18dp"
+
+            android:textAllCaps="false"
             android:backgroundTint="@color/darkYellow"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edit_text_desciption_warehouse" />
+            app:layout_constraintTop_toBottomOf="@+id/edit_text_rent" />
 
 
 

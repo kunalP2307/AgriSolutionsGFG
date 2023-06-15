@@ -15,7 +15,8 @@
         android:layout_marginEnd="30dp"
         android:layout_marginBottom="70dp"
         android:text="Search Ride"
-        android:textSize="26dp"
+        android:textSize="@dimen/_18sdp"
+        android:textAllCaps="false"
         android:background="@drawable/custom_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,12 +27,12 @@
         android:id="@+id/textView49"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_20sdp"
-        android:layout_marginTop="13dp"
-        android:text="DATE"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="12dp"
+        android:text="Date"
         android:textColor="@color/Brown"
         android:fontFamily="@font/nbold"
-        android:textSize="@dimen/_18sdp"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_destination_address_search" />
 
@@ -40,16 +41,14 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-
-        android:layout_marginTop="13dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="20dp"
         android:background="@drawable/custome_input"
-        android:gravity="center"
-
-
+        android:gravity="center_vertical"
         android:hint="Select Destination Address"
         android:textColor="@color/black"
-        android:textSize="25dp"
+        android:textSize="18dp"
+        android:padding="6dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -61,46 +60,61 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-
-        android:layout_marginTop="13dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="20dp"
         android:background="@drawable/custome_input"
-        android:gravity="center"
+        android:gravity="center_vertical"
         android:hint="Select Transport Date"
         android:textColor="@color/black"
-        android:textSize="25dp"
+        android:textSize="18dp"
         android:textStyle="bold"
+        android:padding="6dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView49" />
+    <CheckBox
+        android:id="@+id/check_box_flex_with_date_ride_search"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="20dp"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:scaleX="0.80"
+        android:scaleY="0.80"
+        android:text="Flexible With Date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_transport_date_search" />
 
     <ImageView
-        android:id="@+id/textView47"
+        android:id="@+id/imgView13"
         android:layout_width="@dimen/_18sdp"
-        android:layout_height="@dimen/_20sdp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/ic_addlocation_red"
+        android:layout_height="@dimen/_18sdp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/ic_location"
 
+        app:layout_constraintBottom_toBottomOf="@+id/textView46"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/edit_source_address_search" />
+        app:layout_constraintTop_toTopOf="@+id/textView46"
+        app:layout_constraintVertical_bias="1.0" />
 
     <EditText
         android:id="@+id/edit_source_address_search"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-
-        android:layout_marginTop="13dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="20dp"
+        android:padding="6dp"
         android:background="@drawable/custome_input"
-        android:gravity="center"
+        android:gravity="center_vertical"
 
         android:hint="Select Source Address"
 
         android:textColor="@color/black"
-        android:textSize="25dp"
+        android:textSize="18dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -108,27 +122,28 @@
         app:layout_constraintTop_toBottomOf="@+id/textView46" />
 
     <ImageView
-        android:id="@+id/imgView13"
+        android:id="@+id/textView47"
         android:layout_width="@dimen/_18sdp"
-        android:layout_height="@dimen/_20sdp"
-        android:layout_marginStart="24dp"
+        android:layout_height="@dimen/_18sdp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/ic_addlocation_red"
 
-        android:layout_marginTop="52dp"
-        android:background="@drawable/ic_location"
-
+        app:layout_constraintBottom_toBottomOf="@+id/textView48"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/textView48"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/textView46"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="40dp"
         android:fontFamily="@font/nbold"
-        android:text="FROM"
+        android:text="From"
+
         android:textColor="@color/Brown"
-        android:textSize="@dimen/_18sdp"
         app:layout_constraintStart_toEndOf="@+id/imgView13"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -136,12 +151,12 @@
         android:id="@+id/textView48"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="12dp"
         android:fontFamily="@font/nbold"
-        android:text="TO"
+        android:text="To"
         android:textColor="@color/Brown"
-        android:textSize="@dimen/_18sdp"
+
         app:layout_constraintStart_toEndOf="@+id/textView47"
         app:layout_constraintTop_toBottomOf="@+id/edit_source_address_search" />
 </androidx.constraintlayout.widget.ConstraintLayout>

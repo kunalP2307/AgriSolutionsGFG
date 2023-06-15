@@ -78,4 +78,9 @@ dependencies {
     //For Shimmer Loading Effect
     implementation 'com.facebook.shimmer:shimmer:0.1.0@aar'
 
+    implementation 'com.google.android.gms:play-services-maps:18.1.0'
+    implementation 'com.google.maps.android:android-maps-utils:2.3.0'
+
+
+    implementation 'com.google.maps:google-maps-services:2.2.0'
 }

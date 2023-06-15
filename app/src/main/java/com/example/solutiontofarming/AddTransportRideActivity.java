@@ -16,6 +16,7 @@ import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.HttpHeaderParser;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.solutiontofarming.data.Extras;
 import com.example.solutiontofarming.data.TransportRide;
 import com.google.gson.Gson;
 
@@ -28,9 +29,7 @@ public class AddTransportRideActivity extends AppCompatActivity {
 
     TransportRide transportRide;
     JSONObject jsonObjectTransportRide = null;
-
     ProgressDialog dialog;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,7 +65,7 @@ public class AddTransportRideActivity extends AppCompatActivity {
 
     private void addRide(){
         RequestQueue requestQueue = Volley.newRequestQueue(this);
-        String URL = "http://34.123.49.115:7000/insert-one/user";
+        String URL = "http://"+ Extras.VM_IP+":7000/insert-one/user";
 //            JSONObject jsonBody = new JSONObject();
 //            jsonBody.put("Title", "Android Volley Demo");
 //            jsonBody.put("Author", "BNK");
