@@ -331,82 +331,9 @@
                     android:text=""
                     android:textColor="@color/black"
                     android:textSize="@dimen/_16sdp" />
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/_10sdp"
-                android:background="@drawable/section_background"
-
-                android:orientation="vertical"
-                android:padding="16dp">
-
-                <TextView
-                    android:id="@+id/title_driver"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:shadowColor="@color/white"
-                    android:shadowDx="1"
-                    android:shadowDy="2"
-                    android:shadowRadius="1"
-                    android:text="Driver Details"
-                    android:textAlignment="center"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_18sdp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/textdriver"
-
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Name"
-
-                    android:textColor="@color/Brown" />
-
-
-                <TextView
-                    android:id="@+id/text_equip_driver_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginVertical="@dimen/_5sdp"
-                    android:background="@drawable/textview_border"
-                    android:paddingLeft="@dimen/_8sdp"
-                    android:paddingTop="@dimen/_2sdp"
-                    android:paddingBottom="@dimen/_2sdp"
-                    android:text=""
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_16sdp" />
-
-
-                <TextView
-                    android:id="@+id/textdrivercontact"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Contact No."
-
-                    android:textColor="@color/Brown" />
-
-                <TextView
-                    android:id="@+id/text_equip__driver_contact"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginVertical="@dimen/_5sdp"
-                    android:background="@drawable/textview_border"
-                    android:paddingLeft="@dimen/_8sdp"
-                    android:paddingTop="@dimen/_2sdp"
-                    android:paddingBottom="@dimen/_2sdp"
-                    android:text=""
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_16sdp" />
-
-
                 <androidx.appcompat.widget.AppCompatButton
 
-                    android:id="@+id/btn_call_driver"
+                    android:id="@+id/btn_call_equi_owner"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
@@ -417,15 +344,18 @@
                     android:fontFamily="@font/nbold"
                     android:gravity="center"
                     android:padding="6dp"
-                    android:text=" Call Driver "
+                    android:text=" Call Owner "
                     android:textAllCaps="false">
 
                 </androidx.appcompat.widget.AppCompatButton>
+
+
             </LinearLayout>
 
 
+
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_call_equi_owner"
+                android:id="@+id/btn_book_equip"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

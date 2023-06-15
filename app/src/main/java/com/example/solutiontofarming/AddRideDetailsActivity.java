@@ -153,6 +153,7 @@ public class AddRideDetailsActivity extends AppCompatActivity implements DatePic
                 month = calendar.get(Calendar.MONTH);
                 day = calendar.get(Calendar.DAY_OF_MONTH);
                 DatePickerDialog datePickerDialog = new DatePickerDialog(AddRideDetailsActivity.this,AddRideDetailsActivity.this::onDateSet,year, month,day);
+                datePickerDialog.getDatePicker().setMinDate(System.currentTimeMillis() - 1000);
                 datePickerDialog.show();
             }
         });

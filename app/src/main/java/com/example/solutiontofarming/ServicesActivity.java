@@ -106,7 +106,7 @@ public class ServicesActivity extends AppCompatActivity {
                 if(ch == 'F'){
                     textViewProfileStatus.setText(" VERIFIED ");
                     textViewProfileStatus.setBackgroundColor(Color.GREEN);
-                    imageViewProfileStatus.setImageResource(R.drawable.check);
+                    imageViewProfileStatus.setImageResource(R.drawable.img_check);
                     textViewProfileDetails.setText("Verified Profile");
                     Log.d(TAG, "onDataChange: verified");
                 }

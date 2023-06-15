@@ -53,7 +53,7 @@ public class ShowAvailableRidesActivity extends AppCompatActivity {
     TransportAdapter transportAdapter;
     TextView textViewHeader;
     ListView listViewAvailableRides;
-    String GET_ALL_URL = "http://"+ Extras.VM_IP +":7000/find/user";
+    String GET_ALL_URL = "http://"+ Extras.VM_IP +":7000/find/rides";
     ProgressDialog dialog;
     List<TransportRide> availableRides;
     final static double RADIUS_LIMIT = 10;

@@ -25,7 +25,6 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:background="@drawable/section_background"
-                android:elevation="@dimen/_5sdp"
                 android:padding="16dp"
                 android:layout_marginBottom="@dimen/_10sdp">
                 <TextView
@@ -43,7 +42,7 @@
                     android:shadowRadius="1"/>
                 <TextView
                     android:id="@+id/textSource"
-                    android:textSize="@dimen/_16sdp"
+
                     android:textColor="@color/Brown"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -53,17 +52,22 @@
                     android:id="@+id/text_ride_details_source"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/black"
-                    android:fontFamily="@font/nbold" android:textSize="@dimen/_16sdp"  android:layout_marginVertical="@dimen/_5sdp"
+                    android:layout_marginVertical="@dimen/_5sdp"
                     android:background="@drawable/textview_border"
-                    android:text="" />
+                    android:fontFamily="@font/nbold"
+                    android:paddingLeft="6dp"
+                    android:paddingTop="2dp"
+                    android:paddingBottom="2dp"
+                    android:text=""
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_16sdp" />
 
                 <TextView
                     android:id="@+id/textDest"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Destination"
-                    android:textSize="@dimen/_16sdp"
+
                     android:textColor="@color/Brown"
                     />
 
@@ -71,6 +75,9 @@
                     android:id="@+id/text_ride_details_destination"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:paddingLeft="6dp"
+                    android:paddingTop="2dp"
+                    android:paddingBottom="2dp"
                     android:textColor="@color/black" android:textSize="@dimen/_16sdp"  android:layout_marginVertical="@dimen/_5sdp"
                     android:fontFamily="@font/nbold"
                     android:background="@drawable/textview_border"
@@ -94,7 +101,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"  android:background="@drawable/section_background"
-                android:elevation="@dimen/_5sdp"
                 android:padding="16dp"
                 android:layout_marginBottom="@dimen/_10sdp">
                 <TextView
@@ -116,13 +122,16 @@
                     android:layout_height="wrap_content"
                     android:text="Date"
                     android:textColor="@color/Brown"
-                    android:textSize="@dimen/_16sdp" />
+                    />
 
                 <TextView
                     android:id="@+id/text_ride_details_date"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
+                    android:paddingLeft="6dp"
+                    android:paddingTop="2dp"
+                    android:paddingBottom="2dp"
                     android:fontFamily="@font/nbold"
                     android:layout_marginVertical="@dimen/_5sdp"
                     android:background="@drawable/textview_border" android:textSize="@dimen/_16sdp"
@@ -134,7 +143,6 @@
                     android:layout_height="wrap_content"
                     android:text="Time"
                     android:hint="Enter time"
-                    android:textSize="@dimen/_16sdp"
                     android:textColor="@color/Brown"/>
 
                 <TextView
@@ -144,22 +152,23 @@
                     android:layout_marginVertical="@dimen/_5sdp"
                     android:background="@drawable/textview_border"
                     android:fontFamily="@font/nbold"
-                    android:paddingLeft="8dp"
+                    android:paddingLeft="6dp"
                     android:paddingTop="2dp"
                     android:paddingBottom="2dp"
                     android:text="testing"
+
                     android:textColor="@color/black"
                     android:textSize="@dimen/_16sdp" />
 
                 <CheckBox
-                    android:id="@+id/chk_date"
+                    android:id="@+id/chk_flex_date_det"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:clickable="false"
                     android:text="Flexible with Date" />
 
                 <CheckBox
-                    android:id="@+id/chk_time"
+                    android:id="@+id/chk_flex_time_det"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:clickable="false"
@@ -172,7 +181,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"  android:background="@drawable/section_background"
-                android:elevation="@dimen/_15sdp"
                 android:padding="16dp"
                 android:layout_marginBottom="@dimen/_10sdp">
                 <TextView
@@ -194,7 +202,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Vehicle Type"
-                    android:textSize="@dimen/_16sdp"
                     android:textColor="@color/Brown"
                     />
 
@@ -203,6 +210,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
+                    android:paddingLeft="6dp"
+                    android:paddingTop="2dp"
+                    android:paddingBottom="2dp"
+
                     android:fontFamily="@font/nbold" android:textSize="@dimen/_16sdp"  android:layout_marginVertical="@dimen/_5sdp"
                     android:background="@drawable/textview_border"
                     android:text="" />
@@ -211,7 +222,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Container Type"
-                    android:textSize="@dimen/_16sdp"
                     android:textColor="@color/Brown"
                     />
 
@@ -219,6 +229,9 @@
                     android:id="@+id/text_view_ride_details_container_type"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:paddingLeft="6dp"
+                    android:paddingTop="2dp"
+                    android:paddingBottom="2dp"
                     android:textColor="@color/black"
                     android:fontFamily="@font/nbold" android:textSize="@dimen/_16sdp"  android:layout_marginVertical="@dimen/_5sdp"
                     android:background="@drawable/textview_border"
@@ -231,7 +244,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"  android:background="@drawable/section_background"
-                android:elevation="@dimen/_15sdp"
                 android:padding="16dp"
                 android:layout_marginBottom="@dimen/_10sdp">
                 <TextView
@@ -252,9 +264,7 @@
                     android:id="@+id/textGoods"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="@dimen/_16sdp"
                     android:textColor="@color/Brown"
-
                     android:text="Goods Being Transported" />
 
                 <TextView
@@ -262,6 +272,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
+                    android:paddingLeft="6dp"
+                    android:paddingTop="2dp"
+                    android:paddingBottom="2dp"
+
                     android:fontFamily="@font/nbold" android:textSize="@dimen/_16sdp"
                     android:background="@drawable/textview_border"
                     android:layout_marginVertical="@dimen/_5sdp"
@@ -270,9 +284,7 @@
                     android:id="@+id/textSpaceAvailability"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="@dimen/_16sdp"
                     android:textColor="@color/Brown"
-
                     android:text="Availability of Space" />
 
                 <TextView
@@ -280,6 +292,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
+                    android:paddingLeft="6dp"
+                    android:paddingTop="2dp"
+                    android:paddingBottom="2dp"
                     android:fontFamily="@font/nbold"
                     android:textSize="@dimen/_16sdp"
                     android:layout_marginVertical="@dimen/_5sdp"
@@ -291,8 +306,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginHorizontal="@dimen/_60sdp"
-                    android:layout_marginTop="@dimen/_7sdp"
+                    android:textColor="@color/white"
+                    android:textAllCaps="false"
                     android:background="@drawable/custom_button"
                     android:fontFamily="@font/nbold"
                     android:gravity="center"
@@ -305,7 +320,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"  android:background="@drawable/section_background"
-                android:elevation="@dimen/_15sdp"
                 android:padding="16dp"
                 android:layout_marginBottom="@dimen/_10sdp">
                 <TextView
@@ -326,7 +340,6 @@
                     android:id="@+id/textPricePerKm"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="@dimen/_16sdp"
                     android:textColor="@color/Brown"
 
                     android:text="Price per Km" />
@@ -337,6 +350,9 @@
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
                     android:fontFamily="@font/nbold"
+                    android:paddingLeft="6dp"
+                    android:paddingTop="2dp"
+                    android:paddingBottom="2dp"
                     android:layout_marginVertical="@dimen/_5sdp"
                     android:textSize="@dimen/_16sdp"
                     android:background="@drawable/textview_border"

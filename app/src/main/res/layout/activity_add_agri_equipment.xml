@@ -60,16 +60,17 @@
                     android:background="@drawable/custome_input"
                     android:gravity="center_vertical"
                     android:padding="6dp"
-                    android:textSize="18dp"
+                    android:textSize="18dp" android:layout_marginVertical="@dimen/_5sdp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent" />
+
 
                 <TextView
                     android:id="@+id/textView3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Equipment Name" />
-
+                    android:text="Equipment Name"
+                    android:textColor="@color/Brown" />
 
                 <EditText
                     android:id="@+id/edit_agri_equip_name"
@@ -254,7 +255,7 @@
                     android:textColor="@color/Brown" />
 
                 <EditText
-                    android:id="@+id/text_view_ride_details_vehicle_type"
+                    android:id="@+id/edit_agri_equip_location"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="@dimen/_5sdp"
@@ -327,69 +328,9 @@
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/_10sdp"
-                android:background="@drawable/section_background"
-                android:orientation="vertical"
-                android:padding="16dp">
-
-                <TextView
-                    android:id="@+id/title_"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:shadowColor="@color/white"
-                    android:shadowDx="0"
-                    android:shadowDy="2"
-                    android:shadowRadius="1"
-                    android:text="Driver Details"
-                    android:textAlignment="center"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_18sdp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/text_driver_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Name"
-                    android:textColor="@color/Brown" />
-
-                <EditText
-                    android:id="@+id/edit_equip_driver_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginVertical="@dimen/_5sdp"
-                    android:background="@drawable/custome_input"
-                    android:inputType="textPersonName"
-                    android:padding="6dp"     android:gravity="center_vertical"
-                    android:textColor="@color/black"
-                    android:textSize="18sp" />
-
-                <TextView
-                    android:id="@+id/text_driver_contact"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Contact"
-                    android:textColor="@color/Brown" />
-
-                <EditText
-                    android:id="@+id/edit_equip_driver_mobile_no"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginVertical="@dimen/_5sdp"
-                    android:background="@drawable/custome_input"
-                    android:inputType="phone"
-                    android:padding="6dp"     android:gravity="center_vertical"
-                    android:textColor="@color/black"
-                    android:textSize="18sp" />
-
-
-            </LinearLayout>
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_continue_equip_details"
+                android:id="@+id/btn_add_agri_equip"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

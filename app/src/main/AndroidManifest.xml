@@ -23,6 +23,12 @@
         android:theme="@style/Theme.SolutionToFarming"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".CropRecommendInputActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CropRecommendHomeActivity"
+            android:exported="false" />
+        <activity
             android:name=".ShowSearchedRidesActivity"
             android:exported="false" />
         <activity

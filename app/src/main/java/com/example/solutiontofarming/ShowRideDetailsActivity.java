@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -20,7 +21,9 @@ import java.util.List;
 
 public class ShowRideDetailsActivity extends AppCompatActivity {
 
-    TextView textViewDate,textViewTime,textViewSource,textViewDestination,textViewRoute,textViewVehicleType,textViewAvailableLoad,textViewPricePerKm,textViewDriverName;
+    TextView textViewDate,textViewTime,textViewSource,textViewDestination,textViewRoute,textViewVehicleType,textViewAvailableLoad,textViewPricePerKm,textViewDriverName,
+            textViewContainerType,textViewGoodsTransported,textViewFare;
+    CheckBox checkBoxFlexWithDate, checkBoxFlexWithTime,checkBoxOnDemandFare;
     Button btnCall,btnGetRide;
     TransportRide transport;
     @Override
@@ -47,15 +50,30 @@ public class ShowRideDetailsActivity extends AppCompatActivity {
         this.btnCall = findViewById(R.id.btn_view_ride_details_call);
         this.textViewRoute = findViewById(R.id.text_ride_details_view_route);
         this.btnGetRide = findViewById(R.id.btn_view_ride_details_get_this_ride);
+        textViewContainerType = findViewById(R.id.text_view_ride_details_container_type);
+        textViewGoodsTransported = findViewById(R.id.text_view_ride_details_goods_to_transport);
+        textViewFare = findViewById(R.id.text_ride_details_price_per_km);
+        checkBoxFlexWithDate = findViewById(R.id.chk_flex_date_det);
+        checkBoxFlexWithTime = findViewById(R.id.chk_flex_time_det);
+        checkBoxOnDemandFare = findViewById(R.id.checkboxOnDemand);
     }
     public void showRideDetails(){
-        textViewSource.setText(transport.getSource().getAddress());
-        textViewDestination.setText(transport.getDestination().getAddress());
+        textViewSource.setText(transport.getSource().getName());
+        textViewDestination.setText(transport.getDestination().getName());
         textViewDate.setText(transport.getWhen().getDate()+"  "+transport.getWhen().getTime());
-        //textViewTime.setText(transport.getRideTime());
-        //textViewPricePerKm.setText(transport.getFare().getPricePerKm());
+        textViewTime.setText(transport.getWhen().getTime());
         textViewVehicleType.setText(transport.getVehicle().getType());
-        textViewAvailableLoad.setText(transport.getVehicle().getAvailableLimit());
+        textViewAvailableLoad.setText(transport.getVehicle().getAvailableLimit()+ " "+transport.getVehicle().getWeightUnit());
+        textViewContainerType.setText(transport.getVehicle().getContainerType());
+        textViewGoodsTransported.setText(transport.getGoods().getName());
+        textViewFare.setText(transport.getFare().getPricePerKm());
+
+        if(transport.getWhen().getFlexWithDate().equals("Yes"))
+            checkBoxFlexWithDate.setChecked(true);
+        if(transport.getWhen().getFlexWithTime().equals("Yes"))
+            checkBoxFlexWithTime.setChecked(true);
+        if(transport.getFare().getOnDemandAvailable().equals("Yes"))
+            checkBoxOnDemandFare.setChecked(true);
 //        textViewDriverName.setText(transport.getDriver().getName());
     }
 
