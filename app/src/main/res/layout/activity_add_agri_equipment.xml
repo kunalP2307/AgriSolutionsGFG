@@ -4,229 +4,404 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/greenGrey"
+    android:background="@color/white"
     tools:context=".AddAgriEquipment">
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="40dp"
-        android:text="Owner Name"
-        android:textColor="@color/Brown"
-        android:textSize="20dp"
-        android:fontFamily="@font/nbold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="@dimen/_16sdp"
+        android:paddingBottom="@dimen/_10sdp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="30dp">
 
-    <TextView
-        android:id="@+id/textView51"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="13dp"
-        android:text="Owner Mobile"
-        android:textColor="@color/Brown"
-        android:textSize="20dp"
-        android:fontFamily="@font/nbold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_equip_owner_name" />
+        <LinearLayout
 
-    <TextView
-        android:id="@+id/textView55"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="13dp"
-        android:text="Location"
-        android:textColor="@color/Brown"
-        android:textSize="20dp"
-        android:fontFamily="@font/nbold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_equip_owner_mobile_no" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/_7sdp">
 
-    <TextView
-        android:id="@+id/textView52"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="13dp"
-        android:text="Equipment Category"
-        android:textColor="@color/Brown"
-        android:textSize="20dp"
-        android:fontFamily="@font/nbold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_agri_equip_location" />
 
-    <TextView
-        android:id="@+id/textView53"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="13dp"
-        android:text="Equipment Name"
-        android:textColor="@color/Brown"
-        android:textSize="20dp"
-        android:fontFamily="@font/nbold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spin_agri_equip_cat" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@drawable/section_background"
 
-    <TextView
-        android:id="@+id/textView54"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="13dp"
-        android:text="Rent Per Hour"
-        android:textColor="@color/Brown"
-        android:textSize="20dp"
-        android:fontFamily="@font/nbold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_agri_equip_name" />
+                android:orientation="vertical"
+                android:padding="16dp">
 
-    <TextView
-        android:id="@+id/textView56"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="13dp"
-        android:text="Additional Details"
-        android:textColor="@color/Brown"
-        android:textSize="20dp"
-        android:fontFamily="@font/nbold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_agri_equip_rent" />
+                <TextView
+                    android:id="@+id/title_equipment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:shadowColor="@color/white"
+                    android:shadowDx="1"
+                    android:shadowDy="2"
+                    android:shadowRadius="1"
+                    android:text="Equipment Details"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_18sdp"
+                    android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/edit_equip_owner_name"
-        android:layout_width="0dp"
-        android:layout_height="33dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="20dp"
-        android:background="@drawable/custome_input"
-        android:ems="10"
-        android:textAlignment="center"
-        android:inputType="textPersonName"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+                <TextView
+                    android:id="@+id/textView52"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Equipment Category"
+                    android:textColor="@color/Brown" />
 
-    <EditText
-        android:id="@+id/edit_equip_owner_mobile_no"
-        android:layout_width="0dp"
-        android:layout_height="33dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="20dp"
-        android:background="@drawable/custome_input"
-        android:ems="10"
-        android:textAlignment="center"
-        android:inputType="textPersonName"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView51" />
+                <Spinner
+                    android:id="@+id/spin_agri_equip_cat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/custome_input"
+                    android:gravity="center_vertical"
+                    android:padding="6dp"
+                    android:textSize="18dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
 
-    <EditText
-        android:id="@+id/edit_agri_equip_location"
-        android:layout_width="0dp"
-        android:layout_height="33dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="13dp"
-        android:layout_marginEnd="20dp"
-        android:background="@drawable/custome_input"
-        android:ems="10"
-        android:textAlignment="center"
-        android:inputType="textPersonName"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView55" />
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Equipment Name" />
 
-    <EditText
-        android:id="@+id/edit_agri_equip_name"
-        android:layout_width="0dp"
-        android:layout_height="33dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="20dp"
-        android:background="@drawable/custome_input"
-        android:ems="10"
-        android:textAlignment="center"
-        android:inputType="textPersonName"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView53" />
 
-    <EditText
-        android:id="@+id/edit_agri_equip_rent"
-        android:layout_width="0dp"
-        android:layout_height="33dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="20dp"
-        android:background="@drawable/custome_input"
-        android:ems="10"
+                <EditText
+                    android:id="@+id/edit_agri_equip_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/_5sdp"
+                    android:background="@drawable/custome_input"
+                    android:inputType="text"
+                    android:padding="6dp"     android:gravity="center_vertical"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
 
-        android:textAlignment="center"
-        android:inputType="textPersonName"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView54" />
 
-    <EditText
-        android:id="@+id/edit_agri_euip_details"
-        android:layout_width="0dp"
-        android:layout_height="33dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="20dp"
-        android:background="@drawable/custome_input"
-        android:ems="10"
-        android:gravity="center"
-        android:inputType="textPersonName"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView56" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Year Used"
+                    android:textColor="@color/Brown" />
 
-    <Spinner
-        android:id="@+id/spin_agri_equip_cat"
-        android:layout_width="0dp"
-        android:layout_height="33dp"
-        android:layout_marginStart="20dp"
-        android:background="@drawable/custome_input"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="20dp"
-        android:textAlignment="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView52" />
+                <EditText
+                    android:id="@+id/edit_agri_equip_year_used"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/_5sdp"
+                    android:gravity="center_vertical"
+                    android:background="@drawable/custome_input"
+                    android:inputType="numberDecimal"
+                    android:padding="6dp"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_add_agri_equip"
-        android:layout_width="334dp"
-        android:layout_height="44dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="20dp"
-        android:background="@drawable/custom_button"
-        android:backgroundTint="@color/darkYellow"
-        android:fontFamily="@font/nbold"
-        android:text="Add This Equipment"
-        android:textSize="26dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_agri_euip_details" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Rental per Day"
+                    android:textColor="@color/Brown" />
+
+                <EditText
+                    android:id="@+id/edit_agri_equip_rent"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/custome_input"
+                    android:inputType="numberDecimal"
+                    android:padding="6dp"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:text="Price Recommendation" />
+
+                <ImageView
+                    android:id="@+id/img_agri_equp"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_100sdp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/img" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_add_img_equip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="20dp"
+                    android:layout_marginBottom="@dimen/_20sdp"
+                    android:background="@drawable/custom_button"
+                    android:text="Add Image"
+                    android:textAllCaps="false"
+                    android:textSize="18dp" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@drawable/section_background"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/availabiltiy_equipment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:shadowColor="@color/white"
+                    android:shadowDx="1"
+                    android:shadowDy="2"
+                    android:shadowRadius="1"
+                    android:text="Availabiltiy"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_18sdp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Start Date"
+                    android:textColor="@color/Brown" />
+
+                <EditText
+                    android:id="@+id/edit_agri_euip_avialable_from"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/_5sdp"
+                    android:background="@drawable/custome_input"
+                    android:inputType="date"     android:gravity="center_vertical"
+                    android:padding="6dp"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="End Date"
+                    android:textColor="@color/Brown" />
+
+                <EditText
+                    android:id="@+id/edit_agri_euip_avialable_to"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/_5sdp"
+                    android:background="@drawable/custome_input"
+                    android:inputType="date"     android:gravity="center_vertical"
+                    android:padding="6dp"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <ListView
+                    android:id="@+id/edit_agri_list_available_dates"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_add_list_date_equip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="20dp"
+                    android:layout_marginBottom="@dimen/_20sdp"
+                    android:background="@drawable/custom_button"
+                    android:text=" Add New "
+                    android:textAllCaps="false"
+                    android:textSize="18dp" />
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@drawable/section_background"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/title_address"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:shadowColor="@color/white"
+                    android:shadowDx="0"
+                    android:shadowDy="2"
+                    android:shadowRadius="1"
+                    android:text="Address"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_18sdp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textVehicleType"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Select Location"
+                    android:textColor="@color/Brown" />
+
+                <EditText
+                    android:id="@+id/text_view_ride_details_vehicle_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/_5sdp"
+                    android:background="@drawable/custome_input"
+                    android:inputType="textPostalAddress"     android:gravity="center_vertical"
+                    android:padding="6dp"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@drawable/section_background"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/title_owner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:shadowColor="@color/white"
+                    android:shadowDx="0"
+                    android:shadowDy="2"
+                    android:shadowRadius="1"
+                    android:text="Owner Details"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_18sdp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/text_owner_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Name"
+                    android:textColor="@color/Brown" />
+
+                <EditText
+                    android:id="@+id/edit_equip_owner_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/_5sdp"
+                    android:background="@drawable/custome_input"
+                    android:inputType="textPersonName"
+                    android:padding="6dp"     android:gravity="center_vertical"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/text_owner_contact"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Contact"
+                    android:textColor="@color/Brown" />
+
+                <EditText
+                    android:id="@+id/edit_equip_owner_mobile_no"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/_5sdp"
+                    android:background="@drawable/custome_input"
+                    android:inputType="phone"     android:gravity="center_vertical"
+                    android:padding="6dp"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@drawable/section_background"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/title_"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:shadowColor="@color/white"
+                    android:shadowDx="0"
+                    android:shadowDy="2"
+                    android:shadowRadius="1"
+                    android:text="Driver Details"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_18sdp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/text_driver_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Name"
+                    android:textColor="@color/Brown" />
+
+                <EditText
+                    android:id="@+id/edit_equip_driver_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/_5sdp"
+                    android:background="@drawable/custome_input"
+                    android:inputType="textPersonName"
+                    android:padding="6dp"     android:gravity="center_vertical"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/text_driver_contact"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Contact"
+                    android:textColor="@color/Brown" />
+
+                <EditText
+                    android:id="@+id/edit_equip_driver_mobile_no"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/_5sdp"
+                    android:background="@drawable/custome_input"
+                    android:inputType="phone"
+                    android:padding="6dp"     android:gravity="center_vertical"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_continue_equip_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"      android:layout_marginBottom="@dimen/_20sdp"
+                android:background="@drawable/custom_button"
+                android:fontFamily="@font/nbold"
+                android:padding="6dp"
+                android:text="  Continue  "
+                android:textAllCaps="false" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

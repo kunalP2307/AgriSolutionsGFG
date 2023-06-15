@@ -55,11 +55,11 @@ public class AddAgriEquipment extends AppCompatActivity implements AdapterView.O
     public void bindComponents(){
         this.editTextEquipmentOwner = findViewById(R.id.edit_equip_owner_name);
         this.getEditTextEquipmentOwnerMobile = findViewById(R.id.edit_equip_owner_mobile_no);
-        this.editTextEquipmentLocation = findViewById(R.id.edit_agri_equip_location);
+//        this.editTextEquipmentLocation = findViewById(R.id.edit_agri_equip_location);
         this.editTextEquipmentName = findViewById(R.id.edit_agri_equip_name);
         this.editTextEquipmentRentHour = findViewById(R.id.edit_agri_equip_rent);
-        this.editTextEquipmentDetails = findViewById(R.id.edit_agri_euip_details);
-        this.btnAddEquipment = findViewById(R.id.btn_add_agri_equip);
+//        this.editTextEquipmentDetails = findViewById(R.id.edit_agri_euip_details);
+//        this.btnAddEquipment = findViewById(R.id.btn_add_agri_equip);
         this.spinEquipmentCategory = findViewById(R.id.spin_agri_equip_cat);
         spinEquipmentCategory.setOnItemSelectedListener(this);
 

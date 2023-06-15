@@ -63,7 +63,7 @@
         app:layout_constraintTop_toBottomOf="@+id/text_field_location" />
 
     <TextView
-        android:id="@+id/text_field_type"
+        android:id="@+id/text_available_limit_row"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
@@ -102,7 +102,7 @@
         app:layout_constraintEnd_toStartOf="@+id/text_field_location"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_field_type" />
+        app:layout_constraintTop_toBottomOf="@+id/text_available_limit_row" />
 
     <ImageView
         android:id="@+id/img_area"

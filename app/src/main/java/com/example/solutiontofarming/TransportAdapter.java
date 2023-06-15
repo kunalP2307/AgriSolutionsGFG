@@ -10,7 +10,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.solutiontofarming.data.TransportRide;
-import com.example.solutiontofarming.data.TransportRide;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -47,10 +48,11 @@ public class TransportAdapter extends BaseAdapter {
         TransportRide currTransport = (TransportRide)getItem(position);
         TextView textViewSource = (TextView) convertView.findViewById(R.id.text_field_area);
         TextView textViewDestination = (TextView) convertView.findViewById(R.id.scheduled_ride_destination);
-        TextView textViewLoad = (TextView) convertView.findViewById(R.id.text_field_type);
-        TextView textViewPrice = (TextView) convertView.findViewById(R.id.text_field_rent);
+        TextView textViewLoad = (TextView) convertView.findViewById(R.id.text_available_limit_row);
         TextView textViewDateTime = (TextView) convertView.findViewById(R.id.text_field_location);
+        TextView textViewTruckType = convertView.findViewById(R.id.text_truck_type_row);
         ImageView imageView = convertView.findViewById(R.id.imageView);
+        TextView textViewPrice = (TextView) convertView.findViewById(R.id.text_field_rent);
 
 
         /*if(position == 0 || position > 2)  {
@@ -64,6 +66,9 @@ public class TransportAdapter extends BaseAdapter {
         textViewSource.setText(currTransport.getSource().getName());
         textViewDestination.setText(currTransport.getDestination().getName());
         textViewLoad.setText(currTransport.getVehicle().getAvailableLimit() + " "+currTransport.getVehicle().getWeightUnit());
+        textViewTruckType.setText(currTransport.getVehicle().getType());
+
+
 //        textViewPrice.setText(currTransport.getFare().getPricePerKm());
 
 //        String rideProviderId = currTransport.getRideProviderId();

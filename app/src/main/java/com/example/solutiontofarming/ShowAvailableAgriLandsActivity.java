@@ -5,13 +5,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.example.solutiontofarming.data.AgriculturalLand;
-import com.example.solutiontofarming.data.Transport;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,7 +43,7 @@ public class ShowAvailableAgriLandsActivity extends AppCompatActivity implements
         this.textViewLandAddress = findViewById(R.id.text_field_location);
         this.textViewLandArea = findViewById(R.id.text_field_area);
         this.textViewLandRent = findViewById(R.id.text_field_rent);
-        this.textViewLandType = findViewById(R.id.text_field_type);
+        this.textViewLandType = findViewById(R.id.text_available_limit_row);
     }
 
     @Override

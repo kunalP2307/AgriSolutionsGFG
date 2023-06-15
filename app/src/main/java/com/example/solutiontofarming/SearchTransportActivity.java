@@ -35,10 +35,20 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
+
 import java.io.Serializable;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.List;
 
 public class SearchTransportActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
@@ -224,14 +234,7 @@ public class SearchTransportActivity extends AppCompatActivity implements DatePi
                         e.printStackTrace();
                     }
                 }
-                dialog.hide();
-                Intent intent = new Intent(getApplicationContext(), ShowAvailableRidesActivity.class);
-                intent.putExtra("RIDE_SHOW_TYPE", "SEARCHED");
-                intent.putExtra("RIDES_LIST", (Serializable) allRidesList);
-                intent.putExtra("EXTRA_SOURCE_SEARCH", sourcePlace);
-                intent.putExtra("EXTRA_DEST_SEARCH", destPlace);
-                Log.d(TAG, "onSuccess:SIZE in JSOn Array "+allRidesList.size());
-                startActivity(intent);
+                filterRidesByDate();
             }
 
             @Override
@@ -242,6 +245,47 @@ public class SearchTransportActivity extends AppCompatActivity implements DatePi
         });
 
     }
+
+    private void filterRidesByDate(){
+        List<TransportRide> filteredRides = new ArrayList<>();
+        List<String> dates = new ArrayList<>();
+        String searchedDate = editTextDate.getText().toString();
+        dates.add(searchedDate);
+        LocalDate givenDate = null;
+        DateTimeFormatter formatter = null;
+
+        if(checkBoxFlexWithDate.isChecked()){
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                formatter = DateTimeFormatter.ofPattern("d-M-yyyy");
+                givenDate = LocalDate.parse(searchedDate, formatter);
+            }
+            for (int i = 1; i <= 2; i++) {
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                    LocalDate nextDate = givenDate.plusDays(i);
+                    LocalDate previousDate = givenDate.minusDays(i);
+                    dates.add(nextDate.format(formatter));
+                    dates.add(previousDate.format(formatter));
+                }
+            }
+        }
+
+        filteredRides.clear();
+        for(int i=0; i<allRidesList.size(); i++){
+            if(dates.contains(allRidesList.get(i).getWhen().getDate().toString())){
+                filteredRides.add(allRidesList.get(i));
+            }
+        }
+
+        Intent intent = new Intent(getApplicationContext(), ShowAvailableRidesActivity.class);
+        intent.putExtra("RIDE_SHOW_TYPE", "SEARCHED");
+        intent.putExtra("RIDES_LIST", (Serializable) filteredRides);
+        intent.putExtra("EXTRA_SOURCE_SEARCH", sourcePlace);
+        intent.putExtra("EXTRA_DEST_SEARCH", destPlace);
+        Log.d(TAG, "onSuccess:SIZE in JSOn Array "+allRidesList.size());
+        dialog.hide();
+        startActivity(intent);
+    }
+
     @Override
     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
 

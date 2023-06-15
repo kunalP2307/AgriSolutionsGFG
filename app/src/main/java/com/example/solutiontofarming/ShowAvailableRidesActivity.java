@@ -1,9 +1,11 @@
 package com.example.solutiontofarming;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.location.Location;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -12,6 +14,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.facebook.shimmer.ShimmerFrameLayout;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -53,14 +56,20 @@ public class ShowAvailableRidesActivity extends AppCompatActivity {
     String GET_ALL_URL = "http://"+ Extras.VM_IP +":7000/find/user";
     ProgressDialog dialog;
     List<TransportRide> availableRides;
+    final static double RADIUS_LIMIT = 10;
     String TAG = "ShowAvailableRidesActivity";
 
+    ShimmerFrameLayout shimmer_layout;
+    ConstraintLayout main_layout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_available_rides);
+        main_layout = findViewById(R.id.main_layout);
+        shimmer_layout = findViewById(R.id.shimmer_activity_available_rides);
 
-
+        main_layout.setVisibility(View.INVISIBLE);
+        shimmer_layout.startShimmerAnimation();
 //        Address s = new Address();
 //        s.setLatitude("18.603428810812144");
 //        s.setLongitude("73.78611887320858");
@@ -75,22 +84,24 @@ public class ShowAvailableRidesActivity extends AppCompatActivity {
 
         renderShowRides();
 
-
     }
 
     private void renderShowRides(){
+        initListView();
         if(getIntent().getStringExtra("RIDE_SHOW_TYPE") != null){
             if(getIntent().getStringExtra("RIDE_SHOW_TYPE").equals("SEARCHED")){
                 List<TransportRide> allRides = (List<TransportRide>) getIntent().getSerializableExtra("RIDES_LIST");
                 Address source = (Address) getIntent().getSerializableExtra("EXTRA_SOURCE_SEARCH");
                 Address destination = (Address) getIntent().getSerializableExtra("EXTRA_DEST_SEARCH");
 
-                availableRides = searchRides(allRides, source, destination, new RideTime());
-                initListView();
+                searchRides(allRides, source, destination, new RideTime());
+                Log.d(TAG, "renderShowRides: "+availableRides.size());
+                main_layout.setVisibility(View.VISIBLE);
+                shimmer_layout.stopShimmerAnimation();
+                shimmer_layout.setVisibility(View.INVISIBLE);
             }
         }
         else {
-            initListView();
             getAllRides();
         }
     }
@@ -100,12 +111,14 @@ public class ShowAvailableRidesActivity extends AppCompatActivity {
     }
 
     private void initListView(){
+
         Log.d("TAG", "onCreate: Before ");
         getSupportActionBar().setTitle("Available Rides");
 
-        Log.d("TAG", "onCreate: size of List "+availableRides.size());
-        Log.d("TAG", "onCreate: After ");
+//        Log.d("TAG", "onCreate: size of List "+availableRides.size());
+//        Log.d("TAG", "onCreate: After ");
 
+        availableRides = new ArrayList<>();
         listViewAvailableRides = findViewById(R.id.list_available_rides);
         transportAdapter = new TransportAdapter(getApplicationContext(), (ArrayList<TransportRide>) availableRides);
         listViewAvailableRides.setAdapter(transportAdapter);
@@ -133,11 +146,14 @@ public class ShowAvailableRidesActivity extends AppCompatActivity {
     private void getAllRides(){
         setProgressDialog();
         GetAllRides getAllRides = new GetAllRides(this);
-        availableRides = new ArrayList<>();
+
         getAllRides.fetchAllRides(new FetchNews.ApiResponseListener() {
             @Override
             public void onSuccess(JSONArray response) {
                 dialog.hide();
+                main_layout.setVisibility(View.VISIBLE);
+                shimmer_layout.stopShimmerAnimation();
+                shimmer_layout.setVisibility(View.INVISIBLE);
                 for (int i = 0; i < response.length(); i++) {
                     // creating a new json object and
                     // getting each object from our json array.
@@ -164,20 +180,115 @@ public class ShowAvailableRidesActivity extends AppCompatActivity {
         });
     }
 
-    private List<TransportRide> searchRides(List<TransportRide> allRides, Address source, Address destination, RideTime time){
-        List<TransportRide> filteredRides = new ArrayList<>();
+    private void searchRides(List<TransportRide> allRides, Address source, Address destination, RideTime time){
 
-        List<LatLng> path = new ArrayList();
+        TransportRide ride;
+        Address rideSource, rideDestination;
+        //availableRides = new ArrayList<>();
+        for(int i=0; i<allRides.size(); i++){
+            ride = allRides.get(i);
+            rideSource = ride.getSource();
+            rideDestination = ride.getDestination();
 
-        for(int rideNo=0; rideNo<allRides.size(); rideNo++){
 
+            double sDistance = getDistanceBetweenGeoPts(
+                    Double.parseDouble(source.getLatitude()),
+                    Double.parseDouble(source.getLongitude()),
+                    Double.parseDouble(rideSource.getLatitude()),
+                    Double.parseDouble(rideSource.getLongitude())
+                    );
 
+            double dDistance = getDistanceBetweenGeoPts(
+                    Double.parseDouble(destination.getLatitude()),
+                    Double.parseDouble(destination.getLongitude()),
+                    Double.parseDouble(rideDestination.getLatitude()),
+                    Double.parseDouble(rideDestination.getLongitude())
+            );
 
+            Log.d(TAG, "searchRides: source Dis "+sDistance+" Destination Dis"+dDistance);
+
+            if(dDistance < RADIUS_LIMIT && sDistance < RADIUS_LIMIT){
+                Log.d(TAG, "searchRides: Inside If");
+                availableRides.add(ride);
+                transportAdapter.notifyDataSetChanged();
+            }
+            else {
+                List<LatLng> path = getGeoPtsAlongRoute(rideSource, rideDestination);
+                int minIndexSource = 0;
+                double distanceSource = Double.MAX_VALUE;
+                for (int k = 0; k < path.size(); k++) {
+                    Address pointOnRoute = new Address();
+                    pointOnRoute.setLatitude(Double.toString(path.get(k).latitude));
+                    pointOnRoute.setLongitude(Double.toString(path.get(k).longitude));
+                    double temp = getDistance(source, pointOnRoute);
+                    if (temp < distanceSource) {
+                        distanceSource = temp;
+                        minIndexSource = k;
+                    }
+                }
+                double distanceDest = Double.MAX_VALUE;
+                int minIndexDist = 0;
+                if (distanceSource < RADIUS_LIMIT) {
+                    for (int j = path.size() - 1; j >= minIndexSource; j--) {
+                        Address pointOnRoute = new Address();
+                        pointOnRoute.setLatitude(Double.toString(path.get(j).latitude));
+                        pointOnRoute.setLongitude(Double.toString(path.get(j).longitude));
+                        double temp = getDistance(destination, pointOnRoute);
+                        if (temp < distanceDest) {
+                            distanceDest = temp;
+                            minIndexDist = j;
+                        }
+                    }
+                }
+                Log.d(TAG, "searchRides: Source Distance" + distanceSource + " Destination SOurce" + distanceDest);
+
+                Address s = new Address();
+                s.setLatitude(Double.toString(path.get(minIndexSource).latitude));
+                s.setLongitude(Double.toString(path.get(minIndexSource).longitude));
+
+                Address d = new Address();
+                d.setLatitude(Double.toString(path.get(minIndexDist).latitude));
+                d.setLongitude(Double.toString(path.get(minIndexDist).longitude));
+
+                double sd = getDistance(s, source);
+                double dd = getDistance(d, destination);
+
+                if(sd < RADIUS_LIMIT && dd<RADIUS_LIMIT){
+                    availableRides.add(ride);
+                    transportAdapter.notifyDataSetChanged();
+                }
+                Log.d(TAG, "searchRides: distance after looping" + sd + "\t" + dd);
+            }
         }
 
-        return filteredRides;
+        List<TransportRide> filteredRides = new ArrayList<>();
+
     }
 
+
+
+
+
+
+    private double getDistance(Address source, Address destination){
+        return getDistanceBetweenGeoPts(
+                Double.parseDouble(source.getLatitude()),
+                Double.parseDouble(source.getLongitude()),
+                Double.parseDouble(destination.getLatitude()),
+                Double.parseDouble(destination.getLongitude())
+        );
+    }
+
+    private double getDistanceBetweenGeoPts(double sLat, double sLon, double dLat, double dLon){
+        Location start = new Location("");
+        start.setLatitude(sLat);
+        start.setLongitude(sLon);
+
+        Location end = new Location("");
+        end.setLatitude(dLat);
+        end.setLongitude(dLon);
+        return (start.distanceTo(end)/1000);
+    }
 
     private List<LatLng> getGeoPtsAlongRoute(Address source,Address destination){
         List<LatLng> path = new ArrayList();
@@ -198,7 +309,7 @@ public class ShowAvailableRidesActivity extends AppCompatActivity {
                     for(int i=0; i<route.legs.length; i++) {
                         DirectionsLeg leg = route.legs[i];
                         if (leg.steps != null) {
-                            for (int j=0; j<leg.steps.length;j+=1){
+                            for (int j=0; j<leg.steps.length;j+=10){
                                 DirectionsStep step = leg.steps[j];
                                 if (step.steps != null && step.steps.length >0) {
                                     for (int k=0; k<step.steps.length;k++){
