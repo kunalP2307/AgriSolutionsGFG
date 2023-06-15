@@ -103,16 +103,16 @@ public class ServicesActivity extends AppCompatActivity {
 
                 char ch = uId.charAt(length-1);
 
-                if(ch == 'F'){
-                    textViewProfileStatus.setText(" VERIFIED ");
-                    textViewProfileStatus.setBackgroundColor(Color.GREEN);
-                    imageViewProfileStatus.setImageResource(R.drawable.img_check);
-                    textViewProfileDetails.setText("Verified Profile");
-                    Log.d(TAG, "onDataChange: verified");
-                }
-                else{
-                    Log.d(TAG, "onDataChange: Profile not verified yet");
-                }
+//                if(ch == 'F'){
+//                    textViewProfileStatus.setText(" VERIFIED ");
+//                    textViewProfileStatus.setBackgroundColor(Color.GREEN);
+//                    imageViewProfileStatus.setImageResource(R.drawable.img_check);
+//                    textViewProfileDetails.setText("Verified Profile");
+//                    Log.d(TAG, "onDataChange: verified");
+//                }
+//                else{
+//                    Log.d(TAG, "onDataChange: Profile not verified yet");
+//                }
 
             }
 

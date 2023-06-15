@@ -35,7 +35,7 @@ public class ShowMyRidesActivity extends AppCompatActivity implements AdapterVie
 
         if(!(myRides.size()==0)) {
             listViewMyRides = findViewById(R.id.list_my_rides);
-            transportAdapter = new TransportAdapter(this, (ArrayList<TransportRide>) myRides);
+            transportAdapter = new TransportAdapter(this, (ArrayList<TransportRide>) myRides,null);
             listViewMyRides.setAdapter(transportAdapter);
             listViewMyRides.setOnItemClickListener(this);
         }else{

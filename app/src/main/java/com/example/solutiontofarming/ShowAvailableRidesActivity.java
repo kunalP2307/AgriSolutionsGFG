@@ -14,6 +14,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.solutiontofarming.data.HowFar;
 import com.facebook.shimmer.ShimmerFrameLayout;
 
 import com.android.volley.Request;
@@ -58,6 +60,7 @@ public class ShowAvailableRidesActivity extends AppCompatActivity {
     List<TransportRide> availableRides;
     final static double RADIUS_LIMIT = 10;
     String TAG = "ShowAvailableRidesActivity";
+    ArrayList<HowFar> howFarList = null;
 
     ShimmerFrameLayout shimmer_layout;
     ConstraintLayout main_layout;
@@ -119,8 +122,9 @@ public class ShowAvailableRidesActivity extends AppCompatActivity {
 //        Log.d("TAG", "onCreate: After ");
 
         availableRides = new ArrayList<>();
+        howFarList = new ArrayList<>();
         listViewAvailableRides = findViewById(R.id.list_available_rides);
-        transportAdapter = new TransportAdapter(getApplicationContext(), (ArrayList<TransportRide>) availableRides);
+        transportAdapter = new TransportAdapter(getApplicationContext(), (ArrayList<TransportRide>) availableRides, howFarList);
         listViewAvailableRides.setAdapter(transportAdapter);
         listViewAvailableRides.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -185,6 +189,7 @@ public class ShowAvailableRidesActivity extends AppCompatActivity {
         TransportRide ride;
         Address rideSource, rideDestination;
         //availableRides = new ArrayList<>();
+
         for(int i=0; i<allRides.size(); i++){
             ride = allRides.get(i);
             rideSource = ride.getSource();
@@ -210,6 +215,8 @@ public class ShowAvailableRidesActivity extends AppCompatActivity {
             if(dDistance < RADIUS_LIMIT && sDistance < RADIUS_LIMIT){
                 Log.d(TAG, "searchRides: Inside If");
                 availableRides.add(ride);
+                HowFar howFar = new HowFar(sDistance, dDistance);
+                howFarList.add(howFar);
                 transportAdapter.notifyDataSetChanged();
             }
             else {
@@ -255,14 +262,14 @@ public class ShowAvailableRidesActivity extends AppCompatActivity {
 
                 if(sd < RADIUS_LIMIT && dd<RADIUS_LIMIT){
                     availableRides.add(ride);
+                    HowFar howFar = new HowFar(sd, dd);
+                    howFarList.add(howFar);
                     transportAdapter.notifyDataSetChanged();
                 }
                 Log.d(TAG, "searchRides: distance after looping" + sd + "\t" + dd);
             }
         }
-
         List<TransportRide> filteredRides = new ArrayList<>();
-
     }
 
 
