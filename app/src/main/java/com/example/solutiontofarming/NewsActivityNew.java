@@ -111,7 +111,7 @@ public class NewsActivityNew extends AppCompatActivity {
 
         StringBuilder half_desc = new StringBuilder();
 
-        int numberOfWords = 90;
+        int numberOfWords = 70;
 
         String[] desc_split = full_desc.split("\\s+");
 

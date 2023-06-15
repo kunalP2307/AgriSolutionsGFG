@@ -23,6 +23,9 @@
         android:theme="@style/Theme.SolutionToFarming"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".DiscussionForumActivity"
+            android:exported="false" />
+        <activity
             android:name=".ShowSearchedRidesActivity"
             android:exported="false" />
         <activity

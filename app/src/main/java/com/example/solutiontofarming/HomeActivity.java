@@ -34,7 +34,13 @@ import com.android.volley.toolbox.Volley;
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.models.SlideModel;
 import com.example.solutiontofarming.data.Fare;
+import com.example.solutiontofarming.data.User;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.gson.Gson;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -63,6 +69,8 @@ public class HomeActivity extends AppCompatActivity {
     private boolean network_enable = false;
     Geocoder geocoder;
     List<Address> myaddress;
+    Button btnChatRoom;
+    String userEmailId, userName;
 
     //Location Permission
     private final int REQUEST_LOCATION_PERMISSION = 1;
@@ -101,6 +109,7 @@ public class HomeActivity extends AppCompatActivity {
         });
         bindComponents();
         addListeners();
+        getUserDetails();
 
 
         SharedPreferences preferences =getSharedPreferences("DATA",Context.MODE_PRIVATE);
@@ -148,6 +157,28 @@ public class HomeActivity extends AppCompatActivity {
         //textViewTemperature.setTextSize(70);
         btnGetTemperature = findViewById(R.id.btn_get_temperature);
         btnShowWeatherDetails = findViewById(R.id.btn_get_weather_details);
+        btnChatRoom = findViewById(R.id.btnEnterChatRoom);
+
+    }
+
+    private void getUserDetails(){
+
+        FirebaseDatabase.getInstance().getReference("(Q2-2021)Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                User user  = snapshot.getValue(User.class);
+
+                userEmailId = user.getEmail();
+                userName = user.getFullName();
+
+                Log.d("TAG", "onDataChange: "+user.getFullName()+user.getEmail()+user.getPhoneNo());
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
 
     }
 
@@ -189,6 +220,17 @@ public class HomeActivity extends AppCompatActivity {
                }
            }
        });
+
+       btnChatRoom.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               Intent intent = new Intent(HomeActivity.this, DiscussionForumActivity.class);
+               intent.putExtra("userEmailId", userEmailId);
+               intent.putExtra("userName", userName);
+               startActivity(intent);
+           }
+       });
+
     }
 
     class MyLocationListener implements LocationListener {
