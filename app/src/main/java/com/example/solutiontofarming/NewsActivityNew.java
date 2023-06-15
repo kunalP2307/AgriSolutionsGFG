@@ -97,6 +97,7 @@ public class NewsActivityNew extends AppCompatActivity {
 
                     shimmer_layout.stopShimmerAnimation();
                     verticalViewPager.setVisibility(View.VISIBLE);
+                    shimmer_layout.setVisibility(View.INVISIBLE);
 
                     verticalViewPager.setAdapter((new ViewPagerAdapter(NewsActivityNew.this, sliderItems, titles, desc, newslinks, news_date, verticalViewPager)));
 
