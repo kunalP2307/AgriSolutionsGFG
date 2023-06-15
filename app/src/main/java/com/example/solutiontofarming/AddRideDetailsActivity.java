@@ -2,7 +2,6 @@ package com.example.solutiontofarming;
 
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
@@ -23,35 +22,22 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.TimePicker;
-import android.widget.Toast;
 
 import com.example.solutiontofarming.data.Address;
 import com.example.solutiontofarming.data.Extras;
 import com.example.solutiontofarming.data.Fare;
-import com.example.solutiontofarming.data.ID;
 import com.example.solutiontofarming.data.RideTime;
 import com.example.solutiontofarming.data.Transport;
 import com.example.solutiontofarming.data.TransportRide;
 import com.example.solutiontofarming.data.User;
-import com.google.android.gms.common.api.Status;
 import com.google.android.libraries.places.api.Places;
-import com.google.android.libraries.places.api.model.Place;
-import com.google.android.libraries.places.widget.Autocomplete;
-import com.google.android.libraries.places.widget.AutocompleteActivity;
-import com.google.android.libraries.places.widget.model.AutocompleteActivityMode;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.gson.JsonObject;
 
-import org.json.JSONException;
-
-import java.io.Serializable;
-import java.util.Arrays;
 import java.util.Calendar;
-import java.util.List;
 
 public class AddRideDetailsActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener  {
 
@@ -114,7 +100,7 @@ public class AddRideDetailsActivity extends AppCompatActivity implements DatePic
         this.textViewRideTime = findViewById(R.id.text_ride_time);
         this.editTextPricePerKM = findViewById(R.id.edit_ride_price_km);
         this.editTextRideDescription = findViewById(R.id.edit_ride_description);
-        checkBoxFlexWithDate = findViewById(R.id.check_box_flex_with_date);
+        checkBoxFlexWithDate = findViewById(R.id.check_box_flex_with_date_ride_search);
         checkBoxFlexWithDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

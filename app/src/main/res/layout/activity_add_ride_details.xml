@@ -55,7 +55,7 @@
         android:text="Time"
         android:textColor="@color/Brown"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/check_box_flex_with_date" />
+        app:layout_constraintTop_toBottomOf="@+id/check_box_flex_with_date_ride_search" />
 
     <TextView
         android:id="@+id/textView7"
@@ -264,7 +264,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <CheckBox
-        android:id="@+id/check_box_flex_with_date"
+        android:id="@+id/check_box_flex_with_date_ride_search"
         android:layout_width="wrap_content"
         android:layout_height="20dp"
         android:layout_marginTop="2dp"

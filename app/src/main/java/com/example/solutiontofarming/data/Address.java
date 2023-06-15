@@ -8,12 +8,14 @@ public class Address implements Serializable {
     String address;
     String name;
 
+    public Address(){}
     public Address(String latitude, String longitude, String address, String name) {
         this.latitude = latitude;
         this.longitude = longitude;
         this.address = address;
         this.name = name;
     }
+
 
     public String getLatitude() {
         return latitude;
