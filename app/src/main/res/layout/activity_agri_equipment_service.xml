@@ -81,7 +81,7 @@
                     android:layout_height="60dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="20dp"
-                    android:src="@drawable/ic_tractor" />
+                    android:src="@drawable/ic_rent_equipments" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -114,7 +114,7 @@
                     android:layout_height="60dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="20dp"
-                    android:src="@drawable/ic_work" />
+                    android:src="@drawable/ic_borrow_equipments" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -148,7 +148,7 @@
                     android:layout_height="60dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="20dp"
-                    android:src="@drawable/ic_people" />
+                    android:src="@drawable/ic_my_equipments" />
 
                 <TextView
                     android:layout_width="wrap_content"

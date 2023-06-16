@@ -32,7 +32,7 @@
                     android:fontFamily="@font/nunito"
                     android:text="Transport Pool"
                     android:textColor="@color/white"
-                    android:textSize="30dp" />car
+                    android:textSize="30dp" />
 
                 <ImageView
                     android:layout_width="50dp"
@@ -80,9 +80,10 @@
                 <ImageView
                     android:layout_width="60dp"
                     android:layout_height="60dp"
+                    android:src="@drawable/ic_find_transport"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="20dp"
-                    android:src="@drawable/search" />
+                    />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -117,7 +118,7 @@
                     android:layout_height="60dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="20dp"
-                    android:src="@drawable/shipping" />
+                    android:src="@drawable/ic_schedule_transport" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -152,7 +153,7 @@
                     android:layout_height="60dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="20dp"
-                    android:src="@drawable/delivery" />
+                    android:src="@drawable/ic_show_all_rides" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -187,7 +188,7 @@
                     android:layout_height="60dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="20dp"
-                    android:src="@drawable/ic_manage_rides" />
+                    android:src="@drawable/ic_manage_my_rides" />
 
                 <TextView
                     android:layout_width="wrap_content"
