@@ -79,6 +79,7 @@
                     android:layout_marginVertical="@dimen/_5sdp"
                     android:background="@drawable/custome_input"
                     android:inputType="text"
+                    android:hint="eg 20Ltr Electric Sprayer"
                     android:padding="6dp"     android:gravity="center_vertical"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
@@ -98,6 +99,7 @@
                     android:gravity="center_vertical"
                     android:background="@drawable/custome_input"
                     android:inputType="numberDecimal"
+                    android:hint="eg 2 years"
                     android:padding="6dp"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
@@ -115,6 +117,7 @@
                     android:background="@drawable/custome_input"
                     android:inputType="numberDecimal"
                     android:padding="6dp"
+                    android:hint="Rent Per Day"
                     android:gravity="center_vertical"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
@@ -123,13 +126,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="right"
-                    android:text="Price Recommendation" />
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:textStyle="bold"
+                    android:textSize="16dp"
+                    android:text="Recommend Price" />
 
                 <ImageView
                     android:id="@+id/img_agri_equp"
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_100sdp"
                     android:scaleType="fitCenter"
+                    android:visibility="gone"
                     android:src="@drawable/img" />
 
                 <androidx.appcompat.widget.AppCompatButton
@@ -138,7 +146,11 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_margin="20dp"
-                    android:layout_marginBottom="@dimen/_20sdp"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:layout_marginBottom="12dp"
                     android:background="@drawable/custom_button"
                     android:text="Add Image"
                     android:textAllCaps="false"
@@ -183,6 +195,7 @@
                     android:background="@drawable/custome_input"
                     android:inputType="date"     android:gravity="center_vertical"
                     android:padding="6dp"
+                    android:hint="Available From"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
 
@@ -200,6 +213,7 @@
                     android:background="@drawable/custome_input"
                     android:inputType="date"     android:gravity="center_vertical"
                     android:padding="6dp"
+                    android:hint="Available Till"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
 
@@ -210,14 +224,18 @@
 
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/btn_add_list_date_equip"
+                    android:id="@+id/btn_add_new_availability"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_margin="20dp"
                     android:layout_marginBottom="@dimen/_20sdp"
                     android:background="@drawable/custom_button"
-                    android:text=" Add New "
+                    android:text="Add New"
+                    android:paddingRight="8dp"
+                    android:paddingLeft="8dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
                     android:textAllCaps="false"
                     android:textSize="18dp" />
 
@@ -260,7 +278,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="@dimen/_5sdp"
                     android:background="@drawable/custome_input"
-                    android:inputType="textPostalAddress"     android:gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:hint="Select Location of Equipment"
+                    android:inputType="textPostalAddress"
                     android:padding="6dp"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
@@ -303,8 +323,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="@dimen/_5sdp"
                     android:background="@drawable/custome_input"
+                    android:gravity="center_vertical"
+                    android:hint="Owner Name"
                     android:inputType="textPersonName"
-                    android:padding="6dp"     android:gravity="center_vertical"
+                    android:padding="6dp"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
 
@@ -316,12 +338,14 @@
                     android:textColor="@color/Brown" />
 
                 <EditText
-                    android:id="@+id/edit_equip_owner_mobile_no"
+                    android:id="@+id/edit_equip_owner_contact"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="@dimen/_5sdp"
                     android:background="@drawable/custome_input"
-                    android:inputType="phone"     android:gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:hint="Owner Contact"
+                    android:inputType="phone"
                     android:padding="6dp"
                     android:textColor="@color/black"
                     android:textSize="18sp" />
@@ -334,11 +358,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_weight="1"      android:layout_marginBottom="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:layout_weight="1"
                 android:background="@drawable/custom_button"
                 android:fontFamily="@font/nbold"
                 android:padding="6dp"
-                android:text="  Continue  "
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:text="Add Equipment"
                 android:textAllCaps="false" />
 
 
