@@ -1,20 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".ShowAgriEquipmentActivity">
+    tools:context=".AddAgriEquipDetailsActivity">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:paddingTop="@dimen/_16sdp"
-        android:paddingBottom="@dimen/_16sdp"
-        android:layout_marginBottom="@dimen/_10sdp"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="16dp">
+        android:paddingBottom="@dimen/_10sdp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="30dp">
 
         <LinearLayout
 
@@ -34,11 +33,11 @@
                 android:padding="16dp">
 
                 <TextView
-                    android:id="@+id/title_quipment"
+                    android:id="@+id/title_equipment"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:shadowColor="@color/white"
-                    android:shadowDx="0"
+                    android:shadowDx="1"
                     android:shadowDy="2"
                     android:shadowRadius="1"
                     android:text="Equipment Details"
@@ -48,111 +47,114 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/textCategory"
+                    android:id="@+id/textView52"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Category"
+                    android:text="Equipment Category"
                     android:textColor="@color/Brown" />
 
+                <Spinner
+                    android:id="@+id/spin_agri_equip_cat"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/custome_input"
+                    android:gravity="center_vertical"
+                    android:padding="6dp"
+                    android:textSize="18dp" android:layout_marginVertical="@dimen/_5sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
+
+
                 <TextView
-                    android:id="@+id/text_equip_category"
+                    android:id="@+id/textView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Equipment Name"
+                    android:textColor="@color/Brown" />
+
+                <EditText
+                    android:id="@+id/edit_agri_equip_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="@dimen/_5sdp"
-                    android:background="@drawable/textview_border"
-                    android:paddingLeft="@dimen/_8sdp"
-                    android:paddingTop="@dimen/_2sdp"
-                    android:paddingBottom="@dimen/_2sdp"
-                    android:text=""
+                    android:background="@drawable/custome_input"
+                    android:inputType="text"
+                    android:hint="eg 20Ltr Electric Sprayer"
+                    android:padding="6dp"     android:gravity="center_vertical"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/_16sdp" />
+                    android:textSize="18sp" />
+
 
                 <TextView
-                    android:id="@+id/textEquipName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Name"
-
+                    android:text="Year Used"
                     android:textColor="@color/Brown" />
 
-                <TextView
-                    android:id="@+id/text_equip_name"
+                <EditText
+                    android:id="@+id/edit_agri_equip_year_used"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="@dimen/_5sdp"
-                    android:background="@drawable/textview_border"
-                    android:paddingLeft="@dimen/_8sdp"
-                    android:paddingTop="@dimen/_2sdp"
-                    android:paddingBottom="@dimen/_2sdp"
-                    android:text=""
+                    android:gravity="center_vertical"
+                    android:background="@drawable/custome_input"
+                    android:inputType="numberDecimal"
+                    android:hint="eg 2 years"
+                    android:padding="6dp"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/_18sdp" />
+                    android:textSize="18sp" />
 
                 <TextView
-                    android:id="@+id/textYrUsed"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Enter time"
-                    android:text="Years Used"
-
+                    android:text="Rental per Day"
                     android:textColor="@color/Brown" />
 
-                <TextView
-                    android:id="@+id/textViewYearUsed"
+                <EditText
+                    android:id="@+id/edit_agri_equip_rent"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginVertical="@dimen/_5sdp"
-                    android:background="@drawable/textview_border"
-
-                    android:paddingLeft="@dimen/_8sdp"
-                    android:paddingTop="@dimen/_2sdp"
-                    android:paddingBottom="@dimen/_2sdp"
-                    android:text=""
+                    android:background="@drawable/custome_input"
+                    android:inputType="numberDecimal"
+                    android:padding="6dp"
+                    android:hint="Rent Per Day"
+                    android:gravity="center_vertical"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/_18sdp" />
+                    android:textSize="18sp" />
 
                 <TextView
-                    android:id="@+id/textRent"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-
-                    android:text="Rent"
-
-                    android:textColor="@color/Brown" />
-
-                <TextView
-                    android:id="@+id/text_equip_rent_day"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginVertical="@dimen/_5sdp"
-
-                    android:background="@drawable/textview_border"
-                    android:paddingLeft="@dimen/_8sdp"
-                    android:paddingTop="@dimen/_2sdp"
-                    android:paddingBottom="@dimen/_2sdp"
-                    android:text=""
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_18sdp" />
-
-                <TextView
-                    android:id="@+id/textshowImg"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Images of equipment"
-
-                    android:textColor="@color/Brown" />
+                    android:gravity="right"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:textStyle="bold"
+                    android:textSize="16dp"
+                    android:text="Recommend Price" />
 
                 <ImageView
-                    android:id="@+id/text_equip_Image"
+                    android:id="@+id/img_agri_equp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginVertical="@dimen/_5sdp"
-                    android:src="@drawable/img_no_image"
-                    android:background="@drawable/textview_border"
-                    />
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/img"
+                    android:visibility="gone" />
 
-
-
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_add_img_equip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="20dp"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:layout_marginBottom="12dp"
+                    android:background="@drawable/custom_button"
+                    android:text="Add Image"
+                    android:textAllCaps="false"
+                    android:textSize="18dp" />
 
             </LinearLayout>
 
@@ -166,55 +168,76 @@
                 android:padding="16dp">
 
                 <TextView
-                    android:id="@+id/title_avail_rent"
+                    android:id="@+id/availabiltiy_equipment"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:shadowColor="@color/white"
-                    android:shadowDx="0"
+                    android:shadowDx="1"
                     android:shadowDy="2"
                     android:shadowRadius="1"
-                    android:text="Available For Rent"
+                    android:text="Availabiltiy"
                     android:textAlignment="center"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_18sdp"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/textFrom"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Dates Available"
-
+                    android:text="Start Date"
                     android:textColor="@color/Brown" />
 
-                <TextView
-                    android:id="@+id/text_equip_avail_dates"
+                <EditText
+                    android:id="@+id/edit_agri_euip_avialable_from"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="@dimen/_5sdp"
-                    android:background="@drawable/textview_border"
-                    android:paddingLeft="@dimen/_8sdp"
-                    android:paddingTop="@dimen/_2sdp"
-                    android:paddingBottom="@dimen/_2sdp"
-                    android:text=""
+                    android:background="@drawable/custome_input"
+                    android:inputType="date"     android:gravity="center_vertical"
+                    android:padding="6dp"
+                    android:hint="Available From"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/_18sdp" />
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="End Date"
+                    android:textColor="@color/Brown" />
+
+                <EditText
+                    android:id="@+id/edit_agri_euip_avialable_to"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/_5sdp"
+                    android:background="@drawable/custome_input"
+                    android:inputType="date"     android:gravity="center_vertical"
+                    android:padding="6dp"
+                    android:hint="Available Till"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
+
+                <ListView
+                    android:id="@+id/edit_agri_list_available_dates"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
 
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/btn_check_avail_dates"
+                    android:id="@+id/btn_add_new_availability"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginHorizontal="@dimen/_60sdp"
-                    android:layout_marginTop="@dimen/_7sdp"
+                    android:layout_gravity="center"
+                    android:layout_margin="20dp"
+                    android:layout_marginBottom="@dimen/_20sdp"
                     android:background="@drawable/custom_button"
-                    android:fontFamily="@font/nbold"
-                    android:gravity="center"
-                    android:padding="6dp"
-                    android:text=" Check Availability "
-                    android:textAllCaps="false" />
+                    android:text="Add New"
+                    android:paddingRight="8dp"
+                    android:paddingLeft="8dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:textAllCaps="false"
+                    android:textSize="18dp" />
 
 
             </LinearLayout>
@@ -225,53 +248,51 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/_10sdp"
                 android:background="@drawable/section_background"
-
                 android:orientation="vertical"
                 android:padding="16dp">
 
                 <TextView
-                    android:id="@+id/title_location"
+                    android:id="@+id/title_address"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:shadowColor="@color/white"
                     android:shadowDx="0"
                     android:shadowDy="2"
                     android:shadowRadius="1"
-                    android:text="Location Details"
+                    android:text="Address"
                     android:textAlignment="center"
                     android:textColor="@color/black"
                     android:textSize="@dimen/_18sdp"
                     android:textStyle="bold" />
 
                 <TextView
+                    android:id="@+id/textVehicleType"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Location "
+                    android:text="Select Location"
                     android:textColor="@color/Brown" />
 
-
-                <TextView
-                    android:id="@+id/text_equip_location"
+                <EditText
+                    android:id="@+id/edit_agri_equip_location"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="@dimen/_5sdp"
-                    android:background="@drawable/textview_border"
-                    android:paddingLeft="@dimen/_8sdp"
-                    android:paddingTop="@dimen/_2sdp"
-                    android:paddingBottom="@dimen/_2sdp"
-                    android:text=""
+                    android:background="@drawable/custome_input"
+                    android:gravity="center_vertical"
+                    android:hint="Select Location of Equipment"
+                    android:inputType="textPostalAddress"
+                    android:padding="6dp"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/_16sdp" />
-
+                    android:textSize="18sp" />
 
             </LinearLayout>
+
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/_10sdp"
                 android:background="@drawable/section_background"
-
                 android:orientation="vertical"
                 android:padding="16dp">
 
@@ -280,7 +301,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:shadowColor="@color/white"
-                    android:shadowDx="1"
+                    android:shadowDx="0"
                     android:shadowDy="2"
                     android:shadowRadius="1"
                     android:text="Owner Details"
@@ -290,62 +311,63 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/textSource"
-
+                    android:id="@+id/text_owner_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Name"
-
                     android:textColor="@color/Brown" />
 
-
-                <TextView
-                    android:id="@+id/text_equip_owner_name"
+                <EditText
+                    android:id="@+id/edit_equip_owner_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="@dimen/_5sdp"
-                    android:background="@drawable/textview_border"
-                    android:paddingLeft="@dimen/_8sdp"
-                    android:paddingTop="@dimen/_2sdp"
-                    android:paddingBottom="@dimen/_2sdp"
-                    android:text=""
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_16sdp" />
-
-
-                <androidx.appcompat.widget.AppCompatButton
-
-                    android:id="@+id/btn_call_equi_owner"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginHorizontal="@dimen/_60sdp"
-                    android:layout_marginTop="@dimen/_7sdp"
-                    android:background="@drawable/custom_button"
-                    android:fontFamily="@font/nbold"
-                    android:gravity="center"
+                    android:background="@drawable/custome_input"
+                    android:gravity="center_vertical"
+                    android:hint="Owner Name"
+                    android:inputType="textPersonName"
                     android:padding="6dp"
-                    android:text=" Call Owner "
-                    android:textAllCaps="false">
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
 
-                </androidx.appcompat.widget.AppCompatButton>
+                <TextView
+                    android:id="@+id/text_owner_contact"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Contact"
+                    android:textColor="@color/Brown" />
 
+                <EditText
+                    android:id="@+id/edit_equip_owner_contact"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="@dimen/_5sdp"
+                    android:background="@drawable/custome_input"
+                    android:gravity="center_vertical"
+                    android:hint="Owner Contact"
+                    android:inputType="phone"
+                    android:padding="6dp"
+                    android:textColor="@color/black"
+                    android:textSize="18sp" />
 
             </LinearLayout>
 
 
-
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_book_equip"
+                android:id="@+id/btn_add_agri_equip"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_weight="1" android:layout_marginBottom="@dimen/_20sdp"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:layout_weight="1"
                 android:background="@drawable/custom_button"
                 android:fontFamily="@font/nbold"
                 android:padding="6dp"
-                android:text="  Book Equipment  "
+                android:paddingLeft="8dp"
+                android:paddingRight="8dp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:text="Add Equipment"
                 android:textAllCaps="false" />
 
 

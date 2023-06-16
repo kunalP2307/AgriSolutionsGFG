@@ -4,374 +4,66 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    tools:context=".AddAgriEquipment">
+    android:id="@+id/constrain_equip_added"
+    tools:context=".AddAgriEquipmentActivity">
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:paddingTop="@dimen/_16sdp"
-        android:paddingBottom="@dimen/_10sdp"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="30dp">
+    <TextView
+        android:id="@+id/textView434"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="10dp"
+        android:fontFamily="@font/nbold"
+        android:gravity="center_horizontal|center"
+        android:text="Your Agricultural Equipment has been added to our portal."
 
-        <LinearLayout
+        android:textColor="@color/darkGreen"
+        android:textSize="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView131" />
 
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="@dimen/_7sdp">
+    <TextView
+        android:id="@+id/textView543"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Know More!"
+        android:textSize="18dp"
+        android:textColor="@color/darkGreen"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView434"
+        app:layout_constraintVertical_bias="0.05" />
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_continue_equip_added"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/custom_button"
+        android:fontFamily="@font/nbold"
+        android:text="Continue"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/_10sdp"
-                android:background="@drawable/section_background"
-
-                android:orientation="vertical"
-                android:padding="16dp">
-
-                <TextView
-                    android:id="@+id/title_equipment"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:shadowColor="@color/white"
-                    android:shadowDx="1"
-                    android:shadowDy="2"
-                    android:shadowRadius="1"
-                    android:text="Equipment Details"
-                    android:textAlignment="center"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_18sdp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/textView52"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Equipment Category"
-                    android:textColor="@color/Brown" />
-
-                <Spinner
-                    android:id="@+id/spin_agri_equip_cat"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/custome_input"
-                    android:gravity="center_vertical"
-                    android:padding="6dp"
-                    android:textSize="18dp" android:layout_marginVertical="@dimen/_5sdp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
-
-
-                <TextView
-                    android:id="@+id/textView3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Equipment Name"
-                    android:textColor="@color/Brown" />
-
-                <EditText
-                    android:id="@+id/edit_agri_equip_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginVertical="@dimen/_5sdp"
-                    android:background="@drawable/custome_input"
-                    android:inputType="text"
-                    android:hint="eg 20Ltr Electric Sprayer"
-                    android:padding="6dp"     android:gravity="center_vertical"
-                    android:textColor="@color/black"
-                    android:textSize="18sp" />
-
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Year Used"
-                    android:textColor="@color/Brown" />
-
-                <EditText
-                    android:id="@+id/edit_agri_equip_year_used"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginVertical="@dimen/_5sdp"
-                    android:gravity="center_vertical"
-                    android:background="@drawable/custome_input"
-                    android:inputType="numberDecimal"
-                    android:hint="eg 2 years"
-                    android:padding="6dp"
-                    android:textColor="@color/black"
-                    android:textSize="18sp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Rental per Day"
-                    android:textColor="@color/Brown" />
-
-                <EditText
-                    android:id="@+id/edit_agri_equip_rent"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/custome_input"
-                    android:inputType="numberDecimal"
-                    android:padding="6dp"
-                    android:hint="Rent Per Day"
-                    android:gravity="center_vertical"
-                    android:textColor="@color/black"
-                    android:textSize="18sp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="right"
-                    android:layout_marginTop="4dp"
-                    android:layout_marginBottom="4dp"
-                    android:textStyle="bold"
-                    android:textSize="16dp"
-                    android:text="Recommend Price" />
-
-                <ImageView
-                    android:id="@+id/img_agri_equp"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/_100sdp"
-                    android:scaleType="fitCenter"
-                    android:visibility="gone"
-                    android:src="@drawable/img" />
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/btn_add_img_equip"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_margin="20dp"
-                    android:paddingLeft="8dp"
-                    android:paddingRight="8dp"
-                    android:textStyle="bold"
-                    android:textColor="@color/white"
-                    android:layout_marginBottom="12dp"
-                    android:background="@drawable/custom_button"
-                    android:text="Add Image"
-                    android:textAllCaps="false"
-                    android:textSize="18dp" />
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/_10sdp"
-                android:background="@drawable/section_background"
-                android:orientation="vertical"
-                android:padding="16dp">
-
-                <TextView
-                    android:id="@+id/availabiltiy_equipment"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:shadowColor="@color/white"
-                    android:shadowDx="1"
-                    android:shadowDy="2"
-                    android:shadowRadius="1"
-                    android:text="Availabiltiy"
-                    android:textAlignment="center"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_18sdp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Start Date"
-                    android:textColor="@color/Brown" />
-
-                <EditText
-                    android:id="@+id/edit_agri_euip_avialable_from"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginVertical="@dimen/_5sdp"
-                    android:background="@drawable/custome_input"
-                    android:inputType="date"     android:gravity="center_vertical"
-                    android:padding="6dp"
-                    android:hint="Available From"
-                    android:textColor="@color/black"
-                    android:textSize="18sp" />
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="End Date"
-                    android:textColor="@color/Brown" />
-
-                <EditText
-                    android:id="@+id/edit_agri_euip_avialable_to"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginVertical="@dimen/_5sdp"
-                    android:background="@drawable/custome_input"
-                    android:inputType="date"     android:gravity="center_vertical"
-                    android:padding="6dp"
-                    android:hint="Available Till"
-                    android:textColor="@color/black"
-                    android:textSize="18sp" />
-
-                <ListView
-                    android:id="@+id/edit_agri_list_available_dates"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/btn_add_new_availability"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_margin="20dp"
-                    android:layout_marginBottom="@dimen/_20sdp"
-                    android:background="@drawable/custom_button"
-                    android:text="Add New"
-                    android:paddingRight="8dp"
-                    android:paddingLeft="8dp"
-                    android:textStyle="bold"
-                    android:textColor="@color/white"
-                    android:textAllCaps="false"
-                    android:textSize="18dp" />
-
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/_10sdp"
-                android:background="@drawable/section_background"
-                android:orientation="vertical"
-                android:padding="16dp">
-
-                <TextView
-                    android:id="@+id/title_address"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:shadowColor="@color/white"
-                    android:shadowDx="0"
-                    android:shadowDy="2"
-                    android:shadowRadius="1"
-                    android:text="Address"
-                    android:textAlignment="center"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_18sdp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/textVehicleType"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Select Location"
-                    android:textColor="@color/Brown" />
-
-                <EditText
-                    android:id="@+id/edit_agri_equip_location"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginVertical="@dimen/_5sdp"
-                    android:background="@drawable/custome_input"
-                    android:gravity="center_vertical"
-                    android:hint="Select Location of Equipment"
-                    android:inputType="textPostalAddress"
-                    android:padding="6dp"
-                    android:textColor="@color/black"
-                    android:textSize="18sp" />
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/_10sdp"
-                android:background="@drawable/section_background"
-                android:orientation="vertical"
-                android:padding="16dp">
-
-                <TextView
-                    android:id="@+id/title_owner"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:shadowColor="@color/white"
-                    android:shadowDx="0"
-                    android:shadowDy="2"
-                    android:shadowRadius="1"
-                    android:text="Owner Details"
-                    android:textAlignment="center"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_18sdp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/text_owner_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Name"
-                    android:textColor="@color/Brown" />
-
-                <EditText
-                    android:id="@+id/edit_equip_owner_name"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginVertical="@dimen/_5sdp"
-                    android:background="@drawable/custome_input"
-                    android:gravity="center_vertical"
-                    android:hint="Owner Name"
-                    android:inputType="textPersonName"
-                    android:padding="6dp"
-                    android:textColor="@color/black"
-                    android:textSize="18sp" />
-
-                <TextView
-                    android:id="@+id/text_owner_contact"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Contact"
-                    android:textColor="@color/Brown" />
-
-                <EditText
-                    android:id="@+id/edit_equip_owner_contact"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginVertical="@dimen/_5sdp"
-                    android:background="@drawable/custome_input"
-                    android:gravity="center_vertical"
-                    android:hint="Owner Contact"
-                    android:inputType="phone"
-                    android:padding="6dp"
-                    android:textColor="@color/black"
-                    android:textSize="18sp" />
-
-            </LinearLayout>
-
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btn_add_agri_equip"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginBottom="@dimen/_20sdp"
-                android:layout_weight="1"
-                android:background="@drawable/custom_button"
-                android:fontFamily="@font/nbold"
-                android:padding="6dp"
-                android:paddingLeft="8dp"
-                android:paddingRight="8dp"
-                android:textStyle="bold"
-                android:textColor="@color/white"
-                android:text="Add Equipment"
-                android:textAllCaps="false" />
-
-
-        </LinearLayout>
-    </ScrollView>
-
+    <ImageView
+        android:id="@+id/imageView131"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/img_check" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,36 +7,49 @@
 
     <TextView
         android:id="@+id/text_row_agri_equip_rent"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:text="250000"
         android:textColor="@color/black"
-        android:textSize="19dp"
+        android:textSize="16dp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/textView59"
-        app:layout_constraintTop_toBottomOf="@+id/text_row_loc_agri_euip" />
+        app:layout_constraintBottom_toBottomOf="@+id/textView59"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView59" />
 
     <TextView
         android:id="@+id/textView59"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="90dp"
-        android:text="RENT/HOUR"
+        android:layout_marginEnd="8dp"
+        android:text="Rent"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/text_row_agri_equip_category"
+        app:layout_constraintEnd_toStartOf="@+id/text_row_agri_equip_rent"
+        app:layout_constraintTop_toTopOf="@+id/text_row_agri_equip_category" />
+
+    <TextView
+        android:id="@+id/text_row_agri_equip_category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:textColor="@color/darkGreen"
         android:textSize="18dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/img_row_loc_agri_equi_" />
+        app:layout_constraintBottom_toBottomOf="@+id/img_row_agri_cat"
+        app:layout_constraintStart_toEndOf="@+id/img_row_agri_cat"
+        app:layout_constraintTop_toBottomOf="@+id/img_row_loc_agri_equi_"
+        tools:text="Tractor Mahindra" />
 
     <TextView
         android:id="@+id/text_row_agri_equip_name"
-        android:layout_width="0dp"
+        android:layout_width="282dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="2dp"
+        android:textColor="@color/NdarkGreen"
         android:textSize="16dp"
-        app:layout_constraintStart_toEndOf="@+id/img_row_agri_cat"
-        app:layout_constraintTop_toBottomOf="@+id/text_row_loc_agri_euip" />
+        app:layout_constraintStart_toStartOf="@+id/text_row_agri_equip_category"
+        app:layout_constraintTop_toBottomOf="@+id/text_row_agri_equip_category" />
 
     <ImageView
         android:id="@+id/img_profile_status_in_agri_equip"
@@ -51,35 +64,38 @@
 
     <TextView
         android:id="@+id/text_row_loc_agri_euip"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="20dp"
         android:textColor="@color/black"
-        android:textSize="20dp"
+        android:textSize="17dp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/img_row_loc_agri_equi_"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/img_row_loc_agri_equi_"
-        android:layout_width="27dp"
-        android:layout_height="27dp"
+        android:layout_width="23dp"
+        android:layout_height="23dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
         android:src="@drawable/ic_location"
+        app:layout_constraintBottom_toBottomOf="@+id/text_row_loc_agri_euip"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/text_row_loc_agri_euip"
+        app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
         android:id="@+id/img_row_agri_cat"
-        android:layout_width="27dp"
-        android:layout_height="27dp"
+        android:layout_width="23dp"
+        android:layout_height="23dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="8dp"
-        android:src="@drawable/agri_equip_cat"
+        android:layout_marginTop="4dp"
+        android:src="@drawable/ic_agri_equip"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/img_row_loc_agri_equi_" />
+        app:layout_constraintTop_toBottomOf="@+id/text_row_loc_agri_euip" />
 
     <TextView
         android:id="@+id/text_profile_status_in_agri_equi"
@@ -94,12 +110,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <View
+        android:id="@+id/view6"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginTop="10dp"
-        android:background="@color/colorAccent"
-        android:layout_marginRight="16dp"
         android:layout_marginLeft="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginRight="16dp"
+        android:background="@color/colorAccent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"

@@ -23,8 +23,11 @@
         android:theme="@style/Theme.SolutionToFarming"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".AddAgriEquipmentActivity"
+            android:exported="false" />
+        <activity
             android:name=".DiscussionForumActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".CropRecommendInputActivity"
             android:exported="false" />
@@ -75,7 +78,7 @@
         <activity android:name=".ShowAvailableAgriEquipmentsActivity" />
         <activity android:name=".EquipmentAddedActivity" />
         <activity android:name=".ShowAgriEquipmentActivity" />
-        <activity android:name=".AddAgriEquipment" />
+        <activity android:name=".AddAgriEquipDetailsActivity" />
         <activity android:name=".temp" />
         <activity android:name=".HelpActivity" />
         <activity android:name=".MyAddressActivity" />
