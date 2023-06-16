@@ -4,4 +4,10 @@
     <string name="viewroute"><u>View Route ></u>></string>
     <string name="OfficeAddress">AgriSolution, 125,Main Street, Shivaji Nagar, Pune-411006</string>
     <string name="about1"> Our app serves as a one-stop platform for farmers from facilitating land rentals and equipment lending to fostering collaborative transportation and delivering up-to-date news, we strive to uplift the farming community by leveraging technology.\n\n We are committed to addressing the unique challenges faced by farmers and contribute to the growth and prosperity of the farming community.</string>
+    <string-array name="land_rent_type_array">
+        <item>Select Rent Type</item>
+        <item>Rent</item>
+        <item>Share of Income</item>
+        <item>Spend Equal Get Equal</item>
+    </string-array>
 </resources>
