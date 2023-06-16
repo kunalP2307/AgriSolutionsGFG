@@ -62,7 +62,7 @@
         android:paddingBottom="10dp">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/card_add_agri_equip"
+            android:id="@+id/card_add_warehouse"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_margin="10dp"
@@ -95,7 +95,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/card_find_agri_equip"
+            android:id="@+id/ic_borrow_ware_house"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_margin="10dp"
@@ -128,7 +128,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/card_my_agri_equip"
+            android:id="@+id/card_my_warehouses"
             android:layout_width="150dp"
             android:layout_margin="10dp"
             android:layout_marginTop="30dp"

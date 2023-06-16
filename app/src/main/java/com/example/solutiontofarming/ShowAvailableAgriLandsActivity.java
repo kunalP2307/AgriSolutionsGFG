@@ -43,7 +43,7 @@ public class ShowAvailableAgriLandsActivity extends AppCompatActivity implements
         this.textViewLandAddress = findViewById(R.id.text_field_location);
         this.textViewLandArea = findViewById(R.id.text_field_area);
         this.textViewLandRent = findViewById(R.id.text_field_rent);
-        this.textViewLandType = findViewById(R.id.text_available_limit_row);
+        this.textViewLandType = findViewById(R.id.text_agri_land_type_row);
     }
 
     @Override

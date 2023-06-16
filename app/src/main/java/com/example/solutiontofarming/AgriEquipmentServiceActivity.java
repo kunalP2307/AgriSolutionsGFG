@@ -44,8 +44,8 @@ public class AgriEquipmentServiceActivity extends AppCompatActivity {
     }
     public void bindComponents(){
         this.imageViewAddEquip = findViewById(R.id.card_add_agri_equip);
-        this.imageViewFindEquip = findViewById(R.id.card_find_agri_equip);
-        this.imageViewMyEquipments = findViewById(R.id.card_my_agri_equip);
+        this.imageViewFindEquip = findViewById(R.id.card_borrow_ware_house);
+        this.imageViewMyEquipments = findViewById(R.id.card_my_warehouses);
     }
 
     public void addLisnteners(){

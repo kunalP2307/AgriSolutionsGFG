@@ -41,7 +41,7 @@
             android:name=".NewsActivityNew"
             android:exported="false" />
         <activity
-            android:name=".AddWareHouseActivity"
+            android:name=".AddWareHouseDetailsActivity"
             android:exported="false" />
         <activity
             android:name=".WareHouseServiceActivity"
@@ -55,6 +55,8 @@
         <activity
             android:name=".SelectPlaceActivity"
             android:exported="false" />
+        <activity android:name=".AddWareHouseActivity"
+            android:exported="false"/>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

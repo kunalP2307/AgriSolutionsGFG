@@ -25,9 +25,9 @@
         android:layout_marginEnd="8dp"
         android:text="Rent"
         android:textSize="16dp"
-        app:layout_constraintBottom_toBottomOf="@+id/text_row_agri_equip_category"
+        app:layout_constraintBottom_toBottomOf="@+id/text_row_agri_equip_name"
         app:layout_constraintEnd_toStartOf="@+id/text_row_agri_equip_rent"
-        app:layout_constraintTop_toTopOf="@+id/text_row_agri_equip_category" />
+        app:layout_constraintTop_toTopOf="@+id/text_row_agri_equip_name" />
 
     <TextView
         android:id="@+id/text_row_agri_equip_category"
@@ -43,11 +43,13 @@
 
     <TextView
         android:id="@+id/text_row_agri_equip_name"
-        android:layout_width="282dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
+        android:layout_marginEnd="10dp"
         android:textColor="@color/NdarkGreen"
         android:textSize="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/textView59"
         app:layout_constraintStart_toStartOf="@+id/text_row_agri_equip_category"
         app:layout_constraintTop_toBottomOf="@+id/text_row_agri_equip_category" />
 

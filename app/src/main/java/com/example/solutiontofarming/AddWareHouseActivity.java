@@ -1,138 +1,141 @@
 package com.example.solutiontofarming;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 
-import android.app.DatePickerDialog;
-import android.app.TimePickerDialog;
+import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
-import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.DatePicker;
-import android.widget.EditText;
-import android.widget.RadioButton;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.Locale;
+import com.android.volley.AuthFailureError;
+import com.android.volley.NetworkResponse;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.VolleyLog;
+import com.android.volley.toolbox.HttpHeaderParser;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import com.example.solutiontofarming.data.AgriEquipment;
+import com.example.solutiontofarming.data.Extras;
+import com.example.solutiontofarming.data.Warehouse;
+import com.google.gson.Gson;
+
+import org.json.JSONObject;
+
+import java.io.UnsupportedEncodingException;
 
 public class AddWareHouseActivity extends AppCompatActivity {
-    EditText editTextOwnerName ,editTextOwnerAddress,editTextOwnerMob, editTextWareHouseLocation ,editTextFloorSpace, editTextCeiling,editTextTransportAccess,editTextDescription,
-            editLeaseTermDuration ,editTextLeaseTermStart , editTextLeaseTermEnd,editTextRent;
-    Button btnAddWarehouse;
-    RadioButton radioFirePreventYes, radioFirePreventNo, radioTransportAccessYes, radioTransportAccessNo;
-    Date leaseTermStart, leaseTermEnd;
+
+    Button buttonContinue;
+    ProgressDialog dialog;
+    ConstraintLayout mainLayout;
+    Warehouse warehouse;
+    String URL = "http://"+ Extras.VM_IP+":7000/insert-one/warehouses";
+    JSONObject jsonObjectWarehouse = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_ware_house);
+
         bindComponents();
-        addListeners();
+        setProgressDialog();
+        getWarehouse();
+        addAgriEquipment();
     }
 
-    private void bindComponents() {
-
-        editTextOwnerName = findViewById(R.id.edit_text_select_name_warehouse);
-        editTextOwnerMob = findViewById(R.id.edit_text_select_contact_warehouse);
-        editTextWareHouseLocation = findViewById(R.id.edit_text_select_address_warehouse);
-        editTextFloorSpace = findViewById(R.id.edit_text_select_floor_space_warehouse);
-        editTextCeiling = findViewById(R.id.edit_text_select_ceiling_height_warehouse);
-        editTextTransportAccess = findViewById(R.id.edit_text_select_road_conditions_warehouse);
-
-        editLeaseTermDuration = findViewById(R.id.edit_text_select_lease_term_duration_warehouse);
-        editTextLeaseTermStart =findViewById(R.id.edit_text_select_lease_term_start_date_warehouse);
-        editTextLeaseTermEnd=findViewById(R.id.edit_text_select_lease_term_end_date_warehouse);
-        editTextRent =findViewById(R.id.edit_text_rent);
-//      textview is given end date , edittext id given rent
-        btnAddWarehouse = findViewById(R.id.btn_rent_warehouse);
-
-        radioFirePreventYes = findViewById(R.id.edit_text_select_fire_prevention_system_yes_warehouse);
-        radioFirePreventNo = findViewById(R.id.edit_text_select_fire_prevention_system_no_warehouse);
-        radioTransportAccessYes = findViewById(R.id.edit_text_select_transportation_access_yes_warehouse);
-        radioTransportAccessNo = findViewById(R.id.edit_text_select_transportation_access_no_warehouse);
-
-
-
-    }
-    public void addListeners()
-    {
-        btnAddWarehouse.setOnClickListener(new View.OnClickListener() {
+    private void bindComponents(){
+        mainLayout = findViewById(R.id.constrain_warehouse_added);
+        buttonContinue = findViewById(R.id.btn_continue_warehouse_added);
+        buttonContinue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (isFormValid()) {
-                    Log.d("", "onClick: "+editTextWareHouseLocation.toString());
-                } else {
-
-                }
+                startActivity(new Intent(getApplicationContext(), ServicesActivity.class));
             }
         });
-
     }
 
-    private boolean isValidOwnerName(String ownerName) {
-        //  only letters
-        return !TextUtils.isEmpty(ownerName) && ownerName.matches("[a-zA-Z]+");
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(getApplicationContext(), HomeActivity.class));
     }
 
-    private boolean isValidAddress(String address) {
-        // valid pincode
-        return !TextUtils.isEmpty(address) && address.matches(".\\d{6}.");
+    private void setProgressDialog(){
+        dialog = new ProgressDialog(this);
+        dialog.setMessage("Hold On Adding Your Warehouse..!");
+        dialog.setCancelable(false);
+        dialog.setInverseBackgroundForced(false);
+        dialog.show();
+        mainLayout.setVisibility(View.INVISIBLE);
     }
 
-    private boolean isValidMobileNumber(String mobileNumber) {
-        //  exactly 10 digits
-        return !TextUtils.isEmpty(mobileNumber) && mobileNumber.matches("\\d{10}");
+    private void getWarehouse(){
+        warehouse = (Warehouse) getIntent().getSerializableExtra("WAREHOUSE_OBJ");
+        Log.d("TAG", "getTransport: "+warehouse.toString());
+
+        Gson gson = new Gson();
+        String json = gson.toJson(warehouse);
+        try {
+            jsonObjectWarehouse = new JSONObject(json);
+        } catch (Throwable t) {
+            Log.e("My App", "Could not parse malformed JSON: \"" + json + "\"");
+        }
+//        JsonObject jsonObject = gson.fromJson(json, (Type) Fare.class);
+        Log.d("TAG", "onCreate: JsonObject"+jsonObjectWarehouse);
     }
 
-    private boolean isValidTermDuration(String termDuration) {
-        // only numbers
-        return !TextUtils.isEmpty(termDuration) && termDuration.matches("\\d+");
-    }
+    private void addAgriEquipment(){
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
 
-    private boolean isValidDate(String date) {
-        return !TextUtils.isEmpty(date);
-    }
+        final String requestBody = jsonObjectWarehouse.toString();
 
-    private boolean isFormValid() {
-        String ownerName = editTextOwnerName.getText().toString().trim();
-        String address = editTextOwnerAddress.getText().toString().trim();
-        String mobileNumber = editTextOwnerMob.getText().toString().trim();
-        String termDuration = editLeaseTermDuration.getText().toString().trim();
-        String startDate = editTextLeaseTermStart.getText().toString().trim();
-        String endDate = editTextLeaseTermEnd.getText().toString().trim();
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                Log.i("VOLLEY", response);
+                dialog.hide();
+                mainLayout.setVisibility(View.VISIBLE);
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.e("Something Went Wrong", error.toString());
+                dialog.hide();
+                startActivity(new Intent(getApplicationContext(), ServicesActivity.class));
+            }
+        }) {
+            @Override
+            public String getBodyContentType() {
+                return "application/json; charset=utf-8";
+            }
 
-        boolean isOwnerNameValid = isValidOwnerName(ownerName);
-        boolean isAddressValid = isValidAddress(address);
-        boolean isMobileNumberValid = isValidMobileNumber(mobileNumber);
-        boolean isTermDurationValid = isValidTermDuration(termDuration);
-        boolean isStartDateValid = isValidDate(startDate);
-        boolean isEndDateValid = isValidDate(endDate);
+            @Override
+            public byte[] getBody() throws AuthFailureError {
+                try {
+                    return requestBody == null ? null : requestBody.getBytes("utf-8");
+                } catch (UnsupportedEncodingException uee) {
+                    VolleyLog.wtf("Unsupported Encoding while trying to get the bytes of %s using %s", requestBody, "utf-8");
+                    return null;
+                }
+            }
 
-        if (!isOwnerNameValid) {
-            editTextOwnerName.setError("Please enter a valid owner name");
-        }
-        if (!isAddressValid) {
-            editTextOwnerAddress.setError("Please enter a valid address with a pincode");
-        }
-        if (!isMobileNumberValid) {
-            editTextOwnerMob.setError("Please enter a valid 10-digit mobile number");
-        }
-        if (!isTermDurationValid) {
-            editLeaseTermDuration.setError("Please enter a valid term duration (numbers only)");
-        }
-        if (!isStartDateValid) {
-            editTextLeaseTermStart.setError("Please select a valid start date");
-        }
-        if (!isEndDateValid) {
-            editTextLeaseTermEnd.setError("Please select a valid end date");
-        }
+            @Override
+            protected Response<String> parseNetworkResponse(NetworkResponse response) {
+                String responseString = "";
+                if (response != null) {
+                    responseString = String.valueOf(response.statusCode);
+                    // can get more details such as response.headers
+                }
+                return Response.success(responseString, HttpHeaderParser.parseCacheHeaders(response));
+            }
+        };
 
-        return isOwnerNameValid && isAddressValid && isMobileNumberValid && isTermDurationValid && isStartDateValid && isEndDateValid;
+        requestQueue.add(stringRequest);
     }
 
 }

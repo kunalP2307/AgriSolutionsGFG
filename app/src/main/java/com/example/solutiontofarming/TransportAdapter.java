@@ -12,8 +12,6 @@ import android.widget.TextView;
 import com.example.solutiontofarming.data.HowFar;
 import com.example.solutiontofarming.data.TransportRide;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 
 public class TransportAdapter extends BaseAdapter {
@@ -51,7 +49,7 @@ public class TransportAdapter extends BaseAdapter {
         TransportRide currTransport = (TransportRide)getItem(position);
         TextView textViewSource = convertView.findViewById(R.id.text_field_area);
         TextView textViewDestination = convertView.findViewById(R.id.scheduled_ride_destination);
-        TextView textViewLoad =  convertView.findViewById(R.id.text_available_limit_row);
+        TextView textViewLoad =  convertView.findViewById(R.id.text_agri_land_type_row);
         TextView textViewDateTime =  convertView.findViewById(R.id.text_field_location);
         TextView textViewTruckType = convertView.findViewById(R.id.text_truck_type_row);
         ImageView imageView = convertView.findViewById(R.id.imageView);

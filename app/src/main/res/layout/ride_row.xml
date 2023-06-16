@@ -42,7 +42,7 @@
         app:layout_constraintTop_toBottomOf="@+id/text_field_location" />
 
     <TextView
-        android:id="@+id/text_available_limit_row"
+        android:id="@+id/text_agri_land_type_row"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -96,9 +96,9 @@
         android:layout_height="32dp"
         android:layout_marginStart="20dp"
         android:src="@drawable/available_load_ic"
-        app:layout_constraintBottom_toBottomOf="@+id/text_available_limit_row"
+        app:layout_constraintBottom_toBottomOf="@+id/text_agri_land_type_row"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/text_available_limit_row" />
+        app:layout_constraintTop_toTopOf="@+id/text_agri_land_type_row" />
 
     <ImageView
         android:id="@+id/imageView12"
