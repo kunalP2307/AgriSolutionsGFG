@@ -94,7 +94,7 @@ public class ShowAvailableAgriEquipmentsActivity extends AppCompatActivity imple
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 if(position!=0)
                     Toast.makeText(ShowAvailableAgriEquipmentsActivity.this, "Coming Soon", Toast.LENGTH_SHORT).show();
-            }git s
+            }
 
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
