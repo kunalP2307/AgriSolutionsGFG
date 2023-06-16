@@ -1,8 +1,6 @@
 package com.example.solutiontofarming;
 
 import android.content.Context;
-import android.graphics.Color;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,9 +9,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.solutiontofarming.data.AgriculturalLand;
-import com.example.solutiontofarming.data.Transport;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -52,7 +47,7 @@ public class AgriculturalLandAdapter extends BaseAdapter {
         TextView textViewLocation = (TextView)convertView.findViewById(R.id.text_field_location);
         TextView textViewArea = (TextView)convertView.findViewById(R.id.text_field_area);
         TextView textViewRent = (TextView)convertView.findViewById(R.id.text_field_rent);
-        TextView textViewType = (TextView)convertView.findViewById(R.id.text_field_type);
+        TextView textViewType = (TextView)convertView.findViewById(R.id.text_available_limit_row);
 
         String landOwnerId = currAgriLand.getProviderId();
         int length = landOwnerId.length();

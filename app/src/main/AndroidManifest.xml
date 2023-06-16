@@ -24,6 +24,12 @@
         android:usesCleartextTraffic="true">
         <activity
             android:name=".DiscussionForumActivity"
+            android:exported="false"/>
+        <activity
+            android:name=".CropRecommendInputActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CropRecommendHomeActivity"
             android:exported="false" />
         <activity
             android:name=".ShowSearchedRidesActivity"

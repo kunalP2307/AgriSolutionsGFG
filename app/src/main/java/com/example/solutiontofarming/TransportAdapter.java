@@ -9,17 +9,21 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.solutiontofarming.data.HowFar;
 import com.example.solutiontofarming.data.TransportRide;
-import com.example.solutiontofarming.data.TransportRide;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
 public class TransportAdapter extends BaseAdapter {
     Context context;
     ArrayList<TransportRide> transportList;
-    public TransportAdapter(Context context,ArrayList<TransportRide> transportList){
+    ArrayList<HowFar> howFarList;
+    public TransportAdapter(Context context,ArrayList<TransportRide> transportList, ArrayList<HowFar> howFarList){
         this.context = context;
         this.transportList = transportList;
+        this.howFarList = howFarList;
     }
 
 
@@ -45,12 +49,18 @@ public class TransportAdapter extends BaseAdapter {
         }
 
         TransportRide currTransport = (TransportRide)getItem(position);
-        TextView textViewSource = (TextView) convertView.findViewById(R.id.text_field_area);
-        TextView textViewDestination = (TextView) convertView.findViewById(R.id.scheduled_ride_destination);
-        TextView textViewLoad = (TextView) convertView.findViewById(R.id.text_field_type);
-        TextView textViewPrice = (TextView) convertView.findViewById(R.id.text_field_rent);
-        TextView textViewDateTime = (TextView) convertView.findViewById(R.id.text_field_location);
+        TextView textViewSource = convertView.findViewById(R.id.text_field_area);
+        TextView textViewDestination = convertView.findViewById(R.id.scheduled_ride_destination);
+        TextView textViewLoad =  convertView.findViewById(R.id.text_available_limit_row);
+        TextView textViewDateTime =  convertView.findViewById(R.id.text_field_location);
+        TextView textViewTruckType = convertView.findViewById(R.id.text_truck_type_row);
         ImageView imageView = convertView.findViewById(R.id.imageView);
+        TextView textViewPrice =  convertView.findViewById(R.id.text_field_rent);
+
+        TextView textViewHowFarSource = convertView.findViewById(R.id.text_how_far_source);
+        TextView textViewHowFarDest = convertView.findViewById(R.id.text_how_far_destination);
+        ImageView temp1 = convertView.findViewById(R.id.imageView14);
+        ImageView temp2 = convertView.findViewById(R.id.imageView15);
 
 
         /*if(position == 0 || position > 2)  {
@@ -61,9 +71,22 @@ public class TransportAdapter extends BaseAdapter {
         }*/
 
         textViewDateTime.setText(currTransport.getWhen().getDate());
-        textViewSource.setText(currTransport.getSource().getName());
-        textViewDestination.setText(currTransport.getDestination().getName());
+        textViewSource.setText(currTransport.getSource().getAddress());
+        textViewDestination.setText(currTransport.getDestination().getAddress());
         textViewLoad.setText(currTransport.getVehicle().getAvailableLimit() + " "+currTransport.getVehicle().getWeightUnit());
+        textViewTruckType.setText(currTransport.getVehicle().getType());
+
+        if(howFarList.size() != 0){
+            HowFar howFar = howFarList.get(position);
+            textViewHowFarSource.setVisibility(View.VISIBLE);
+            textViewHowFarDest.setVisibility(View.VISIBLE);
+            textViewHowFarSource.setText((Math.round(howFar.getFarFromSource()*10.0)/10.0)+ " KM");
+            textViewHowFarDest.setText((Math.round(howFar.getFarFromDestination()*10.0)/10.0)+ " KM");
+            temp1.setVisibility(View.VISIBLE);
+            temp2.setVisibility(View.VISIBLE);
+
+        }
+
 //        textViewPrice.setText(currTransport.getFare().getPricePerKm());
 
 //        String rideProviderId = currTransport.getRideProviderId();

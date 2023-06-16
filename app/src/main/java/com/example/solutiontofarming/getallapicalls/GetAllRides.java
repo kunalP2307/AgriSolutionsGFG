@@ -18,7 +18,7 @@ public class GetAllRides {
 
     private RequestQueue requestQueue;
 
-    String GET_ALL_URL = "http://"+ Extras.VM_IP +":7000/find/user";
+    String GET_ALL_URL = "http://"+ Extras.VM_IP +":7000/find/rides";
 
     public GetAllRides(Context context){
         requestQueue = Volley.newRequestQueue(context);

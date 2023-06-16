@@ -35,8 +35,8 @@ public class ShowAgriEquipmentActivity extends AppCompatActivity {
     public void bindComponents(){
         this.textViewEquipCategory = findViewById(R.id.text_equip_category);
         this.textViewEquipName = findViewById(R.id.text_equip_name);
-        this.textViewEquipmentRent = findViewById(R.id.text_equip_rent_hour);
-        this.textViewEquipmentAdditionalDetails = findViewById(R.id.text_equip_details);
+//        this.textViewEquipmentRent = findViewById(R.id.text_equip_rent_hour);
+//        this.textViewEquipmentAdditionalDetails = findViewById(R.id.text_equip_details);
         this.textViewEquipmentLocation = findViewById(R.id.text_equip_location);
         this.textViewEquipmentOwner = findViewById(R.id.text_equip_owner_name);
         this.btnCallEquipmentOwner = findViewById(R.id.btn_call_equi_owner);

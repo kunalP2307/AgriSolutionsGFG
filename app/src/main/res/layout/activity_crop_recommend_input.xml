@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".CropRecommendInputActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="@dimen/_16sdp"
+        android:paddingBottom="@dimen/_10sdp"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="30dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/_7sdp">
+
+            <!-- Land Details Section -->
+            <LinearLayout
+                android:id="@+id/section_land_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@drawable/section_background"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/title_land_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:shadowColor="@color/white"
+                    android:shadowDx="1"
+                    android:shadowDy="2"
+                    android:shadowRadius="1"
+                    android:text="Land Details"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_18sdp"
+                    android:textStyle="bold" />
+
+
+
+                <!-- Land Area Input -->
+                <TextView
+                    android:id="@+id/text_land_area"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/Brown"
+                    android:text="Land Area (in acres)" />
+
+                <EditText
+                    android:id="@+id/edit_land_area"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="18dp"
+                    android:padding="6dp"
+                    android:background="@drawable/custome_input" android:textColor="@color/Brown"
+                    android:inputType="numberDecimal" />
+
+                <!-- Soil Type Input -->
+                <TextView
+                    android:id="@+id/text_soil_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:textColor="@color/Brown"
+                    android:text="Soil Type" />
+
+                <EditText
+                    android:id="@+id/edit_soil_type"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"  android:textSize="18dp"
+                    android:padding="6dp"
+                    android:background="@drawable/custome_input"
+                    android:inputType="text" />
+
+                <!-- Location EditText -->
+                <TextView
+                    android:id="@+id/text_location"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:textColor="@color/Brown"
+                    android:text="Location" />
+
+                <EditText
+                    android:id="@+id/edit_location"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"  android:textSize="18dp"
+                    android:padding="6dp"
+                    android:background="@drawable/custome_input"
+                    android:inputType="text" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:orientation="horizontal">
+
+                    <!-- Get Current Location Button -->
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_get_current_location"
+                        android:layout_width="30dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAllCaps="false"
+                        android:background="@drawable/custom_button"
+                        android:layout_marginRight="@dimen/_10sdp"
+                        android:text="Current Location" />
+
+                    <!-- Select Location Button -->
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_select_location"
+                        android:layout_width="30dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/custom_button"
+                        android:textAllCaps="false"
+                        android:text="Select Location" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Other sections and buttons can be added here -->
+            <!-- Climate Information Section -->
+            <LinearLayout
+                android:id="@+id/section_climate_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@drawable/section_background"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/title_climate_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:shadowColor="@color/white"
+                    android:shadowDx="1"
+                    android:shadowDy="2"
+                    android:shadowRadius="1"
+                    android:text="Climate Information"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_18sdp"
+                    android:textStyle="bold" />
+
+                <!-- Average Annual Rainfall -->
+                <TextView
+                    android:id="@+id/text_avg_rainfall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:textColor="@color/Brown"
+                    android:text="Average Annual Rainfall (in mm)" />
+
+                <EditText
+                    android:id="@+id/edit_avg_rainfall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"  android:textSize="18dp"
+                    android:padding="6dp"
+                    android:background="@drawable/custome_input"
+                    android:inputType="number" />
+
+                <!-- Average Temperature -->
+                <TextView
+                    android:id="@+id/text_avg_temperature"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:textColor="@color/Brown"
+                    android:text="Average Temperature (in Celsius)" />
+
+                <EditText
+                    android:id="@+id/edit_avg_temperature"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"  android:textSize="18dp"
+                    android:padding="6dp"
+                    android:background="@drawable/custome_input"
+                    android:inputType="numberDecimal" />
+
+                <!-- Growing Season Duration -->
+                <TextView
+                    android:id="@+id/text_growing_season_duration"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:textColor="@color/Brown"
+                    android:text="Growing Season Duration (in months)" />
+
+                <EditText
+                    android:id="@+id/edit_growing_season_duration"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/custome_input"  android:textSize="18dp"
+                    android:padding="6dp"
+                    android:inputType="number" />
+
+            </LinearLayout>
+            <!-- Water Availability Section -->
+            <LinearLayout
+                android:id="@+id/section_water_availability"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@drawable/section_background"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/title_water_availability"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:shadowColor="@color/white"
+                    android:shadowDx="1"
+                    android:shadowDy="2"
+                    android:shadowRadius="1"
+                    android:text="Water Availability"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_18sdp"
+                    android:textStyle="bold" />
+
+                <!-- Water Source -->
+                <TextView
+                    android:id="@+id/text_water_source"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:textColor="@color/Brown"
+                    android:text="Water Source" />
+
+                <Spinner
+                    android:id="@+id/spin_water_source"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="6dp"
+                    android:background="@drawable/custome_input" />
+
+                <!-- Water Supply -->
+                <TextView
+                    android:id="@+id/text_water_supply"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:textColor="@color/Brown"
+                    android:text="Water Supply" />
+                <EditText
+                    android:id="@+id/edit_water_supply"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/custome_input"  android:textSize="18dp"
+                    android:padding="6dp"
+                    android:inputType="number" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:id="@+id/section_crop_history"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:background="@drawable/section_background"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/title_crop_history"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:shadowColor="@color/white"
+                    android:shadowDx="1"
+                    android:shadowDy="2"
+                    android:shadowRadius="1"
+                    android:text="Crop History"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_18sdp"
+                    android:textStyle="bold" />
+
+                <!-- Previous Crop -->
+                <TextView
+                    android:id="@+id/text_previous_crop"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/Brown"
+                    android:text="Previous Crop(s)" />
+
+                <EditText
+                    android:id="@+id/edit_previous_crop"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="6dp"
+                    android:textSize="18dp"
+                    android:background="@drawable/custome_input"
+                    android:inputType="text" />
+
+                <!-- Yield of Previous Crops -->
+                <TextView
+                    android:id="@+id/text_yield_of_previous_crops"
+                    android:layout_width="match_parent"
+                    android:textColor="@color/Brown"
+                    android:layout_height="wrap_content"
+                    android:text="Yield of Previous Crops" />
+
+                <EditText
+                    android:id="@+id/edit_yield_of_previous_crops"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"  android:padding="6dp"
+                    android:textSize="18dp"
+                    android:background="@drawable/custome_input"
+                    android:inputType="numberDecimal" />
+
+                <!-- Pest -->
+                <TextView
+                    android:id="@+id/text_pest_disease_issues"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/Brown"
+                    android:text="Pesticides Used" />
+
+                <EditText
+                    android:id="@+id/edit_pest_disease_issues"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:padding="6dp"
+                    android:textSize="18dp"
+                    android:background="@drawable/custome_input"
+                    android:inputType="textMultiLine" />
+
+                <!-- Fertilizer and Nutrient Application -->
+                <TextView
+                    android:id="@+id/text_fertilizer_nutrient_application"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:textColor="@color/Brown"
+                    android:text="Fertilizer and Nutrient Used" />
+
+                <EditText
+                    android:id="@+id/edit_fertilizer_nutrient_application"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:padding="6dp"
+                    android:textSize="18dp"
+                    android:background="@drawable/custome_input"
+                    android:inputType="textMultiLine" />
+
+                <!-- Irrigation Practices -->
+                <TextView
+                    android:id="@+id/text_irrigation_practices"
+                    android:layout_width="match_parent" android:textColor="@color/Brown"
+                    android:layout_height="wrap_content"
+                    android:text="Irrigation Practice Used" />
+
+                <EditText
+                    android:id="@+id/edit_irrigation_practices"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:padding="6dp"
+                    android:textSize="18dp"
+                    android:background="@drawable/custome_input"
+                    android:inputType="textMultiLine" />
+
+                <!-- Crop Rotation -->
+                <TextView
+                    android:id="@+id/text_crop_rotation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:textColor="@color/Brown"
+                    android:text="Crop Rotation" />
+
+                <EditText
+                    android:id="@+id/edit_crop_rotation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:padding="6dp"
+                    android:textSize="18dp"
+                    android:background="@drawable/custome_input"
+                    android:inputType="textMultiLine" />
+
+            </LinearLayout>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_get_crop_recommend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_weight="1"      android:layout_marginBottom="@dimen/_20sdp"
+                android:background="@drawable/custom_button"
+                android:fontFamily="@font/nbold"
+                android:padding="6dp"
+                android:text="  Get Your Crop Match  "
+                android:textAllCaps="false" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

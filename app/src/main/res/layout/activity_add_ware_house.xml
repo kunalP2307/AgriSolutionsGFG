@@ -20,12 +20,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="40dp"
             android:fontFamily="@font/nbold"
             android:text="Owner Name"
             android:textColor="@color/Brown"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/edit_text_rent" />
 
         <TextView
             android:id="@+id/textView51"
@@ -44,12 +43,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="20dp"
             android:fontFamily="@font/nbold"
             android:text="Select Location"
             android:textColor="@color/Brown"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edit_text_select_contact_warehouse" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textView50"
@@ -163,7 +162,8 @@
         <EditText
             android:id="@+id/edit_text_select_name_warehouse"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"            android:layout_marginStart="20dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="20dp"
             android:background="@drawable/custome_input"
@@ -222,8 +222,8 @@
             android:layout_marginEnd="20dp"
             android:background="@drawable/custome_input"
             android:ems="10"
-            android:padding="6dp"
             android:inputType="numberDecimal"
+            android:padding="6dp"
             android:textAlignment="viewStart"
             android:textSize="18dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -239,8 +239,8 @@
             android:layout_marginEnd="20dp"
             android:background="@drawable/custome_input"
             android:ems="10"
-            android:padding="6dp"
             android:inputType="numberDecimal"
+            android:padding="6dp"
             android:textAlignment="viewStart"
             android:textSize="18dp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -333,9 +333,9 @@
             android:background="@drawable/custome_input"
             android:ems="10"
             android:inputType="text"
-            android:textSize="18dp"
             android:padding="6dp"
             android:textAlignment="viewStart"
+            android:textSize="18dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -351,9 +351,10 @@
             android:background="@drawable/custome_input"
             android:ems="10"
             android:inputType="number"
-            android:padding="6dp"            android:textSize="18dp"
-
+            android:padding="6dp"
             android:textAlignment="viewStart"
+
+            android:textSize="18dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView15" />
@@ -367,9 +368,9 @@
             android:layout_marginEnd="20dp"
             android:background="@drawable/custome_input"
             android:ems="10"
-            android:textSize="18dp"
-            android:padding="6dp"
             android:inputType="date"
+            android:padding="6dp"
+            android:textSize="18dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -385,9 +386,10 @@
             android:background="@drawable/custome_input"
             android:ems="10"
             android:inputType="number"
-            android:padding="6dp"             android:textSize="18dp"
-
+            android:padding="6dp"
             android:textAlignment="viewStart"
+
+            android:textSize="18dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView22" />
@@ -403,31 +405,25 @@
             android:ems="10"
             android:inputType="number"
             android:padding="6dp"
-            android:textSize="18dp"
             android:textAlignment="viewStart"
+            android:textSize="18dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
         <Button
             android:id="@+id/btn_rent_warehouse"
-            android:layout_width="0dp"
+            android:layout_width="371dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="60dp"
+
+            android:layout_marginTop="30dp"
+            android:backgroundTint="@color/darkYellow"
             android:text="Continue"
+            android:textAllCaps="false"
             android:textColor="@color/black"
             android:textSize="18dp"
-
-            android:textAllCaps="false"
-            android:backgroundTint="@color/darkYellow"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edit_text_rent" />
-
+            app:layout_constraintTop_toBottomOf="@+id/edit_text_select_contact_warehouse"
+            tools:layout_editor_absoluteX="20dp" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
