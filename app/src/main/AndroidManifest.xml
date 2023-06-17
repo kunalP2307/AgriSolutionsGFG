@@ -23,6 +23,12 @@
         android:theme="@style/Theme.SolutionToFarming"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".ShowAvailableWarehouseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ShowWarehouseDetailsActivity"
+            android:exported="false" />
+        <activity
             android:name=".AddAgriEquipmentActivity"
             android:exported="false" />
         <activity
@@ -55,8 +61,9 @@
         <activity
             android:name=".SelectPlaceActivity"
             android:exported="false" />
-        <activity android:name=".AddWareHouseActivity"
-            android:exported="false"/>
+        <activity
+            android:name=".AddWareHouseActivity"
+            android:exported="false" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
