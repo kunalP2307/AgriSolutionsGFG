@@ -2,6 +2,7 @@ package com.example.solutiontofarming;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,6 +10,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -22,6 +24,7 @@ import com.example.solutiontofarming.data.AgriculturalLand;
 import com.example.solutiontofarming.data.Extras;
 import com.example.solutiontofarming.data.TransportRide;
 import com.example.solutiontofarming.getallapicalls.FetchAllLands;
+import com.facebook.shimmer.ShimmerFrameLayout;
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
@@ -40,6 +43,9 @@ public class ShowAvailableAgriLandsActivity extends AppCompatActivity implements
     NewAgriLandAdapter newAgriLandAdapter;
     List<AgriLand> availableLands;
 
+    ShimmerFrameLayout shimmer;
+    ProgressDialog progressDialog;
+
     String TAG = "Fetch_Lands";
 
     private static final String API_URL = "http://"+ Extras.VM_IP +":7000/find/agri_lands";
@@ -50,6 +56,15 @@ public class ShowAvailableAgriLandsActivity extends AppCompatActivity implements
         setContentView(R.layout.activity_show_available_agri_lands);
         bindComponents();
         getSupportActionBar().setTitle("All Lands");
+
+        shimmer = findViewById(R.id.shimmer_activity_available_lands);
+        shimmer.setVisibility(View.VISIBLE);
+        shimmer.startShimmerAnimation();
+
+        progressDialog = new ProgressDialog(ShowAvailableAgriLandsActivity.this);
+        progressDialog.setMessage("Loading...");
+        progressDialog.setCancelable(false);
+        progressDialog.show();
 
 
 //        availableRides = (List<AgriculturalLand>) getIntent().getSerializableExtra("availableLand");
@@ -62,6 +77,16 @@ public class ShowAvailableAgriLandsActivity extends AppCompatActivity implements
         availableLands = new ArrayList<>();
 
         fetch_all_lands();
+
+        listViewAgriLand.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                AgriLand selectedLand = (AgriLand) newAgriLandAdapter.getItem(position);
+                Intent showLandDetailsIntent = new Intent(getApplicationContext(),ShowAgriLandDetailsNew.class);
+                showLandDetailsIntent.putExtra("EXTRA_SELECTED_LAND",selectedLand);
+                startActivity(showLandDetailsIntent);
+            }
+        });
 
     }
 
@@ -79,13 +104,17 @@ public class ShowAvailableAgriLandsActivity extends AppCompatActivity implements
                         JsonObject jsonObject = new Gson().fromJson(responseObj.toString(), JsonObject.class);
                         AgriLand agriLand = new Gson().fromJson(jsonObject, AgriLand.class);
                         availableLands.add(agriLand);
-                        Log.d("TAG", "onResponse:jsonObject "+responseObj.toString());
-                        Log.d("TAG", "onResponse:mapped Java "+agriLand.toString());
+//                        Log.d("TAG", "onResponse:jsonObject "+responseObj.toString());
+//                        Log.d("TAG", "onResponse:mapped Java "+agriLand.toString());
 
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
                 }
+
+                progressDialog.dismiss();
+                shimmer.stopShimmerAnimation();
+                shimmer.setVisibility(View.INVISIBLE);
 
                 newAgriLandAdapter = new NewAgriLandAdapter(ShowAvailableAgriLandsActivity.this,(ArrayList<AgriLand>) availableLands);
                 listViewAgriLand.setAdapter(newAgriLandAdapter);
@@ -93,7 +122,10 @@ public class ShowAvailableAgriLandsActivity extends AppCompatActivity implements
 
             @Override
             public void onError(VolleyError error) {
-
+                progressDialog.dismiss();
+                shimmer.stopShimmerAnimation();
+                shimmer.setVisibility(View.INVISIBLE);
+                Toast.makeText(ShowAvailableAgriLandsActivity.this, "Unable to Fetch Available Lands. Try Again.", Toast.LENGTH_SHORT).show();
             }
         });
 

@@ -35,46 +35,37 @@ public class NewAgriLandAdapter extends ArrayAdapter<AgriLand> {
             viewHolder.tvLandType = convertView.findViewById(R.id.text_agri_land_type_row);
             viewHolder.tvAmount = convertView.findViewById(R.id.text_field_rent);
             viewHolder.tvRentType = convertView.findViewById(R.id.text_field_rent_type);
+
+            convertView.setTag(viewHolder);
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
         }
 
-            TextView tvLocation = (TextView) convertView.findViewById(R.id.text_field_location);
-            TextView tvArea = (TextView) convertView.findViewById(R.id.text_field_area);
-            TextView tvLandType = (TextView) convertView.findViewById(R.id.text_agri_land_type_row);
-            TextView tvAmount = (TextView) convertView.findViewById(R.id.text_field_rent);
-            TextView tvRentType = (TextView) convertView.findViewById(R.id.text_field_rent_type);
-
             AgriLand currAgriLand = (AgriLand) getItem(position);
 
-            tvLocation.setText(currAgriLand.getAddress().getName());
-            tvArea.setText(String.valueOf(currAgriLand.getField().getArea())+" "+currAgriLand.getField().getUnit());
-            tvLandType.setText(currAgriLand.getField().getType());
-
-            Log.d("Fetch_Lands", "getView: "+currAgriLand.getAddress().getName());
-            Log.d("Fetch_Lands", "getView: "+currAgriLand.getField().getArea());
-            Log.d("Fetch_Lands", "getView: "+currAgriLand.getField().getType());
-            Log.d("Fetch_Lands", "getView: "+currAgriLand.getRent().getType());
+            viewHolder.tvLocation.setText(currAgriLand.getAddress().getName());
+            viewHolder.tvArea.setText(String.valueOf(currAgriLand.getField().getArea())+" "+currAgriLand.getField().getUnit());
+            viewHolder.tvLandType.setText(currAgriLand.getField().getType());
 
             String rentType = currAgriLand.getRent().getType();
 
             if(rentType.equals("Rent"))
             {
-                tvRentType.setText(rentType);
+                viewHolder.tvRentType.setText(rentType);
                 String text = String.valueOf(currAgriLand.getRent().getAmount());
-                tvAmount.setText("Rs."+text);
+                viewHolder.tvAmount.setText("Rs."+text);
             }
             else if(rentType.equals("Share of Income"))
             {
-                tvRentType.setText(rentType);
+                viewHolder.tvRentType.setText(rentType);
 
                 String text = String.valueOf(currAgriLand.getRent().getShare_percent());
-                tvAmount.setText(text+"%");
+                viewHolder.tvAmount.setText(text+"%");
             }
             else if(rentType.equals("Spend Equal Get Equal"))
             {
-                tvRentType.setText(rentType);
-                tvAmount.setText("");
+                viewHolder.tvRentType.setText(rentType);
+                viewHolder.tvAmount.setText("");
             }
         return convertView;
     }

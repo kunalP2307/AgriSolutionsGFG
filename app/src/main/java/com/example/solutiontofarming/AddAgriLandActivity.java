@@ -5,9 +5,9 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -18,6 +18,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.ScrollView;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -39,6 +40,7 @@ import com.example.solutiontofarming.data.AgriculturalLand;
 import com.example.solutiontofarming.data.Extras;
 import com.example.solutiontofarming.data.Field;
 import com.example.solutiontofarming.data.ID;
+import com.example.solutiontofarming.data.LandUser;
 import com.example.solutiontofarming.data.Lease;
 import com.example.solutiontofarming.data.Owner;
 import com.example.solutiontofarming.data.Rent;
@@ -59,8 +61,11 @@ import com.google.gson.Gson;
 import org.json.JSONObject;
 
 import java.io.UnsupportedEncodingException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
@@ -75,8 +80,11 @@ public class AddAgriLandActivity extends AppCompatActivity {
     RadioGroup rgFieldAreaUnit;
     Button btnStartDate, btnEndDate, btnAddLand;
     Spinner spRentType;
+    ScrollView scrollView;
 
     String leaseStartDate, leaseEndDate;
+
+    LandUser landUser = null;
 
     private String selectedAreaUnit = "";
     private String rentType = "";
@@ -85,7 +93,7 @@ public class AddAgriLandActivity extends AppCompatActivity {
     final int ADDRESS_REQ = 100;
     Address address = null;
 
-
+    ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,6 +106,7 @@ public class AddAgriLandActivity extends AppCompatActivity {
         addListeners();
         getSupportActionBar().setTitle("Add Farm");
         initPlaces();
+        getNameFromFireBase();
 
     }
 
@@ -145,6 +154,8 @@ public class AddAgriLandActivity extends AppCompatActivity {
 
         rgFieldAreaUnit = findViewById(R.id.radioGroup_field_area_unit);
         spRentType = findViewById(R.id.land_rent_type_spinner);
+
+        scrollView = findViewById(R.id.scrollView_add_agri_land_new);
     }
 
     public void addListeners(){
@@ -159,10 +170,18 @@ public class AddAgriLandActivity extends AppCompatActivity {
                 setLandDetailsNew();
 
                 if(agriLand != null)
+                {
+                    progressDialog = new ProgressDialog(AddAgriLandActivity.this);
+                    progressDialog.setMessage("Please Wait...");
+                    progressDialog.setCancelable(false);
+
+                    progressDialog.show();
+
                     addLandNew();
+                }
+
             }
         });
-
 
         etFieldLocation.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -203,13 +222,15 @@ public class AddAgriLandActivity extends AppCompatActivity {
                         new DatePickerDialog.OnDateSetListener() {
                             @Override
                             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                                leaseStartDate = String.format(Locale.getDefault(), "%d-%02d-%02d", year, month + 1, dayOfMonth);
+                                leaseStartDate = String.format(Locale.getDefault(), "%02d-%02d-%04d", dayOfMonth, month + 1, year);
                                 btnStartDate.setText(leaseStartDate);
                                 Log.d("Add_Land", "onDateSet: "+leaseStartDate);
                             }
                         }, year, month, dayOfMonth);
 
                 // Show the DatePickerDialog
+
+                datePickerDialog.getDatePicker().setMinDate(calendar.getTimeInMillis());
                 datePickerDialog.show();
             }
         });
@@ -217,23 +238,42 @@ public class AddAgriLandActivity extends AppCompatActivity {
         btnEndDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Calendar calendar = Calendar.getInstance();
-                int year = calendar.get(Calendar.YEAR);
-                int month = calendar.get(Calendar.MONTH);
-                int dayOfMonth = calendar.get(Calendar.DAY_OF_MONTH);
 
-                DatePickerDialog datePickerDialog = new DatePickerDialog(AddAgriLandActivity.this,
-                        new DatePickerDialog.OnDateSetListener() {
-                            @Override
-                            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                                leaseEndDate = String.format(Locale.getDefault(), "%d-%02d-%02d", year, month + 1, dayOfMonth);
-                                btnEndDate.setText(leaseEndDate);
-                                Log.d("Add_Land", "onDateSet: "+leaseEndDate);
-                            }
-                        }, year, month, dayOfMonth);
+                if(leaseStartDate != null){
 
-                // Show the DatePickerDialog
-                datePickerDialog.show();
+                    SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault());
+
+                    try {
+                        Date startDate = dateFormat.parse(leaseStartDate);
+
+                        Calendar calendar = Calendar.getInstance();
+                        calendar.setTime(startDate);
+                        calendar.add(Calendar.DAY_OF_MONTH, 1);
+
+                        int year = calendar.get(Calendar.YEAR);
+                        int month = calendar.get(Calendar.MONTH);
+                        int dayOfMonth = calendar.get(Calendar.DAY_OF_MONTH);
+
+                        DatePickerDialog datePickerDialog = new DatePickerDialog(AddAgriLandActivity.this,
+                                new DatePickerDialog.OnDateSetListener() {
+                                    @Override
+                                    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                                        leaseEndDate = String.format(Locale.getDefault(), "%02d-%02d-%04d", dayOfMonth, month + 1, year);
+                                        btnEndDate.setText(leaseEndDate);
+                                        Log.d("Add_Land", "onDateSet: "+leaseEndDate);
+                                    }
+                                }, year, month, dayOfMonth);
+
+                        datePickerDialog.getDatePicker().setMinDate(calendar.getTimeInMillis());
+                        datePickerDialog.show();
+
+                    } catch (ParseException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
+                else{
+                    Toast.makeText(AddAgriLandActivity.this, "Please select Start Date first.", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -266,6 +306,13 @@ public class AddAgriLandActivity extends AppCompatActivity {
 
                     etLandSharePercent.setEnabled(false);
                     etLandSharePercent.setText("Not Required");
+                }
+                else if (rentType.equals("Select Rent Type"))
+                {
+                    etLandRent.setEnabled(true);
+                    etLandRent.setText("");
+                    etLandSharePercent.setEnabled(true);
+                    etLandSharePercent.setText("");
                 }
             }
 
@@ -363,13 +410,13 @@ public class AddAgriLandActivity extends AppCompatActivity {
 
         Owner owner = new Owner(owner_name, contact);
 
+
+
         if(AgriLandValidator.validateField(field) && AgriLandValidator.validateDescription(description)
                 && AgriLandValidator.validateLease(lease) && AgriLandValidator.validateRent(rent)
                 && AgriLandValidator.validateOwner(owner) && address != null)
         {
-            agriLand = new AgriLand(field,description, address, lease, rent, owner);
-            clearEditTexts();
-            Toast.makeText(this, "Your Land is Added. You can check it in My Lands.", Toast.LENGTH_LONG).show();
+            agriLand = new AgriLand(field,description, address, lease, rent, owner, landUser);
         }
         else{
             Toast.makeText(this, "Please fill all details correctly...!!!", Toast.LENGTH_LONG).show();
@@ -439,11 +486,15 @@ public class AddAgriLandActivity extends AppCompatActivity {
         StringRequest stringRequest = new StringRequest(Request.Method.POST, URL, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
+                progressDialog.dismiss();
+                Toast.makeText(AddAgriLandActivity.this, "Your Land is Added. You can check it in My Lands.", Toast.LENGTH_LONG).show();
+                finish();
                 Log.i("Add_Land", response);
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
+                progressDialog.dismiss();
                 Log.e("Add_Land", error.toString());
             }
         }) {
@@ -479,6 +530,27 @@ public class AddAgriLandActivity extends AppCompatActivity {
 
     private void initPlaces(){
         Places.initialize(getApplicationContext(), Extras.API_KEY);
+    }
+
+    private void getNameFromFireBase(){
+        FirebaseDatabase.getInstance().getReference("(Q2-2021)Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                User user  = snapshot.getValue(User.class);
+
+                String userName = user.getFullName();
+                String userEmail = user.getEmail();
+
+                landUser = new LandUser(userName, userEmail);
+
+                Log.d("Add_Land", "onDataChange: "+user.getFullName()+user.getEmail()+user.getPhoneNo());
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 
 //    public void setLandDetails(){
