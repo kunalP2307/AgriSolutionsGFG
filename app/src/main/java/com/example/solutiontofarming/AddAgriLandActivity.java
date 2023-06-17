@@ -328,7 +328,7 @@ public class AddAgriLandActivity extends AppCompatActivity {
 
         if(rentType.equals("Rent"))
         {
-            text = etFieldArea.getText().toString();
+            text = etLandRent.getText().toString();
             try {
                 rent_amount = Double.parseDouble(text);
             } catch (NumberFormatException e) {
