@@ -314,20 +314,54 @@ http://IP:8000/store-message/USER_ID
 http://IP:8000/get-notification/USERID/FEILD_NAME
 ```
 
+**Data Format**
+
+```
+
+{
+    "userId" : "user1",
+    "msg" : {
+        "message_from" :{
+            "name" : "Kunal",
+            "contact" : "707007"
+        },
+        "service_type" : "",
+        "message" : "",
+        "read_status":""
+    }
+}
+```
+
 **Response Example**
 
 ```
 {
-  "data": [
-    {
-      "name": "sonu",
-      "notification": "hello"
-    },
-    {
-      "name": "sonu",
-      "notification": "hii"
-    }
-  ]
+    "data": [
+        {
+            "userId": "user1",
+            "msg": {
+                "message_from": {
+                    "name": "Kunal",
+                    "contact": "707007"
+                },
+                "service_type": "",
+                "message": "",
+                "read_status": ""
+            }
+        },
+        {
+            "userId": "user1",
+            "msg": {
+                "message_from": {
+                    "name": "Kunal",
+                    "contact": "707007"
+                },
+                "service_type": "",
+                "message": "",
+                "read_status": ""
+            }
+        }
+    ]
 }
 ```
 
