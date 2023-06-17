@@ -10,21 +10,19 @@ import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.solutiontofarming.FetchNews;
 import com.example.solutiontofarming.data.Extras;
-import com.google.maps.PlaceAutocompleteRequest;
 
 import org.json.JSONArray;
 
-public class GetAllRides {
-
+public class GetAllEquipments {
     private RequestQueue requestQueue;
 
-    String GET_ALL_URL = "http://"+ Extras.VM_IP +":7000/find/rides";
+    String GET_ALL_URL = "http://"+ Extras.VM_IP +":7000/find/agriequipments";
 
-    public GetAllRides(Context context){
+    public GetAllEquipments(Context context){
         requestQueue = Volley.newRequestQueue(context);
     }
 
-    public void fetchAllRides(final GetAllRides.ApiResponseListener listener){
+    public void fetchAllEquipments(final GetAllEquipments.ApiResponseListener listener){
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, GET_ALL_URL, null,
                 new Response.Listener<JSONArray>() {
                     @Override
@@ -46,5 +44,4 @@ public class GetAllRides {
         void onSuccess(JSONArray response);
         void onError(VolleyError error);
     }
-
 }

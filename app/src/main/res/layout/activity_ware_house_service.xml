@@ -62,7 +62,7 @@
         android:paddingBottom="10dp">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/card_rent_warehouse"
+            android:id="@+id/card_add_warehouse"
             android:layout_rowWeight="1"
             android:layout_columnWeight="1"
             android:layout_margin="10dp"

@@ -61,7 +61,7 @@ public class AddRideDetailsActivity extends AppCompatActivity implements DatePic
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_ride_details);
-        Places.initialize(getApplicationContext(),"AIzaSyBgXbVJEa9ev4akoZhezFVYeGfneYbHlRQ");
+        Places.initialize(getApplicationContext(),Extras.API_KEY);
 
         getUserId();
         bindComponents();

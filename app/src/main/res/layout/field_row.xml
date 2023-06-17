@@ -5,112 +5,96 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/img_profile_status_in_land"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="10dp"
-        android:src="@drawable/img_check"
-        android:visibility="gone"
-        app:layout_constraintStart_toStartOf="@+id/textView32"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/text_verified_profile_in_land"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="13dp"
-        android:text="Verified Profile"
-        android:textColor="#4CAF50"
-        android:visibility="gone"
-        app:layout_constraintStart_toEndOf="@+id/img_profile_status_in_land"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/text_field_location"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
+        android:text="Shelapur"
         android:textColor="@color/black"
-        android:textSize="20dp"
+        android:textSize="17dp"
         android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/img_loc"
         app:layout_constraintStart_toEndOf="@+id/img_loc"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/img_loc" />
 
     <TextView
         android:id="@+id/text_field_rent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:text="2000"
         android:textColor="@color/black"
-        android:textSize="19dp"
+        android:textSize="16dp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/textView32"
-        app:layout_constraintTop_toBottomOf="@+id/text_field_location" />
+        app:layout_constraintBottom_toBottomOf="@+id/textView32"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/textView32" />
 
     <TextView
         android:id="@+id/text_field_area"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:textSize="16dp"
+        android:text="20 Acre"
+        android:textColor="@color/Brown"
+        android:textSize="17dp"
+        app:layout_constraintBottom_toBottomOf="@+id/img_area"
         app:layout_constraintStart_toEndOf="@+id/img_area"
-        app:layout_constraintTop_toBottomOf="@+id/text_field_location" />
+        app:layout_constraintTop_toTopOf="@+id/img_area" />
 
     <TextView
-        android:id="@+id/text_available_limit_row"
+        android:id="@+id/text_agri_land_type_row"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
-        android:textSize="18dp"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="4dp"
+        android:text="Crop Land"
+        android:textColor="@color/NdarkGreen"
+        android:textSize="16dp"
+        app:layout_constraintStart_toStartOf="@+id/text_field_area"
         app:layout_constraintTop_toBottomOf="@+id/text_field_area" />
 
     <TextView
         android:id="@+id/textView32"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="90dp"
-        android:text="RENT/YEAR"
-        android:textSize="18dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_field_location" />
+        android:layout_marginEnd="8dp"
+        android:text="Rent"
+        android:textColor="@color/black"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toStartOf="@+id/text_field_rent"
+        app:layout_constraintTop_toTopOf="@+id/text_agri_land_type_row" />
 
     <ImageView
         android:id="@+id/img_loc"
-        android:layout_width="27dp"
-        android:layout_height="27dp"
+        android:layout_width="23dp"
+        android:layout_height="23dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
         android:src="@drawable/ic_location"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
     <View
+        android:id="@+id/view12"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginRight="16dp"
         android:layout_marginLeft="16dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginRight="16dp"
         android:background="@color/colorAccent"
         app:layout_constraintEnd_toStartOf="@+id/text_field_location"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_available_limit_row" />
+        app:layout_constraintTop_toBottomOf="@+id/text_agri_land_type_row" />
 
     <ImageView
         android:id="@+id/img_area"
         android:layout_width="27dp"
         android:layout_height="27dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="4dp"
         android:src="@drawable/ic_area"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/img_loc" />
+        app:layout_constraintTop_toBottomOf="@+id/text_field_location" />
 </androidx.constraintlayout.widget.ConstraintLayout>

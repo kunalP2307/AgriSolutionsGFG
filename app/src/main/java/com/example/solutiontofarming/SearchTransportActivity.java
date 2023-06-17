@@ -215,7 +215,7 @@ public class SearchTransportActivity extends AppCompatActivity implements DatePi
 
         GetAllRides getAllRides = new GetAllRides(this);
 
-        getAllRides.fetchAllRides(new FetchNews.ApiResponseListener() {
+        getAllRides.fetchAllRides(new GetAllRides.ApiResponseListener() {
             @Override
             public void onSuccess(JSONArray response) {
                 for (int i = 0; i < response.length(); i++) {

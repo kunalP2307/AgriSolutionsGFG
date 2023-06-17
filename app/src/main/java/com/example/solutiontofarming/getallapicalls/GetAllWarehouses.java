@@ -8,19 +8,17 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.solutiontofarming.FetchNews;
 import com.example.solutiontofarming.data.Extras;
-import com.google.maps.PlaceAutocompleteRequest;
 
 import org.json.JSONArray;
 
-public class GetAllRides {
+public class GetAllWarehouses {
 
     private RequestQueue requestQueue;
 
-    String GET_ALL_URL = "http://"+ Extras.VM_IP +":7000/find/rides";
+    String GET_ALL_URL = "http://"+ Extras.VM_IP +":7000/find/warehouses";
 
-    public GetAllRides(Context context){
+    public GetAllWarehouses(Context context){
         requestQueue = Volley.newRequestQueue(context);
     }
 
@@ -46,5 +44,4 @@ public class GetAllRides {
         void onSuccess(JSONArray response);
         void onError(VolleyError error);
     }
-
 }

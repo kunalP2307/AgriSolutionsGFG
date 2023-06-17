@@ -1,430 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fillViewport="true"
-    tools:context=".AddWareHouseActivity"
-    tools:layout_editor_absoluteX="1dp"
-    tools:layout_editor_absoluteY="1dp">
+    android:id="@+id/constrain_warehouse_added"
+    tools:context=".AddWareHouseActivity">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/textView434"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@color/greenGrey">
+        android:layout_margin="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="10dp"
+        android:fontFamily="@font/nbold"
+        android:gravity="center_horizontal|center"
+        android:text="Your Warehouse has been added to our portal."
 
+        android:textColor="@color/darkGreen"
+        android:textSize="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView131" />
 
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:fontFamily="@font/nbold"
-            android:text="Owner Name"
-            android:textColor="@color/Brown"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edit_text_rent" />
+    <TextView
+        android:id="@+id/textView543"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Know More!"
+        android:textSize="18dp"
+        android:textColor="@color/darkGreen"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView434"
+        app:layout_constraintVertical_bias="0.05" />
 
-        <TextView
-            android:id="@+id/textView51"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="12dp"
-            android:fontFamily="@font/nbold"
-            android:text="Owner Contact"
-            android:textColor="@color/Brown"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edit_text_select_name_warehouse" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_continue_warehouse_added"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="30dp"
+        android:background="@drawable/custom_button"
+        android:fontFamily="@font/nbold"
+        android:text="Continue"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
 
-        <TextView
-            android:id="@+id/textView10"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:fontFamily="@font/nbold"
-            android:text="Select Location"
-            android:textColor="@color/Brown"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/textView50"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="12dp"
-            android:fontFamily="@font/nbold"
-            android:text="Floor Space"
-            android:textColor="@color/Brown"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edit_text_select_address_warehouse" />
-
-        <TextView
-            android:id="@+id/textView87"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="12dp"
-            android:fontFamily="@font/nbold"
-            android:text="Ceiling Height"
-            android:textColor="@color/Brown"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edit_text_select_floor_space_warehouse" />
-
-        <TextView
-            android:id="@+id/textView31"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="12dp"
-            android:fontFamily="@font/nbold"
-            android:text="Fire Prevention System"
-            android:textColor="@color/Brown"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edit_text_select_ceiling_height_warehouse" />
-
-        <TextView
-            android:id="@+id/textView13"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="12dp"
-            android:fontFamily="@font/nbold"
-            android:text="Transportation Access"
-            android:textColor="@color/Brown"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edit_text_select_fire_prevention_system_warehouse" />
-
-        <TextView
-            android:id="@+id/textView14"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:fontFamily="@font/nbold"
-            android:text="Transportation Access"
-            android:textColor="@color/Brown"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edit_text_select_transportation_access_warehouse" />
-
-        <TextView
-            android:id="@+id/textView15"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="12dp"
-            android:fontFamily="@font/nbold"
-            android:text="Lease Term Duration"
-            android:textColor="@color/Brown"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edit_text_select_road_conditions_warehouse" />
-
-        <TextView
-            android:id="@+id/textView17"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="12dp"
-            android:fontFamily="@font/nbold"
-            android:text="Lease Term Start Date"
-            android:textColor="@color/Brown"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edit_text_select_lease_term_duration_warehouse" />
-
-        <TextView
-            android:id="@+id/textView22"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="12dp"
-            android:fontFamily="@font/nbold"
-            android:text="Lease Term End Date"
-            android:textColor="@color/Brown"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edit_text_select_lease_term_start_date_warehouse" />
-
-
-        <TextView
-            android:id="@+id/textView11"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="12dp"
-            android:fontFamily="@font/nbold"
-            android:text="Rent"
-            android:textColor="@color/Brown"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edit_text_select_lease_term_end_date_warehouse" />
-
-        <EditText
-            android:id="@+id/edit_text_select_name_warehouse"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="20dp"
-            android:background="@drawable/custome_input"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:padding="6dp"
-            android:textAlignment="viewStart"
-            android:textSize="18dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView3" />
-
-        <EditText
-            android:id="@+id/edit_text_select_contact_warehouse"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="20dp"
-            android:background="@drawable/custome_input"
-            android:ems="10"
-            android:inputType="number"
-            android:padding="6dp"
-            android:textAlignment="viewStart"
-            android:textSize="18dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView51" />
-
-        <EditText
-            android:id="@+id/edit_text_select_address_warehouse"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="20dp"
-            android:background="@drawable/custome_input"
-            android:ems="10"
-            android:inputType="text"
-            android:padding="6dp"
-            android:textAlignment="viewStart"
-            android:textSize="18dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView10" />
-
-        <EditText
-            android:id="@+id/edit_text_select_floor_space_warehouse"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="20dp"
-            android:background="@drawable/custome_input"
-            android:ems="10"
-            android:inputType="numberDecimal"
-            android:padding="6dp"
-            android:textAlignment="viewStart"
-            android:textSize="18dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView50" />
-
-        <EditText
-            android:id="@+id/edit_text_select_ceiling_height_warehouse"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="20dp"
-            android:background="@drawable/custome_input"
-            android:ems="10"
-            android:inputType="numberDecimal"
-            android:padding="6dp"
-            android:textAlignment="viewStart"
-            android:textSize="18dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView87" />
-
-        <RadioGroup
-            android:id="@+id/edit_text_select_fire_prevention_system_warehouse"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView31">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <RadioButton
-                    android:id="@+id/edit_text_select_fire_prevention_system_yes_warehouse"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:padding="6dp"
-                    android:text="Yes"
-                    app:layout_constraintTop_toTopOf="@+id/textView31"
-                    tools:layout_editor_absoluteX="180dp" />
-
-                <RadioButton
-                    android:id="@+id/edit_text_select_fire_prevention_system_no_warehouse"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"
-                    android:padding="6dp"
-                    android:text="No"
-                    app:layout_constraintTop_toBottomOf="@+id/textView31"
-                    tools:layout_editor_absoluteX="58dp" />
-
-            </LinearLayout>
-
-        </RadioGroup>
-
-        <RadioGroup
-            android:id="@+id/edit_text_select_transportation_access_warehouse"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView13">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <RadioButton
-                    android:id="@+id/edit_text_select_transportation_access_yes_warehouse"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:padding="6dp"
-                    android:text="Yes"
-                    app:layout_constraintTop_toTopOf="@+id/textView13"
-                    tools:layout_editor_absoluteX="180dp" />
-
-                <RadioButton
-                    android:id="@+id/edit_text_select_transportation_access_no_warehouse"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:layout_marginEnd="20dp"
-                    android:padding="6dp"
-                    android:text="No"
-                    app:layout_constraintTop_toBottomOf="@+id/textView13"
-                    tools:layout_editor_absoluteX="58dp" />
-
-            </LinearLayout>
-
-        </RadioGroup>
-
-        <EditText
-            android:id="@+id/edit_text_select_road_conditions_warehouse"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="20dp"
-            android:background="@drawable/custome_input"
-            android:ems="10"
-            android:inputType="text"
-            android:padding="6dp"
-            android:textAlignment="viewStart"
-            android:textSize="18dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView14" />
-
-        <EditText
-            android:id="@+id/edit_text_select_lease_term_duration_warehouse"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="20dp"
-            android:background="@drawable/custome_input"
-            android:ems="10"
-            android:inputType="number"
-            android:padding="6dp"
-            android:textAlignment="viewStart"
-
-            android:textSize="18dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView15" />
-
-        <EditText
-            android:id="@+id/edit_text_select_lease_term_start_date_warehouse"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="20dp"
-            android:background="@drawable/custome_input"
-            android:ems="10"
-            android:inputType="date"
-            android:padding="6dp"
-            android:textSize="18dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView17" />
-
-        <EditText
-            android:id="@+id/edit_text_select_lease_term_end_date_warehouse"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="20dp"
-            android:background="@drawable/custome_input"
-            android:ems="10"
-            android:inputType="number"
-            android:padding="6dp"
-            android:textAlignment="viewStart"
-
-            android:textSize="18dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView22" />
-
-        <EditText
-            android:id="@+id/edit_text_rent"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="20dp"
-            android:background="@drawable/custome_input"
-            android:ems="10"
-            android:inputType="number"
-            android:padding="6dp"
-            android:textAlignment="viewStart"
-            android:textSize="18dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView11" />
-
-        <Button
-            android:id="@+id/btn_rent_warehouse"
-            android:layout_width="371dp"
-            android:layout_height="wrap_content"
-
-            android:layout_marginTop="30dp"
-            android:backgroundTint="@color/darkYellow"
-            android:text="Continue"
-            android:textAllCaps="false"
-            android:textColor="@color/black"
-            android:textSize="18dp"
-            app:layout_constraintTop_toBottomOf="@+id/edit_text_select_contact_warehouse"
-            tools:layout_editor_absoluteX="20dp" />
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.core.widget.NestedScrollView>
+    <ImageView
+        android:id="@+id/imageView131"
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/img_check" />
+</androidx.constraintlayout.widget.ConstraintLayout>

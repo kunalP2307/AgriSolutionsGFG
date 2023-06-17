@@ -151,7 +151,7 @@ public class ShowAvailableRidesActivity extends AppCompatActivity {
         setProgressDialog();
         GetAllRides getAllRides = new GetAllRides(this);
 
-        getAllRides.fetchAllRides(new FetchNews.ApiResponseListener() {
+        getAllRides.fetchAllRides(new GetAllRides.ApiResponseListener() {
             @Override
             public void onSuccess(JSONArray response) {
                 dialog.hide();
@@ -301,7 +301,7 @@ public class ShowAvailableRidesActivity extends AppCompatActivity {
         List<LatLng> path = new ArrayList();
 
         GeoApiContext context = new GeoApiContext.Builder()
-                .apiKey("AIzaSyBgXbVJEa9ev4akoZhezFVYeGfneYbHlRQ")
+                .apiKey(Extras.API_KEY)
                 .build();
 
         DirectionsApiRequest req = DirectionsApi.getDirections(context, source.getLatitude()+","+source.getLongitude(), destination.getLatitude()+","+destination.getLongitude());

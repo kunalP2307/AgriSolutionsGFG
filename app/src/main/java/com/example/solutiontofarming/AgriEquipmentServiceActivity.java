@@ -9,12 +9,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.solutiontofarming.data.AgriculturalEquipment;
-import com.example.solutiontofarming.data.Transport;
 import com.example.solutiontofarming.data.User;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -47,15 +44,15 @@ public class AgriEquipmentServiceActivity extends AppCompatActivity {
     }
     public void bindComponents(){
         this.imageViewAddEquip = findViewById(R.id.card_add_agri_equip);
-        this.imageViewFindEquip = findViewById(R.id.card_find_agri_equip);
-        this.imageViewMyEquipments = findViewById(R.id.card_my_agri_equip);
+        this.imageViewFindEquip = findViewById(R.id.card_borrow_ware_house);
+        this.imageViewMyEquipments = findViewById(R.id.card_my_warehouses);
     }
 
     public void addLisnteners(){
         this.imageViewAddEquip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(),AddAgriEquipment.class));
+                startActivity(new Intent(getApplicationContext(), AddAgriEquipDetailsActivity.class));
             }
         });
         this.imageViewFindEquip.setOnClickListener(new View.OnClickListener() {

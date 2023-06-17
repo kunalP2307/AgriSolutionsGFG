@@ -3,9 +3,11 @@ package com.example.solutiontofarming.data;
 import java.io.Serializable;
 
 public class Warehouse implements Serializable {
+
+    String userId;
     Address address;
     Owner owner;
-    String freeSpace,ceilingHeight;
+    String freeSpace,area,description;
     InfraFacilities infraFacilities;
     Lease lease;
     String rent;
@@ -13,14 +15,40 @@ public class Warehouse implements Serializable {
     public Warehouse() {
     }
 
-    public Warehouse(Address address, Owner owner, String freeSpace, String ceilingHeight, InfraFacilities infraFacilities, Lease lease, String rent) {
+    public Warehouse(String userId,Address address, Owner owner, String freeSpace, String area, String description, InfraFacilities infraFacilities, Lease lease, String rent) {
+        this.userId = userId;
         this.address = address;
         this.owner = owner;
         this.freeSpace = freeSpace;
-        this.ceilingHeight = ceilingHeight;
+        this.area = area;
+        this.description = description;
         this.infraFacilities = infraFacilities;
         this.lease = lease;
         this.rent = rent;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public String getArea() {
+        return area;
+    }
+
+    public void setArea(String area) {
+        this.area = area;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Address getAddress() {
@@ -48,11 +76,11 @@ public class Warehouse implements Serializable {
     }
 
     public String getCeilingHeight() {
-        return ceilingHeight;
+        return area;
     }
 
     public void setCeilingHeight(String ceilingHeight) {
-        this.ceilingHeight = ceilingHeight;
+        this.area = ceilingHeight;
     }
 
     public InfraFacilities getInfraFacilities() {
@@ -85,7 +113,7 @@ public class Warehouse implements Serializable {
                 "address=" + address +
                 ", owner=" + owner +
                 ", freeSpace='" + freeSpace + '\'' +
-                ", ceilingHeight='" + ceilingHeight + '\'' +
+                ", ceilingHeight='" + area + '\'' +
                 ", infraFacilities=" + infraFacilities +
                 ", lease=" + lease +
                 ", rent='" + rent + '\'' +

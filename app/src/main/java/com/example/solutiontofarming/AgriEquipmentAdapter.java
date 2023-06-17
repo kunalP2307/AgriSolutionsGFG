@@ -5,11 +5,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.solutiontofarming.data.AgriculturalEquipment;
-import com.example.solutiontofarming.data.AgriculturalLand;
+import com.example.solutiontofarming.data.AgriEquipment;
 
 import org.w3c.dom.Text;
 
@@ -17,9 +15,9 @@ import java.util.ArrayList;
 
 public class AgriEquipmentAdapter extends BaseAdapter {
     Context context;
-    ArrayList<AgriculturalEquipment> agriculturalEquipmentArrayList;
+    ArrayList<AgriEquipment> agriculturalEquipmentArrayList;
 
-    public AgriEquipmentAdapter(Context context,ArrayList<AgriculturalEquipment> agriculturalEquipmentArrayList){
+    public AgriEquipmentAdapter(Context context,ArrayList<AgriEquipment> agriculturalEquipmentArrayList){
         this.context = context;
         this.agriculturalEquipmentArrayList = agriculturalEquipmentArrayList;
     }
@@ -45,27 +43,28 @@ public class AgriEquipmentAdapter extends BaseAdapter {
             convertView = LayoutInflater.from(context).inflate(R.layout.agri_equip_row,parent,false);
         }
 
-        AgriculturalEquipment currAgriEquipment = (AgriculturalEquipment) getItem(position);
+        AgriEquipment currAgriEquipment = (AgriEquipment) getItem(position);
 
         TextView textViewLocation = convertView.findViewById(R.id.text_row_loc_agri_euip);
-        TextView textViewName = convertView.findViewById(R.id.text_row_agri_equip_name);
+        TextView textViewCategory = convertView.findViewById(R.id.text_row_agri_equip_category);
         TextView textViewRent = convertView.findViewById(R.id.text_row_agri_equip_rent);
+        TextView textViewName = convertView.findViewById(R.id.text_row_agri_equip_name);
+        textViewLocation.setText(currAgriEquipment.getAddress().getAddress());
+        textViewName.setText(currAgriEquipment.getName());
+        textViewCategory.setText(currAgriEquipment.getCategory());
+        textViewRent.setText("\u20A8 "+currAgriEquipment.getRentPerDay());
 
-        textViewLocation.setText(currAgriEquipment.getEquipmentLocation());
-        textViewName.setText(currAgriEquipment.getEquipmentName());
-        textViewRent.setText(currAgriEquipment.getRentPerHour());
-
-        String equipmentProviderId = currAgriEquipment.getEquipmentProviderId();
-        int length = equipmentProviderId.length();
-
-        char ch = equipmentProviderId.charAt(length-1);
-
-        if(ch == 'F'){
-            ImageView imageView = convertView.findViewById(R.id.img_profile_status_in_agri_equip);
-            TextView textView = convertView.findViewById(R.id.text_profile_status_in_agri_equi);
-            imageView.setVisibility(View.VISIBLE);
-            textView.setVisibility(View.VISIBLE);
-        }
+//        String equipmentProviderId = currAgriEquipment.getEquipmentProviderId();
+//        int length = equipmentProviderId.length();
+//
+//        char ch = equipmentProviderId.charAt(length-1);
+//
+//        if(ch == 'F'){
+//            ImageView imageView = convertView.findViewById(R.id.img_profile_status_in_agri_equip);
+//            TextView textView = convertView.findViewById(R.id.text_profile_status_in_agri_equi);
+//            imageView.setVisibility(View.VISIBLE);
+//            textView.setVisibility(View.VISIBLE);
+//        }
         return convertView;
     }
 

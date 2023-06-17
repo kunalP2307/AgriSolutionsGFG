@@ -9,48 +9,26 @@ import android.view.View;
 
 public class WareHouseServiceActivity extends AppCompatActivity {
 
-    CardView cvRentWarehouse, cvBorrowWarehouse, cvMyWarehouse;
-
+    CardView cardViewRentWarehouse,cardViewBorrowWareHouse,cardViewMyWareHouse;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ware_house_service);
 
         bindComponents();
-        addListeners();
     }
-
     private void bindComponents(){
-        cvRentWarehouse = findViewById(R.id.card_rent_warehouse);
-        cvBorrowWarehouse = findViewById(R.id.card_borrow_warehouse);
-        cvMyWarehouse = findViewById(R.id.card_my_warehouse);
+        cardViewRentWarehouse = findViewById(R.id.card_add_warehouse);
+        cardViewRentWarehouse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), AddWareHouseDetailsActivity.class));
+            }
+        });
+        cardViewBorrowWareHouse = findViewById(R.id.card_borrow_ware_house);
+        cardViewMyWareHouse =findViewById(R.id.card_my_warehouses);
+
+
     }
-
-    private void addListeners(){
-        cvRentWarehouse.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(WareHouseServiceActivity.this, AddWareHouseActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        cvBorrowWarehouse.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(WareHouseServiceActivity.this, AddWareHouseActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        cvMyWarehouse.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(WareHouseServiceActivity.this, AddWareHouseActivity.class);
-                startActivity(intent);
-            }
-        });
-    }
-
 
 }
