@@ -322,7 +322,7 @@ http://IP:8000/get-notification/USERID/FEILD_NAME
     "userId" : "user1",
     "msg" : {
         "message_from" :{
-            "name" : "Kunal",
+            "name" : "Sonu",
             "contact" : "707007"
         },
         "service_type" : "",
