@@ -9,6 +9,7 @@ const fs = require('fs');
 const uniqid = require('uniqid');
 const cloudinary = require('cloudinary').v2;
 const news_api = require('./utils/news_api');
+const Notification = require('./models/notifications');
 const http = require('http');
 const io = require('socket.io')(http);
 const app = express();
@@ -517,7 +518,7 @@ app.get('/chat-updates/:collection_name', async (req, res) => {
             await db.db.disconnect();
             res.json({ stat: 0, msg: "Collection not exists." });
         }
-       
+
     } catch (error) {
         console.error('Error fetching chat messages:', error);
     }
@@ -548,7 +549,7 @@ app.post('/send-message/:collection_name', async (req, res) => {
             res.json({ stat: 0, msg: "Collection not exists." });
         }
 
-        
+
     } catch (error) {
         console.error('Error saving chat message:', error);
         res.sendStatus(500);
@@ -558,8 +559,8 @@ app.post('/send-message/:collection_name', async (req, res) => {
 app.get('/close-connections', (req, res) => {
     try {
         for (const [clientId, clientResponse] of clients) {
-            clientResponse.end(); 
-            clients.delete(clientId); 
+            clientResponse.end();
+            clients.delete(clientId);
         }
         res.sendStatus(200);
     } catch (error) {
@@ -567,6 +568,58 @@ app.get('/close-connections', (req, res) => {
         res.sendStatus(500);
     }
 });
+
+// /--------------------------------------------------------------------------------------------\
+//                              Message Notification Using Model
+// \--------------------------------------------------------------------------------------------/
+
+app.post('/store-message/:userid', async (req, res) => {
+    try {
+        const userid = req.params.userid;
+        const doc = req.body;
+        await db.db.connect();
+        const is_exist = await Notification.notification.findOne({ 'userId': userid });
+        // console.log(is_exist);
+        if (!is_exist) {
+            const notification = new Notification.notification({
+                userId: userid,
+                all_notifications: [doc]
+            });
+            const saved_notification = await notification.save();
+        }else{
+            await is_exist.all_notifications.push(doc);
+            await is_exist.save();
+        } 
+        await db.db.disconnect();
+        res.sendStatus(200);
+    } catch (error) {
+        res.status(500).send("Internal Server Error");
+    }
+})
+
+app.get('/get-notification/:userid/:field_name', async (req, res) => {
+    try {
+        const userid = req.params.userid;
+        const field_name = req.params.field_name;
+        await db.db.connect();
+        const is_exist = await Notification.notification.findOne({ 'userId': userid });
+        // console.log(is_exist);
+        if (!is_exist) {
+            await db.db.disconnect();
+            res.json({stat:0, msg:"user id not exists"});
+        }else{
+            if(is_exist[field_name]){
+                await db.db.disconnect();
+                res.json({data : is_exist[field_name]})
+            }else{
+                await db.db.disconnect();
+                res.json({stat:0, "msg":'field name not exists'})
+            }     
+        } 
+    } catch (error) {
+        res.status(500).send("Internal Server Error");
+    }
+})
 
 app.get('/', async (req, res) => {
     res.status(200).send({ msg: "Connected to SIH Project!!" });
