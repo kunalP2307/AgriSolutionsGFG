@@ -11,7 +11,7 @@
         android:layout_height="1dp"
         android:layout_marginTop="4dp"
         android:background="@color/colorAccent"
-        app:layout_constraintTop_toBottomOf="@+id/text_ware_area_row"
+        app:layout_constraintTop_toBottomOf="@+id/text_w_row_dis_area"
         tools:layout_editor_absoluteX="16dp" />
 
     <TextView
@@ -31,22 +31,14 @@
         android:id="@+id/textView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginBottom="4dp"
         android:text="Rent"
         android:textColor="@color/black"
         android:textSize="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/view13"
         app:layout_constraintEnd_toStartOf="@+id/text_field_rent_ware_row"
-        app:layout_constraintTop_toTopOf="@+id/text_ware_area_row" />
-
-    <TextView
-        android:id="@+id/text_ware_area_row"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text="12000 sq ft"
-        android:textColor="@color/NdarkGreen"
-        android:textSize="16dp"
-        app:layout_constraintStart_toStartOf="@+id/text_field_aval_space_w_row"
         app:layout_constraintTop_toBottomOf="@+id/text_field_aval_space_w_row" />
 
     <TextView
@@ -73,14 +65,16 @@
 
     <TextView
         android:id="@+id/text_warehouse_locaation_row"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
+        android:layout_marginEnd="12dp"
         android:text="Shelapur"
         android:textColor="@color/black"
         android:textSize="17dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/img_loc2"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/img_loc2"
         app:layout_constraintTop_toTopOf="@+id/img_loc2" />
 
@@ -89,8 +83,31 @@
         android:layout_width="23dp"
         android:layout_height="0dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="8dp"
         android:src="@drawable/ic_location"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView16"
+        android:layout_width="21dp"
+        android:layout_height="21dp"
+        android:visibility="invisible"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_area2"
+        app:srcCompat="@drawable/ic_distance_bet" />
+
+    <TextView
+        android:id="@+id/text_w_row_dis_area"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="2km"
+        android:textColor="@color/darkGreen"
+        android:textSize="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView16"
+        app:layout_constraintStart_toEndOf="@+id/imageView16"
+        app:layout_constraintTop_toTopOf="@+id/imageView16" />
 </androidx.constraintlayout.widget.ConstraintLayout>

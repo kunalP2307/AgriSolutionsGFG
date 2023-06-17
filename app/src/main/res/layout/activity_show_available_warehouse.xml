@@ -6,11 +6,26 @@
     android:layout_height="match_parent"
     tools:context=".ShowAvailableWarehouseActivity">
 
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer_activity_available_warehouses"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view14">
+
+        <include layout="@layout/layout_available_rides_shimmer_effect" />
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
     <View
         android:id="@+id/view14"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="8dp"
         android:background="@color/colorAccent"
         app:layout_constraintTop_toBottomOf="@+id/edit_select_lo_ware_search" />
 
@@ -18,30 +33,51 @@
         android:id="@+id/edit_select_lo_ware_search"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-
-
-        android:layout_marginStart="20dp"
-
-
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="8dp"
         android:background="@drawable/custome_input"
         android:gravity="center"
         android:hint="Search Near By Location"
-        android:padding="6dp"
+        android:padding="2dp"
         android:textSize="18dp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/image_clear_location"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <CheckBox
-        android:id="@+id/checkBox"
+    <ListView
+        android:id="@+id/list_view_warehouses"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="2dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_ware_show_filter" />
+
+    <ImageView
+        android:id="@+id/image_clear_location"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:text="CheckBox"
+        android:layout_marginEnd="12dp"
+        app:layout_constraintBottom_toBottomOf="@+id/edit_select_lo_ware_search"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/edit_select_lo_ware_search"
+        app:srcCompat="@drawable/ic_clear" />
+
+    <TextView
+        android:id="@+id/text_ware_show_filter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="2dp"
+        android:text="Showing All Warehouses"
+        android:textStyle="bold"
+        android:textColor="@color/Brown"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_select_lo_ware_search" />
+        app:layout_constraintTop_toBottomOf="@+id/view14" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
