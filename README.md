@@ -300,4 +300,35 @@ http://IP:7000/send-message/chats
 }
 ```
 
+# Notification API
 
+## POST Requests
+
+```
+http://IP:8000/store-message/USER_ID
+```
+
+## GET Requests
+
+```
+http://IP:8000/get-notification/USERID/FEILD_NAME
+```
+
+**Response Example**
+
+```
+{
+  "data": [
+    {
+      "name": "sonu",
+      "notification": "hello"
+    },
+    {
+      "name": "sonu",
+      "notification": "hii"
+    }
+  ]
+}
+```
+
+**Data contains your requested feild**
