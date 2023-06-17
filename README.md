@@ -266,3 +266,38 @@ where in place of **LIMIT** you can specify values e.g.
 ```
 http://IP:7000/find-latest/agri_news/5
 ```
+
+# Realtime Chat streaming API endpoint and how to use
+
+## GET Requests
+**1. To make connection and fetch all chats**
+
+ ```
+ http://IP:7000/chat-updates/chats
+ ```
+ 
+ **2. To close connection**
+ 
+ ```
+ http://IP:7000/close-connections
+ ```
+ 
+## POST Requests
+
+**1. To send msg and store it in mongodb**
+
+```
+http://IP:7000/send-message/chats
+```
+
+
+**Data Formate**
+
+```
+{
+  "name":"sonu",
+  "chats":"Hello"
+}
+```
+
+
