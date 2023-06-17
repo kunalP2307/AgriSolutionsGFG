@@ -56,6 +56,7 @@ public class AddRideDetailsActivity extends AppCompatActivity implements DatePic
     int PLACE_PICKER_REQUEST = 1;
     String userId;
     TransportRide transportRide;
+
     Calendar date;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -296,9 +297,13 @@ public class AddRideDetailsActivity extends AppCompatActivity implements DatePic
                 editTextPricePerKM.getText().toString(),
                 onDemandFare
         );
-
+        transportRide.setUserId(userId);
         transportRide.setFare(fare);
 
+    }
+
+    public void getUserId(){
+        userId = FirebaseAuth.getInstance().getCurrentUser().getUid();
     }
 
     //-------- FIREBASE-------------
@@ -316,22 +321,22 @@ public class AddRideDetailsActivity extends AppCompatActivity implements DatePic
         Log.d("", "setRideDetails: "+transport.getRideDate());
     }
 
-    private void getUserId(){
-
-        FirebaseDatabase.getInstance().getReference("(Q2-2021)Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-
-                User user = snapshot.getValue(User.class);
-                userId = user.getUserId();
-                Log.d("", "onDataChange:userId "+userId);
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-
-    }
+//    private void getUserId(){
+//
+//        FirebaseDatabase.getInstance().getReference("(Q2-2021)Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).addListenerForSingleValueEvent(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot snapshot) {
+//
+//                User user = snapshot.getValue(User.class);
+//                userId = user.getUserId();
+//                Log.d("", "onDataChange:userId "+userId);
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//
+//            }
+//        });
+//
+//    }
 }

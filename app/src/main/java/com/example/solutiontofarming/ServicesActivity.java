@@ -216,15 +216,6 @@ public class ServicesActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), WareHouseServiceActivity.class));
             }
         });
-
-        imageViewProfileStatus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),VerifyProfileActivity.class);
-                startActivity(intent);
-            }
-        });
-
     }
 
     public void initRides(){
