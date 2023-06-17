@@ -9,5 +9,5 @@ public class Extras {
 
     public static final String API_KEY = "AIzaSyBgXbVJEa9ev4akoZhezFVYeGfneYbHlRQ";
 
-    public static final String VM_IP = "35.239.244.31";
+    public static final String VM_IP = "35.239.244.31Ware";
 }
