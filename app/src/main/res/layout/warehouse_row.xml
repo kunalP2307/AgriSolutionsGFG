@@ -9,8 +9,8 @@
         android:id="@+id/view13"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginTop="4dp"
-        android:background="@color/colorAccent"
+       android:layout_margin="10dp"
+        android:background="@color/Brown"
         app:layout_constraintTop_toBottomOf="@+id/text_w_row_dis_area"
         tools:layout_editor_absoluteX="16dp" />
 

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="@color/greenGrey"
+    tools:context=".GetLandDetailsActivity">
+
+    <LinearLayout
+        android:id="@+id/section_land_details"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+       android:background="@color/greenGrey"
+        android:padding="16dp"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/title_land_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:shadowColor="@color/white"
+            android:shadowDx="1"
+            android:shadowDy="2"
+            android:shadowRadius="1"
+            android:text="Land Details"
+            android:textAlignment="center"
+            android:textColor="@color/darkGreen"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/text_land_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Land ID"
+            android:textSize="16dp"
+
+            android:textColor="@color/Brown" />
+
+        <EditText
+            android:id="@+id/edit_land_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custome_input"
+            android:inputType="number"
+            android:padding="6dp"
+            android:textColor="@color/black"  android:layout_marginBottom="5dp"
+            android:textSize="18dp" />
+
+
+        <!-- Land Area Input -->
+        <TextView
+            android:id="@+id/text_land_area"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Land Area (in acres)"   android:textSize="16dp"
+            android:textColor="@color/Brown" />
+
+        <EditText
+            android:id="@+id/edit_land_area"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custome_input"
+            android:inputType="numberDecimal"
+            android:padding="6dp"
+            android:textColor="@color/black"  android:layout_marginBottom="5dp"
+            android:textSize="18dp" />
+
+        <!-- Soil Type Input -->
+        <TextView
+            android:id="@+id/text_soil_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Soil Type"   android:textSize="16dp"
+            android:textColor="@color/Brown" />
+
+        <EditText
+            android:id="@+id/edit_soil_type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custome_input"
+            android:inputType="text"
+            android:padding="6dp"
+            android:textColor="@color/black"  android:layout_marginBottom="5dp"
+            android:textSize="18dp" />
+
+
+
+        <!-- Location EditText -->
+        <TextView
+            android:id="@+id/text_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Location"   android:textSize="16dp"
+            android:textColor="@color/Brown" />
+
+        <EditText
+            android:id="@+id/edit_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custome_input"
+            android:inputType="text"
+            android:padding="6dp"
+            android:textColor="@color/black"  android:layout_marginBottom="5dp"
+            android:textSize="18dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:orientation="horizontal">
+
+            <!-- Get Current Location Button -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_get_current_location"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="@dimen/_10sdp"
+                android:layout_weight="1"
+                android:padding="6dp"
+                android:background="@drawable/custom_button"
+                android:text="Current Location"
+                android:textAllCaps="false" />
+
+            <!-- Select Location Button -->
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_select_location"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:padding="6dp"
+                android:background="@drawable/custom_button"
+                android:text="Select Location"
+                android:textAllCaps="false" />
+
+        </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_list_crop"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:visibility="gone"
+            android:layout_marginTop="10dp"
+            tools:listitem="@layout/list_crop_details_item" />
+
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_add_crop_details"
+            android:layout_marginTop="20dp"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/custom_button"
+            android:text="Add Crop"
+
+            android:padding="6dp"
+            android:textAllCaps="false" />
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_add_details"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/custom_button"
+            android:padding="6dp"
+            android:text="Add Details"
+            android:textAllCaps="false" />
+
+    </LinearLayout>
+
+</ScrollView>

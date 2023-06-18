@@ -4,7 +4,7 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
 xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
-android:background="#EEEDEF"
+android:background="@color/greenGrey"
 android:foregroundGravity="center"
 app:layout_anchorGravity="center|center_vertical"
 tools:context=".ProfileActivity">
@@ -19,7 +19,7 @@ tools:context=".ProfileActivity">
     android:layout_marginTop="16dp"
     android:layout_marginEnd="11dp"
     android:src="@drawable/person"
-    app:civ_border_color="#FF000000"
+    app:civ_border_color="@color/Brown"
     app:civ_border_width="2dp"
     app:layout_constraintBottom_toBottomOf="@+id/cameraIcon"
     app:layout_constraintEnd_toEndOf="@+id/cameraIcon"
@@ -45,13 +45,14 @@ tools:context=".ProfileActivity">
         android:id="@+id/text_profile_name"
         android:layout_width="230dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="22dp"
-        android:paddingLeft="15sp"
+        android:layout_marginTop="40dp"
+android:padding="5dp"
         android:textColor="@color/black"
-        android:textSize="15sp"
-        android:textStyle="bold"
+        android:textSize="16dp"
+        android:layout_marginLeft="50dp"
+
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.644"
+        app:layout_constraintHorizontal_bias="0.65"
         app:layout_constraintStart_toEndOf="@+id/profile_image"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -59,29 +60,28 @@ tools:context=".ProfileActivity">
         android:id="@+id/text_profile_email"
         android:layout_width="230dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:paddingLeft="15sp"
+        android:padding="5dp"
         android:textColor="@color/black"
-        android:textSize="15sp"
-        android:textStyle="bold"
+        android:textSize="16dp"
+        android:layout_marginLeft="50dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.644"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toEndOf="@+id/profile_image"
-        app:layout_constraintTop_toTopOf="@id/text_profile_name" />
+        app:layout_constraintTop_toBottomOf="@+id/text_profile_name" />
 
     <TextView
         android:id="@+id/text_profile_mob"
         android:layout_width="230dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:paddingLeft="15sp"
+        android:padding="5dp"
         android:textColor="@color/black"
-        android:textSize="15sp"
-        android:textStyle="bold"
+        android:textSize="16dp"
+        android:layout_marginLeft="50dp"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.644"
         app:layout_constraintStart_toEndOf="@+id/profile_image"
-        app:layout_constraintTop_toBottomOf="@id/text_profile_email" />
+        app:layout_constraintTop_toBottomOf="@+id/text_profile_email" />
 
 <LinearLayout
     android:layout_width="match_parent"

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/greenGrey"
     tools:context=".NoRidesActivity">
 
     <TextView
@@ -13,8 +14,8 @@
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:gravity="center_horizontal"
-        android:text="No Upcoming Rides Found Between Specified Locations.!\nWe will notify you once someone\n schedules a ride!"
-        android:textColor="@color/colorAccent"
+        android:text="No Upcoming Rides Found Between Specified Locations.\nWe will notify you once someone\n schedules a ride!"
+        android:textColor="@color/Brown"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -27,7 +28,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Back"
-        app:backgroundTint="#00BCD4"
+        app:backgroundTint="@color/quantum_orange"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"

@@ -61,7 +61,7 @@
             android:orientation="vertical"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:layout_marginTop="55dp">
+            android:layout_marginTop="57dp">
 
             <EditText
                 android:id="@+id/text_doc_no"
@@ -73,7 +73,7 @@
 
                 android:drawablePadding="12dp"
                 android:hint="Name"
-                android:padding="15dp" />
+                android:padding="10dp" />
 
             <EditText
                 android:id="@+id/text_phone"
@@ -84,7 +84,7 @@
                 android:drawableStart="@drawable/ic_call"
                 android:drawablePadding="12dp"
                 android:hint="Phone Number"
-                android:padding="15dp" />
+                android:padding="10dp" />
 
             <EditText
                 android:id="@+id/text_email"
@@ -95,7 +95,7 @@
                 android:drawableStart="@drawable/ic_email"
                 android:drawablePadding="12dp"
                 android:hint="Email"
-                android:padding="15dp" />
+                android:padding="10dp" />
 
             <EditText
                 android:id="@+id/text_password"
@@ -107,7 +107,7 @@
                 android:drawablePadding="12dp"
                 android:inputType="textPassword"
                 android:hint="Password"
-                android:padding="15dp" />
+                android:padding="10dp" />
 
             <EditText
                 android:id="@+id/text_cnf_password"
@@ -119,7 +119,7 @@
                 android:drawablePadding="12dp"
                 android:inputType="textPassword"
                 android:hint="Confirm Password"
-                android:padding="15dp" />
+                android:padding="10dp" />
 
             <ProgressBar
                 android:id="@+id/spin_weight_unit"

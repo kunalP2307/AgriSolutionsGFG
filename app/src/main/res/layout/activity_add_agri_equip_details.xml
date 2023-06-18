@@ -4,16 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@color/greenGrey"
     tools:context=".AddAgriEquipDetailsActivity">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingTop="@dimen/_16sdp"
-        android:paddingBottom="@dimen/_10sdp"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="30dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
 
         <LinearLayout
 
@@ -28,7 +30,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/_10sdp"
                 android:background="@drawable/section_background"
-
                 android:orientation="vertical"
                 android:padding="16dp">
 
@@ -42,8 +43,9 @@
                     android:shadowRadius="1"
                     android:text="Equipment Details"
                     android:textAlignment="center"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_18sdp"
+                    android:textColor="@color/darkGreen"
+                    android:textSize="20dp"
+                    android:layout_marginTop="10dp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -51,6 +53,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Equipment Category"
+                    android:textSize="16dp" android:layout_marginTop="16dp"
                     android:textColor="@color/Brown" />
 
                 <Spinner
@@ -70,6 +73,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Equipment Name"
+                    android:textSize="16dp"
+
                     android:textColor="@color/Brown" />
 
                 <EditText
@@ -82,13 +87,14 @@
                     android:hint="eg 20Ltr Electric Sprayer"
                     android:padding="6dp"     android:gravity="center_vertical"
                     android:textColor="@color/black"
-                    android:textSize="18sp" />
+                    android:textSize="18dp"
+                    />
 
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Year Used"
+                    android:text="Year Used" android:textSize="16dp"
                     android:textColor="@color/Brown" />
 
                 <EditText
@@ -102,12 +108,12 @@
                     android:hint="eg 2 years"
                     android:padding="6dp"
                     android:textColor="@color/black"
-                    android:textSize="18sp" />
+                    android:textSize="18dp" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Rental per Day"
+                    android:text="Rental per Day" android:textSize="16dp"
                     android:textColor="@color/Brown" />
 
                 <EditText
@@ -116,11 +122,12 @@
                     android:layout_height="wrap_content"
                     android:background="@drawable/custome_input"
                     android:inputType="numberDecimal"
+                    android:layout_marginVertical="@dimen/_5sdp"
                     android:padding="6dp"
                     android:hint="Rent Per Day"
                     android:gravity="center_vertical"
                     android:textColor="@color/black"
-                    android:textSize="18sp" />
+                    android:textSize="18dp" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -140,18 +147,17 @@
                     android:src="@drawable/img"
                     android:visibility="gone" />
 
-                <androidx.appcompat.widget.AppCompatButton
+                <Button
                     android:id="@+id/btn_add_img_equip"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_margin="20dp"
-                    android:paddingLeft="8dp"
-                    android:paddingRight="8dp"
+                   android:padding="6dp"
                     android:textStyle="bold"
                     android:textColor="@color/white"
                     android:layout_marginBottom="12dp"
-                    android:background="@drawable/custom_button"
+                  android:backgroundTint="@color/quantum_orange"
                     android:text="Add Image"
                     android:textAllCaps="false"
                     android:textSize="18dp" />
@@ -177,14 +183,17 @@
                     android:shadowRadius="1"
                     android:text="Availabiltiy"
                     android:textAlignment="center"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_18sdp"
+                    android:textColor="@color/darkGreen"
+                    android:layout_marginTop="10dp"
+                    android:textSize="20dp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Start Date"
+                    android:textSize="16dp"
+                    android:layout_marginTop="16dp"
                     android:textColor="@color/Brown" />
 
                 <EditText
@@ -197,12 +206,13 @@
                     android:padding="6dp"
                     android:hint="Available From"
                     android:textColor="@color/black"
-                    android:textSize="18sp" />
+                    android:textSize="18dp" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="End Date"
+                    android:textSize="16dp"
                     android:textColor="@color/Brown" />
 
                 <EditText
@@ -215,7 +225,7 @@
                     android:padding="6dp"
                     android:hint="Available Till"
                     android:textColor="@color/black"
-                    android:textSize="18sp" />
+                    android:textSize="18dp" />
 
                 <ListView
                     android:id="@+id/edit_agri_list_available_dates"
@@ -223,17 +233,16 @@
                     android:layout_height="wrap_content" />
 
 
-                <androidx.appcompat.widget.AppCompatButton
+                <Button
                     android:id="@+id/btn_add_new_availability"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_margin="20dp"
                     android:layout_marginBottom="@dimen/_20sdp"
-                    android:background="@drawable/custom_button"
+                   android:backgroundTint="@color/quantum_orange"
                     android:text="Add New"
-                    android:paddingRight="8dp"
-                    android:paddingLeft="8dp"
+                   android:padding="6dp"
                     android:textStyle="bold"
                     android:textColor="@color/white"
                     android:textAllCaps="false"
@@ -261,15 +270,16 @@
                     android:shadowRadius="1"
                     android:text="Address"
                     android:textAlignment="center"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_18sdp"
+                    android:textColor="@color/darkGreen"
+                    android:textSize="20dp"
+                    android:layout_marginTop="10dp"
                     android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/textVehicleType"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Select Location"
+                    android:text="Select Location" android:layout_marginTop="16dp" android:textSize="16dp"
                     android:textColor="@color/Brown" />
 
                 <EditText
@@ -283,7 +293,7 @@
                     android:inputType="textPostalAddress"
                     android:padding="6dp"
                     android:textColor="@color/black"
-                    android:textSize="18sp" />
+                    android:textSize="18dp" />
 
             </LinearLayout>
 
@@ -305,9 +315,10 @@
                     android:shadowDy="2"
                     android:shadowRadius="1"
                     android:text="Owner Details"
+                    android:layout_marginTop="10dp"
                     android:textAlignment="center"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_18sdp"
+                    android:textColor="@color/darkGreen"
+                    android:textSize="20dp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -315,6 +326,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Name"
+                    android:layout_marginTop="16dp" android:textSize="16dp"
                     android:textColor="@color/Brown" />
 
                 <EditText
@@ -328,13 +340,13 @@
                     android:inputType="textPersonName"
                     android:padding="6dp"
                     android:textColor="@color/black"
-                    android:textSize="18sp" />
+                    android:textSize="18dp" />
 
                 <TextView
                     android:id="@+id/text_owner_contact"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Contact"
+                    android:text="Contact" android:textSize="16dp"
                     android:textColor="@color/Brown" />
 
                 <EditText
@@ -348,24 +360,24 @@
                     android:inputType="phone"
                     android:padding="6dp"
                     android:textColor="@color/black"
-                    android:textSize="18sp" />
+                    android:textSize="18dp" />
 
             </LinearLayout>
 
 
-            <androidx.appcompat.widget.AppCompatButton
+            <Button
                 android:id="@+id/btn_add_agri_equip"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginBottom="@dimen/_20sdp"
                 android:layout_weight="1"
-                android:background="@drawable/custom_button"
-                android:fontFamily="@font/nbold"
+          android:textSize="18dp"
+                android:backgroundTint="@color/quantum_orange"
+
                 android:padding="6dp"
-                android:paddingLeft="8dp"
-                android:paddingRight="8dp"
-                android:textStyle="bold"
+
+
                 android:textColor="@color/white"
                 android:text="Add Equipment"
                 android:textAllCaps="false" />

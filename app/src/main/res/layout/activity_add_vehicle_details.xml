@@ -7,19 +7,19 @@
     android:background="@color/greenGrey"
     tools:context=".AddVehicleDetailsActivity">
 
-    <androidx.appcompat.widget.AppCompatButton
+    <Button
         android:id="@+id/btn_continue_add_vehicle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
         android:layout_marginBottom="20dp"
-        android:background="@drawable/custom_button"
+    android:backgroundTint="@color/quantum_orange"
         android:text="Continue"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="16dp"
-        android:textStyle="bold"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -214,13 +214,13 @@
         android:layout_marginEnd="20dp"
         android:background="@drawable/custome_input"
         android:ems="10"
-        android:gravity="center"
+
         android:hint="MH 12 FG 4491"
         android:inputType="textPersonName"
         android:padding="6dp"
         android:textColor="@color/black"
         android:textSize="18dp"
-        android:textStyle="bold"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView24" />
@@ -234,13 +234,13 @@
         android:layout_marginEnd="20dp"
         android:background="@drawable/custome_input"
         android:ems="10"
-        android:gravity="center"
+
         android:hint="eg Wheat, Rice"
         android:inputType="textPersonName"
         android:padding="6dp"
         android:textColor="@color/black"
         android:textSize="18dp"
-        android:textStyle="bold"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView44" />
@@ -254,13 +254,13 @@
         android:layout_marginEnd="20dp"
         android:background="@drawable/custome_input"
         android:ems="10"
-        android:gravity="center"
+
         android:hint="eg Tempo Truck"
         android:inputType="textPersonName"
         android:padding="6dp"
         android:textColor="@color/black"
         android:textSize="18dp"
-        android:textStyle="bold"
+
 
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
@@ -276,13 +276,12 @@
         android:layout_marginEnd="20dp"
         android:background="@drawable/custome_input"
         android:ems="10"
-        android:gravity="center"
+
         android:hint="eg Closed Body,Open Top etc"
         android:inputType="textPersonName"
         android:padding="6dp"
         android:textColor="@color/black"
         android:textSize="18dp"
-        android:textStyle="bold"
 
         android:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
@@ -298,12 +297,12 @@
         android:layout_marginEnd="20dp"
         android:background="@drawable/custome_input"
         android:ems="10"
-        android:gravity="center"
+
         android:inputType="numberDecimal"
         android:textColor="@color/black"
         android:visibility="visible"
         android:textSize="25dp"
-        android:textStyle="bold"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/spin_weight_unit"

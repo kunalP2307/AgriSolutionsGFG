@@ -177,13 +177,22 @@
 
                 </LinearLayout>
 
-                <Button
-                    android:id="@+id/btnEnterChatRoom"
+                <TextView
+                    android:id="@+id/txtEnterChatRoom"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Enter Chat Room"
+                    android:textSize="18sp"
                     android:layout_gravity="center"/>
 
+                <TextView
+                    android:id="@+id/txtCropRecommend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Crop Recommend"
+                    android:layout_marginTop="20dp"
+                    android:textSize="18sp"
+                    android:layout_gravity="center"/>
 
             </LinearLayout>
 

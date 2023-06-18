@@ -15,6 +15,7 @@
         android:layout_marginTop="40dp"
         android:fontFamily="@font/nbold"
         android:text="Name"
+        android:textSize="16dp"
         android:textColor="@color/Brown"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -27,6 +28,7 @@
         android:layout_marginTop="12dp"
         android:fontFamily="@font/nbold"
         android:text="Contact"
+        android:textSize="16dp"
         android:textColor="@color/Brown"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_driver_name" />
@@ -40,10 +42,11 @@
         android:layout_marginEnd="20dp"
         android:background="@drawable/custome_input"
         android:ems="10"
+        android:gravity="center_vertical"
         android:hint="Enter Driver Name"
         android:inputType="textPersonName"
         android:padding="6dp"
-        android:textAlignment="center"
+
         android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -58,25 +61,26 @@
         android:layout_marginEnd="20dp"
         android:background="@drawable/custome_input"
         android:ems="10"
-        android:hint="Enter Driver Contant"
+        android:hint="Enter Driver Contact"
         android:inputType="textPersonName"
+
         android:padding="6dp"
-        android:textAlignment="center"
+
         android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView26" />
 
-    <androidx.appcompat.widget.AppCompatButton
+    <Button
         android:id="@+id/button_continue_driver_det"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="20dp"
-        android:background="@drawable/custom_button"
-        android:fontFamily="@font/nbold"
+
+       android:backgroundTint="@color/quantum_orange"
         android:text="Continue"
         android:textAllCaps="false"
         android:textColor="@color/white"

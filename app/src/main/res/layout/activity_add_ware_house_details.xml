@@ -22,7 +22,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="12dp"
             android:fontFamily="@font/nbold"
-            android:text="Owner Name"
+            android:text="Owner Name"   android:textSize="16dp"
             android:textColor="@color/Brown"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edit_text_rent_warehouse" />
@@ -34,7 +34,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="12dp"
             android:fontFamily="@font/nbold"
-            android:text="Owner Contact"
+            android:text="Owner Contact"   android:textSize="16dp"
             android:textColor="@color/Brown"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edit_text_owner_name_warehouse" />
@@ -47,6 +47,7 @@
             android:layout_marginTop="20dp"
             android:fontFamily="@font/nbold"
             android:text="Select Location"
+            android:textSize="16dp"
             android:textColor="@color/Brown"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -59,6 +60,7 @@
             android:layout_marginTop="12dp"
             android:fontFamily="@font/nbold"
             android:text="Floor Space"
+            android:textSize="16dp"
             android:textColor="@color/Brown"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edit_text_select_address_warehouse" />
@@ -70,7 +72,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="12dp"
             android:fontFamily="@font/nbold"
-            android:text="Ware House Area"
+            android:text="Ware House Area"   android:textSize="16dp"
             android:textColor="@color/Brown"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edit_text_floor_space_warehouse" />
@@ -81,7 +83,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="12dp"
-            android:fontFamily="@font/nbold"
+            android:fontFamily="@font/nbold"   android:textSize="16dp"
             android:text="Additional Desciption"
             android:textColor="@color/Brown"
             app:layout_constraintStart_toStartOf="parent"
@@ -94,7 +96,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="12dp"
             android:fontFamily="@font/nbold"
-            android:text="Lease Term Duration"
+            android:text="Lease Term Duration"   android:textSize="16dp"
             android:textColor="@color/Brown"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edit_text_desciption_warehouse" />
@@ -106,7 +108,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="12dp"
             android:fontFamily="@font/nbold"
-            android:text="Available From"
+            android:text="Available From"   android:textSize="16dp"
             android:textColor="@color/Brown"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edit_text_lease_term_duration_warehouse" />
@@ -118,7 +120,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="12dp"
             android:fontFamily="@font/nbold"
-            android:text="Available Till"
+            android:text="Available Till"   android:textSize="16dp"
             android:textColor="@color/Brown"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edit_text_lease_term_start_date_warehouse" />
@@ -131,7 +133,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="12dp"
             android:fontFamily="@font/nbold"
-            android:text="Rent Per Term"
+            android:text="Rent Per Term"   android:textSize="16dp"
             android:textColor="@color/Brown"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edit_text_select_lease_term_end_date_warehouse" />
@@ -342,7 +344,7 @@
             android:layout_marginStart="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="20dp"
-            android:backgroundTint="@color/darkYellow"
+            android:backgroundTint="@color/quantum_orange"
             android:text="Continue"
             android:textAllCaps="false"
             android:textColor="@color/black"

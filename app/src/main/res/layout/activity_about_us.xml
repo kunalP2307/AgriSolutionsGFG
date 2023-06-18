@@ -12,77 +12,74 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="150dp"
-                    android:background="@color/darkGreen" />
-
-                <TextView
-                    android:id="@+id/tabout1"
-                    android:layout_width="220dp"
-                    android:layout_height="63dp"
-                    android:layout_marginStart="100dp"
-                    android:layout_marginTop="50dp"
-                    android:layout_marginEnd="0dp"
-                    android:fontFamily="@font/nbold"
-                    android:text="Our Mission "
-                    android:textColor="@color/white"
-                    android:textSize="35dp"
-
-                    />
-
-
-            </FrameLayout>
-            <FrameLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:layout_gravity="end"
-                    android:background="@drawable/ic_wave" />
-            </FrameLayout>
-        </LinearLayout>
-
-
         <FrameLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:paddingBottom="20dp"
-            android:layout_marginTop="160dp"
-            android:layout_marginRight="20dp">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/tcontact22"
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:background="@color/darkGreen" />
+
+                    <TextView
+                        android:id="@+id/tabout1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/nbold"
+                        android:text="Our Mission"
+                        android:textColor="@color/white"
+                        android:gravity="center"
+                        android:textSize="30dp" />
+
+
+                </FrameLayout>
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:layout_gravity="end"
+                        android:background="@drawable/ic_wave" />
+                </FrameLayout>
+            </LinearLayout>
+
+
+            <FrameLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="70dp"
-                android:layout_marginEnd="2dp"
-                android:fontFamily="@font/nmedium"
-                android:padding="8dp"
-                android:paddingEnd="8dp"
-                android:text="@string/about1"
-                android:textColor="@color/Brown"
-                android:textSize="20sp"
-                android:textStyle="italic" />
+                android:layout_marginHorizontal="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_170sdp"
+                android:layout_marginBottom="@dimen/_6sdp"
+                >
 
+                <TextView
+                    android:id="@+id/tcontact22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:textAlignment="viewStart"
+                    android:justificationMode="inter_word"
+                    android:fontFamily="@font/nunito"
+                    android:padding="6dp"
+
+                    android:text="@string/about1"
+                    android:textColor="@color/Brown"
+                    android:textSize="18dp"
+                    android:textStyle="italic" />
+
+
+            </FrameLayout>
 
         </FrameLayout>
-
-    </FrameLayout>
-</ScrollView>
+    </ScrollView>
 </RelativeLayout>
