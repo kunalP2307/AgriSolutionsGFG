@@ -22,7 +22,7 @@ public class GetAllWarehouses {
         requestQueue = Volley.newRequestQueue(context);
     }
 
-    public void fetchAllRides(final GetAllRides.ApiResponseListener listener){
+    public void fetchAllWarehouses(final GetAllWarehouses.ApiResponseListener listener){
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, GET_ALL_URL, null,
                 new Response.Listener<JSONArray>() {
                     @Override

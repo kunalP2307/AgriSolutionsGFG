@@ -25,7 +25,13 @@ public class WareHouseServiceActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), AddWareHouseDetailsActivity.class));
             }
         });
-        cardViewBorrowWareHouse = findViewById(R.id.card_borrow_ware_house);
+        cardViewBorrowWareHouse = findViewById(R.id.card_borrow_warehouse);
+        cardViewBorrowWareHouse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), ShowAvailableWarehouseActivity.class));
+            }
+        });
         cardViewMyWareHouse =findViewById(R.id.card_my_warehouses);
 
 

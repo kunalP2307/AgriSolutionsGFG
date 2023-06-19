@@ -8,6 +8,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.telephony.SmsManager;
 import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -35,6 +36,8 @@ public class ServicesActivity extends AppCompatActivity {
     ImageView imageViewTransportService, imageViewLandService,imageViewWarehouseService,imageViewAgriEquipmentService;
     TextView textViewProfileDetails;
     List<Transport> transportList = new ArrayList<>();
+    TextView textCartItemCount;
+    int mCartItemCount = 10;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,7 +78,55 @@ public class ServicesActivity extends AppCompatActivity {
         showProfileStatus();
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.notification_menu, menu);
 
+        final MenuItem menuItem = menu.findItem(R.id.action_notification);
+
+        View actionView = menuItem.getActionView();
+        textCartItemCount = actionView.findViewById(R.id.cart_badge);
+
+        setupBadge();
+
+        actionView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onOptionsItemSelected(menuItem);
+            }
+        });
+
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()) {
+
+            case R.id.action_notification: {
+                Toast.makeText(this, "clicked", Toast.LENGTH_SHORT).show();
+                return true;
+            }
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void setupBadge() {
+
+        if (textCartItemCount != null) {
+            if (mCartItemCount == 0) {
+                if (textCartItemCount.getVisibility() != View.GONE) {
+                    textCartItemCount.setVisibility(View.GONE);
+                }
+            } else {
+                textCartItemCount.setText(String.valueOf(Math.min(mCartItemCount, 99)));
+                if (textCartItemCount.getVisibility() != View.VISIBLE) {
+                    textCartItemCount.setVisibility(View.VISIBLE);
+                }
+            }
+        }
+    }
     @Override
     protected void onPostResume() {
         super.onPostResume();
@@ -165,15 +216,6 @@ public class ServicesActivity extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), WareHouseServiceActivity.class));
             }
         });
-
-        imageViewProfileStatus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),VerifyProfileActivity.class);
-                startActivity(intent);
-            }
-        });
-
     }
 
     public void initRides(){

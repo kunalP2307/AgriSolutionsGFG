@@ -43,6 +43,8 @@
                         android:layout_marginTop="10dp"
                         android:text="Warehouse Details"
                         android:textSize="20sp"
+                        android:textColor="@color/darkGreen"
+
                         android:textStyle="bold"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -54,7 +56,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
                         android:text="Free Space"
-                        android:textSize="20sp"
+                        android:textColor="@color/Brown"
+                        android:textSize="18sp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textView45" />
 
@@ -62,8 +65,10 @@
                         android:id="@+id/edit_text_free_space_show_warehouse"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
                         android:layout_marginEnd="30dp"
+                        android:enabled="false"
+                        android:inputType="none"
+                        android:textColor="@color/black"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="@+id/textView38"
                         app:layout_constraintTop_toBottomOf="@+id/textView38" />
@@ -72,9 +77,12 @@
                         android:id="@+id/textView39"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
+                        android:layout_marginTop="12dp"
                         android:text="Warehouse Dimensions"
-                        android:textSize="20sp"
+                        android:textSize="18sp"
+                        android:enabled="false"
+                        android:textColor="@color/Brown"
+
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/edit_text_free_space_show_warehouse" />
 
@@ -93,9 +101,11 @@
                         android:id="@+id/edit_text_warehouse_dimensions_show_warehouse"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
                         android:layout_marginEnd="30dp"
-                        android:inputType="text"
+                        android:enabled="false"
+                        android:inputType="none"
+                        android:textColor="@color/black"
+
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/textView39" />
@@ -106,7 +116,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
                         android:text="Description"
-                        android:textSize="20sp"
+                        android:textColor="@color/Brown"
+                        android:textSize="18sp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/edit_text_warehouse_dimensions_show_warehouse" />
 
@@ -114,9 +125,12 @@
                         android:id="@+id/edit_text_description_show_warehouse"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
                         android:layout_marginEnd="30dp"
+                        android:enabled="false"
+                        android:inputType="none"
+                        android:textColor="@color/black"
                         app:layout_constraintEnd_toEndOf="parent"
+
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textView40" />
 
@@ -124,8 +138,9 @@
                         android:id="@+id/check_box_ventilation_show_warehouse"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
+                        android:layout_marginTop="12dp"
                         android:text="Ventilation"
+                        android:clickable="false"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/edit_text_description_show_warehouse" />
 
@@ -133,8 +148,9 @@
                         android:id="@+id/check_box_temperature_control_show_warehouse"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
+                        android:layout_marginTop="4dp"
                         android:text="Temperature Control"
+                        android:clickable="false"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/check_box_ventilation_show_warehouse" />
 
@@ -161,6 +177,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:text="Availability Details"
+                        android:textColor="@color/darkGreen"
+
                         android:textSize="20sp"
                         android:textStyle="bold"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -186,7 +204,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
                         android:text="Available From"
-                        android:textSize="20sp"
+                        android:textSize="18sp"
+                        android:textColor="@color/Brown"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textView46" />
 
@@ -196,7 +215,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
                         android:text="Available Till"
-                        android:textSize="20sp"
+                        android:textSize="18sp"
+                        android:textColor="@color/Brown"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/edit_text_available_from_show_warehouse" />
 
@@ -204,12 +224,14 @@
                         android:id="@+id/edit_text_available_from_show_warehouse"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
                         android:layout_marginEnd="30dp"
                         android:ems="10"
-                        android:inputType="textPersonName"
+                        android:enabled="false"
+                        android:inputType="none"
+                        android:textColor="@color/black"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.0"
+
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -217,10 +239,12 @@
                         android:id="@+id/edit_text_available_till_show_warehouse"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
                         android:layout_marginEnd="30dp"
                         android:ems="10"
-                        android:inputType="textPersonName"
+                        android:enabled="false"
+                        android:inputType="none"
+                        android:textColor="@color/black"
+
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textView77" />
@@ -252,6 +276,8 @@
                         android:text="Rent Details"
                         android:textSize="20sp"
                         android:textStyle="bold"
+                        android:textColor="@color/darkGreen"
+
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -262,7 +288,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
                         android:text="Lease Period"
-                        android:textSize="20sp"
+                        android:textSize="18sp"
+                        android:textColor="@color/Brown"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/textView51" />
 
@@ -273,7 +300,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
                         android:text="Lent Per Period"
-                        android:textSize="20sp"
+                        android:textSize="18sp"
+                        android:textColor="@color/Brown"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/edit_text_lease_period_show_warehouse" />
 
@@ -281,8 +309,11 @@
                         android:id="@+id/edit_text_lent_per_period_show_warehouse"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
                         android:layout_marginEnd="30dp"
+                        android:enabled="false"
+                        android:inputType="none"
+
+                        android:textColor="@color/black"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toStartOf="parent"
@@ -292,9 +323,12 @@
                         android:id="@+id/edit_text_lease_period_show_warehouse"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="16dp"
                         android:layout_marginEnd="30dp"
+                        android:enabled="false"
+                        android:inputType="none"
+                        android:textColor="@color/black"
                         app:layout_constraintEnd_toEndOf="parent"
+
                         app:layout_constraintHorizontal_bias="1.0"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textView50" />
@@ -325,6 +359,8 @@
                         android:text="Location"
                         android:textSize="20sp"
                         android:textStyle="bold"
+                        android:textColor="@color/darkGreen"
+
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -335,7 +371,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
                         android:text="Location"
-                        android:textSize="20sp"
+                        android:textSize="18sp"
+                        android:textColor="@color/Brown"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/textView54" />
 
@@ -344,9 +381,12 @@
                         android:id="@+id/edit_text_location_show_warehouse"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
                         android:layout_marginEnd="30dp"
+                        android:enabled="false"
+                        android:inputType="none"
+                        android:textColor="@color/black"
                         app:layout_constraintEnd_toEndOf="parent"
+
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/textView55" />
 
@@ -375,6 +415,8 @@
                         android:layout_marginTop="10dp"
                         android:text="Owner Details"
                         android:textSize="20sp"
+                        android:textColor="@color/darkGreen"
+
                         android:textStyle="bold"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -386,7 +428,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
                         android:text="Name"
-                        android:textSize="20sp"
+                        android:textSize="18sp"
+                        android:textColor="@color/Brown"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/textView79" />
 
@@ -395,9 +438,12 @@
                         android:id="@+id/edit_text_name_show_warehouse"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
                         android:layout_marginEnd="30dp"
+                        android:enabled="false"
+                        android:inputType="none"
+                        android:textColor="@color/black"
                         app:layout_constraintEnd_toEndOf="parent"
+
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/textView59" />
 
