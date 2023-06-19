@@ -57,7 +57,7 @@
                             android:layout_height="170dp"
                             android:layout_marginTop="8dp"
                             android:scaleType="fitXY"
-                            app:srcCompat="@drawable/ic_transport_banner" />
+                            app:srcCompat="@drawable/ic_transport_banner_comp" />
 
                         <ImageView
                             android:id="@+id/img_agri_equip_service"
@@ -65,7 +65,7 @@
                             android:layout_height="170dp"
                             android:layout_marginTop="8dp"
                             android:scaleType="fitXY"
-                            app:srcCompat="@drawable/ic_agri_equip_banner" />
+                            app:srcCompat="@drawable/ic_equipment_banner_comp" />
 
                         <ImageView
                             android:id="@+id/img_land_service"
@@ -73,7 +73,7 @@
                             android:layout_height="170dp"
                             android:layout_marginTop="8dp"
                             android:scaleType="fitXY"
-                            app:srcCompat="@drawable/ic_agri_land_banner" />
+                            app:srcCompat="@drawable/ic_land_banner_comp" />
 
                         <ImageView
                             android:id="@+id/img_warehouse_service"
@@ -81,7 +81,7 @@
                             android:layout_height="170dp"
                             android:layout_marginTop="8dp"
                             android:scaleType="fitXY"
-                            app:srcCompat="@drawable/ic_warehouse_banner" />
+                            app:srcCompat="@drawable/ic_warehouse_banner_comp" />
 
                 </LinearLayout>
         </ScrollView>

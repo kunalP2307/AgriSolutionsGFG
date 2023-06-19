@@ -11,14 +11,16 @@ public class AgriLand implements Serializable {
     private Lease lease;
     private Rent rent;
     private Owner owner;
+    private LandUser user;
 
-    public AgriLand(Field field, String description, Address address, Lease lease, Rent rent, Owner owner) {
+    public AgriLand(Field field, String description, Address address, Lease lease, Rent rent, Owner owner, LandUser user) {
         this.field = field;
         this.description = description;
         this.address = address;
         this.lease = lease;
         this.rent = rent;
         this.owner = owner;
+        this.user = user;
     }
 
     public Field getField() {
@@ -69,15 +71,24 @@ public class AgriLand implements Serializable {
         this.owner = owner;
     }
 
+    public LandUser getUser() {
+        return user;
+    }
+
+    public void setUser(LandUser user) {
+        this.user = user;
+    }
+
     @Override
     public String toString() {
         return "AgriLand{" +
-                "field='" + field + '\'' +
+                "field=" + field +
                 ", description='" + description + '\'' +
-                ", address='" + address + '\'' +
-                ", lease='" + lease + '\'' +
-                ", rent='" + rent + '\'' +
-                ", owner='" + owner + '\'' +
+                ", address=" + address +
+                ", lease=" + lease +
+                ", rent=" + rent +
+                ", owner=" + owner +
+                ", user=" + user +
                 '}';
     }
 }

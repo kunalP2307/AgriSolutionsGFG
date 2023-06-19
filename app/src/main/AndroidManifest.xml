@@ -22,6 +22,9 @@
         android:theme="@style/Theme.SolutionToFarming"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".ShowAgriLandDetailsNew"
+            android:exported="false" />
+        <activity
             android:name=".ShowAvailableWarehouseActivity"
             android:exported="false" />
         <activity

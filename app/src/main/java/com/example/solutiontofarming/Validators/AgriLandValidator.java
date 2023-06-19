@@ -79,10 +79,7 @@ public class AgriLandValidator {
         }
 
         // Validate contact
-        if (owner.getContact() == null || owner.getContact().isEmpty()) {
-            return false;
-        }
-
-        return true;
+        String regexPattern = "^[6789]\\d{9}$";
+        return owner.getContact().matches(regexPattern);
     }
 }

@@ -109,20 +109,20 @@
                 android:id="@+id/imageView3"
                 android:layout_width="match_parent"
                 android:layout_height="160dp"
-                app:srcCompat="@drawable/ic_agri_equip_banner" />
+                app:srcCompat="@drawable/ic_equipment_banner_comp" />
             <ImageView
                 android:id="@+id/imageView4"
                 android:layout_width="match_parent"
                 android:layout_height="160dp"
-                app:srcCompat="@drawable/ic_agri_equip_banner" /><ImageView
+                app:srcCompat="@drawable/ic_equipment_banner_comp" /><ImageView
             android:id="@+id/imageView5"
             android:layout_width="match_parent"
             android:layout_height="160dp"
-            app:srcCompat="@drawable/ic_agri_equip_banner" /><ImageView
+            app:srcCompat="@drawable/ic_equipment_banner_comp" /><ImageView
             android:id="@+id/imageView6"
             android:layout_width="match_parent"
             android:layout_height="160dp"
-            app:srcCompat="@drawable/ic_agri_equip_banner" />
+            app:srcCompat="@drawable/ic_equipment_banner_comp" />
         </LinearLayout>
     </ScrollView>
 
