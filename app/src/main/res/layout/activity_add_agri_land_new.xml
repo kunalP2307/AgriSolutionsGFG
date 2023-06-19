@@ -230,8 +230,8 @@
 
                     <EditText
                         android:id="@+id/btn_start_date_picker"
-                        android:layout_width="340dp"
-                        android:layout_height="36dp"
+                        android:layout_width="339dp"
+                        android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:background="@drawable/custome_input"
                         android:padding="6dp"
@@ -253,8 +253,8 @@
 
                     <EditText
                         android:id="@+id/btn_end_date_picker"
-                        android:layout_width="340dp"
-                        android:layout_height="36dp"
+                        android:layout_width="339dp"
+                        android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:background="@drawable/custome_input"
                         android:padding="6dp"
@@ -276,8 +276,8 @@
 
                     <EditText
                         android:id="@+id/et_lease_duration_add_land_new"
-                        android:layout_width="338dp"
-                        android:layout_height="30dp"
+                        android:layout_width="339dp"
+                        android:layout_height="wrap_content"
                         android:layout_marginTop="2dp"
                         android:background="@drawable/custome_input"
                         android:inputType="number"
@@ -411,13 +411,14 @@
 
                     <TextView
                         android:id="@+id/textView54"
-                        android:layout_width="wrap_content"
+                        android:layout_width="339dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
                         android:text="Owner Details"
                         android:textSize="20dp"
                         android:textColor="@color/darkGreen"
                         android:textStyle="bold"
+                        android:gravity="center"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -459,7 +460,7 @@
 
                     <EditText
                         android:id="@+id/et_land_owner_contact"
-                        android:layout_width="200dp"
+                        android:layout_width="339dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="2dp"
                         android:layout_marginEnd="30dp"
