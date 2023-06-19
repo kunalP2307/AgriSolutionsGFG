@@ -291,20 +291,19 @@
     <EditText
         android:id="@+id/edit_available_load"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="43dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="20dp"
         android:background="@drawable/custome_input"
         android:ems="10"
-
         android:inputType="numberDecimal"
+        android:padding="6dp"
         android:textColor="@color/black"
+        android:textSize="18dp"
         android:visibility="visible"
-        android:textSize="25dp"
-
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.16"
         app:layout_constraintStart_toEndOf="@+id/spin_weight_unit"
         app:layout_constraintTop_toBottomOf="@+id/textView25" />
 
@@ -321,10 +320,11 @@
 
     <Spinner
         android:id="@+id/spin_weight_unit"
-        android:layout_width="140dp"
-        android:layout_height="34dp"
+        android:layout_width="0dp"
+        android:layout_height="43dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="8dp"
+        android:padding="6dp"
         android:background="@drawable/custome_input"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView25" />
@@ -332,10 +332,10 @@
     <Spinner
         android:id="@+id/spinner_goods_category"
         android:layout_width="0dp"
-        android:layout_height="34dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:gravity="center"
         android:layout_marginTop="8dp"
+        android:padding="6dp"
         android:layout_marginEnd="20dp"
         android:background="@drawable/custome_input"
         app:layout_constraintEnd_toEndOf="parent"

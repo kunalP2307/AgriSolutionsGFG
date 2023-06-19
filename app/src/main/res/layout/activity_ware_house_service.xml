@@ -27,20 +27,15 @@
                     android:layout_width="320dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical|left"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="50dp"
                     android:layout_marginTop="10dp"
                     android:fontFamily="@font/nunito"
+                    android:gravity="center"
                     android:text="Storage WareHouses Pool"
                     android:textColor="@color/white"
                     android:textSize="30dp" />
 
-                <ImageView
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_gravity="center_vertical|right"
-                    android:src="@drawable/farmer"
-                    android:layout_marginRight="10dp"
-                    android:layout_marginTop="10dp"/>
+
             </FrameLayout>
 
             <View

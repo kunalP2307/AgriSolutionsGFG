@@ -181,18 +181,20 @@
                     android:id="@+id/txtEnterChatRoom"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Enter Chat Room"
-                    android:textSize="18sp"
-                    android:layout_gravity="center"/>
+                    android:text="Farmers's Connect: Cultivating ideas ,Sharing Wisdom. Join here  "
+                    android:textSize="18dp"
+                    android:textColor="@color/leafGreen"
+                   />
 
                 <TextView
                     android:id="@+id/txtCropRecommend"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Crop Recommend"
+                    android:text="Crop Recommendation: Unlock your farm's potential here."
                     android:layout_marginTop="20dp"
-                    android:textSize="18sp"
-                    android:layout_gravity="center"/>
+                    android:textSize="18dp"
+                    android:textColor="@color/leafGreen"
+                   />
 
             </LinearLayout>
 
