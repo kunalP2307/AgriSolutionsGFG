@@ -37,7 +37,7 @@ public class ServicesActivity extends AppCompatActivity {
     TextView textViewProfileDetails;
     List<Transport> transportList = new ArrayList<>();
     TextView textCartItemCount;
-    int mCartItemCount = 10;
+    int mCartItemCount = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

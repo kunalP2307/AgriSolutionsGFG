@@ -40,8 +40,8 @@ public class ProfileActivity extends AppCompatActivity {
     TextView textViewUserName,textViewUserMob,textViewUserEmail;
 
     ListView listview;
-    String[] mTitle={"MY ADDRESS","HELP","CONTACT US","ABOUT US","CHANGE PASSWORD","LOGOUT"};
-    int images[]={R.drawable.myaddress,R.drawable.help,R.drawable.contactus,R.drawable.aboutus,R.drawable.changepass,R.drawable.logout};
+    String[] mTitle={"Change Language","Help","Contact Us","About Us","Change Password","Logout"};
+    int images[]={R.drawable.ic_change_lan,R.drawable.help,R.drawable.contactus,R.drawable.aboutus,R.drawable.changepass,R.drawable.logout};
 
     ImageView cover;
     CircleImageView profile;
@@ -110,7 +110,7 @@ public class ProfileActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 if(position== 0)
                 {
-                    startActivity(new Intent(getApplicationContext(),MyAddressActivity.class));
+                    Toast.makeText(ProfileActivity.this, "Coming Soon!!", Toast.LENGTH_SHORT).show();
                 }
                 if(position== 1)
                 {
@@ -123,7 +123,6 @@ public class ProfileActivity extends AppCompatActivity {
 
                 }if(position== 3)
                 {
-                    Toast.makeText(ProfileActivity.this,"About Us",Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(getApplicationContext(),AboutUsActivity.class));
 
                 }if(position== 4)
@@ -131,9 +130,8 @@ public class ProfileActivity extends AppCompatActivity {
                 {
                 }if(position== 5)
                 {
-                    Toast.makeText(ProfileActivity.this,"Logout",Toast.LENGTH_SHORT).show();
+                    FirebaseAuth.getInstance().signOut();
                     startActivity(new Intent(getApplicationContext(),LoginActivity.class));
-
                 }
                 if(position== 6)
                 {

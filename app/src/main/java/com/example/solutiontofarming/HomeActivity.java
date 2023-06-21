@@ -151,6 +151,10 @@ public class HomeActivity extends AppCompatActivity {
 //        JsonObject jsonObject = gson.fromJson(json, (Type) Fare.class);
         Log.d("TAG", "onCreate: JsonObject"+object);
     }
+    @Override
+    public void onBackPressed() {
+        finishAffinity();
+    }
     private void bindComponents(){
 //        textViewMoreNews = findViewById(R.id.textv_more);
 //        imageViewHomeNews = findViewById(R.id.img_home_news);

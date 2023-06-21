@@ -42,10 +42,10 @@ public class ExploreActivity extends AppCompatActivity implements AdapterView.On
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.navigation_services:
-                        startActivity(new Intent(getApplicationContext(), ServicesActivity.class));
-                        overridePendingTransition(0,0);
                         return true;
                     case R.id.navigation_explore:
+                        startActivity(new Intent(getApplicationContext(), ServicesActivity.class));
+                        overridePendingTransition(0,0);
                         return true;
                     case R.id.navigation_more:
                         startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
