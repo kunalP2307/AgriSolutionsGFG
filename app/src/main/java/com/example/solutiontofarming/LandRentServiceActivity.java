@@ -27,7 +27,7 @@ import java.util.List;
 
 public class LandRentServiceActivity extends AppCompatActivity {
 
-    CardView cardFindLand,cardAddLand,cardShowAllLand;
+    CardView cardFindLand,cardAddLand,cardMyLand;
     List<AgriculturalLand> landRendList = new ArrayList<>();
 
     @Override
@@ -42,7 +42,7 @@ public class LandRentServiceActivity extends AppCompatActivity {
     public void addListeners(){
         cardAddLand = findViewById(R.id.card_rent_land);
         cardFindLand = findViewById(R.id.card_borrow_land);
-        cardShowAllLand = findViewById(R.id.card_my_land);
+        cardMyLand = findViewById(R.id.card_my_land);
 
         cardAddLand.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,6 +60,16 @@ public class LandRentServiceActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        cardMyLand.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(),ShowMyLandsActivity.class);
+//                intent.putExtra("availableLand", (Serializable) landRendList);
+                startActivity(intent);
+            }
+        });
+
        /* imageViewShowAllLand.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

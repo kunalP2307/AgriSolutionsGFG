@@ -2,8 +2,11 @@ package com.example.solutiontofarming;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -33,6 +36,38 @@ public class ShowAgriLandDetailsNew extends AppCompatActivity {
         disableEditTexts();
         displayDetails();
         getSupportActionBar().setTitle("Land Details");
+
+        addListeners();
+    }
+
+    private void addListeners(){
+
+        btnRouteOnMap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String geoUri = "http://maps.google.com/maps?q=loc:" + agriLand.getAddress().getLatitude() + "," + agriLand.getAddress().getLongitude() + " (" + agriLand.getAddress().getName() + ")";
+
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(geoUri));
+                startActivity(intent);
+
+            }
+        });
+
+        btnCallOwner.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_DIAL);
+                intent.setData(Uri.parse("tel:"+agriLand.getOwner().getContact()));
+                startActivity(intent);
+            }
+        });
+
+        btnBorrowLand.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
 
     }
 

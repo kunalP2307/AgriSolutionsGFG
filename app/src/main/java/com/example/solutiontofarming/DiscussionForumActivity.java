@@ -57,13 +57,15 @@ public class DiscussionForumActivity extends AppCompatActivity {
     private volatile String userEmail = null;
     private volatile String userName = null;
 
-    private static final String API_URL = "http://"+ Extras.VM_IP +":7000/find-latest/agri_news/10";
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_discussion_forum);
+
+
+        fetchChats();
 
         bindComponents();
 
@@ -73,10 +75,9 @@ public class DiscussionForumActivity extends AppCompatActivity {
         chatAdapter = new ChatAdapter(chatList);
         recyclerView.setAdapter(chatAdapter);
 
+
 //        addDummyData();
         addListeners();
-
-
         getNameFromFireBase();
 
     }
@@ -173,14 +174,6 @@ public class DiscussionForumActivity extends AppCompatActivity {
         } catch (Throwable t) {
             Log.e("TAG", "Could not parse malformed JSON: \"" + json + "\"");
         }
-
-//        chatList.add(new ChatModel(userName, message, userImage));
-
-        fetchChats();
-//        chatList.add(new ChatModel(userName, message, userImage));
-//        chatAdapter.notifyDataSetChanged();
-//        int lastPosition = chatList.size() - 1;
-//        recyclerView.scrollToPosition(lastPosition);
 
     }
 
