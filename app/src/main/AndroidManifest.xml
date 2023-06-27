@@ -13,6 +13,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -21,6 +22,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SolutionToFarming"
         android:usesCleartextTraffic="true">
+        <activity
+            android:name=".ShowRideRouteActivity"
+            android:exported="false" />
         <activity
             android:name=".ShowAgriLandDetailsNew"
             android:exported="false" />
@@ -122,7 +126,7 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyAXsfDGmffRx9ShDwA_C2MqPHzIjOOXEpo" />
+            android:value="AIzaSyBgXbVJEa9ev4akoZhezFVYeGfneYbHlRQ" />
 
         <activity android:name=".AddDriverDetailsActivity" />
         <activity android:name=".AddVehicleDetailsActivity" />
