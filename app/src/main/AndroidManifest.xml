@@ -26,6 +26,9 @@
             android:name=".ShowMyLandsActivity"
             android:exported="false" />
         <activity
+            android:name=".ShowRideRouteActivity"
+            android:exported="false" />
+        <activity
             android:name=".ShowAgriLandDetailsNew"
             android:exported="false" />
         <activity
@@ -126,7 +129,7 @@
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyAXsfDGmffRx9ShDwA_C2MqPHzIjOOXEpo" />
+            android:value="AIzaSyBgXbVJEa9ev4akoZhezFVYeGfneYbHlRQ" />
 
         <activity android:name=".AddDriverDetailsActivity" />
         <activity android:name=".AddVehicleDetailsActivity" />

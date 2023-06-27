@@ -140,7 +140,7 @@
                 <ImageView
                     android:id="@+id/text_equip_Image"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="220dp"
                     android:layout_marginVertical="@dimen/_5sdp"
                     android:src="@drawable/img_no_image"
 

@@ -88,7 +88,7 @@ public class AddAgriEquipDetailsActivity extends AppCompatActivity{
     private static final int PERMISSION_CODE =1;
     private static final int PICK_IMAGE=1;
 
-    String filePath;
+    String filePath = null;
     Map config = new HashMap();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -135,7 +135,9 @@ public class AddAgriEquipDetailsActivity extends AppCompatActivity{
         config.put("cloud_name", "dy0ogzrix");
         config.put("api_key", "881912264742965");
         config.put("api_secret", "C8oUYp3G6Fd7MljO43tXaVSkDmM");
-        MediaManager.init(AddAgriEquipDetailsActivity.this, config);
+        try{
+            MediaManager.init(AddAgriEquipDetailsActivity.this, config);
+        }catch (IllegalStateException e){}
     }
 
     public void addListeners(){
@@ -143,7 +145,8 @@ public class AddAgriEquipDetailsActivity extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 if (validDetails()) {
-                    uploadToCloudinary(filePath);
+                    if(filePath != null)
+                        uploadToCloudinary(filePath);
                     setEquipmentDetails();
                     Intent intent = new Intent(getApplicationContext(), AddAgriEquipmentActivity.class);
                     intent.putExtra("AGRO_EQUIP_OBJ", agriEquipment);
@@ -333,30 +336,6 @@ public class AddAgriEquipDetailsActivity extends AppCompatActivity{
         spinEquipmentCategory.setAdapter(arrayAdapter);
     }
 
-
-    public void addEquipment(){
-        Log.d("TAG", "getTransport: "+agriEquipment.toString());
-
-        Gson gson = new Gson();
-        String json = gson.toJson(agriEquipment);
-
-        JSONObject jsonObject = null;
-        try {
-            jsonObject = new JSONObject(json);
-        } catch (Throwable t) {
-            Log.e("My App", "Could not parse malformed JSON: \"" + json + "\"");
-        }
-
-        JsonObject jsonObject1 = new Gson().fromJson(jsonObject.toString(), JsonObject.class);
-        AgriEquipment agriEquipment1 = new Gson().fromJson(jsonObject1, AgriEquipment.class);
-
-//        JsonObject jsonObject = gson.fromJson(json, (Type) Fare.class);
-        Log.d("TAG", "onCreate: JsonObject"+jsonObject);
-        Log.d("ad", "addRide: "+"Equipment added");
-        Log.d("","AgriEquip Java Obj "+agriEquipment1.toString());
-        //startActivity(new Intent(getApplicat ionContext(),EquipmentAddedActivity.class));
-    }
-
     public boolean validDetails(){
 
         if(spinEquipmentCategory.getSelectedItem().toString().equals(AGRI_EQUIPMENT_CATEGORY[0])){
@@ -488,6 +467,27 @@ public class AddAgriEquipDetailsActivity extends AppCompatActivity{
         });
         //  Log.d("RegAct", "onDataChange2: "+ textViewUid.getText().toString());
     }
+    public void addEquipment(){
+        Log.d("TAG", "getTransport: "+agriEquipment.toString());
 
+        Gson gson = new Gson();
+        String json = gson.toJson(agriEquipment);
+
+        JSONObject jsonObject = null;
+        try {
+            jsonObject = new JSONObject(json);
+        } catch (Throwable t) {
+            Log.e("My App", "Could not parse malformed JSON: \"" + json + "\"");
+        }
+
+        JsonObject jsonObject1 = new Gson().fromJson(jsonObject.toString(), JsonObject.class);
+        AgriEquipment agriEquipment1 = new Gson().fromJson(jsonObject1, AgriEquipment.class);
+
+//        JsonObject jsonObject = gson.fromJson(json, (Type) Fare.class);
+        Log.d("TAG", "onCreate: JsonObject"+jsonObject);
+        Log.d("ad", "addRide: "+"Equipment added");
+        Log.d("","AgriEquip Java Obj "+agriEquipment1.toString());
+        //startActivity(new Intent(getApplicat ionContext(),EquipmentAddedActivity.class));
+    }
 
 }

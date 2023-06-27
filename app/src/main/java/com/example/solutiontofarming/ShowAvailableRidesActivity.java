@@ -58,7 +58,7 @@ public class ShowAvailableRidesActivity extends AppCompatActivity {
     String GET_ALL_URL = "http://"+ Extras.VM_IP +":7000/find/rides";
     ProgressDialog dialog;
     List<TransportRide> availableRides;
-    final static double RADIUS_LIMIT = 10;
+    final static double RADIUS_LIMIT = 30;
     String TAG = "ShowAvailableRidesActivity";
     ArrayList<HowFar> howFarList = null;
 
@@ -189,7 +189,8 @@ public class ShowAvailableRidesActivity extends AppCompatActivity {
         TransportRide ride;
         Address rideSource, rideDestination;
         //availableRides = new ArrayList<>();
-
+        textViewHeader = findViewById(R.id.text_header_available_rides);
+        textViewHeader.setText(source.getName() + " -> "+destination.getName());
         for(int i=0; i<allRides.size(); i++){
             ride = allRides.get(i);
             rideSource = ride.getSource();
@@ -269,12 +270,10 @@ public class ShowAvailableRidesActivity extends AppCompatActivity {
                 Log.d(TAG, "searchRides: distance after looping" + sd + "\t" + dd);
             }
         }
-        List<TransportRide> filteredRides = new ArrayList<>();
+        if(availableRides.size() == 0){
+            startActivity(new Intent(getApplicationContext(), NoRidesActivity.class));
+        }
     }
-
-
-
-
 
 
     private double getDistance(Address source, Address destination){
@@ -298,6 +297,7 @@ public class ShowAvailableRidesActivity extends AppCompatActivity {
     }
 
     private List<LatLng> getGeoPtsAlongRoute(Address source,Address destination){
+
         List<LatLng> path = new ArrayList();
 
         GeoApiContext context = new GeoApiContext.Builder()

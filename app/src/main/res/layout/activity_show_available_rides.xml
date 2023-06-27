@@ -37,16 +37,18 @@
 
         <TextView
             android:id="@+id/text_header_available_rides"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
+            android:layout_marginStart="12dp"
             android:layout_marginTop="20dp"
+            android:layout_marginEnd="12dp"
             android:layout_marginBottom="4dp"
             android:text="Showing All Scheduled Transport Rides "
-            android:textSize="20dp"
-            android:textStyle="bold"
             android:textColor="@color/darkGreen"
+            android:textSize="18dp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/view2"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

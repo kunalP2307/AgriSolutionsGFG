@@ -367,17 +367,6 @@ android:textSize="16dp" android:layout_marginTop="16dp"
                 android:orientation="horizontal"
                 android:layout_marginTop="@dimen/_16sdp"  >
 
-
-                <Button
-                    android:id="@+id/btn_view_ride_details_get_this_ride"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-android:textAllCaps="false"
-                    android:layout_weight="1"
-                    android:text=" Get Ride "
-                    android:backgroundTint="@color/quantum_orange"
-                   />
-
                 <Button
                     android:id="@+id/btn_view_ride_details_call"
                     android:layout_width="0dp"
