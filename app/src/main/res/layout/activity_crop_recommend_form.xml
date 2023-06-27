@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/greenGrey"
+    tools:context=".CropRecommendation"
+    tools:ignore="MissingDefaultResource">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Land Details Section -->
+            <LinearLayout
+                android:id="@+id/section_land_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@drawable/section_background"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/title_land_details"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:shadowColor="@color/white"
+                    android:shadowDx="1"
+                    android:shadowDy="2"
+                    android:shadowRadius="1"
+                    android:text="Land Details"
+                    android:textAlignment="center"
+                    android:textColor="@color/darkGreen"
+                    android:textSize="20dp"
+                    android:layout_marginTop="10dp"
+                    android:textStyle="bold" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_list_land"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="10dp"
+                    android:visibility="gone"
+                    tools:listitem="@layout/list_land_details_item" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:orientation="horizontal">
+
+
+                    <!-- Select Location Button -->
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_add_land_details"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/custom_button"
+                        android:padding="6dp"
+                        android:text="Add New Land"
+                        android:textAllCaps="false" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:orientation="horizontal" />
+
+            </LinearLayout>
+
+            <!-- Other sections and buttons can be added here -->
+            <!-- Climate Information Section -->
+            <LinearLayout
+                android:id="@+id/section_climate_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@drawable/section_background"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/title_climate_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:shadowColor="@color/white"
+                    android:shadowDx="1"
+                    android:shadowDy="2"
+                    android:shadowRadius="1"
+                    android:text="Climate Information"
+                    android:textAlignment="center"
+                    android:textColor="@color/darkGreen"
+                    android:textSize="20dp"
+                    android:layout_marginTop="10dp"
+                    android:textStyle="bold" />
+
+                <!-- Average Annual Rainfall -->
+                <TextView
+                    android:id="@+id/text_avg_rainfall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp"
+                    android:text="Average Annual Rainfall (in mm)"
+                    android:textColor="@color/Brown" />
+
+                <EditText
+                    android:id="@+id/edit_avg_rainfall"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/custome_input"
+                    android:inputType="number"
+                    android:padding="6dp"
+                    android:layout_marginBottom="5dp"
+                    android:textSize="18dp" />
+
+                <!-- Average Temperature -->
+                <TextView
+                    android:id="@+id/text_avg_temperature"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Average Temperature (in Celsius)"
+                    android:textColor="@color/Brown" />
+
+                <EditText
+                    android:id="@+id/edit_avg_temperature"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/custome_input"
+                    android:inputType="numberDecimal"
+                    android:padding="6dp"  android:layout_marginBottom="5dp"
+                    android:textSize="18dp" />
+
+                <!-- Growing Season Duration -->
+                <TextView
+                    android:id="@+id/text_growing_season_duration"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Growing Season Duration (in months)"
+                    android:textColor="@color/Brown" />
+
+                <EditText
+                    android:id="@+id/edit_growing_season_duration"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/custome_input"
+                    android:inputType="number"
+                    android:padding="6dp"  android:layout_marginBottom="5dp"
+                    android:textSize="18dp" />
+
+            </LinearLayout>
+            <!-- Water Availability Section -->
+            <LinearLayout
+                android:id="@+id/section_water_availability"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@drawable/section_background"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/title_water_availability"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:shadowColor="@color/white"
+                    android:shadowDx="1"
+                    android:shadowDy="2"
+                    android:shadowRadius="1"
+                    android:text="Water Availability"
+                    android:textAlignment="center"
+                    android:textColor="@color/darkGreen"
+                    android:textSize="20dp"
+                    android:layout_marginTop="10dp"
+                    android:textStyle="bold" />
+
+                <!-- Water Source -->
+                <TextView
+                    android:id="@+id/text_water_source"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Water Source"
+                    android:textColor="@color/Brown" />
+
+                <Spinner
+                    android:id="@+id/spin_water_source"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/custome_input"  android:layout_marginBottom="5dp"
+                    android:padding="6dp" />
+
+                <!-- Water Supply -->
+                <TextView
+                    android:id="@+id/text_water_supply"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Water Supply"
+                    android:textColor="@color/Brown" />
+
+                <EditText
+                    android:id="@+id/edit_water_supply"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/custome_input"
+                    android:inputType="text"
+                    android:padding="6dp"  android:layout_marginBottom="5dp"
+                    android:textSize="18dp" />
+
+            </LinearLayout>
+
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_get_crop_recommend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="@dimen/_20sdp"
+                android:layout_weight="1"
+                android:background="@drawable/custom_button"
+                android:fontFamily="@font/nbold"
+                android:padding="6dp"
+                android:text="  Get Your Crop Match  "
+                android:textAllCaps="false" />
+
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

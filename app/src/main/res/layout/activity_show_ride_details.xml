@@ -1,23 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/greenGrey"
     tools:context=".ShowRideDetailsActivity">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingTop="@dimen/_16sdp"
-        android:paddingBottom="@dimen/_16sdp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
 
         <LinearLayout
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="@dimen/_7sdp">
+            android:padding="16dp">
 
 
             <LinearLayout
@@ -32,8 +36,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Ride Details"
-                    android:textSize="@dimen/_18sdp"
-                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textColor="@color/darkGreen"
                     android:textStyle="bold"
                     android:textAlignment="center"
                     android:shadowColor="@color/white"
@@ -42,7 +46,8 @@
                     android:shadowRadius="1"/>
                 <TextView
                     android:id="@+id/textSource"
-
+    android:layout_marginTop="16dp"
+                    android:textSize="16dp"
                     android:textColor="@color/Brown"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -54,20 +59,17 @@
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="@dimen/_5sdp"
                     android:background="@drawable/textview_border"
-                    android:fontFamily="@font/nbold"
-                    android:paddingLeft="6dp"
-                    android:paddingTop="2dp"
-                    android:paddingBottom="2dp"
+                    android:padding="6dp"
                     android:text=""
                     android:textColor="@color/black"
-                    android:textSize="@dimen/_16sdp" />
+                    android:textSize="18dp" />
 
                 <TextView
                     android:id="@+id/textDest"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Destination"
-
+android:textSize="16dp"
                     android:textColor="@color/Brown"
                     />
 
@@ -75,11 +77,8 @@
                     android:id="@+id/text_ride_details_destination"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="6dp"
-                    android:paddingTop="2dp"
-                    android:paddingBottom="2dp"
-                    android:textColor="@color/black" android:textSize="@dimen/_16sdp"  android:layout_marginVertical="@dimen/_5sdp"
-                    android:fontFamily="@font/nbold"
+                   android:padding="6dp"
+                    android:textColor="@color/black" android:textSize="18dp"  android:layout_marginVertical="@dimen/_5sdp"
                     android:background="@drawable/textview_border"
                     android:text="" />
 
@@ -108,11 +107,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Scheduled On"
-                    android:textSize="@dimen/_18sdp"
-                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textColor="@color/darkGreen"
                     android:textStyle="bold"
                     android:textAlignment="center"
                     android:shadowColor="@color/white"
+                    android:layout_marginTop="10dp"
                     android:shadowDx="0"
                     android:shadowDy="2"
                     android:shadowRadius="1"/>
@@ -121,6 +121,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Date"
+                    android:layout_marginTop="16dp"
+                    android:textSize="16dp"
                     android:textColor="@color/Brown"
                     />
 
@@ -129,20 +131,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
-                    android:paddingLeft="6dp"
-                    android:paddingTop="2dp"
-                    android:paddingBottom="2dp"
-                    android:fontFamily="@font/nbold"
+                   android:padding="6dp"
                     android:layout_marginVertical="@dimen/_5sdp"
-                    android:background="@drawable/textview_border" android:textSize="@dimen/_16sdp"
-
+                    android:background="@drawable/textview_border" android:textSize="18dp"
                     android:text="" />
                 <TextView
                     android:id="@+id/textTime"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Time"
-                    android:hint="Enter time"
+                 android:textSize="16dp"
+
                     android:textColor="@color/Brown"/>
 
                 <TextView
@@ -151,14 +150,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="@dimen/_5sdp"
                     android:background="@drawable/textview_border"
-                    android:fontFamily="@font/nbold"
-                    android:paddingLeft="6dp"
-                    android:paddingTop="2dp"
-                    android:paddingBottom="2dp"
-                    android:text="testing"
 
+                   android:padding="6dp"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/_16sdp" />
+                    android:textSize="18dp" />
 
                 <CheckBox
                     android:id="@+id/chk_flex_date_det"
@@ -188,8 +183,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Vehicle Details"
-                    android:textSize="@dimen/_18sdp"
-                    android:textColor="@color/black"
+                    android:layout_marginTop="10dp"
+                    android:textSize="20dp"
+                    android:textColor="@color/darkGreen"
                     android:textStyle="bold"
                     android:textAlignment="center"
                     android:shadowColor="@color/white"
@@ -202,6 +198,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Vehicle Type"
+                    android:textSize="16dp"
+                    android:layout_marginTop="16dp"
                     android:textColor="@color/Brown"
                     />
 
@@ -210,11 +208,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
-                    android:paddingLeft="6dp"
-                    android:paddingTop="2dp"
-                    android:paddingBottom="2dp"
-
-                    android:fontFamily="@font/nbold" android:textSize="@dimen/_16sdp"  android:layout_marginVertical="@dimen/_5sdp"
+                    android:padding="6dp"
+               android:textSize="18dp"  android:layout_marginVertical="@dimen/_5sdp"
                     android:background="@drawable/textview_border"
                     android:text="" />
                 <TextView
@@ -222,6 +217,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Container Type"
+                    android:textSize="16dp"
                     android:textColor="@color/Brown"
                     />
 
@@ -229,11 +225,10 @@
                     android:id="@+id/text_view_ride_details_container_type"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingLeft="6dp"
-                    android:paddingTop="2dp"
-                    android:paddingBottom="2dp"
+                   android:padding="6dp"
+
                     android:textColor="@color/black"
-                    android:fontFamily="@font/nbold" android:textSize="@dimen/_16sdp"  android:layout_marginVertical="@dimen/_5sdp"
+                  android:textSize="18dp"  android:layout_marginVertical="@dimen/_5sdp"
                     android:background="@drawable/textview_border"
                     android:text="" />
 
@@ -251,8 +246,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Goods Details"
-                    android:textSize="@dimen/_18sdp"
-                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textColor="@color/darkGreen"
+                    android:layout_marginTop="10dp"
                     android:textStyle="bold"
                     android:textAlignment="center"
                     android:shadowColor="@color/white"
@@ -265,6 +261,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/Brown"
+                    android:textSize="16dp"
+                    android:layout_marginTop="16dp"
                     android:text="Goods Being Transported" />
 
                 <TextView
@@ -272,11 +270,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
-                    android:paddingLeft="6dp"
-                    android:paddingTop="2dp"
-                    android:paddingBottom="2dp"
-
-                    android:fontFamily="@font/nbold" android:textSize="@dimen/_16sdp"
+                   android:padding="6dp"
+                    android:textSize="18dp"
                     android:background="@drawable/textview_border"
                     android:layout_marginVertical="@dimen/_5sdp"
                     android:text="" />
@@ -285,6 +280,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/Brown"
+                    android:textSize="16dp"
                     android:text="Availability of Space" />
 
                 <TextView
@@ -292,24 +288,21 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
-                    android:paddingLeft="6dp"
-                    android:paddingTop="2dp"
-                    android:paddingBottom="2dp"
-                    android:fontFamily="@font/nbold"
-                    android:textSize="@dimen/_16sdp"
+                android:padding="6dp"
+                    android:textSize="18dp"
                     android:layout_marginVertical="@dimen/_5sdp"
                     android:background="@drawable/textview_border"
                     android:text="" />
 
-                <androidx.appcompat.widget.AppCompatButton
+                <Button
                     android:id="@+id/button_Check_Compatibility"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:textColor="@color/white"
                     android:textAllCaps="false"
-                    android:background="@drawable/custom_button"
-                    android:fontFamily="@font/nbold"
+                    android:backgroundTint="@color/quantum_orange"
+
                     android:gravity="center"
                     android:text="  Check Compatibility  " />
 
@@ -327,11 +320,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Fare Details"
-                    android:textSize="@dimen/_18sdp"
-                    android:textColor="@color/black"
+                    android:textSize="20dp"
+                    android:textColor="@color/darkGreen"
                     android:textStyle="bold"
                     android:textAlignment="center"
                     android:shadowColor="@color/white"
+                    android:layout_marginTop="10dp"
                     android:shadowDx="0"
                     android:shadowDy="2"
                     android:shadowRadius="1"/>
@@ -341,7 +335,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/Brown"
-
+android:textSize="16dp" android:layout_marginTop="16dp"
                     android:text="Price per Km" />
 
                 <TextView
@@ -349,12 +343,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black"
-                    android:fontFamily="@font/nbold"
-                    android:paddingLeft="6dp"
-                    android:paddingTop="2dp"
-                    android:paddingBottom="2dp"
+                   android:padding="6dp"
+
                     android:layout_marginVertical="@dimen/_5sdp"
-                    android:textSize="@dimen/_16sdp"
+                    android:textSize="18dp"
                     android:background="@drawable/textview_border"
                     android:text=""
                     android:hint="perKm"/>
@@ -376,24 +368,25 @@
                 android:layout_marginTop="@dimen/_16sdp"  >
 
 
-                <androidx.appcompat.widget.AppCompatButton
+                <Button
                     android:id="@+id/btn_view_ride_details_get_this_ride"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-
+android:textAllCaps="false"
                     android:layout_weight="1"
                     android:text=" Get Ride "
-                    android:background="@drawable/custom_button"
-                    android:fontFamily="@font/nbold"/>
+                    android:backgroundTint="@color/quantum_orange"
+                   />
 
-                <androidx.appcompat.widget.AppCompatButton
+                <Button
                     android:id="@+id/btn_view_ride_details_call"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text=" Call Driver "    android:layout_marginLeft="@dimen/_4sdp"
-                    android:background="@drawable/custom_button"
-                    android:fontFamily="@font/nbold"/>
+                  android:backgroundTint="@color/quantum_orange"
+                    android:textAllCaps="false"
+                  />
 
             </LinearLayout>
 

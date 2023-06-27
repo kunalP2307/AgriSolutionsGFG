@@ -23,7 +23,7 @@
         android:layout_height="12dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="16dp"
-        android:background="#4CAF50"
+        android:background="@drawable/ic_location"
         android:text=""
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_field_location" />
@@ -85,7 +85,7 @@
         android:layout_height="12dp"
         android:layout_marginStart="12dp"
         android:layout_marginTop="16dp"
-        android:background="#03A9F4"
+        android:background="@drawable/baseline_location_on_24"
         android:text=""
         app:layout_constraintStart_toEndOf="@+id/view5"
         app:layout_constraintTop_toBottomOf="@+id/text_field_location" />

@@ -6,6 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/Home"
     tools:context=".HomeActivity"
+    android:background="#F5F5F5"
     tools:openDrawer="start">
 
     <ScrollView
@@ -17,7 +18,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="#F5F5F5">
+        android:background="#F5F5F5"
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -34,7 +36,8 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp">
+                android:background="#F5F5F5"
+                android:layout_marginTop="8dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -45,12 +48,11 @@
                         android:id="@+id/textView9"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="#9DF1AC"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:textColor="@color/darkGreen"
                         android:fontFamily="@font/nunito"
                         android:gravity="center_vertical"
-                        android:padding="4dp"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginBottom="8dp"
                         android:paddingLeft="4dp"
                         android:text="Agricultural News"
                         android:textSize="20sp"
@@ -100,18 +102,18 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:orientation="vertical">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="#9DF1AC"
                     android:fontFamily="@font/nunito"
                     android:gravity="center_vertical"
                     android:padding="4dp"
                     android:paddingLeft="4dp"
                     android:text="Weather Details"
+                    android:textColor="@color/darkGreen"
                     android:textSize="20sp"
                     android:textStyle="bold" />
 
@@ -152,7 +154,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="30dp"
+                    android:layout_marginBottom="12dp"
                     android:orientation="horizontal">
 
                     <Button
@@ -176,14 +178,51 @@
                         android:textSize="12sp" />
 
                 </LinearLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/darkGreen"
+                    android:fontFamily="@font/nunito"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:text="Farmers's Connect"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
 
-                <Button
-                    android:id="@+id/btnEnterChatRoom"
+                <TextView
+                    android:id="@+id/txtEnterChatRoom"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Enter Chat Room"
-                    android:layout_gravity="center"/>
+                    android:text="Farmers's Connect: Cultivating ideas ,Sharing Wisdom. Join here  "
+                    android:textSize="18dp"
+                    android:background="#FFFFFF"
+                    android:paddingLeft="4dp"
+                    android:textColor="@color/black"
+                    />
 
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/darkGreen"
+                    android:fontFamily="@font/nunito"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:text="Crop Recommendation"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/txtCropRecommend"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#FFFFFF"
+                    android:text="Crop Recommendation: Unlock your farm's potential here."
+                    android:textSize="18dp"
+                    android:paddingLeft="4dp"
+                    android:textColor="@color/black"
+                   />
 
             </LinearLayout>
 

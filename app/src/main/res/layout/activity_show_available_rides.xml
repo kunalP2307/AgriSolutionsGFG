@@ -30,7 +30,7 @@
             android:id="@+id/view2"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="@color/colorAccent"
+            android:background="@color/Brown"
             app:layout_constraintBottom_toTopOf="@+id/list_available_rides"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
@@ -45,7 +45,7 @@
             android:text="Showing All Scheduled Transport Rides "
             android:textSize="20dp"
             android:textStyle="bold"
-            android:textColor="@color/colorAccent"
+            android:textColor="@color/darkGreen"
             app:layout_constraintBottom_toTopOf="@+id/view2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

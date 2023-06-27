@@ -62,15 +62,17 @@ public class HomeActivity extends AppCompatActivity {
     // abbhis
 
     public LocationManager locationManager;
-    public LocationListener locationListener = new HomeActivity.MyLocationListener();
+    public LocationListener locationListener = new MyLocationListener();
     String lat, lon, address;
     Button buttonReadMooreNews;
     private boolean gps_enable = false;
     private boolean network_enable = false;
     Geocoder geocoder;
     List<Address> myaddress;
-    Button btnChatRoom;
+    TextView txtChatRoom , txtCropRecommend;
     String userEmailId, userName;
+
+
 
     //Location Permission
     private final int REQUEST_LOCATION_PERMISSION = 1;
@@ -103,6 +105,7 @@ public class HomeActivity extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
                         overridePendingTransition(0,0);
                         return true;
+
                 }
                 return false;
             }
@@ -148,6 +151,10 @@ public class HomeActivity extends AppCompatActivity {
 //        JsonObject jsonObject = gson.fromJson(json, (Type) Fare.class);
         Log.d("TAG", "onCreate: JsonObject"+object);
     }
+    @Override
+    public void onBackPressed() {
+        finishAffinity();
+    }
     private void bindComponents(){
 //        textViewMoreNews = findViewById(R.id.textv_more);
 //        imageViewHomeNews = findViewById(R.id.img_home_news);
@@ -157,7 +164,8 @@ public class HomeActivity extends AppCompatActivity {
         //textViewTemperature.setTextSize(70);
         btnGetTemperature = findViewById(R.id.btn_get_temperature);
         btnShowWeatherDetails = findViewById(R.id.btn_get_weather_details);
-        btnChatRoom = findViewById(R.id.btnEnterChatRoom);
+        txtChatRoom = findViewById(R.id.txtEnterChatRoom);
+        txtCropRecommend = findViewById(R.id.txtCropRecommend);
 
     }
 
@@ -221,12 +229,20 @@ public class HomeActivity extends AppCompatActivity {
            }
        });
 
-       btnChatRoom.setOnClickListener(new View.OnClickListener() {
+       txtChatRoom.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {
                Intent intent = new Intent(HomeActivity.this, DiscussionForumActivity.class);
                intent.putExtra("userEmailId", userEmailId);
                intent.putExtra("userName", userName);
+               startActivity(intent);
+           }
+       });
+
+       txtCropRecommend.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               Intent intent = new Intent(HomeActivity.this,CropRecommendationHome.class);
                startActivity(intent);
            }
        });

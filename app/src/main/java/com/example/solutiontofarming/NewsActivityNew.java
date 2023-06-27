@@ -40,7 +40,7 @@ public class NewsActivityNew extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_news_new);
 
-        verticalViewPager = (VerticalViewPager) findViewById(R.id.verticalViewPager);
+        verticalViewPager = findViewById(R.id.verticalViewPager);
         shimmer_layout = findViewById(R.id.shimmer_activity_news_new);
 
         verticalViewPager.setVisibility(View.INVISIBLE);

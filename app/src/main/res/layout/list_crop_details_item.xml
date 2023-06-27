@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/text_crop_name"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:text="Crop name"
+            android:textColor="@color/Brown"
+            android:layout_marginTop="5dp"
+            android:padding="10dp"
+            android:textSize="18dp"/>
+
+        <TextView
+            android:id="@+id/text_crop_planting_season"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Planting Season"
+            android:textSize="16dp"
+            android:layout_marginTop="5dp"
+            android:padding="10dp"
+            android:textColor="@color/black"/>
+
+
+    </LinearLayout>
+
+
+
+    <TextView
+        android:id="@+id/text_crop_market_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Price"
+        android:textColor="@color/black"
+        android:textSize="16dp" />
+
+
+</LinearLayout>

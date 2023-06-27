@@ -16,18 +16,12 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view14">
+        app:layout_constraintTop_toBottomOf="@+id/text_ware_show_filter">
 
         <include layout="@layout/layout_available_rides_shimmer_effect" />
 
     </com.facebook.shimmer.ShimmerFrameLayout>
-    <View
-        android:id="@+id/view14"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginTop="8dp"
-        android:background="@color/colorAccent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_select_lo_ware_search" />
+
 
     <EditText
         android:id="@+id/edit_select_lo_ware_search"
@@ -76,8 +70,16 @@
         android:layout_marginTop="2dp"
         android:text="Showing All Warehouses"
         android:textStyle="bold"
-        android:textColor="@color/Brown"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view14" />
-
+        android:textSize="20dp"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/darkGreen"
+        app:layout_constraintStart_toStartOf="@id/shimmer_activity_available_warehouses"
+        app:layout_constraintTop_toTopOf="@+id/view14" />
+    <View
+        android:id="@+id/view14"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/Brown"
+        app:layout_constraintTop_toBottomOf="@+id/edit_select_lo_ware_search" />
 </androidx.constraintlayout.widget.ConstraintLayout>

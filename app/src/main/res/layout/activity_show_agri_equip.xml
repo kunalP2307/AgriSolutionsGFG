@@ -1,27 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/greenGrey"
     tools:context=".ShowAgriEquipmentActivity">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingTop="@dimen/_16sdp"
-        android:paddingBottom="@dimen/_16sdp"
-        android:layout_marginBottom="@dimen/_10sdp"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="16dp">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
 
         <LinearLayout
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="@dimen/_7sdp">
+            android:padding="16dp">
 
 
             <LinearLayout
@@ -43,8 +44,9 @@
                     android:shadowRadius="1"
                     android:text="Equipment Details"
                     android:textAlignment="center"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_18sdp"
+                    android:textColor="@color/darkGreen"
+                    android:textSize="20dp"
+               android:layout_marginTop="10dp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -52,6 +54,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Category"
+                    android:textSize="16dp"
+                    android:layout_marginTop="16dp"
                     android:textColor="@color/Brown" />
 
                 <TextView
@@ -60,19 +64,17 @@
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="@dimen/_5sdp"
                     android:background="@drawable/textview_border"
-                    android:paddingLeft="@dimen/_8sdp"
-                    android:paddingTop="@dimen/_2sdp"
-                    android:paddingBottom="@dimen/_2sdp"
+                    android:padding="6dp"
                     android:text=""
                     android:textColor="@color/black"
-                    android:textSize="@dimen/_16sdp" />
+                    android:textSize="18dp" />
 
                 <TextView
                     android:id="@+id/textEquipName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Name"
-
+                    android:textSize="16dp"
                     android:textColor="@color/Brown" />
 
                 <TextView
@@ -81,12 +83,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="@dimen/_5sdp"
                     android:background="@drawable/textview_border"
-                    android:paddingLeft="@dimen/_8sdp"
-                    android:paddingTop="@dimen/_2sdp"
-                    android:paddingBottom="@dimen/_2sdp"
+                    android:padding="6dp"
                     android:text=""
                     android:textColor="@color/black"
-                    android:textSize="@dimen/_18sdp" />
+                    android:textSize="18dp" />
 
                 <TextView
                     android:id="@+id/textYrUsed"
@@ -94,7 +94,7 @@
                     android:layout_height="wrap_content"
                     android:hint="Enter time"
                     android:text="Years Used"
-
+                    android:textSize="16dp"
                     android:textColor="@color/Brown" />
 
                 <TextView
@@ -104,18 +104,16 @@
                     android:layout_marginVertical="@dimen/_5sdp"
                     android:background="@drawable/textview_border"
 
-                    android:paddingLeft="@dimen/_8sdp"
-                    android:paddingTop="@dimen/_2sdp"
-                    android:paddingBottom="@dimen/_2sdp"
+                    android:padding="6dp"
                     android:text=""
                     android:textColor="@color/black"
-                    android:textSize="@dimen/_18sdp" />
+                    android:textSize="18dp" />
 
                 <TextView
                     android:id="@+id/textRent"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-
+                    android:textSize="16dp"
                     android:text="Rent"
 
                     android:textColor="@color/Brown" />
@@ -125,21 +123,18 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="@dimen/_5sdp"
-
                     android:background="@drawable/textview_border"
-                    android:paddingLeft="@dimen/_8sdp"
-                    android:paddingTop="@dimen/_2sdp"
-                    android:paddingBottom="@dimen/_2sdp"
+                    android:padding="6dp"
                     android:text=""
                     android:textColor="@color/black"
-                    android:textSize="@dimen/_18sdp" />
+                    android:textSize="18dp" />
 
                 <TextView
                     android:id="@+id/textshowImg"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Images of equipment"
-
+                    android:text="Image of equipment"
+                    android:textSize="16dp"
                     android:textColor="@color/Brown" />
 
                 <ImageView
@@ -148,7 +143,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="@dimen/_5sdp"
                     android:src="@drawable/img_no_image"
-                    android:background="@drawable/textview_border"
+
                     />
 
 
@@ -175,16 +170,18 @@
                     android:shadowRadius="1"
                     android:text="Available For Rent"
                     android:textAlignment="center"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_18sdp"
-                    android:textStyle="bold" />
+                    android:textColor="@color/darkGreen"
+                    android:textSize="20dp"
+                    android:layout_marginTop="10dp"
+                    android:textStyle="bold"/>
 
                 <TextView
                     android:id="@+id/textFrom"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Dates Available"
-
+                    android:textSize="16dp"
+                    android:layout_marginTop="16dp"
                     android:textColor="@color/Brown" />
 
                 <TextView
@@ -193,15 +190,13 @@
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="@dimen/_5sdp"
                     android:background="@drawable/textview_border"
-                    android:paddingLeft="@dimen/_8sdp"
-                    android:paddingTop="@dimen/_2sdp"
-                    android:paddingBottom="@dimen/_2sdp"
+                    android:padding="6dp"
                     android:text=""
                     android:textColor="@color/black"
-                    android:textSize="@dimen/_18sdp" />
+                    android:textSize="18dp" />
 
 
-                <androidx.appcompat.widget.AppCompatButton
+                <Button
                     android:id="@+id/btn_check_avail_dates"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -209,10 +204,11 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginHorizontal="@dimen/_60sdp"
                     android:layout_marginTop="@dimen/_7sdp"
-                    android:background="@drawable/custom_button"
-                    android:fontFamily="@font/nbold"
+                    android:backgroundTint="@color/quantum_orange"
+                    android:textColor="@color/white"
                     android:gravity="center"
                     android:padding="6dp"
+                    android:textSize="18dp"
                     android:text=" Check Availability "
                     android:textAllCaps="false" />
 
@@ -239,14 +235,15 @@
                     android:shadowRadius="1"
                     android:text="Location Details"
                     android:textAlignment="center"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_18sdp"
-                    android:textStyle="bold" />
+                    android:textColor="@color/darkGreen"
+                    android:textSize="20dp"
+                    android:layout_marginTop="10dp"
+                    android:textStyle="bold"/>
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Location "
+                    android:text="Location "  android:textSize="16dp" android:layout_marginTop="16dp"
                     android:textColor="@color/Brown" />
 
 
@@ -256,12 +253,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="@dimen/_5sdp"
                     android:background="@drawable/textview_border"
-                    android:paddingLeft="@dimen/_8sdp"
-                    android:paddingTop="@dimen/_2sdp"
-                    android:paddingBottom="@dimen/_2sdp"
+                    android:padding="6dp"
                     android:text=""
                     android:textColor="@color/black"
-                    android:textSize="@dimen/_16sdp" />
+                    android:textSize="18dp" />
 
 
             </LinearLayout>
@@ -283,10 +278,11 @@
                     android:shadowDx="1"
                     android:shadowDy="2"
                     android:shadowRadius="1"
+                    android:layout_marginTop="10dp"
                     android:text="Owner Details"
                     android:textAlignment="center"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/_18sdp"
+                    android:textColor="@color/darkGreen"
+                    android:textSize="20dp"
                     android:textStyle="bold" />
 
                 <TextView
@@ -295,7 +291,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Name"
-
+                    android:textSize="16dp"
+                    android:layout_marginTop="16dp"
                     android:textColor="@color/Brown" />
 
 
@@ -305,46 +302,45 @@
                     android:layout_height="wrap_content"
                     android:layout_marginVertical="@dimen/_5sdp"
                     android:background="@drawable/textview_border"
-                    android:paddingLeft="@dimen/_8sdp"
-                    android:paddingTop="@dimen/_2sdp"
-                    android:paddingBottom="@dimen/_2sdp"
+                    android:padding="6dp"
                     android:text=""
                     android:textColor="@color/black"
-                    android:textSize="@dimen/_16sdp" />
+                    android:textSize="18dp" />
 
 
-                <androidx.appcompat.widget.AppCompatButton
+                <Button
 
                     android:id="@+id/btn_call_equi_owner"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
                     android:layout_gravity="center_horizontal"
                     android:layout_marginHorizontal="@dimen/_60sdp"
                     android:layout_marginTop="@dimen/_7sdp"
-                    android:background="@drawable/custom_button"
-                    android:fontFamily="@font/nbold"
+                    android:backgroundTint="@color/quantum_orange"
+                    android:textColor="@color/white"
+                    android:textSize="18dp"
                     android:gravity="center"
                     android:padding="6dp"
                     android:text=" Call Owner "
                     android:textAllCaps="false">
 
-                </androidx.appcompat.widget.AppCompatButton>
+                </Button>
 
 
             </LinearLayout>
 
 
 
-            <androidx.appcompat.widget.AppCompatButton
+            <Button
                 android:id="@+id/btn_book_equip"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_weight="1" android:layout_marginBottom="@dimen/_20sdp"
-                android:background="@drawable/custom_button"
-                android:fontFamily="@font/nbold"
-                android:padding="6dp"
+    android:backgroundTint="@color/quantum_orange"
+                android:textColor="@color/white"
+                 android:padding="6dp"
+                android:textSize="18dp"
                 android:text="  Book Equipment  "
                 android:textAllCaps="false" />
 

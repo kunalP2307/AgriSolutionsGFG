@@ -45,7 +45,7 @@
         android:layout_marginBottom="124dp"
         android:text=" Show Now "
         android:textSize="25dp"
-        android:fontFamily="@font/nbold"
+      android:textAllCaps="false"
        android:background="@drawable/custom_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -25,11 +25,28 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Collaborative Transport: Share Now!"
-                android:textSize="@dimen/_17sdp"
+                android:textSize="25dp"
                 android:textColor="@color/darkGreen"
                 android:textStyle="bold"
                 android:layout_marginTop="@dimen/_16sdp" />
-
+            <TextView
+                android:id="@+id/text_driver_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add Driver Details"
+                android:visibility="gone"
+                android:textSize="@dimen/_16sdp"
+                android:fontFamily="@font/nbold"
+                android:textColor="@color/Brown" />
+            <TextView
+                android:id="@+id/text_vehicle_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add Vehicle Details"
+                android:visibility="gone"
+                android:textSize="@dimen/_16sdp"
+                android:fontFamily="@font/nbold"
+                android:textColor="@color/Brown" />
             <LinearLayout
                 android:id="@+id/sectionAddRideDetails"
                 android:layout_width="match_parent"
@@ -38,7 +55,7 @@
 
                 android:background="@color/white"
                 android:padding="@dimen/_16sdp"
-                android:elevation="@dimen/_8sdp"
+
                 android:layout_marginTop="@dimen/_16sdp">
 
                 <TextView
@@ -46,76 +63,20 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Add Ride Details"
-                    android:textSize="@dimen/_16sdp"
+                    android:textSize="20dp"
                     android:fontFamily="@font/nbold"
                     android:textColor="@color/Brown" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Help us understand your transport needs by adding ride details."
-                    android:textSize="@dimen/_14sdp"
+                    android:text="Help us understand your transport needs by adding ride details.\n\nConnect with farmers who share similar transport requirements by adding your vehicle details.\n\nEnsure a safe and efficient transport experience by providing comprehensive driver details." android:textSize="@dimen/_14sdp"
                     android:textColor="@color/black"
                     android:layout_marginTop="@dimen/_8sdp" />
 
             </LinearLayout>
 
-            <LinearLayout
-                android:id="@+id/sectionAddVehicleDetails"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:background="@color/white"
-                android:padding="@dimen/_16sdp"
-                android:elevation="@dimen/_8sdp"
-                android:layout_marginTop="@dimen/_16sdp">
 
-                <TextView
-                    android:id="@+id/text_vehicle_details"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Add Vehicle Details"
-                    android:textSize="@dimen/_16sdp"
-                    android:fontFamily="@font/nbold"
-                    android:textColor="@color/Brown" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Connect with farmers who share similar transport requirements by adding your vehicle details."
-                    android:textSize="@dimen/_14sdp"
-                    android:textColor="@color/black"
-                    android:layout_marginTop="@dimen/_8sdp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/sectionAddDriverDetails"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:elevation="@dimen/_8sdp"
-                android:background="@color/white"
-                android:padding="@dimen/_16sdp"
-                android:layout_marginTop="@dimen/_16sdp">
-
-                <TextView
-                    android:id="@+id/text_driver_details"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Add Driver Details"
-                    android:textSize="@dimen/_16sdp"
-                    android:fontFamily="@font/nbold"
-                    android:textColor="@color/Brown" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Ensure a safe and efficient transport experience by providing comprehensive driver details."
-                    android:textSize="@dimen/_16sdp"
-                    android:layout_marginTop="@dimen/_8sdp" />
-
-            </LinearLayout>
 
             <Button
                 android:id="@+id/btn_add_ride"

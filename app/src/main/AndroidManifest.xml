@@ -44,6 +44,21 @@
             android:name=".CropRecommendInputActivity"
             android:exported="false" />
         <activity
+            android:name=".CropRecommendationHome"
+            android:exported="false" />
+        <activity
+            android:name=".CropRecommendation"
+            android:exported="false" />
+        <activity
+            android:name=".FinalCropMatchActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GetLandDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".GetCropDetailsActivity"
+            android:exported="false" />
+        <activity
             android:name=".CropRecommendHomeActivity"
             android:exported="false" />
         <activity

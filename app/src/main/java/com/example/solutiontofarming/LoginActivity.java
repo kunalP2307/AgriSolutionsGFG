@@ -40,6 +40,11 @@ public class LoginActivity extends AppCompatActivity {
         this.addListeners();
 
     }
+
+    @Override
+    public void onBackPressed() {
+        finishAffinity();
+    }
     private void bindComponents(){
         editTextEmail = findViewById(R.id.text_log_email);
         editTextPassword = findViewById(R.id.text_log_password);

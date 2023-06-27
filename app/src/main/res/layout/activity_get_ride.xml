@@ -4,24 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/greenGrey"
     tools:context=".GetRideActivity">
 
     <EditText
         android:id="@+id/edit_destination_ride_req"
         android:layout_width="0dp"
-        android:layout_height="38dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
 
         android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
-        android:background="@drawable/border"
         android:gravity="center_vertical"
 
 
         android:hint="Select Destination Address"
         android:textColor="@color/black"
-        android:textSize="25dp"
-        android:textStyle="bold"
+        android:textSize="18dp"
+        android:padding="6dp"
+        android:background="@drawable/custome_input"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,19 +31,20 @@
     <EditText
         android:id="@+id/edit_goods_ride_req"
         android:layout_width="0dp"
-        android:layout_height="38dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
 
         android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
-        android:background="@drawable/border"
+
 
 
         android:gravity="center_vertical"
         android:hint="Goods Being Transported"
         android:textColor="@color/black"
-        android:textSize="25dp"
-        android:textStyle="bold"
+        android:textSize="18dp"
+        android:padding="6dp"
+        android:background="@drawable/custome_input"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -51,19 +53,20 @@
     <EditText
         android:id="@+id/edit_goods_weight_ride_req"
         android:layout_width="0dp"
-        android:layout_height="38dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
 
         android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
 
 
-        android:background="@drawable/border"
+
         android:gravity="center_vertical"
         android:hint="Goods Weight "
         android:textColor="@color/black"
-        android:textSize="25dp"
-        android:textStyle="bold"
+        android:textSize="18dp"
+        android:padding="6dp"
+        android:background="@drawable/custome_input"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -72,19 +75,20 @@
     <EditText
         android:id="@+id/edit_add_des_ride_req"
         android:layout_width="0dp"
-        android:layout_height="38dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
 
         android:layout_marginTop="10dp"
-
+        android:textSize="18dp"
+        android:padding="6dp"
+        android:background="@drawable/custome_input"
 
         android:layout_marginEnd="20dp"
-        android:background="@drawable/border"
+
         android:gravity="center_vertical"
         android:hint="Additional Details"
         android:textColor="@color/black"
-        android:textSize="25dp"
-        android:textStyle="bold"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -97,8 +101,8 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="15dp"
         android:text="TO"
-        android:textColor="@color/colorAccent"
-        android:textSize="22dp"
+        android:textColor="@color/Brown" android:textStyle="bold"
+        android:textSize="16dp"
         app:layout_constraintStart_toEndOf="@+id/textView65"
         app:layout_constraintTop_toBottomOf="@+id/edit_source_ride_req" />
 
@@ -109,8 +113,8 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="15dp"
         android:text="Goods To Be Transported"
-        android:textColor="@color/colorAccent"
-        android:textSize="22dp"
+        android:textColor="@color/Brown"
+        android:textSize="16dp" android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_destination_ride_req" />
 
@@ -121,8 +125,8 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="15dp"
         android:text="Goods Weight (Approximately)"
-        android:textColor="@color/colorAccent"
-        android:textSize="22dp"
+        android:textColor="@color/Brown"
+        android:textSize="16dp" android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_goods_ride_req" />
 
@@ -133,50 +137,52 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="15dp"
         android:text="Additional Details(Optional)"
-        android:textColor="@color/colorAccent"
-        android:textSize="22dp"
+        android:textColor="@color/Brown"
+        android:textSize="16dp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_goods_weight_ride_req" />
 
     <TextView
         android:id="@+id/textView65"
-        android:layout_width="15dp"
-        android:layout_height="15dp"
+        android:layout_width="19dp"
+        android:layout_height="19dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="23dp"
-        android:background="#2196F3"
+        android:background="@drawable/ic_addlocation_red"
+        app:layout_constraintBottom_toBottomOf="@+id/textView66"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edit_source_ride_req" />
+        app:layout_constraintTop_toTopOf="@+id/textView66" />
 
     <EditText
         android:id="@+id/edit_source_ride_req"
         android:layout_width="0dp"
-        android:layout_height="38dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
 
         android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
-        android:background="@drawable/border"
+
         android:gravity="center_vertical"
 
         android:hint="Select Source Address"
 
         android:textColor="@color/black"
-        android:textSize="25dp"
-        android:textStyle="bold"
+        android:textSize="18dp"
+        android:padding="6dp"
+        android:background="@drawable/custome_input"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView64" />
 
     <TextView
         android:id="@+id/textView63"
-        android:layout_width="15dp"
-        android:layout_height="15dp"
+        android:layout_width="19dp"
+        android:layout_height="19dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="50dp"
-        android:background="#4CAF50"
+        android:background="@drawable/ic_location"
+        app:layout_constraintBottom_toBottomOf="@+id/textView64"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@+id/textView64" />
 
     <TextView
         android:id="@+id/textView64"
@@ -185,8 +191,9 @@
         android:layout_marginStart="10dp"
         android:layout_marginTop="40dp"
         android:text="FROM"
-        android:textColor="@color/colorAccent"
-        android:textSize="22dp"
+        android:textColor="@color/Brown"
+        android:textSize="16dp"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/textView63"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -197,8 +204,10 @@
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:layout_marginBottom="60dp"
-        android:text="SEND Ride Request"
-        android:textSize="22dp"
+        android:text="Send Ride Request"
+        android:backgroundTint="@color/quantum_orange"
+        android:textSize="18dp"
+        android:textAllCaps="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

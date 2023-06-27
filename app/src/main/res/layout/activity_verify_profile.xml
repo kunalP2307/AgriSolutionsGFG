@@ -4,18 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/greenGrey"
     tools:context=".VerifyProfileActivity">
 
     <TextView
         android:id="@+id/text_verify_through"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:textSize="22dp"
-        android:textStyle="bold"
-        android:textColor="@color/black"
         android:layout_marginTop="30dp"
+
         android:text="VERIFY THROUGH"
+        android:textColor="@color/darkGreen"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -23,61 +25,66 @@
         android:id="@+id/radio_aadhaar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="45dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="36dp"
         android:text="Aadhar Card"
-        android:textSize="20dp"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="@+id/radio_pan"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/text_verify_through" />
+        app:layout_constraintTop_toBottomOf="@+id/text_verify_through"
+        app:layout_constraintVertical_bias="1.0" />
 
     <RadioButton
         android:id="@+id/radio_pan"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="45dp"
-        android:layout_marginTop="15dp"
-
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="50dp"
         android:text="PAN Card"
-        android:textSize="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radio_aadhaar" />
+        android:textSize="18dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.606"
+        app:layout_constraintStart_toEndOf="@+id/radio_aadhaar"
+        app:layout_constraintTop_toBottomOf="@+id/text_verify_through" />
 
     <EditText
         android:id="@+id/edit_doc_no"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="45dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:layout_marginEnd="45dp"
         android:ems="10"
-        android:textSize="23dp"
+        android:textSize="18dp"
+        android:padding="6dp"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_hint_doc_no" />
 
+
     <TextView
         android:id="@+id/text_hint_doc_no"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="45dp"
-        android:layout_marginTop="30dp"
-        android:textColor="@color/colorAccent"
-        android:textSize="22dp"
+        android:layout_marginStart="48dp"
         android:text="Document No "
+        android:textColor="@color/Brown"
+        android:textSize="20dp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radio_pan" />
-
+        tools:layout_editor_absoluteY="174dp" />
 
     <TextView
         android:id="@+id/text_hint_doc_no2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="45dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="20dp"
         android:text="Upload Document"
-        android:textColor="@color/colorAccent"
-        android:textSize="22dp"
+        android:textColor="@color/Brown"
+        android:textSize="20dp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_doc_no" />
 
@@ -99,7 +106,10 @@
         android:layout_marginTop="50dp"
         android:layout_marginEnd="45dp"
         android:text="Verify Profile"
-        android:textSize="22dp"
+        android:textSize="18dp"
+        android:padding="6dp"
+        android:textAllCaps="false"
+        android:backgroundTint="@color/quantum_orange"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/image_verify_doc" />

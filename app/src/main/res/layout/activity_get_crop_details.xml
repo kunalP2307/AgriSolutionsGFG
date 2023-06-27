@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    android:background="@color/greenGrey"
+    tools:context=".GetCropDetailsActivity">
+
+    <LinearLayout
+        android:id="@+id/section_crop_details"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        android:paddingBottom="50dp">
+
+        <TextView
+            android:id="@+id/title_crop_details"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:shadowColor="@color/white"
+            android:shadowDx="1"
+            android:shadowDy="2"
+            android:shadowRadius="1"
+            android:text="Crop History"
+            android:textAlignment="center"
+            android:textColor="@color/darkGreen"
+            android:textSize="20dp"
+
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/text_crop_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Crop name"
+            android:textSize="16dp"
+            android:textColor="@color/Brown" />
+
+        <EditText
+            android:id="@+id/edit_crop_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custome_input"
+            android:inputType="text"
+            android:padding="6dp"
+            android:textColor="@color/black"
+            android:layout_marginBottom="5dp"
+            android:textSize="18dp" />
+
+
+        <!-- Land Area Input -->
+        <TextView
+            android:id="@+id/text_crop_planting_season"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Planting Season "  android:textSize="16dp"
+            android:textColor="@color/Brown" />
+
+        <EditText
+            android:id="@+id/edit_crop_planting_season"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custome_input"
+            android:inputType="text"
+            android:padding="6dp"
+            android:textColor="@color/black"  android:layout_marginBottom="5dp"
+            android:textSize="18dp" />
+
+        <!-- Growing Duration Input -->
+        <TextView
+            android:id="@+id/text_crop_growing_duration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Growing Duration"  android:textSize="16dp"
+            android:textColor="@color/Brown" />
+
+        <EditText
+            android:id="@+id/edit_crop_growing_duration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custome_input"
+            android:inputType="number"
+            android:padding="6dp"
+            android:textColor="@color/black"  android:layout_marginBottom="5dp"
+            android:textSize="18dp" />
+
+
+        <TextView
+            android:id="@+id/text_crop_harvesting_storage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Harvesting and Storage"  android:textSize="16dp"
+            android:textColor="@color/Brown" />
+
+        <EditText
+            android:id="@+id/edit_crop_harvesting_storage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custome_input"
+            android:inputType="text"
+            android:padding="6dp"
+            android:textColor="@color/black"  android:layout_marginBottom="5dp"
+            android:textSize="18dp" />
+
+        <TextView
+            android:id="@+id/text_crop_market_value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Market Value"  android:textSize="16dp"
+            android:textColor="@color/Brown" />
+
+        <EditText
+            android:id="@+id/edit_crop_market_value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custome_input"
+            android:inputType="numberDecimal"
+            android:padding="6dp"
+            android:textColor="@color/black"
+            android:layout_marginBottom="5dp"
+            android:textSize="18dp" />
+
+
+        <!-- Yield of Previous Crops -->
+        <TextView
+            android:id="@+id/text_yield_of_previous_crops"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Yield of Crops"  android:textSize="16dp"
+            android:textColor="@color/Brown" />
+
+        <EditText
+            android:id="@+id/edit_yield_of_crops"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custome_input"
+            android:inputType="number"
+            android:padding="6dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="@color/black"
+            android:textSize="18dp" />
+
+        <!-- Pest -->
+        <TextView
+            android:id="@+id/text_pest_disease_issues"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Pesticides Used"  android:textSize="16dp"
+            android:textColor="@color/Brown" />
+
+        <EditText
+            android:id="@+id/edit_pesticide_used"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custome_input"
+            android:inputType="textMultiLine"
+            android:padding="6dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="@color/black"
+            android:textSize="18dp" />
+
+        <!-- Fertilizer and Nutrient Application -->
+        <TextView
+            android:id="@+id/text_fertilizer_nutrient_application"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Fertilizer and Nutrient Used"  android:textSize="16dp"
+            android:textColor="@color/Brown" />
+
+        <EditText
+            android:id="@+id/edit_fertilizer_nutrient_application"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custome_input"
+            android:inputType="textMultiLine"
+            android:padding="6dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="@color/black"
+            android:textSize="18dp" />
+
+        <!-- Irrigation Practices -->
+        <TextView
+            android:id="@+id/text_irrigation_practices"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Irrigation Practice Used"  android:textSize="16dp"
+            android:textColor="@color/Brown" />
+
+        <EditText
+            android:id="@+id/edit_irrigation_practices"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custome_input"
+            android:inputType="textMultiLine"
+            android:padding="6dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="@color/black"
+            android:textSize="18dp" />
+
+        <!-- Crop Rotation -->
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_crop_add_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/custom_button"
+            android:padding="6dp"
+            android:text="Add Details"
+            android:textAllCaps="false" />
+
+
+    </LinearLayout>
+
+</ScrollView>
